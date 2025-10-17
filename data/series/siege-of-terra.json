@@ -1,0 +1,152 @@
+{
+  "id": "siege-of-terra",
+  "name": "The Siege of Terra",
+  "description": "The final battle for the Imperial Palace",
+  "books": [
+    {
+      "id": "sot-01",
+      "title": "The Solar War",
+      "author": "John French",
+      "orderInSeries": 1,
+      "faction": [
+        "Imperial Fists",
+        "Various Traitors"
+      ],
+      "tags": [
+        "Sol System",
+        "Defense",
+        "Beginning"
+      ]
+    },
+    {
+      "id": "sot-02",
+      "title": "The Lost and the Damned",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": [
+        "Imperial Fists",
+        "Various Traitors"
+      ],
+      "tags": [
+        "Terra",
+        "Outer Palace",
+        "Siege Begins"
+      ]
+    },
+    {
+      "id": "sot-03",
+      "title": "The First Wall",
+      "author": "Gav Thorpe",
+      "orderInSeries": 3,
+      "faction": [
+        "Imperial Fists"
+      ],
+      "tags": [
+        "Rogal Dorn",
+        "Walls",
+        "Defense"
+      ]
+    },
+    {
+      "id": "sot-04",
+      "title": "Saturnine",
+      "author": "Dan Abnett",
+      "orderInSeries": 4,
+      "faction": [
+        "Imperial Fists",
+        "Alpha Legion"
+      ],
+      "tags": [
+        "Saturnine Gate",
+        "Turning Point"
+      ]
+    },
+    {
+      "id": "sot-05",
+      "title": "Mortis",
+      "author": "John French",
+      "orderInSeries": 5,
+      "faction": [
+        "Death Guard"
+      ],
+      "tags": [
+        "Titans",
+        "Mortis",
+        "Mars"
+      ]
+    },
+    {
+      "id": "sot-06",
+      "title": "Warhawk",
+      "author": "Chris Wraight",
+      "orderInSeries": 6,
+      "faction": [
+        "White Scars",
+        "Death Guard"
+      ],
+      "tags": [
+        "Jaghatai Khan",
+        "Mortarion",
+        "Duel"
+      ]
+    },
+    {
+      "id": "sot-07",
+      "title": "Echoes of Eternity",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 7,
+      "faction": [
+        "Blood Angels",
+        "World Eaters"
+      ],
+      "tags": [
+        "Sanguinius",
+        "Angron",
+        "Ultimate Gate"
+      ]
+    },
+    {
+      "id": "sot-08",
+      "title": "The End and the Death: Volume I",
+      "author": "Dan Abnett",
+      "orderInSeries": 8,
+      "faction": [
+        "Various"
+      ],
+      "tags": [
+        "Final Battle",
+        "Emperor",
+        "Horus"
+      ]
+    },
+    {
+      "id": "sot-09",
+      "title": "The End and the Death: Volume II",
+      "author": "Dan Abnett",
+      "orderInSeries": 9,
+      "faction": [
+        "Various"
+      ],
+      "tags": [
+        "Final Battle",
+        "Emperor",
+        "Horus"
+      ]
+    },
+    {
+      "id": "sot-10",
+      "title": "The End and the Death: Volume III",
+      "author": "Dan Abnett",
+      "orderInSeries": 10,
+      "faction": [
+        "Various"
+      ],
+      "tags": [
+        "Final Battle",
+        "Emperor",
+        "Horus",
+        "Conclusion"
+      ]
+    }
+  ]
+}

@@ -142,12 +142,24 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                       </Link>
                     </div>
 
+                    <Link
+                      href="/import"
+                      onClick={() => setShowUserDropdown(false)}
+                      className={`block px-4 py-2 ${
+                        pathname.startsWith('/import')
+                          ? `${styles.textGold}`
+                          : 'text-slate-300'
+                      } hover:bg-slate-700 transition-colors`}
+                    >
+                      Import Books
+                    </Link>
+
                     <button
                       onClick={() => {
                         onLogout();
                         setShowUserDropdown(false);
                       }}
-                      className="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
+                      className="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors border-t border-slate-700 mt-2 pt-2"
                     >
                       Sign Out
                     </button>

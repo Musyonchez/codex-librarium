@@ -90,9 +90,9 @@ export default function SeriesView({ series, readingTracker, onUpdateStatus }: S
                   </div>
                   <div className={`flex flex-wrap gap-3 text-sm ${styles.textSecondary}`}>
                     <span>by {book.author}</span>
-                    {book.legion && book.legion.length > 0 && (
+                    {book.faction && book.faction.length > 0 && (
                       <span className={styles.textMuted}>
-                        • {book.legion.join(', ')}
+                        • {book.faction.join(', ')}
                       </span>
                     )}
                   </div>

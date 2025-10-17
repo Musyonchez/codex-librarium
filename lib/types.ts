@@ -4,7 +4,7 @@ export interface Book {
   author: string;
   orderInSeries: number;
   chronologicalOrder?: number;
-  legion?: string[];
+  faction?: string[];
   tags?: string[];
 }
 

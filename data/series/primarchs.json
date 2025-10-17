@@ -1,0 +1,189 @@
+{
+  "id": "primarchs",
+  "name": "The Primarchs",
+  "description": "Individual novels focusing on each Primarch",
+  "books": [
+    {
+      "id": "p-01",
+      "title": "Roboute Guilliman: Lord of Ultramar",
+      "author": "David Annandale",
+      "orderInSeries": 1,
+      "faction": [
+        "Ultramarines"
+      ],
+      "tags": [
+        "Guilliman",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-02",
+      "title": "Leman Russ: The Great Wolf",
+      "author": "Chris Wraight",
+      "orderInSeries": 2,
+      "faction": [
+        "Space Wolves"
+      ],
+      "tags": [
+        "Leman Russ",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-03",
+      "title": "Magnus the Red: Master of Prospero",
+      "author": "Graham McNeill",
+      "orderInSeries": 3,
+      "faction": [
+        "Thousand Sons"
+      ],
+      "tags": [
+        "Magnus",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-04",
+      "title": "Perturabo: The Hammer of Olympia",
+      "author": "Guy Haley",
+      "orderInSeries": 4,
+      "faction": [
+        "Iron Warriors"
+      ],
+      "tags": [
+        "Perturabo",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-05",
+      "title": "Lorgar: Bearer of the Word",
+      "author": "Gav Thorpe",
+      "orderInSeries": 5,
+      "faction": [
+        "Word Bearers"
+      ],
+      "tags": [
+        "Lorgar",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-06",
+      "title": "Fulgrim: The Palatine Phoenix",
+      "author": "Josh Reynolds",
+      "orderInSeries": 6,
+      "faction": [
+        "Emperor's Children"
+      ],
+      "tags": [
+        "Fulgrim",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-07",
+      "title": "Ferrus Manus: Gorgon of Medusa",
+      "author": "David Guymer",
+      "orderInSeries": 7,
+      "faction": [
+        "Iron Hands"
+      ],
+      "tags": [
+        "Ferrus Manus",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-08",
+      "title": "Jaghatai Khan: Warhawk of Chogoris",
+      "author": "Chris Wraight",
+      "orderInSeries": 8,
+      "faction": [
+        "White Scars"
+      ],
+      "tags": [
+        "Jaghatai Khan",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-09",
+      "title": "Vulkan: Lord of Drakes",
+      "author": "David Annandale",
+      "orderInSeries": 9,
+      "faction": [
+        "Salamanders"
+      ],
+      "tags": [
+        "Vulkan",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-10",
+      "title": "Corax: Lord of Shadows",
+      "author": "Guy Haley",
+      "orderInSeries": 10,
+      "faction": [
+        "Raven Guard"
+      ],
+      "tags": [
+        "Corax",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-11",
+      "title": "Angron: Slave of Nuceria",
+      "author": "Ian St. Martin",
+      "orderInSeries": 11,
+      "faction": [
+        "World Eaters"
+      ],
+      "tags": [
+        "Angron",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-12",
+      "title": "Konrad Curze: The Night Haunter",
+      "author": "Guy Haley",
+      "orderInSeries": 12,
+      "faction": [
+        "Night Lords"
+      ],
+      "tags": [
+        "Konrad Curze",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-13",
+      "title": "Alpharius: Head of the Hydra",
+      "author": "Mike Brooks",
+      "orderInSeries": 13,
+      "faction": [
+        "Alpha Legion"
+      ],
+      "tags": [
+        "Alpharius",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "p-14",
+      "title": "Lion El'Jonson: Lord of the First",
+      "author": "David Guymer",
+      "orderInSeries": 14,
+      "faction": [
+        "Dark Angels"
+      ],
+      "tags": [
+        "Lion El'Jonson",
+        "Primarch"
+      ]
+    }
+  ]
+}

@@ -38,14 +38,14 @@ export async function getSeriesWithBooks() {
         title: string;
         author: string;
         order_in_series: number;
-        legion: string[];
+        faction: string[];
         tags: string[];
       }) => ({
         id: book.id,
         title: book.title,
         author: book.author,
         orderInSeries: book.order_in_series,
-        legion: book.legion,
+        faction: book.faction,
         tags: book.tags,
       })),
   }));
