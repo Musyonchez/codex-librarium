@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
 import OrderTabs from '@/components/OrderTabs';
+import BookDetailsModal from '@/components/BookDetailsModal';
 import { ReadingTracker, BooksMetadata, ReadingStatus, Book } from '@/lib/types';
 import { styles, statusIcons, statusLabels } from '@/lib/design-system';
 import { toast } from 'sonner';
@@ -13,6 +14,7 @@ export default function OrderByTagsPage() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [selectedBook, setSelectedBook] = useState<(Book & { seriesName: string }) | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -74,15 +76,12 @@ export default function OrderByTagsPage() {
     return entry?.status || 'unread';
   };
 
-  const cycleStatus = (bookId: string, bookTitle: string) => {
-    const currentStatus = getStatus(bookId);
-    const statusOrder: ReadingStatus[] = ['unread', 'reading', 'completed'];
-    const currentIndex = statusOrder.indexOf(currentStatus);
-    const nextStatus = statusOrder[(currentIndex + 1) % statusOrder.length];
-    updateReadingStatus(bookId, nextStatus);
+  const handleStatusChange = (bookId: string, bookTitle: string, status: ReadingStatus) => {
+    updateReadingStatus(bookId, status);
+    setSelectedBook(null);
 
     toast.success(`${bookTitle}`, {
-      description: `Marked as ${statusLabels[nextStatus]}`,
+      description: `Marked as ${statusLabels[status]}`,
     });
   };
 
@@ -185,7 +184,7 @@ export default function OrderByTagsPage() {
                       <div
                         key={book.id}
                         className={styles.bookCard}
-                        onClick={() => cycleStatus(book.id, book.title)}
+                        onClick={() => setSelectedBook(book)}
                       >
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-8 text-center">
@@ -246,6 +245,16 @@ export default function OrderByTagsPage() {
               </>
             )}
           </>
+        )}
+
+        {/* Book Details Modal */}
+        {selectedBook && (
+          <BookDetailsModal
+            book={selectedBook}
+            currentStatus={getStatus(selectedBook.id)}
+            onClose={() => setSelectedBook(null)}
+            onStatusChange={(status) => handleStatusChange(selectedBook.id, selectedBook.title, status)}
+          />
         )}
       </div>
     </AppLayout>

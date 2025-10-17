@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Series, ReadingTracker, ReadingStatus } from '@/lib/types';
+import { Series, ReadingTracker, ReadingStatus, Book } from '@/lib/types';
 import { styles, statusIcons, statusLabels } from '@/lib/design-system';
 import { toast } from 'sonner';
+import BookDetailsModal from './BookDetailsModal';
 
 interface SeriesViewProps {
   series: Series;
@@ -13,22 +14,20 @@ interface SeriesViewProps {
 
 export default function SeriesView({ series, readingTracker, onUpdateStatus }: SeriesViewProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedBook, setSelectedBook] = useState<(Book & { seriesName: string }) | null>(null);
 
   const getStatus = (bookId: string): ReadingStatus => {
     const entry = readingTracker?.readingData?.find(r => r.bookId === bookId);
     return entry?.status || 'unread';
   };
 
-  const cycleStatus = (bookId: string, bookTitle: string) => {
-    const currentStatus = getStatus(bookId);
-    const statusOrder: ReadingStatus[] = ['unread', 'reading', 'completed'];
-    const currentIndex = statusOrder.indexOf(currentStatus);
-    const nextStatus = statusOrder[(currentIndex + 1) % statusOrder.length];
-    onUpdateStatus(bookId, nextStatus);
+  const handleStatusChange = (bookId: string, bookTitle: string, status: ReadingStatus) => {
+    onUpdateStatus(bookId, status);
+    setSelectedBook(null);
 
     // Show toast notification
     toast.success(`${bookTitle}`, {
-      description: `Marked as ${statusLabels[nextStatus]}`,
+      description: `Marked as ${statusLabels[status]}`,
     });
   };
 
@@ -77,7 +76,7 @@ export default function SeriesView({ series, readingTracker, onUpdateStatus }: S
             <div
               key={book.id}
               className={styles.bookCard}
-              onClick={() => cycleStatus(book.id, book.title)}
+              onClick={() => setSelectedBook({ ...book, seriesName: series.name })}
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 text-center">
@@ -118,6 +117,16 @@ export default function SeriesView({ series, readingTracker, onUpdateStatus }: S
         })}
           </div>
         </div>
+      )}
+
+      {/* Book Details Modal */}
+      {selectedBook && (
+        <BookDetailsModal
+          book={selectedBook}
+          currentStatus={getStatus(selectedBook.id)}
+          onClose={() => setSelectedBook(null)}
+          onStatusChange={(status) => handleStatusChange(selectedBook.id, selectedBook.title, status)}
+        />
       )}
     </div>
   );
