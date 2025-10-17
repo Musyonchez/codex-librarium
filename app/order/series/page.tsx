@@ -5,7 +5,7 @@ import AppLayout from '@/components/AppLayout';
 import SeriesView from '@/components/SeriesView';
 import { ReadingTracker, BooksMetadata, ReadingStatus } from '@/lib/types';
 
-export default function SeriesPage() {
+export default function OrderBySeriesPage() {
   const [readingTracker, setReadingTracker] = useState<ReadingTracker>({ readingData: [] });
   const [booksMetadata, setBooksMetadata] = useState<BooksMetadata | null>(null);
   const [loading, setLoading] = useState(true);

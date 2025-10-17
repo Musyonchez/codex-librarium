@@ -66,7 +66,7 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                 onMouseEnter={() => setShowOrderDropdown(true)}
                 onMouseLeave={() => setShowOrderDropdown(false)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  pathname.startsWith("/series")
+                  pathname.startsWith("/order") || pathname.startsWith("/series")
                     ? `${styles.textGold} bg-slate-700`
                     : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
                 }`}
@@ -81,19 +81,33 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                   onMouseLeave={() => setShowOrderDropdown(false)}
                 >
                   <Link
-                    href="/series"
+                    href="/order/series"
                     onClick={() => setShowOrderDropdown(false)}
                     className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
                   >
                     By Series
                   </Link>
-                  <button
+                  <Link
+                    href="/order/name"
                     onClick={() => setShowOrderDropdown(false)}
-                    className="w-full text-left px-4 py-2 text-slate-500 cursor-not-allowed"
-                    disabled
+                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
                   >
-                    By Name (Coming Soon)
-                  </button>
+                    By Name
+                  </Link>
+                  <Link
+                    href="/order/tags"
+                    onClick={() => setShowOrderDropdown(false)}
+                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
+                  >
+                    By Tags
+                  </Link>
+                  <Link
+                    href="/order/factions"
+                    onClick={() => setShowOrderDropdown(false)}
+                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
+                  >
+                    By Factions
+                  </Link>
                 </div>
               )}
             </div>
@@ -130,10 +144,10 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         Dashboard
                       </Link>
                       <Link
-                        href="/series"
+                        href="/order/series"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname.startsWith('/series')
+                          pathname.startsWith('/order') || pathname.startsWith('/series')
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
