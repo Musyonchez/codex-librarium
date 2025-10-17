@@ -1,0 +1,44 @@
+{
+  "readingData": [
+    {
+      "bookId": "hh-01",
+      "status": "completed",
+      "startedAt": "2025-10-17T17:20:07.091Z",
+      "completedAt": "2025-10-17T17:20:09.737Z"
+    },
+    {
+      "bookId": "hh-02",
+      "status": "completed",
+      "startedAt": "2025-10-17T17:20:13.070Z",
+      "completedAt": "2025-10-17T17:20:14.822Z"
+    },
+    {
+      "bookId": "hh-03",
+      "status": "completed",
+      "startedAt": "2025-10-17T17:20:16.367Z",
+      "completedAt": "2025-10-17T17:20:19.173Z"
+    },
+    {
+      "bookId": "hh-04",
+      "status": "completed",
+      "startedAt": "2025-10-17T17:20:17.601Z",
+      "completedAt": "2025-10-17T17:20:19.482Z"
+    },
+    {
+      "bookId": "hh-05",
+      "status": "completed",
+      "startedAt": "2025-10-17T17:20:21.843Z",
+      "completedAt": "2025-10-17T17:20:23.785Z"
+    },
+    {
+      "bookId": "hh-06",
+      "status": "reading",
+      "startedAt": "2025-10-17T17:20:26.434Z"
+    },
+    {
+      "bookId": "hh-07",
+      "status": "reading",
+      "startedAt": "2025-10-17T17:20:26.967Z"
+    }
+  ]
+}

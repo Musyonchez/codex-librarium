@@ -1,0 +1,713 @@
+{
+  "series": [
+    {
+      "id": "horus-heresy",
+      "name": "The Horus Heresy",
+      "description": "The galaxy-spanning civil war that tore the Imperium apart",
+      "books": [
+        {
+          "id": "hh-01",
+          "title": "Horus Rising",
+          "author": "Dan Abnett",
+          "orderInSeries": 1,
+          "chronologicalOrder": 1,
+          "legion": ["Luna Wolves/Sons of Horus"],
+          "tags": ["Great Crusade", "Horus", "Loken"]
+        },
+        {
+          "id": "hh-02",
+          "title": "False Gods",
+          "author": "Graham McNeill",
+          "orderInSeries": 2,
+          "chronologicalOrder": 2,
+          "legion": ["Sons of Horus"],
+          "tags": ["Corruption", "Horus Fall"]
+        },
+        {
+          "id": "hh-03",
+          "title": "Galaxy in Flames",
+          "author": "Ben Counter",
+          "orderInSeries": 3,
+          "chronologicalOrder": 3,
+          "legion": ["Sons of Horus", "Emperor's Children", "Death Guard", "World Eaters"],
+          "tags": ["Isstvan III", "Betrayal"]
+        },
+        {
+          "id": "hh-04",
+          "title": "The Flight of the Eisenstein",
+          "author": "James Swallow",
+          "orderInSeries": 4,
+          "chronologicalOrder": 4,
+          "legion": ["Death Guard"],
+          "tags": ["Garro", "Isstvan III", "Warning"]
+        },
+        {
+          "id": "hh-05",
+          "title": "Fulgrim",
+          "author": "Graham McNeill",
+          "orderInSeries": 5,
+          "chronologicalOrder": 5,
+          "legion": ["Emperor's Children", "Iron Hands"],
+          "tags": ["Slaanesh", "Ferrus Manus", "Isstvan V"]
+        },
+        {
+          "id": "hh-06",
+          "title": "Descent of Angels",
+          "author": "Mitchel Scanlon",
+          "orderInSeries": 6,
+          "chronologicalOrder": 6,
+          "legion": ["Dark Angels"],
+          "tags": ["Caliban", "Luther", "Lion El'Jonson"]
+        },
+        {
+          "id": "hh-07",
+          "title": "Legion",
+          "author": "Dan Abnett",
+          "orderInSeries": 7,
+          "chronologicalOrder": 7,
+          "legion": ["Alpha Legion"],
+          "tags": ["Alpharius", "Cabal", "Mystery"]
+        },
+        {
+          "id": "hh-08",
+          "title": "Battle for the Abyss",
+          "author": "Ben Counter",
+          "orderInSeries": 8,
+          "chronologicalOrder": 8,
+          "legion": ["Word Bearers", "Ultramarines", "Space Wolves", "Thousand Sons"],
+          "tags": ["Furious Abyss", "Calth"]
+        },
+        {
+          "id": "hh-09",
+          "title": "Mechanicum",
+          "author": "Graham McNeill",
+          "orderInSeries": 9,
+          "chronologicalOrder": 9,
+          "legion": ["None"],
+          "tags": ["Mars", "Adeptus Mechanicus", "Schism"]
+        },
+        {
+          "id": "hh-10",
+          "title": "Tales of Heresy",
+          "author": "Various",
+          "orderInSeries": 10,
+          "chronologicalOrder": 10,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-11",
+          "title": "Fallen Angels",
+          "author": "Mike Lee",
+          "orderInSeries": 11,
+          "chronologicalOrder": 11,
+          "legion": ["Dark Angels"],
+          "tags": ["Caliban", "Luther", "Zahariel"]
+        },
+        {
+          "id": "hh-12",
+          "title": "A Thousand Sons",
+          "author": "Graham McNeill",
+          "orderInSeries": 12,
+          "chronologicalOrder": 12,
+          "legion": ["Thousand Sons", "Space Wolves"],
+          "tags": ["Magnus", "Prospero", "Psychic Powers"]
+        },
+        {
+          "id": "hh-13",
+          "title": "Nemesis",
+          "author": "James Swallow",
+          "orderInSeries": 13,
+          "chronologicalOrder": 13,
+          "legion": ["None"],
+          "tags": ["Assassins", "Terra", "Malcador"]
+        },
+        {
+          "id": "hh-14",
+          "title": "The First Heretic",
+          "author": "Aaron Dembski-Bowden",
+          "orderInSeries": 14,
+          "chronologicalOrder": 1,
+          "legion": ["Word Bearers"],
+          "tags": ["Lorgar", "Chaos", "Origins"]
+        },
+        {
+          "id": "hh-15",
+          "title": "Prospero Burns",
+          "author": "Dan Abnett",
+          "orderInSeries": 15,
+          "chronologicalOrder": 14,
+          "legion": ["Space Wolves"],
+          "tags": ["Prospero", "Leman Russ", "Executioners"]
+        },
+        {
+          "id": "hh-16",
+          "title": "Age of Darkness",
+          "author": "Various",
+          "orderInSeries": 16,
+          "chronologicalOrder": 15,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-17",
+          "title": "The Outcast Dead",
+          "author": "Graham McNeill",
+          "orderInSeries": 17,
+          "chronologicalOrder": 16,
+          "legion": ["Various"],
+          "tags": ["Terra", "Astropaths", "Prison"]
+        },
+        {
+          "id": "hh-18",
+          "title": "Deliverance Lost",
+          "author": "Gav Thorpe",
+          "orderInSeries": 18,
+          "chronologicalOrder": 17,
+          "legion": ["Raven Guard"],
+          "tags": ["Corax", "Isstvan V", "Gene-seed"]
+        },
+        {
+          "id": "hh-19",
+          "title": "Know No Fear",
+          "author": "Dan Abnett",
+          "orderInSeries": 19,
+          "chronologicalOrder": 18,
+          "legion": ["Ultramarines", "Word Bearers"],
+          "tags": ["Calth", "Guilliman", "Betrayal"]
+        },
+        {
+          "id": "hh-20",
+          "title": "The Primarchs",
+          "author": "Various",
+          "orderInSeries": 20,
+          "chronologicalOrder": 19,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Primarchs", "Short Stories"]
+        },
+        {
+          "id": "hh-21",
+          "title": "Fear to Tread",
+          "author": "James Swallow",
+          "orderInSeries": 21,
+          "chronologicalOrder": 20,
+          "legion": ["Blood Angels"],
+          "tags": ["Sanguinius", "Ka'Bandha", "Signus"]
+        },
+        {
+          "id": "hh-22",
+          "title": "Shadows of Treachery",
+          "author": "Various",
+          "orderInSeries": 22,
+          "chronologicalOrder": 21,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-23",
+          "title": "Angel Exterminatus",
+          "author": "Graham McNeill",
+          "orderInSeries": 23,
+          "chronologicalOrder": 22,
+          "legion": ["Iron Warriors", "Emperor's Children"],
+          "tags": ["Perturabo", "Fulgrim", "Iydris"]
+        },
+        {
+          "id": "hh-24",
+          "title": "Betrayer",
+          "author": "Aaron Dembski-Bowden",
+          "orderInSeries": 24,
+          "chronologicalOrder": 23,
+          "legion": ["World Eaters", "Word Bearers"],
+          "tags": ["Angron", "Lorgar", "Shadow Crusade"]
+        },
+        {
+          "id": "hh-25",
+          "title": "Mark of Calth",
+          "author": "Various",
+          "orderInSeries": 25,
+          "chronologicalOrder": 24,
+          "legion": ["Ultramarines", "Word Bearers"],
+          "tags": ["Anthology", "Calth", "Short Stories"]
+        },
+        {
+          "id": "hh-26",
+          "title": "Vulkan Lives",
+          "author": "Nick Kyme",
+          "orderInSeries": 26,
+          "chronologicalOrder": 25,
+          "legion": ["Salamanders"],
+          "tags": ["Vulkan", "Curze", "Perpetual"]
+        },
+        {
+          "id": "hh-27",
+          "title": "The Unremembered Empire",
+          "author": "Dan Abnett",
+          "orderInSeries": 27,
+          "chronologicalOrder": 26,
+          "legion": ["Ultramarines", "Dark Angels", "Blood Angels"],
+          "tags": ["Imperium Secundus", "Macragge", "Guilliman"]
+        },
+        {
+          "id": "hh-28",
+          "title": "Scars",
+          "author": "Chris Wraight",
+          "orderInSeries": 28,
+          "chronologicalOrder": 27,
+          "legion": ["White Scars"],
+          "tags": ["Jaghatai Khan", "Prospero", "Choice"]
+        },
+        {
+          "id": "hh-29",
+          "title": "Vengeful Spirit",
+          "author": "Graham McNeill",
+          "orderInSeries": 29,
+          "chronologicalOrder": 28,
+          "legion": ["Sons of Horus"],
+          "tags": ["Horus", "Molech", "Power"]
+        },
+        {
+          "id": "hh-30",
+          "title": "The Damnation of Pythos",
+          "author": "David Annandale",
+          "orderInSeries": 30,
+          "chronologicalOrder": 29,
+          "legion": ["Iron Hands"],
+          "tags": ["Pythos", "Daemons", "Despair"]
+        },
+        {
+          "id": "hh-31",
+          "title": "Legacies of Betrayal",
+          "author": "Various",
+          "orderInSeries": 31,
+          "chronologicalOrder": 30,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-32",
+          "title": "Deathfire",
+          "author": "Nick Kyme",
+          "orderInSeries": 32,
+          "chronologicalOrder": 31,
+          "legion": ["Salamanders"],
+          "tags": ["Vulkan", "Return", "Nocturne"]
+        },
+        {
+          "id": "hh-33",
+          "title": "War Without End",
+          "author": "Various",
+          "orderInSeries": 33,
+          "chronologicalOrder": 32,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-34",
+          "title": "Pharos",
+          "author": "Guy Haley",
+          "orderInSeries": 34,
+          "chronologicalOrder": 33,
+          "legion": ["Ultramarines", "Night Lords"],
+          "tags": ["Sotha", "Pharos Device", "Curze"]
+        },
+        {
+          "id": "hh-35",
+          "title": "Eye of Terra",
+          "author": "Various",
+          "orderInSeries": 35,
+          "chronologicalOrder": 34,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-36",
+          "title": "The Path of Heaven",
+          "author": "Chris Wraight",
+          "orderInSeries": 36,
+          "chronologicalOrder": 35,
+          "legion": ["White Scars", "Death Guard"],
+          "tags": ["Jaghatai Khan", "Swordstorm", "Chase"]
+        },
+        {
+          "id": "hh-37",
+          "title": "The Silent War",
+          "author": "Various",
+          "orderInSeries": 37,
+          "chronologicalOrder": 36,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories", "Intrigue"]
+        },
+        {
+          "id": "hh-38",
+          "title": "Angels of Caliban",
+          "author": "Gav Thorpe",
+          "orderInSeries": 38,
+          "chronologicalOrder": 37,
+          "legion": ["Dark Angels"],
+          "tags": ["Lion El'Jonson", "Luther", "Caliban"]
+        },
+        {
+          "id": "hh-39",
+          "title": "Praetorian of Dorn",
+          "author": "John French",
+          "orderInSeries": 39,
+          "chronologicalOrder": 38,
+          "legion": ["Imperial Fists", "Alpha Legion"],
+          "tags": ["Rogal Dorn", "Alpharius", "Terra"]
+        },
+        {
+          "id": "hh-40",
+          "title": "Corax",
+          "author": "Gav Thorpe",
+          "orderInSeries": 40,
+          "chronologicalOrder": 39,
+          "legion": ["Raven Guard"],
+          "tags": ["Corax", "Anthology"]
+        },
+        {
+          "id": "hh-41",
+          "title": "The Master of Mankind",
+          "author": "Aaron Dembski-Bowden",
+          "orderInSeries": 41,
+          "chronologicalOrder": 40,
+          "legion": ["Custodes"],
+          "tags": ["Emperor", "Webway War", "Terra"]
+        },
+        {
+          "id": "hh-42",
+          "title": "Garro",
+          "author": "James Swallow",
+          "orderInSeries": 42,
+          "chronologicalOrder": 41,
+          "legion": ["Knights-Errant"],
+          "tags": ["Garro", "Anthology", "Malcador"]
+        },
+        {
+          "id": "hh-43",
+          "title": "Shattered Legions",
+          "author": "Various",
+          "orderInSeries": 43,
+          "chronologicalOrder": 42,
+          "legion": ["Iron Hands", "Raven Guard", "Salamanders"],
+          "tags": ["Anthology", "Isstvan V Survivors"]
+        },
+        {
+          "id": "hh-44",
+          "title": "The Crimson King",
+          "author": "Graham McNeill",
+          "orderInSeries": 44,
+          "chronologicalOrder": 43,
+          "legion": ["Thousand Sons"],
+          "tags": ["Magnus", "Planet of Sorcerers", "Daemon Prince"]
+        },
+        {
+          "id": "hh-45",
+          "title": "Tallarn",
+          "author": "John French",
+          "orderInSeries": 45,
+          "chronologicalOrder": 44,
+          "legion": ["Iron Warriors", "Imperial Fists"],
+          "tags": ["Tallarn", "Tank Warfare", "Anthology"]
+        },
+        {
+          "id": "hh-46",
+          "title": "Ruinstorm",
+          "author": "David Annandale",
+          "orderInSeries": 46,
+          "chronologicalOrder": 45,
+          "legion": ["Blood Angels", "Dark Angels", "Ultramarines"],
+          "tags": ["Imperium Secundus", "Ruinstorm", "Journey to Terra"]
+        },
+        {
+          "id": "hh-47",
+          "title": "Old Earth",
+          "author": "Nick Kyme",
+          "orderInSeries": 47,
+          "chronologicalOrder": 46,
+          "legion": ["Salamanders"],
+          "tags": ["Vulkan", "Terra", "Talisman"]
+        },
+        {
+          "id": "hh-48",
+          "title": "The Burden of Loyalty",
+          "author": "Various",
+          "orderInSeries": 48,
+          "chronologicalOrder": 47,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Short Stories"]
+        },
+        {
+          "id": "hh-49",
+          "title": "Wolfsbane",
+          "author": "Guy Haley",
+          "orderInSeries": 49,
+          "chronologicalOrder": 48,
+          "legion": ["Space Wolves", "Sons of Horus"],
+          "tags": ["Leman Russ", "Horus", "Duel"]
+        },
+        {
+          "id": "hh-50",
+          "title": "Born of Flame",
+          "author": "Nick Kyme",
+          "orderInSeries": 50,
+          "chronologicalOrder": 49,
+          "legion": ["Salamanders"],
+          "tags": ["Anthology", "Novella"]
+        },
+        {
+          "id": "hh-51",
+          "title": "Slaves to Darkness",
+          "author": "John French",
+          "orderInSeries": 51,
+          "chronologicalOrder": 50,
+          "legion": ["Sons of Horus", "Various Traitors"],
+          "tags": ["Horus", "Ullanor", "Chaos Ascendant"]
+        },
+        {
+          "id": "hh-52",
+          "title": "Heralds of the Siege",
+          "author": "Various",
+          "orderInSeries": 52,
+          "chronologicalOrder": 51,
+          "legion": ["Various"],
+          "tags": ["Anthology", "Pre-Siege"]
+        },
+        {
+          "id": "hh-53",
+          "title": "Titandeath",
+          "author": "Guy Haley",
+          "orderInSeries": 53,
+          "chronologicalOrder": 52,
+          "legion": ["None"],
+          "tags": ["Beta-Garmon", "Titans", "War"]
+        },
+        {
+          "id": "hh-54",
+          "title": "The Buried Dagger",
+          "author": "James Swallow",
+          "orderInSeries": 54,
+          "chronologicalOrder": 53,
+          "legion": ["Death Guard"],
+          "tags": ["Mortarion", "Typhus", "Plague", "Final Heresy Book"]
+        }
+      ]
+    },
+    {
+      "id": "siege-of-terra",
+      "name": "The Siege of Terra",
+      "description": "The final battle for the Imperial Palace",
+      "books": [
+        {
+          "id": "sot-01",
+          "title": "The Solar War",
+          "author": "John French",
+          "orderInSeries": 1,
+          "chronologicalOrder": 54,
+          "legion": ["Imperial Fists", "Various Traitors"],
+          "tags": ["Sol System", "Defense", "Beginning"]
+        },
+        {
+          "id": "sot-02",
+          "title": "The Lost and the Damned",
+          "author": "Guy Haley",
+          "orderInSeries": 2,
+          "chronologicalOrder": 55,
+          "legion": ["Imperial Fists", "Various Traitors"],
+          "tags": ["Terra", "Outer Palace", "Siege Begins"]
+        },
+        {
+          "id": "sot-03",
+          "title": "The First Wall",
+          "author": "Gav Thorpe",
+          "orderInSeries": 3,
+          "chronologicalOrder": 56,
+          "legion": ["Imperial Fists"],
+          "tags": ["Rogal Dorn", "Walls", "Defense"]
+        },
+        {
+          "id": "sot-04",
+          "title": "Saturnine",
+          "author": "Dan Abnett",
+          "orderInSeries": 4,
+          "chronologicalOrder": 57,
+          "legion": ["Imperial Fists", "Alpha Legion"],
+          "tags": ["Saturnine Gate", "Turning Point"]
+        },
+        {
+          "id": "sot-05",
+          "title": "Mortis",
+          "author": "John French",
+          "orderInSeries": 5,
+          "chronologicalOrder": 58,
+          "legion": ["Death Guard"],
+          "tags": ["Titans", "Mortis", "Mars"]
+        },
+        {
+          "id": "sot-06",
+          "title": "Warhawk",
+          "author": "Chris Wraight",
+          "orderInSeries": 6,
+          "chronologicalOrder": 59,
+          "legion": ["White Scars", "Death Guard"],
+          "tags": ["Jaghatai Khan", "Mortarion", "Duel"]
+        },
+        {
+          "id": "sot-07",
+          "title": "Echoes of Eternity",
+          "author": "Aaron Dembski-Bowden",
+          "orderInSeries": 7,
+          "chronologicalOrder": 60,
+          "legion": ["Blood Angels", "World Eaters"],
+          "tags": ["Sanguinius", "Angron", "Ultimate Gate"]
+        },
+        {
+          "id": "sot-08",
+          "title": "The End and the Death: Volume I",
+          "author": "Dan Abnett",
+          "orderInSeries": 8,
+          "chronologicalOrder": 61,
+          "legion": ["Various"],
+          "tags": ["Final Battle", "Emperor", "Horus"]
+        },
+        {
+          "id": "sot-09",
+          "title": "The End and the Death: Volume II",
+          "author": "Dan Abnett",
+          "orderInSeries": 9,
+          "chronologicalOrder": 62,
+          "legion": ["Various"],
+          "tags": ["Final Battle", "Emperor", "Horus"]
+        },
+        {
+          "id": "sot-10",
+          "title": "The End and the Death: Volume III",
+          "author": "Dan Abnett",
+          "orderInSeries": 10,
+          "chronologicalOrder": 63,
+          "legion": ["Various"],
+          "tags": ["Final Battle", "Emperor", "Horus", "Conclusion"]
+        }
+      ]
+    },
+    {
+      "id": "primarchs",
+      "name": "The Primarchs",
+      "description": "Individual novels focusing on each Primarch",
+      "books": [
+        {
+          "id": "p-01",
+          "title": "Roboute Guilliman: Lord of Ultramar",
+          "author": "David Annandale",
+          "orderInSeries": 1,
+          "legion": ["Ultramarines"],
+          "tags": ["Guilliman", "Primarch"]
+        },
+        {
+          "id": "p-02",
+          "title": "Leman Russ: The Great Wolf",
+          "author": "Chris Wraight",
+          "orderInSeries": 2,
+          "legion": ["Space Wolves"],
+          "tags": ["Leman Russ", "Primarch"]
+        },
+        {
+          "id": "p-03",
+          "title": "Magnus the Red: Master of Prospero",
+          "author": "Graham McNeill",
+          "orderInSeries": 3,
+          "legion": ["Thousand Sons"],
+          "tags": ["Magnus", "Primarch"]
+        },
+        {
+          "id": "p-04",
+          "title": "Perturabo: The Hammer of Olympia",
+          "author": "Guy Haley",
+          "orderInSeries": 4,
+          "legion": ["Iron Warriors"],
+          "tags": ["Perturabo", "Primarch"]
+        },
+        {
+          "id": "p-05",
+          "title": "Lorgar: Bearer of the Word",
+          "author": "Gav Thorpe",
+          "orderInSeries": 5,
+          "legion": ["Word Bearers"],
+          "tags": ["Lorgar", "Primarch"]
+        },
+        {
+          "id": "p-06",
+          "title": "Fulgrim: The Palatine Phoenix",
+          "author": "Josh Reynolds",
+          "orderInSeries": 6,
+          "legion": ["Emperor's Children"],
+          "tags": ["Fulgrim", "Primarch"]
+        },
+        {
+          "id": "p-07",
+          "title": "Ferrus Manus: Gorgon of Medusa",
+          "author": "David Guymer",
+          "orderInSeries": 7,
+          "legion": ["Iron Hands"],
+          "tags": ["Ferrus Manus", "Primarch"]
+        },
+        {
+          "id": "p-08",
+          "title": "Jaghatai Khan: Warhawk of Chogoris",
+          "author": "Chris Wraight",
+          "orderInSeries": 8,
+          "legion": ["White Scars"],
+          "tags": ["Jaghatai Khan", "Primarch"]
+        },
+        {
+          "id": "p-09",
+          "title": "Vulkan: Lord of Drakes",
+          "author": "David Annandale",
+          "orderInSeries": 9,
+          "legion": ["Salamanders"],
+          "tags": ["Vulkan", "Primarch"]
+        },
+        {
+          "id": "p-10",
+          "title": "Corax: Lord of Shadows",
+          "author": "Guy Haley",
+          "orderInSeries": 10,
+          "legion": ["Raven Guard"],
+          "tags": ["Corax", "Primarch"]
+        },
+        {
+          "id": "p-11",
+          "title": "Angron: Slave of Nuceria",
+          "author": "Ian St. Martin",
+          "orderInSeries": 11,
+          "legion": ["World Eaters"],
+          "tags": ["Angron", "Primarch"]
+        },
+        {
+          "id": "p-12",
+          "title": "Konrad Curze: The Night Haunter",
+          "author": "Guy Haley",
+          "orderInSeries": 12,
+          "legion": ["Night Lords"],
+          "tags": ["Konrad Curze", "Primarch"]
+        },
+        {
+          "id": "p-13",
+          "title": "Alpharius: Head of the Hydra",
+          "author": "Mike Brooks",
+          "orderInSeries": 13,
+          "legion": ["Alpha Legion"],
+          "tags": ["Alpharius", "Primarch"]
+        },
+        {
+          "id": "p-14",
+          "title": "Lion El'Jonson: Lord of the First",
+          "author": "David Guymer",
+          "orderInSeries": 14,
+          "legion": ["Dark Angels"],
+          "tags": ["Lion El'Jonson", "Primarch"]
+        }
+      ]
+    }
+  ]
+}
