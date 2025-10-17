@@ -365,7 +365,8 @@
       "author": "Nick Kyme",
       "orderInSeries": 26,
       "faction": [
-        "Salamanders"
+        "Salamanders",
+        "Night Lords"
       ],
       "tags": [
         "Vulkan",
@@ -576,7 +577,9 @@
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 41,
       "faction": [
-        "Custodes"
+        "Custodes",
+        "Sisters of Silence",
+        "Adeptus Mechanicus"
       ],
       "tags": [
         "Emperor",
@@ -634,7 +637,7 @@
       "orderInSeries": 45,
       "faction": [
         "Iron Warriors",
-        "Imperial Fists"
+        "Imperial Army"
       ],
       "tags": [
         "Tallarn",

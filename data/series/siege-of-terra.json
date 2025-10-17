@@ -39,7 +39,8 @@
       "author": "Gav Thorpe",
       "orderInSeries": 3,
       "faction": [
-        "Imperial Fists"
+        "Imperial Fists",
+        "Iron Warriors"
       ],
       "tags": [
         "Rogal Dorn",
@@ -67,7 +68,8 @@
       "author": "John French",
       "orderInSeries": 5,
       "faction": [
-        "Death Guard"
+        "Death Guard",
+        "Collegia Titanica"
       ],
       "tags": [
         "Titans",
