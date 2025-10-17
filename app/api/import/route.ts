@@ -35,19 +35,18 @@ export async function POST(request: Request) {
       }
     });
 
-    // Get selected files from request body, or import all if none specified
+    // Get selected files from request body
+    // Format: { files: [{ folder: 'series', file: 'horus-heresy.json' }, ...] }
     const body = await request.json().catch(() => ({}));
-    const selectedFiles = body.files || [];
+    const selectedFiles: Array<{ folder: string; file: string }> = body.files || [];
 
-    // Read series JSON files from data/series directory
-    const seriesDir = path.join(process.cwd(), 'data', 'series');
-    const files = await fs.readdir(seriesDir);
-    const allJsonFiles = files.filter(file => file.endsWith('.json'));
-
-    // If specific files are selected, only process those
-    const jsonFiles = selectedFiles.length > 0
-      ? allJsonFiles.filter(file => selectedFiles.includes(file))
-      : allJsonFiles;
+    // If no files selected, return error
+    if (selectedFiles.length === 0) {
+      return NextResponse.json({
+        success: false,
+        error: 'No files selected for import',
+      });
+    }
 
     const importResults = {
       series: 0,
@@ -55,9 +54,11 @@ export async function POST(request: Request) {
       errors: [] as string[],
     };
 
-    for (const file of jsonFiles) {
+    const dataDir = path.join(process.cwd(), 'data');
+
+    for (const fileInfo of selectedFiles) {
       try {
-        const filePath = path.join(seriesDir, file);
+        const filePath = path.join(dataDir, fileInfo.folder, fileInfo.file);
         const fileContent = await fs.readFile(filePath, 'utf-8');
         const seriesData = JSON.parse(fileContent);
 
@@ -102,7 +103,7 @@ export async function POST(request: Request) {
           }
         }
       } catch (error) {
-        importResults.errors.push(`File ${file}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        importResults.errors.push(`File ${fileInfo.folder}/${fileInfo.file}: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     }
 

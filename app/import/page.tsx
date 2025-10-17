@@ -17,53 +17,97 @@ interface ImportResult {
   details?: string;
 }
 
-interface AvailableFile {
-  name: string;
+interface FileSelection {
+  folder: string;
+  file: string;
   selected: boolean;
+}
+
+interface Folder {
+  name: string;
+  path: string;
+  files: string[];
 }
 
 export default function ImportPage() {
   const [importing, setImporting] = useState(false);
   const [result, setResult] = useState<ImportResult | null>(null);
-  const [availableFiles, setAvailableFiles] = useState<AvailableFile[]>([]);
+  const [folders, setFolders] = useState<Folder[]>([]);
+  const [fileSelections, setFileSelections] = useState<FileSelection[]>([]);
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
   const [loadingFiles, setLoadingFiles] = useState(true);
 
   useEffect(() => {
-    fetchAvailableFiles();
+    fetchAvailableFolders();
   }, []);
 
-  const fetchAvailableFiles = async () => {
+  const fetchAvailableFolders = async () => {
     try {
       const response = await fetch('/api/import/list');
       const data = await response.json();
-      if (data.files) {
-        setAvailableFiles(data.files.map((name: string) => ({ name, selected: true })));
+      if (data.folders) {
+        setFolders(data.folders);
+
+        // Create file selections (all deselected by default)
+        const selections: FileSelection[] = [];
+        data.folders.forEach((folder: Folder) => {
+          folder.files.forEach(file => {
+            selections.push({
+              folder: folder.path,
+              file: file,
+              selected: false,
+            });
+          });
+        });
+        setFileSelections(selections);
       }
     } catch (error) {
-      console.error('Failed to fetch files:', error);
+      console.error('Failed to fetch folders:', error);
       toast.error('Failed to load available files');
     } finally {
       setLoadingFiles(false);
     }
   };
 
-  const toggleFile = (fileName: string) => {
-    setAvailableFiles(prev =>
-      prev.map(file =>
-        file.name === fileName ? { ...file, selected: !file.selected } : file
+  const toggleFolder = (folderPath: string) => {
+    setExpandedFolders(prev => {
+      const next = new Set(prev);
+      if (next.has(folderPath)) {
+        next.delete(folderPath);
+      } else {
+        next.add(folderPath);
+      }
+      return next;
+    });
+  };
+
+  const toggleFile = (folder: string, fileName: string) => {
+    setFileSelections(prev =>
+      prev.map(sel =>
+        sel.folder === folder && sel.file === fileName
+          ? { ...sel, selected: !sel.selected }
+          : sel
       )
     );
   };
 
-  const toggleAll = () => {
-    const allSelected = availableFiles.every(f => f.selected);
-    setAvailableFiles(prev =>
-      prev.map(file => ({ ...file, selected: !allSelected }))
+  const toggleAllInFolder = (folder: string) => {
+    const folderFiles = fileSelections.filter(sel => sel.folder === folder);
+    const allSelected = folderFiles.every(sel => sel.selected);
+
+    setFileSelections(prev =>
+      prev.map(sel =>
+        sel.folder === folder
+          ? { ...sel, selected: !allSelected }
+          : sel
+      )
     );
   };
 
   const handleImport = async () => {
-    const selectedFiles = availableFiles.filter(f => f.selected).map(f => f.name);
+    const selectedFiles = fileSelections
+      .filter(sel => sel.selected)
+      .map(sel => ({ folder: sel.folder, file: sel.file }));
 
     if (selectedFiles.length === 0) {
       toast.error('Please select at least one file to import');
@@ -103,7 +147,16 @@ export default function ImportPage() {
     }
   };
 
-  const selectedCount = availableFiles.filter(f => f.selected).length;
+  const selectedCount = fileSelections.filter(sel => sel.selected).length;
+  const totalCount = fileSelections.length;
+
+  const getFolderFileCount = (folderPath: string) => {
+    return fileSelections.filter(sel => sel.folder === folderPath).length;
+  };
+
+  const getFolderSelectedCount = (folderPath: string) => {
+    return fileSelections.filter(sel => sel.folder === folderPath && sel.selected).length;
+  };
 
   return (
     <AppLayout requireAuth={true}>
@@ -113,54 +166,88 @@ export default function ImportPage() {
             Import Books Data
           </h1>
           <p className={`${styles.textSecondary} mb-8`}>
-            Select and import series from JSON files in the <code className="bg-slate-800 px-2 py-1 rounded">data/series</code> directory.
+            Select JSON files from the <code className="bg-slate-800 px-2 py-1 rounded">data/</code> directory to import.
           </p>
 
           <div className={`${styles.card} p-8`}>
             <div className="space-y-6">
               <div>
-                <h2 className={`text-2xl font-bold ${styles.textGold} mb-4`}>
-                  Select Files to Import
-                </h2>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className={`text-2xl font-bold ${styles.textGold}`}>
+                    Select Files to Import
+                  </h2>
+                  <span className={styles.textSecondary}>
+                    {selectedCount} of {totalCount} selected
+                  </span>
+                </div>
 
                 {loadingFiles ? (
                   <p className={styles.textSecondary}>Loading available files...</p>
-                ) : availableFiles.length === 0 ? (
-                  <p className={styles.textSecondary}>No JSON files found in data/series/</p>
+                ) : folders.length === 0 ? (
+                  <p className={styles.textSecondary}>No folders found in data/</p>
                 ) : (
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between mb-4">
-                      <button
-                        onClick={toggleAll}
-                        className={`text-sm ${styles.textGold} hover:underline`}
-                      >
-                        {availableFiles.every(f => f.selected) ? 'Deselect All' : 'Select All'}
-                      </button>
-                      <span className={styles.textSecondary}>
-                        {selectedCount} of {availableFiles.length} selected
-                      </span>
-                    </div>
+                  <div className="space-y-2">
+                    {folders.map(folder => {
+                      const isExpanded = expandedFolders.has(folder.path);
+                      const folderSelectedCount = getFolderSelectedCount(folder.path);
+                      const folderFileCount = getFolderFileCount(folder.path);
 
-                    <div className="space-y-2">
-                      {availableFiles.map(file => (
-                        <label
-                          key={file.name}
-                          className={`flex items-center gap-3 p-3 rounded cursor-pointer transition-colors ${
-                            file.selected ? 'bg-slate-700' : 'bg-slate-800 hover:bg-slate-750'
-                          }`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={file.selected}
-                            onChange={() => toggleFile(file.name)}
-                            className="w-4 h-4 rounded border-slate-600 text-[#D4AF37] focus:ring-[#D4AF37] focus:ring-offset-slate-900"
-                          />
-                          <span className={file.selected ? styles.textGold : styles.textSecondary}>
-                            {file.name}
-                          </span>
-                        </label>
-                      ))}
-                    </div>
+                      return (
+                        <div key={folder.path} className="bg-slate-800 rounded-lg overflow-hidden">
+                          {/* Folder Header */}
+                          <div className="flex items-center justify-between p-4">
+                            <button
+                              onClick={() => toggleFolder(folder.path)}
+                              className="flex items-center gap-3 flex-1 text-left"
+                            >
+                              <span className={`${styles.textGold} text-xl font-bold`}>
+                                {isExpanded ? '−' : '+'}
+                              </span>
+                              <div>
+                                <h3 className={`text-lg font-semibold ${styles.textPrimary}`}>
+                                  {folder.name}
+                                </h3>
+                                <p className={`text-sm ${styles.textSecondary}`}>
+                                  {folderSelectedCount} of {folderFileCount} files selected
+                                </p>
+                              </div>
+                            </button>
+                            <button
+                              onClick={() => toggleAllInFolder(folder.path)}
+                              className={`text-sm ${styles.textGold} hover:underline px-4`}
+                            >
+                              {folderSelectedCount === folderFileCount ? 'Deselect All' : 'Select All'}
+                            </button>
+                          </div>
+
+                          {/* Folder Files */}
+                          {isExpanded && (
+                            <div className="border-t border-slate-700 p-4 space-y-2">
+                              {fileSelections
+                                .filter(sel => sel.folder === folder.path)
+                                .map(sel => (
+                                  <label
+                                    key={`${sel.folder}-${sel.file}`}
+                                    className={`flex items-center gap-3 p-3 rounded cursor-pointer transition-colors ${
+                                      sel.selected ? 'bg-slate-700' : 'bg-slate-750 hover:bg-slate-700'
+                                    }`}
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      checked={sel.selected}
+                                      onChange={() => toggleFile(sel.folder, sel.file)}
+                                      className="w-4 h-4 rounded border-slate-600 text-[#D4AF37] focus:ring-[#D4AF37] focus:ring-offset-slate-900"
+                                    />
+                                    <span className={sel.selected ? styles.textGold : styles.textSecondary}>
+                                      {sel.file}
+                                    </span>
+                                  </label>
+                                ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -229,19 +316,23 @@ export default function ImportPage() {
             <ul className={`${styles.textSecondary} space-y-2`}>
               <li className="flex gap-2">
                 <span className={styles.textGold}>•</span>
-                <span>Select which series files you want to import</span>
+                <span>Browse folders in the <code className="bg-slate-800 px-2 py-1 rounded text-sm">data/</code> directory</span>
               </li>
               <li className="flex gap-2">
                 <span className={styles.textGold}>•</span>
-                <span>Imports only the selected series and their books</span>
+                <span>Click on a folder to expand and see available JSON files</span>
               </li>
               <li className="flex gap-2">
                 <span className={styles.textGold}>•</span>
-                <span>Updates existing entries if they already exist (based on ID)</span>
+                <span>Select individual files or use &ldquo;Select All&rdquo; per folder</span>
               </li>
               <li className="flex gap-2">
                 <span className={styles.textGold}>•</span>
-                <span>Faster imports when you only need to update specific series</span>
+                <span>Import only what you need - perfect for updating specific series</span>
+              </li>
+              <li className="flex gap-2">
+                <span className={styles.textGold}>•</span>
+                <span>Future-proof: easily add new folders for different categories</span>
               </li>
             </ul>
           </div>
