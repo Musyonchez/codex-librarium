@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
+import OrderTabs from '@/components/OrderTabs';
 import { ReadingTracker, BooksMetadata, ReadingStatus, Book } from '@/lib/types';
 import { styles, statusIcons, statusLabels } from '@/lib/design-system';
 import { toast } from 'sonner';
@@ -137,6 +138,8 @@ export default function OrderByTagsPage() {
             Browse books grouped by tags - click a tag to see all books with that tag
           </p>
         </div>
+
+        <OrderTabs />
 
         {loading ? (
           <div className="flex justify-center items-center h-64">

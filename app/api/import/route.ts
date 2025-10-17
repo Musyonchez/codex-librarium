@@ -4,6 +4,20 @@ import { createClient } from '@supabase/supabase-js';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+// Helper function to normalize strings (trim, consistent casing)
+function normalizeString(str: string): string {
+  return str.trim();
+}
+
+// Helper function to find canonical version of a tag/faction (case-insensitive match)
+function findCanonical(value: string, canonicalList: string[]): string {
+  const normalized = normalizeString(value);
+  const match = canonicalList.find(
+    item => item.toLowerCase() === normalized.toLowerCase()
+  );
+  return match || normalized;
+}
+
 export async function POST(request: Request) {
   try {
     // Verify user is authenticated
@@ -56,6 +70,29 @@ export async function POST(request: Request) {
 
     const dataDir = path.join(process.cwd(), 'data');
 
+    // Load canonical lists
+    const tagsFilePath = path.join(dataDir, 'tags.json');
+    const factionsFilePath = path.join(dataDir, 'factions.json');
+
+    let canonicalTags: string[] = [];
+    let canonicalFactions: string[] = [];
+
+    try {
+      canonicalTags = JSON.parse(await fs.readFile(tagsFilePath, 'utf-8'));
+    } catch (error) {
+      console.warn('tags.json not found, will create it');
+    }
+
+    try {
+      canonicalFactions = JSON.parse(await fs.readFile(factionsFilePath, 'utf-8'));
+    } catch (error) {
+      console.warn('factions.json not found, will create it');
+    }
+
+    // Track new tags/factions found during import
+    const newTags = new Set<string>(canonicalTags);
+    const newFactions = new Set<string>(canonicalFactions);
+
     for (const fileInfo of selectedFiles) {
       try {
         const filePath = path.join(dataDir, fileInfo.folder, fileInfo.file);
@@ -82,6 +119,20 @@ export async function POST(request: Request) {
 
         // Upsert books
         for (const book of seriesData.books) {
+          // Normalize tags
+          const normalizedTags = (book.tags || []).map((tag: string) => {
+            const canonical = findCanonical(tag, canonicalTags);
+            newTags.add(canonical);
+            return canonical;
+          });
+
+          // Normalize factions
+          const normalizedFactions = (book.faction || []).map((faction: string) => {
+            const canonical = findCanonical(faction, canonicalFactions);
+            newFactions.add(canonical);
+            return canonical;
+          });
+
           const { error: bookError } = await supabase
             .from('books')
             .upsert({
@@ -90,8 +141,8 @@ export async function POST(request: Request) {
               title: book.title,
               author: book.author,
               order_in_series: book.orderInSeries,
-              faction: book.faction || [],
-              tags: book.tags || [],
+              faction: normalizedFactions,
+              tags: normalizedTags,
             }, {
               onConflict: 'id',
             });
@@ -105,6 +156,20 @@ export async function POST(request: Request) {
       } catch (error) {
         importResults.errors.push(`File ${fileInfo.folder}/${fileInfo.file}: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
+    }
+
+    // Update canonical lists if new tags/factions were found
+    const updatedTags = Array.from(newTags).sort();
+    const updatedFactions = Array.from(newFactions).sort();
+
+    if (updatedTags.length !== canonicalTags.length ||
+        !updatedTags.every((tag, i) => tag === canonicalTags[i])) {
+      await fs.writeFile(tagsFilePath, JSON.stringify(updatedTags, null, 2) + '\n');
+    }
+
+    if (updatedFactions.length !== canonicalFactions.length ||
+        !updatedFactions.every((faction, i) => faction === canonicalFactions[i])) {
+      await fs.writeFile(factionsFilePath, JSON.stringify(updatedFactions, null, 2) + '\n');
     }
 
     return NextResponse.json({

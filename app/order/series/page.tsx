@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import AppLayout from '@/components/AppLayout';
 import SeriesView from '@/components/SeriesView';
+import OrderTabs from '@/components/OrderTabs';
 import { ReadingTracker, BooksMetadata, ReadingStatus } from '@/lib/types';
 
 export default function OrderBySeriesPage() {
@@ -74,6 +75,8 @@ export default function OrderBySeriesPage() {
             Browse all Warhammer 40K books organized by series in Black Library publication order
           </p>
         </div>
+
+        <OrderTabs />
 
         {loading ? (
           <div className="flex justify-center items-center h-64">

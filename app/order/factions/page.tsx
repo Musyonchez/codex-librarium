@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
+import OrderTabs from '@/components/OrderTabs';
 import { ReadingTracker, BooksMetadata, ReadingStatus, Book } from '@/lib/types';
 import { styles, statusIcons, statusLabels } from '@/lib/design-system';
 import { toast } from 'sonner';
@@ -137,6 +138,8 @@ export default function OrderByFactionsPage() {
             Browse books grouped by factions - click a faction to see all books featuring that faction
           </p>
         </div>
+
+        <OrderTabs />
 
         {loading ? (
           <div className="flex justify-center items-center h-64">

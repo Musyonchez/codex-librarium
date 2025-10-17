@@ -6,6 +6,24 @@ This guide explains how to add new books or create new series in the Warhammer 4
 
 Books are stored as JSON files in the `data/series/` directory. Each series has its own JSON file. After editing the JSON files, you import them through the web interface to sync changes to the database.
 
+## Tag and Faction Consistency
+
+The system maintains canonical lists of all tags and factions:
+- `data/tags.json` - All valid tags (107 tags, alphabetically sorted)
+- `data/factions.json` - All valid factions (28 factions, alphabetically sorted)
+
+**How it works:**
+- When importing books, the system automatically normalizes tag/faction names (case-insensitive matching)
+- If you use "blood angels" instead of "Blood Angels", it will auto-correct to the canonical version
+- New tags/factions are automatically added to these files during import and sorted
+- This prevents duplicates like "Space Wolves", "space wolves", "Space wolves" appearing as different factions
+
+**Best Practice:**
+- Check `data/tags.json` and `data/factions.json` before adding new tags/factions
+- Use existing tags/factions when possible to maintain consistency
+- The import process will handle minor variations (case, spacing) automatically
+- If you add a genuinely new tag/faction, it will be automatically added to the canonical list
+
 ---
 
 ## Adding Books to an Existing Series
