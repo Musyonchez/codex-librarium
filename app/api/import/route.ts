@@ -1,16 +1,53 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createClient as createServerClient } from '@/lib/supabase/server';
+import { createClient } from '@supabase/supabase-js';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
-    const supabase = await createClient();
+    // Verify user is authenticated
+    const serverClient = await createServerClient();
+    const { data: { user } } = await serverClient.auth.getUser();
 
-    // Read all series JSON files from data/series directory
+    if (!user) {
+      return NextResponse.json(
+        { success: false, error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    // Use service role client to bypass RLS for imports
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+
+    if (!supabaseUrl || !supabaseServiceKey) {
+      return NextResponse.json(
+        { success: false, error: 'Missing Supabase configuration' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    });
+
+    // Get selected files from request body, or import all if none specified
+    const body = await request.json().catch(() => ({}));
+    const selectedFiles = body.files || [];
+
+    // Read series JSON files from data/series directory
     const seriesDir = path.join(process.cwd(), 'data', 'series');
     const files = await fs.readdir(seriesDir);
-    const jsonFiles = files.filter(file => file.endsWith('.json'));
+    const allJsonFiles = files.filter(file => file.endsWith('.json'));
+
+    // If specific files are selected, only process those
+    const jsonFiles = selectedFiles.length > 0
+      ? allJsonFiles.filter(file => selectedFiles.includes(file))
+      : allJsonFiles;
 
     const importResults = {
       series: 0,
