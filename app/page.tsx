@@ -1,26 +1,51 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { metadata } from '@/lib/bookData';
 import SeriesView from '@/components/SeriesView';
 import Dashboard from '@/components/Dashboard';
-import { ReadingTracker } from '@/lib/types';
+import { ReadingTracker, BooksMetadata } from '@/lib/types';
 
 export default function Home() {
   const [readingTracker, setReadingTracker] = useState<ReadingTracker>({ readingData: [] });
+  const [booksMetadata, setBooksMetadata] = useState<BooksMetadata | null>(null);
   const [activeView, setActiveView] = useState<'series' | 'timeline' | 'dashboard'>('series');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchReadingTracker();
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    await Promise.all([fetchBooksMetadata(), fetchReadingTracker()]);
+    setLoading(false);
+  };
+
+  const fetchBooksMetadata = async () => {
+    try {
+      const response = await fetch('/api/books');
+      const data = await response.json();
+      setBooksMetadata(data);
+    } catch (error) {
+      console.error('Failed to fetch books metadata:', error);
+    }
+  };
 
   const fetchReadingTracker = async () => {
     try {
       const response = await fetch('/api/reading');
+      if (!response.ok) {
+        // User not authenticated or other error - use empty tracker
+        console.log('Not authenticated or error fetching reading tracker');
+        setReadingTracker({ readingData: [] });
+        return;
+      }
       const data = await response.json();
       setReadingTracker(data);
     } catch (error) {
       console.error('Failed to fetch reading tracker:', error);
+      setReadingTracker({ readingData: [] });
     }
   };
 
@@ -82,28 +107,40 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        {activeView === 'series' && (
-          <div className="space-y-8">
-            {metadata.series.map((series) => (
-              <SeriesView
-                key={series.id}
-                series={series}
-                readingTracker={readingTracker}
-                onUpdateStatus={updateReadingStatus}
-              />
-            ))}
+        {loading ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="text-amber-500 text-xl">Loading...</div>
           </div>
-        )}
-
-        {activeView === 'timeline' && (
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-4">Chronological Timeline</h2>
-            <p className="text-slate-400">Timeline view coming soon...</p>
+        ) : !booksMetadata ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="text-red-500 text-xl">Failed to load books. Please refresh.</div>
           </div>
-        )}
+        ) : (
+          <>
+            {activeView === 'series' && (
+              <div className="space-y-8">
+                {booksMetadata.series.map((series) => (
+                  <SeriesView
+                    key={series.id}
+                    series={series}
+                    readingTracker={readingTracker}
+                    onUpdateStatus={updateReadingStatus}
+                  />
+                ))}
+              </div>
+            )}
 
-        {activeView === 'dashboard' && (
-          <Dashboard readingTracker={readingTracker} />
+            {activeView === 'timeline' && (
+              <div className="text-white">
+                <h2 className="text-2xl font-bold mb-4">Chronological Timeline</h2>
+                <p className="text-slate-400">Timeline view coming soon...</p>
+              </div>
+            )}
+
+            {activeView === 'dashboard' && (
+              <Dashboard readingTracker={readingTracker} booksMetadata={booksMetadata} />
+            )}
+          </>
         )}
       </main>
     </div>

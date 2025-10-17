@@ -1,11 +1,11 @@
-import { ReadingTracker } from '@/lib/types';
-import { metadata } from '@/lib/bookData';
+import { ReadingTracker, BooksMetadata } from '@/lib/types';
 
 interface DashboardProps {
   readingTracker: ReadingTracker;
+  booksMetadata: BooksMetadata;
 }
 
-export default function Dashboard({ readingTracker }: DashboardProps) {
+export default function Dashboard({ readingTracker, booksMetadata }: DashboardProps) {
   const stats = {
     total: 0,
     completed: 0,
@@ -13,7 +13,7 @@ export default function Dashboard({ readingTracker }: DashboardProps) {
     unread: 0,
   };
 
-  const seriesProgress = metadata.series.map((series) => {
+  const seriesProgress = booksMetadata.series.map((series) => {
     const seriesStats = {
       name: series.name,
       total: series.books.length,
@@ -24,7 +24,7 @@ export default function Dashboard({ readingTracker }: DashboardProps) {
 
     series.books.forEach((book) => {
       stats.total++;
-      const entry = readingTracker.readingData.find((r) => r.bookId === book.id);
+      const entry = readingTracker?.readingData?.find((r) => r.bookId === book.id);
       const status = entry?.status || 'unread';
 
       if (status === 'completed') {
@@ -41,7 +41,7 @@ export default function Dashboard({ readingTracker }: DashboardProps) {
     // Find next book to read
     const nextToRead = series.books
       .filter((book) => {
-        const entry = readingTracker.readingData.find((r) => r.bookId === book.id);
+        const entry = readingTracker?.readingData?.find((r) => r.bookId === book.id);
         return !entry || entry.status === 'unread';
       })
       .sort((a, b) => a.orderInSeries - b.orderInSeries)[0];
@@ -96,7 +96,7 @@ export default function Dashboard({ readingTracker }: DashboardProps) {
           </span>
         </div>
         <p className="text-slate-400 mt-2 text-sm">
-          You've completed {stats.completed} out of {stats.total} books in your collection
+          You&apos;ve completed {stats.completed} out of {stats.total} books in your collection
         </p>
       </div>
 
@@ -137,20 +137,20 @@ export default function Dashboard({ readingTracker }: DashboardProps) {
         </div>
       </div>
 
-      {stats.reading > 0 && (
+      {stats.reading > 0 && readingTracker?.readingData && (
         <div className="bg-slate-800/50 rounded-lg p-6 border border-blue-600/20">
           <h2 className="text-2xl font-bold text-blue-400 mb-4">Currently Reading</h2>
           <div className="space-y-2">
             {readingTracker.readingData
               .filter((entry) => entry.status === 'reading')
               .map((entry) => {
-                const book = metadata.series
+                const book = booksMetadata.series
                   .flatMap((s) => s.books)
                   .find((b) => b.id === entry.bookId);
 
                 if (!book) return null;
 
-                const series = metadata.series.find((s) =>
+                const series = booksMetadata.series.find((s) =>
                   s.books.some((b) => b.id === book.id)
                 );
 

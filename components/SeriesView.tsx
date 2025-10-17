@@ -12,7 +12,7 @@ interface SeriesViewProps {
 export default function SeriesView({ series, readingTracker, onUpdateStatus }: SeriesViewProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const getStatusColor = (bookId: string) => {
-    const entry = readingTracker.readingData.find(r => r.bookId === bookId);
+    const entry = readingTracker?.readingData?.find(r => r.bookId === bookId);
     if (!entry || entry.status === 'unread') return 'bg-slate-700 hover:bg-slate-600';
     if (entry.status === 'reading') return 'bg-blue-600 hover:bg-blue-500';
     if (entry.status === 'completed') return 'bg-green-600 hover:bg-green-500';
@@ -20,7 +20,7 @@ export default function SeriesView({ series, readingTracker, onUpdateStatus }: S
   };
 
   const getStatus = (bookId: string): ReadingStatus => {
-    const entry = readingTracker.readingData.find(r => r.bookId === bookId);
+    const entry = readingTracker?.readingData?.find(r => r.bookId === bookId);
     return entry?.status || 'unread';
   };
 

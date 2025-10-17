@@ -30,6 +30,20 @@ export interface ReadingEntry {
   completedAt?: string;
 }
 
+// Supabase reading_progress table type
+export interface ReadingProgress {
+  id: string;
+  user_id: string;
+  book_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+  started_at?: string;
+  completed_at?: string;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface ReadingTracker {
   readingData: ReadingEntry[];
 }
