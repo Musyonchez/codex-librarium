@@ -9,6 +9,7 @@ interface DashboardProps {
 
 export default function Dashboard({ readingTracker, booksMetadata }: DashboardProps) {
   const [expandedSeries, setExpandedSeries] = useState<string | null>(null);
+  const [showSeriesProgress, setShowSeriesProgress] = useState(true);
   const [showReading, setShowReading] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
   const stats = {
@@ -105,10 +106,23 @@ export default function Dashboard({ readingTracker, booksMetadata }: DashboardPr
         </p>
       </div>
 
-      <div className={`${styles.card} p-6`}>
-        <h2 className={`text-2xl font-bold ${styles.textGold} mb-4`}>Series Progress</h2>
-        <div className="space-y-3">
-          {seriesProgress.map((seriesData) => {
+      <div className={`${styles.card} overflow-hidden`}>
+        <button
+          onClick={() => setShowSeriesProgress(!showSeriesProgress)}
+          className="w-full p-6 text-left hover:bg-slate-800 transition-colors"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className={`${styles.textGold} text-2xl`}>{showSeriesProgress ? '−' : '+'}</span>
+              <h2 className={`text-2xl font-bold ${styles.textGold}`}>Series Progress</h2>
+              <span className={`text-lg ${styles.textSecondary}`}>({seriesProgress.length} series)</span>
+            </div>
+          </div>
+        </button>
+
+        {showSeriesProgress && (
+          <div className="px-6 pb-6 space-y-3">
+            {seriesProgress.map((seriesData) => {
             const percent = seriesData.total > 0 ? (seriesData.completed / seriesData.total) * 100 : 0;
             const isExpanded = expandedSeries === seriesData.name;
 
@@ -172,7 +186,8 @@ export default function Dashboard({ readingTracker, booksMetadata }: DashboardPr
               </div>
             );
           })}
-        </div>
+          </div>
+        )}
       </div>
 
       {stats.reading > 0 && readingTracker?.readingData && (
