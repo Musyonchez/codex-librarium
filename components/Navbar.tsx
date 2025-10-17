@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { styles } from "@/lib/design-system";
@@ -15,6 +15,27 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
   const pathname = usePathname();
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showOrderDropdown, setShowOrderDropdown] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Check admin status when user changes
+  useEffect(() => {
+    if (user?.email) {
+      checkAdminStatus();
+    } else {
+      setIsAdmin(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.email]);
+
+  const checkAdminStatus = async () => {
+    try {
+      const response = await fetch('/api/import/check-admin');
+      const data = await response.json();
+      setIsAdmin(data.isAdmin);
+    } catch (error) {
+      setIsAdmin(false);
+    }
+  };
 
   const navLinks = [{ href: "/dashboard", label: "Dashboard" }];
 
@@ -156,17 +177,19 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                       </Link>
                     </div>
 
-                    <Link
-                      href="/import"
-                      onClick={() => setShowUserDropdown(false)}
-                      className={`block px-4 py-2 ${
-                        pathname.startsWith('/import')
-                          ? `${styles.textGold}`
-                          : 'text-slate-300'
-                      } hover:bg-slate-700 transition-colors`}
-                    >
-                      Import Books
-                    </Link>
+                    {isAdmin && (
+                      <Link
+                        href="/import"
+                        onClick={() => setShowUserDropdown(false)}
+                        className={`block px-4 py-2 ${
+                          pathname.startsWith('/import')
+                            ? `${styles.textGold}`
+                            : 'text-slate-300'
+                        } hover:bg-slate-700 transition-colors`}
+                      >
+                        Import Books
+                      </Link>
+                    )}
 
                     <button
                       onClick={() => {

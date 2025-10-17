@@ -3,6 +3,7 @@ import { createClient as createServerClient } from '@/lib/supabase/server';
 import { createClient } from '@supabase/supabase-js';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { isAdmin } from '@/lib/admin';
 
 // Helper function to normalize strings (trim, consistent casing)
 function normalizeString(str: string): string {
@@ -28,6 +29,14 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { success: false, error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Check if user is admin
+    if (!isAdmin(user.email)) {
+      return NextResponse.json(
+        { success: false, error: 'Forbidden - Admin access required' },
+        { status: 403 }
       );
     }
 

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 import AppLayout from '@/components/AppLayout';
 import { styles } from '@/lib/design-system';
 import { toast } from 'sonner';
@@ -30,16 +32,50 @@ interface Folder {
 }
 
 export default function ImportPage() {
+  const router = useRouter();
+  const supabase = createClient();
   const [importing, setImporting] = useState(false);
   const [result, setResult] = useState<ImportResult | null>(null);
   const [folders, setFolders] = useState<Folder[]>([]);
   const [fileSelections, setFileSelections] = useState<FileSelection[]>([]);
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
   const [loadingFiles, setLoadingFiles] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAdmin, setCheckingAdmin] = useState(true);
 
   useEffect(() => {
-    fetchAvailableFolders();
+    checkAdminAccess();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const checkAdminAccess = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (!user) {
+        router.push('/dashboard');
+        return;
+      }
+
+      // Check if user is admin
+      const response = await fetch('/api/import/check-admin');
+      const data = await response.json();
+
+      if (!data.isAdmin) {
+        toast.error('Access denied. Admin privileges required.');
+        router.push('/dashboard');
+        return;
+      }
+
+      setIsAdmin(true);
+      fetchAvailableFolders();
+    } catch (error) {
+      console.error('Failed to check admin access:', error);
+      router.push('/dashboard');
+    } finally {
+      setCheckingAdmin(false);
+    }
+  };
 
   const fetchAvailableFolders = async () => {
     try {
@@ -157,6 +193,22 @@ export default function ImportPage() {
   const getFolderSelectedCount = (folderPath: string) => {
     return fileSelections.filter(sel => sel.folder === folderPath && sel.selected).length;
   };
+
+  if (checkingAdmin) {
+    return (
+      <AppLayout requireAuth={true}>
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex justify-center items-center h-64">
+            <div className={`${styles.textGold} text-xl`}>Checking access...</div>
+          </div>
+        </div>
+      </AppLayout>
+    );
+  }
+
+  if (!isAdmin) {
+    return null; // Will redirect in useEffect
+  }
 
   return (
     <AppLayout requireAuth={true}>
