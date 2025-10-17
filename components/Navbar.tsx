@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { styles } from '@/lib/design-system';
@@ -12,17 +13,23 @@ interface NavbarProps {
 
 export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
   const pathname = usePathname();
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+  const [showOrderDropdown, setShowOrderDropdown] = useState(false);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/series', label: 'By Series' },
     { href: '/timeline', label: 'Timeline' },
     { href: '/dashboard', label: 'Dashboard' },
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
+  };
+
+  // Extract username from email (remove @domain.com) and limit to 15 chars
+  const getUsername = (email?: string) => {
+    if (!email) return '';
+    const username = email.split('@')[0];
+    return username.length > 15 ? username.substring(0, 15) + '...' : username;
   };
 
   return (
@@ -38,6 +45,45 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-1">
+            {/* Order By Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setShowOrderDropdown(!showOrderDropdown)}
+                onMouseEnter={() => setShowOrderDropdown(true)}
+                onMouseLeave={() => setShowOrderDropdown(false)}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  pathname.startsWith('/series')
+                    ? `${styles.textGold} bg-slate-700`
+                    : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+                }`}
+              >
+                Order by
+              </button>
+
+              {showOrderDropdown && (
+                <div
+                  className="absolute left-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg py-2 z-50"
+                  onMouseEnter={() => setShowOrderDropdown(true)}
+                  onMouseLeave={() => setShowOrderDropdown(false)}
+                >
+                  <Link
+                    href="/series"
+                    onClick={() => setShowOrderDropdown(false)}
+                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
+                  >
+                    By Series
+                  </Link>
+                  <button
+                    onClick={() => setShowOrderDropdown(false)}
+                    className="w-full text-left px-4 py-2 text-slate-500 cursor-not-allowed"
+                    disabled
+                  >
+                    By Name (Coming Soon)
+                  </button>
+                </div>
+              )}
+            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -53,16 +99,34 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
             ))}
           </div>
 
-          {/* Auth Button */}
-          <div>
+          {/* Auth Section */}
+          <div className="relative">
             {user ? (
-              <div className="flex items-center gap-3">
-                <span className={`text-sm ${styles.textSecondary} hidden sm:inline`}>
-                  {user.email}
-                </span>
-                <button onClick={onLogout} className={styles.btnSecondary}>
-                  Sign Out
+              <div>
+                <button
+                  onClick={() => setShowUserDropdown(!showUserDropdown)}
+                  onMouseEnter={() => setShowUserDropdown(true)}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${styles.textGold} hover:bg-slate-700`}
+                >
+                  {getUsername(user.email)}
                 </button>
+
+                {showUserDropdown && (
+                  <div
+                    className="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg py-2 z-50"
+                    onMouseLeave={() => setShowUserDropdown(false)}
+                  >
+                    <button
+                      onClick={() => {
+                        onLogout();
+                        setShowUserDropdown(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <button onClick={onLogin} className={styles.btnPrimary}>
@@ -74,6 +138,16 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex gap-1 pb-3 overflow-x-auto">
+          <Link
+            href="/series"
+            className={`px-3 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors ${
+              pathname.startsWith('/series')
+                ? `${styles.textGold} bg-slate-700`
+                : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+            }`}
+          >
+            By Series
+          </Link>
           {navLinks.map((link) => (
             <Link
               key={link.href}
