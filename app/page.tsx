@@ -7,9 +7,9 @@ import { styles } from '@/lib/design-system';
 export default function Home() {
   return (
     <AppLayout requireAuth={false}>
-      <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
+      {/* Hero Section - Full viewport height minus navbar */}
+      <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
+        <div className="container mx-auto px-4 py-16 text-center">
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${styles.textGold}`}>
             Warhammer 40K Reading Tracker
           </h1>
@@ -26,12 +26,15 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Features and Content Section */}
+      <div className="container mx-auto px-4 py-16">
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className={`${styles.card} p-6`}>
-            <div className={`text-4xl mb-4 ${styles.textGold}`}>📚</div>
-            <h3 className={`text-xl font-bold mb-3 ${styles.textPrimary}`}>
+            <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
               Organized by Series
             </h3>
             <p className={styles.textSecondary}>
@@ -41,8 +44,7 @@ export default function Home() {
           </div>
 
           <div className={`${styles.card} p-6`}>
-            <div className={`text-4xl mb-4 ${styles.textGold}`}>📊</div>
-            <h3 className={`text-xl font-bold mb-3 ${styles.textPrimary}`}>
+            <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
               Track Progress
             </h3>
             <p className={styles.textSecondary}>
@@ -52,8 +54,7 @@ export default function Home() {
           </div>
 
           <div className={`${styles.card} p-6`}>
-            <div className={`text-4xl mb-4 ${styles.textGold}`}>🔄</div>
-            <h3 className={`text-xl font-bold mb-3 ${styles.textPrimary}`}>
+            <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
               Sync Across Devices
             </h3>
             <p className={styles.textSecondary}>

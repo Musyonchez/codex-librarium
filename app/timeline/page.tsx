@@ -15,8 +15,7 @@ export default function TimelinePage() {
         </div>
 
         <div className={`${styles.card} p-12 text-center`}>
-          <div className={`text-6xl mb-4 ${styles.textGold}`}>🗓️</div>
-          <h2 className={`text-2xl font-bold mb-4 ${styles.textPrimary}`}>
+          <h2 className={`text-2xl font-bold mb-4 ${styles.textGold}`}>
             Timeline View Coming Soon
           </h2>
           <p className={`${styles.textSecondary} max-w-xl mx-auto`}>
