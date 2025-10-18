@@ -14,12 +14,12 @@ export default function Home() {
             Warhammer 40K Reading Tracker
           </h1>
           <p className={`text-xl md:text-2xl mb-8 ${styles.textSecondary} max-w-3xl mx-auto`}>
-            Track your journey through the grim darkness of the far future.
-            Organize your reading, monitor progress, and never lose your place in the vast Warhammer 40K universe.
+            Track your journey through 150+ books across 32 Black Library series.
+            Organize your reading, monitor progress, and never lose your place in the grim darkness of the far future.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/series" className={styles.btnPrimary}>
-              Get Started
+            <Link href="/order/series" className={styles.btnPrimary}>
+              Browse Series
             </Link>
             <Link href="/dashboard" className={styles.btnSecondary}>
               View Dashboard
@@ -35,11 +35,11 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className={`${styles.card} p-6`}>
             <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
-              Organized by Series
+              32 Complete Series
             </h3>
             <p className={styles.textSecondary}>
-              Browse books organized by series including The Horus Heresy, Siege of Terra, and Primarchs.
-              Follow the recommended Black Library publication order.
+              Browse 150+ books across 32 series including The Horus Heresy, Dawn of Fire, Gaunt's Ghosts,
+              Eisenhorn, Night Lords, and many more. Follow Black Library publication order.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function Home() {
           <p className={`text-lg mb-6 ${styles.textSecondary}`}>
             Join fellow readers tracking their way through the Warhammer 40K universe
           </p>
-          <Link href="/series" className={styles.btnPrimary}>
+          <Link href="/order/series" className={styles.btnPrimary}>
             Start Tracking
           </Link>
         </div>
