@@ -59,7 +59,7 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center gap-3">
             <div className={`text-2xl font-bold ${styles.textGold}`}>
-              WH40K Tracker
+              Codex Librarium
             </div>
           </Link>
 

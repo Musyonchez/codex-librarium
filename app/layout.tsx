@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WH40K Reading Tracker",
-  description: "Track your journey through the Warhammer 40K universe",
+  title: "Codex Librarium",
+  description: "Track your journey through 150+ Warhammer 40K books across 32 Black Library series",
 };
 
 export default function RootLayout({

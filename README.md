@@ -1,4 +1,4 @@
-# Warhammer 40K Reading Tracker
+# Codex Librarium
 
 A comprehensive web application for tracking your progress through the vast Warhammer 40,000 Black Library collection. Built with Next.js 15, TypeScript, and Supabase.
 
@@ -67,8 +67,8 @@ A comprehensive web application for tracking your progress through the vast Warh
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/wh40k-reading-tracker.git
-cd wh40k-reading-tracker
+git clone https://github.com/yourusername/codex-librarium.git
+cd codex-librarium
 ```
 
 2. Install dependencies:
@@ -168,7 +168,7 @@ Comprehensive documentation is available in the `.claude/` directory:
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/wh40k-reading-tracker)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/codex-librarium)
 
 1. Push your code to GitHub
 2. Import the repository in Vercel

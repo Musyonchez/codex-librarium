@@ -11,7 +11,7 @@ export default function Home() {
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${styles.textGold}`}>
-            Warhammer 40K Reading Tracker
+            Codex Librarium
           </h1>
           <p className={`text-xl md:text-2xl mb-8 ${styles.textSecondary} max-w-3xl mx-auto`}>
             Track your journey through 150+ books across 32 Black Library series.
@@ -38,7 +38,7 @@ export default function Home() {
               32 Complete Series
             </h3>
             <p className={styles.textSecondary}>
-              Browse 150+ books across 32 series including The Horus Heresy, Dawn of Fire, Gaunt's Ghosts,
+              Browse 150+ books across 32 series including The Horus Heresy, Dawn of Fire, Gaunt&apos;s Ghosts,
               Eisenhorn, Night Lords, and many more. Follow Black Library publication order.
             </p>
           </div>
