@@ -1,0 +1,51 @@
+{
+  "id": "dawn-of-war",
+  "name": "Dawn of War",
+  "description": "The Blood Ravens Space Marines battle across the galaxy in this series based on the popular video games",
+  "books": [
+    {
+      "id": "dow-01",
+      "title": "Dawn of War",
+      "author": "C.S. Goto",
+      "orderInSeries": 1,
+      "faction": [
+        "Blood Ravens",
+        "Orks"
+      ],
+      "tags": [
+        "Blood Ravens",
+        "Orks",
+        "Tartarus"
+      ]
+    },
+    {
+      "id": "dow-02",
+      "title": "Dawn of War: Ascension",
+      "author": "C.S. Goto",
+      "orderInSeries": 2,
+      "faction": [
+        "Blood Ravens",
+        "Eldar"
+      ],
+      "tags": [
+        "Blood Ravens",
+        "Eldar",
+        "Chaos"
+      ]
+    },
+    {
+      "id": "dow-03",
+      "title": "Dawn of War II",
+      "author": "C.S. Goto",
+      "orderInSeries": 3,
+      "faction": [
+        "Blood Ravens",
+        "Tyranids"
+      ],
+      "tags": [
+        "Blood Ravens",
+        "Tyranids"
+      ]
+    }
+  ]
+}

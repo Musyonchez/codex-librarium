@@ -1,0 +1,38 @@
+{
+  "id": "abaddon",
+  "name": "Abaddon",
+  "description": "The Warmaster of Chaos and his Black Crusades against the Imperium of Man",
+  "books": [
+    {
+      "id": "aba-01",
+      "title": "Talon of Horus",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 1,
+      "faction": [
+        "Black Legion",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Abaddon",
+        "Black Legion",
+        "Eye of Terror",
+        "Horus"
+      ]
+    },
+    {
+      "id": "aba-02",
+      "title": "Black Legion",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 2,
+      "faction": [
+        "Black Legion",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Abaddon",
+        "Black Legion",
+        "Black Crusade"
+      ]
+    }
+  ]
+}

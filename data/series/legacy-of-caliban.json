@@ -1,0 +1,52 @@
+{
+  "id": "legacy-of-caliban",
+  "name": "Legacy of Caliban",
+  "description": "The Dark Angels hunt the Fallen across the galaxy, guarding their darkest secret from the Imperium",
+  "books": [
+    {
+      "id": "loc-01",
+      "title": "Ravenwing",
+      "author": "Gav Thorpe",
+      "orderInSeries": 1,
+      "faction": [
+        "Dark Angels"
+      ],
+      "tags": [
+        "Dark Angels",
+        "Ravenwing",
+        "Fallen",
+        "Hunt"
+      ]
+    },
+    {
+      "id": "loc-02",
+      "title": "Master of Sanctity",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": [
+        "Dark Angels"
+      ],
+      "tags": [
+        "Dark Angels",
+        "Chaplains",
+        "Fallen"
+      ]
+    },
+    {
+      "id": "loc-03",
+      "title": "The Unforgiven",
+      "author": "Gav Thorpe",
+      "orderInSeries": 3,
+      "faction": [
+        "Dark Angels",
+        "Chaos"
+      ],
+      "tags": [
+        "Dark Angels",
+        "Fallen",
+        "Deathwing",
+        "Chaos"
+      ]
+    }
+  ]
+}

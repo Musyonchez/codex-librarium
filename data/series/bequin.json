@@ -1,0 +1,38 @@
+{
+  "id": "bequin",
+  "name": "Bequin",
+  "description": "The final chapter of the Inquisition trilogy, following Alizebeth Bequin as she navigates the shadowy world between Eisenhorn and Ravenor",
+  "books": [
+    {
+      "id": "beq-01",
+      "title": "Pariah",
+      "author": "Dan Abnett",
+      "orderInSeries": 1,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Bequin",
+        "Inquisition",
+        "Blank",
+        "Eisenhorn",
+        "Ravenor"
+      ]
+    },
+    {
+      "id": "beq-02",
+      "title": "Penitent",
+      "author": "Dan Abnett",
+      "orderInSeries": 2,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Bequin",
+        "Inquisition",
+        "Eisenhorn",
+        "Ravenor"
+      ]
+    }
+  ]
+}

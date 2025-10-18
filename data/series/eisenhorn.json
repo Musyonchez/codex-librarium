@@ -1,0 +1,64 @@
+{
+  "id": "eisenhorn",
+  "name": "Eisenhorn",
+  "description": "Follow Inquisitor Gregor Eisenhorn as he battles heresy across the Imperium, facing moral compromises and the lure of the forbidden",
+  "books": [
+    {
+      "id": "eis-01",
+      "title": "Xenos",
+      "author": "Dan Abnett",
+      "orderInSeries": 1,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Eisenhorn",
+        "Inquisition",
+        "Investigation"
+      ]
+    },
+    {
+      "id": "eis-02",
+      "title": "Malleus",
+      "author": "Dan Abnett",
+      "orderInSeries": 2,
+      "faction": [
+        "Inquisition",
+        "Chaos"
+      ],
+      "tags": [
+        "Eisenhorn",
+        "Inquisition",
+        "Daemonhosts"
+      ]
+    },
+    {
+      "id": "eis-03",
+      "title": "Hereticus",
+      "author": "Dan Abnett",
+      "orderInSeries": 3,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Eisenhorn",
+        "Inquisition",
+        "Radical"
+      ]
+    },
+    {
+      "id": "eis-04",
+      "title": "The Magos",
+      "author": "Dan Abnett",
+      "orderInSeries": 4,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Eisenhorn",
+        "Inquisition",
+        "Anthology"
+      ]
+    }
+  ]
+}

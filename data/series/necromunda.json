@@ -1,0 +1,36 @@
+{
+  "id": "necromunda",
+  "name": "Necromunda",
+  "description": "In the hive world undercity, gangs fight for survival and supremacy in the darkness below",
+  "books": [
+    {
+      "id": "nec-01",
+      "title": "Necromunda",
+      "author": "Various",
+      "orderInSeries": 1,
+      "faction": [
+        "Gangs"
+      ],
+      "tags": [
+        "Necromunda",
+        "Hive World",
+        "Underhive",
+        "Anthology"
+      ]
+    },
+    {
+      "id": "nec-02",
+      "title": "Survival Instinct",
+      "author": "Andy Chambers",
+      "orderInSeries": 2,
+      "faction": [
+        "Gangs"
+      ],
+      "tags": [
+        "Necromunda",
+        "Hive World",
+        "Gang Warfare"
+      ]
+    }
+  ]
+}

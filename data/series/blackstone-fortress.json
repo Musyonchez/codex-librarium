@@ -1,0 +1,21 @@
+{
+  "id": "blackstone-fortress",
+  "name": "Blackstone Fortress",
+  "description": "Explorers venture into the mysterious Blackstone Fortress seeking treasure and ancient technology",
+  "books": [
+    {
+      "id": "bsf-01",
+      "title": "The Omnibus",
+      "author": "Darius Hinks",
+      "orderInSeries": 1,
+      "faction": [
+        "Various"
+      ],
+      "tags": [
+        "Blackstone Fortress",
+        "Exploration",
+        "Ancient Technology"
+      ]
+    }
+  ]
+}

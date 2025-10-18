@@ -1,0 +1,52 @@
+{
+  "id": "vaults-of-terra",
+  "name": "Vaults of Terra",
+  "description": "Inquisitor Erasmus Crowl investigates dark conspiracies in the depths of Holy Terra itself",
+  "books": [
+    {
+      "id": "vot-01",
+      "title": "The Carrion Throne",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Terra",
+        "Inquisition",
+        "Investigation",
+        "Crowl"
+      ]
+    },
+    {
+      "id": "vot-02",
+      "title": "The Hollow Mountain",
+      "author": "Chris Wraight",
+      "orderInSeries": 2,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Terra",
+        "Inquisition",
+        "Crowl",
+        "Conspiracy"
+      ]
+    },
+    {
+      "id": "vot-03",
+      "title": "The Dark City",
+      "author": "Chris Wraight",
+      "orderInSeries": 3,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Terra",
+        "Inquisition",
+        "Crowl",
+        "Great Rift"
+      ]
+    }
+  ]
+}

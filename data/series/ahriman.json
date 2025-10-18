@@ -1,0 +1,70 @@
+{
+  "id": "ahriman",
+  "name": "Ahriman",
+  "description": "The Arch-Sorcerer of the Thousand Sons seeks to undo the Rubric and restore his fallen Legion, no matter the cost",
+  "books": [
+    {
+      "id": "ahr-01",
+      "title": "Ahriman: Exile",
+      "author": "John French",
+      "orderInSeries": 1,
+      "faction": [
+        "Thousand Sons",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Ahriman",
+        "Thousand Sons",
+        "Sorcery",
+        "Tzeentch"
+      ]
+    },
+    {
+      "id": "ahr-02",
+      "title": "Ahriman: Sorcerer",
+      "author": "John French",
+      "orderInSeries": 2,
+      "faction": [
+        "Thousand Sons",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Ahriman",
+        "Thousand Sons",
+        "Sorcery",
+        "Black Library"
+      ]
+    },
+    {
+      "id": "ahr-03",
+      "title": "Ahriman: Unchanged",
+      "author": "John French",
+      "orderInSeries": 3,
+      "faction": [
+        "Thousand Sons",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Ahriman",
+        "Thousand Sons",
+        "Rubric",
+        "Tzeentch"
+      ]
+    },
+    {
+      "id": "ahr-04",
+      "title": "Ahriman: Eternal",
+      "author": "John French",
+      "orderInSeries": 4,
+      "faction": [
+        "Thousand Sons",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Ahriman",
+        "Thousand Sons",
+        "Sorcery"
+      ]
+    }
+  ]
+}

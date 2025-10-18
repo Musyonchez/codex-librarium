@@ -1,0 +1,39 @@
+{
+  "id": "watchers-of-the-throne",
+  "name": "Watchers of the Throne",
+  "description": "The guardians of Terra face their greatest challenges as the Imperium crumbles and the Great Rift tears reality apart",
+  "books": [
+    {
+      "id": "wott-01",
+      "title": "The Emperor's Legion",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": [
+        "Adeptus Custodes",
+        "Sisters of Silence"
+      ],
+      "tags": [
+        "Terra",
+        "Custodes",
+        "Great Rift",
+        "Guilliman Returns"
+      ]
+    },
+    {
+      "id": "wott-02",
+      "title": "The Regent's Shadow",
+      "author": "Chris Wraight",
+      "orderInSeries": 2,
+      "faction": [
+        "Adeptus Custodes",
+        "Sisters of Silence"
+      ],
+      "tags": [
+        "Terra",
+        "Custodes",
+        "Guilliman",
+        "Primarch"
+      ]
+    }
+  ]
+}

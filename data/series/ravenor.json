@@ -1,0 +1,49 @@
+{
+  "id": "ravenor",
+  "name": "Ravenor",
+  "description": "Inquisitor Gideon Ravenor, former protégé of Eisenhorn, hunts down heretics despite being bound to a life-support chair",
+  "books": [
+    {
+      "id": "rav-01",
+      "title": "Ravenor",
+      "author": "Dan Abnett",
+      "orderInSeries": 1,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Ravenor",
+        "Inquisition",
+        "Investigation"
+      ]
+    },
+    {
+      "id": "rav-02",
+      "title": "Ravenor Returned",
+      "author": "Dan Abnett",
+      "orderInSeries": 2,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Ravenor",
+        "Inquisition",
+        "Psychic Powers"
+      ]
+    },
+    {
+      "id": "rav-03",
+      "title": "Ravenor Rogue",
+      "author": "Dan Abnett",
+      "orderInSeries": 3,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Ravenor",
+        "Inquisition",
+        "Rogue"
+      ]
+    }
+  ]
+}

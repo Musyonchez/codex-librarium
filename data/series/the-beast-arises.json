@@ -1,0 +1,180 @@
+{
+  "id": "the-beast-arises",
+  "name": "The Beast Arises",
+  "description": "A galaxy-spanning war erupts in M32 as a massive Ork threat emerges, threatening the very existence of the Imperium",
+  "books": [
+    {
+      "id": "tba-01",
+      "title": "I Am Slaughter",
+      "author": "Dan Abnett",
+      "orderInSeries": 1,
+      "faction": [
+        "Imperial Fists",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Orks",
+        "M32"
+      ]
+    },
+    {
+      "id": "tba-02",
+      "title": "Predator, Prey",
+      "author": "Rob Sanders",
+      "orderInSeries": 2,
+      "faction": [
+        "Adeptus Mechanicus",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Tech-Priests"
+      ]
+    },
+    {
+      "id": "tba-03",
+      "title": "The Emperor Expects",
+      "author": "Gav Thorpe",
+      "orderInSeries": 3,
+      "faction": [
+        "Imperial Navy",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Naval Warfare"
+      ]
+    },
+    {
+      "id": "tba-04",
+      "title": "The Last Wall",
+      "author": "David Annandale",
+      "orderInSeries": 4,
+      "faction": [
+        "Imperial Fists Successors",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Last Wall Protocol"
+      ]
+    },
+    {
+      "id": "tba-05",
+      "title": "Throneworld",
+      "author": "Guy Haley",
+      "orderInSeries": 5,
+      "faction": [
+        "Orks",
+        "Terra"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Terra Under Attack"
+      ]
+    },
+    {
+      "id": "tba-06",
+      "title": "Echoes of the Long War",
+      "author": "David Guymer",
+      "orderInSeries": 6,
+      "faction": [
+        "Iron Warriors",
+        "Imperial Fists"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Chaos",
+        "Iron Cage"
+      ]
+    },
+    {
+      "id": "tba-07",
+      "title": "The Hunt for Vulkan",
+      "author": "David Annandale",
+      "orderInSeries": 7,
+      "faction": [
+        "Salamanders",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Vulkan",
+        "Primarch"
+      ]
+    },
+    {
+      "id": "tba-08",
+      "title": "The Beast Must Die",
+      "author": "Gav Thorpe",
+      "orderInSeries": 8,
+      "faction": [
+        "Orks",
+        "Various"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Ullanor"
+      ]
+    },
+    {
+      "id": "tba-09",
+      "title": "Watchers in Death",
+      "author": "David Annandale",
+      "orderInSeries": 9,
+      "faction": [
+        "Deathwatch",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Deathwatch"
+      ]
+    },
+    {
+      "id": "tba-10",
+      "title": "The Last Son of Dorn",
+      "author": "David Guymer",
+      "orderInSeries": 10,
+      "faction": [
+        "Imperial Fists",
+        "Orks"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Koorland"
+      ]
+    },
+    {
+      "id": "tba-11",
+      "title": "Shadow of Ullanor",
+      "author": "Rob Sanders",
+      "orderInSeries": 11,
+      "faction": [
+        "Orks",
+        "Various"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Ullanor",
+        "Final Battle"
+      ]
+    },
+    {
+      "id": "tba-12",
+      "title": "The Beheading",
+      "author": "Guy Haley",
+      "orderInSeries": 12,
+      "faction": [
+        "High Lords of Terra",
+        "Assassins"
+      ],
+      "tags": [
+        "War of the Beast",
+        "Political Intrigue",
+        "Aftermath"
+      ]
+    }
+  ]
+}

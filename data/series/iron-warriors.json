@@ -1,0 +1,37 @@
+{
+  "id": "iron-warriors",
+  "name": "Iron Warriors",
+  "description": "The siege masters of Chaos, the Iron Warriors wage eternal war against the Imperium",
+  "books": [
+    {
+      "id": "iw-01",
+      "title": "Storm of Iron",
+      "author": "Graham McNeill",
+      "orderInSeries": 1,
+      "faction": [
+        "Iron Warriors",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Iron Warriors",
+        "Siege",
+        "Chaos"
+      ]
+    },
+    {
+      "id": "iw-02",
+      "title": "Iron Warrior",
+      "author": "Graham McNeill",
+      "orderInSeries": 2,
+      "faction": [
+        "Iron Warriors",
+        "Chaos Space Marines"
+      ],
+      "tags": [
+        "Iron Warriors",
+        "Honsou",
+        "Chaos"
+      ]
+    }
+  ]
+}

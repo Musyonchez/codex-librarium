@@ -1,0 +1,49 @@
+{
+  "id": "horusian-wars",
+  "name": "The Horusian Wars",
+  "description": "Inquisitor Covenant battles radical factions within the Inquisition itself, facing the question of how far one can go to save humanity",
+  "books": [
+    {
+      "id": "hw-01",
+      "title": "Resurrection",
+      "author": "John French",
+      "orderInSeries": 1,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Inquisition",
+        "Covenant",
+        "Radical vs Puritan"
+      ]
+    },
+    {
+      "id": "hw-02",
+      "title": "Incarnation",
+      "author": "John French",
+      "orderInSeries": 2,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Inquisition",
+        "Covenant",
+        "Horusian Philosophy"
+      ]
+    },
+    {
+      "id": "hw-03",
+      "title": "Divination",
+      "author": "John French",
+      "orderInSeries": 3,
+      "faction": [
+        "Inquisition"
+      ],
+      "tags": [
+        "Inquisition",
+        "Covenant",
+        "Anthology"
+      ]
+    }
+  ]
+}

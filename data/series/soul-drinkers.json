@@ -1,0 +1,94 @@
+{
+  "id": "soul-drinkers",
+  "name": "Soul Drinkers",
+  "description": "A Space Marine Chapter falls from grace and fights to redeem itself while hunted by the Imperium they once served",
+  "books": [
+    {
+      "id": "sd-01",
+      "title": "Soul Drinker",
+      "author": "Ben Counter",
+      "orderInSeries": 1,
+      "faction": [
+        "Soul Drinkers"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Mutation",
+        "Betrayal"
+      ]
+    },
+    {
+      "id": "sd-02",
+      "title": "The Bleeding Chalice",
+      "author": "Ben Counter",
+      "orderInSeries": 2,
+      "faction": [
+        "Soul Drinkers",
+        "Chaos"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Daemon",
+        "Renegade"
+      ]
+    },
+    {
+      "id": "sd-03",
+      "title": "Crimson Tears",
+      "author": "Ben Counter",
+      "orderInSeries": 3,
+      "faction": [
+        "Soul Drinkers"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Mutation",
+        "Quest"
+      ]
+    },
+    {
+      "id": "sd-04",
+      "title": "Chapter War",
+      "author": "Ben Counter",
+      "orderInSeries": 4,
+      "faction": [
+        "Soul Drinkers",
+        "Imperial Fists"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Civil War",
+        "Loyalists"
+      ]
+    },
+    {
+      "id": "sd-05",
+      "title": "Hellforged",
+      "author": "Ben Counter",
+      "orderInSeries": 5,
+      "faction": [
+        "Soul Drinkers",
+        "Chaos"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Daemon Forge"
+      ]
+    },
+    {
+      "id": "sd-06",
+      "title": "Phalanx",
+      "author": "Ben Counter",
+      "orderInSeries": 6,
+      "faction": [
+        "Soul Drinkers",
+        "Imperial Fists"
+      ],
+      "tags": [
+        "Soul Drinkers",
+        "Redemption",
+        "Final Battle"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "ciaphas-cain",
+  "name": "Ciaphas Cain",
+  "description": "The darkly comedic memoirs of Commissar Ciaphas Cain, self-proclaimed coward and accidental hero of the Imperium",
+  "books": [
+    {
+      "id": "cc-01",
+      "title": "For the Emperor",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 1,
+      "faction": [
+        "Astra Militarum"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Commissar"
+      ]
+    },
+    {
+      "id": "cc-02",
+      "title": "Caves of Ice",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 2,
+      "faction": [
+        "Astra Militarum",
+        "Necrons"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Necrons"
+      ]
+    },
+    {
+      "id": "cc-03",
+      "title": "The Traitor's Hand",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 3,
+      "faction": [
+        "Astra Militarum",
+        "Chaos"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Chaos"
+      ]
+    },
+    {
+      "id": "cc-04",
+      "title": "Death or Glory",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 4,
+      "faction": [
+        "Astra Militarum",
+        "Orks"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Orks"
+      ]
+    },
+    {
+      "id": "cc-05",
+      "title": "Duty Calls",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 5,
+      "faction": [
+        "Astra Militarum",
+        "Tau Empire"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Tau"
+      ]
+    },
+    {
+      "id": "cc-06",
+      "title": "Cain's Last Stand",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 6,
+      "faction": [
+        "Astra Militarum",
+        "Tyranids"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Tyranids"
+      ]
+    },
+    {
+      "id": "cc-07",
+      "title": "The Emperor's Finest",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 7,
+      "faction": [
+        "Astra Militarum",
+        "Space Marines"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Space Marines"
+      ]
+    },
+    {
+      "id": "cc-08",
+      "title": "The Last Ditch",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 8,
+      "faction": [
+        "Astra Militarum",
+        "Chaos"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Chaos"
+      ]
+    },
+    {
+      "id": "cc-09",
+      "title": "The Greater Good",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 9,
+      "faction": [
+        "Astra Militarum",
+        "Tau Empire"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Tau"
+      ]
+    },
+    {
+      "id": "cc-10",
+      "title": "Choose Your Enemies",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 10,
+      "faction": [
+        "Astra Militarum",
+        "Necrons"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy",
+        "Necrons"
+      ]
+    },
+    {
+      "id": "cc-11",
+      "title": "Vainglorious",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 11,
+      "faction": [
+        "Astra Militarum"
+      ],
+      "tags": [
+        "Ciaphas Cain",
+        "Comedy"
+      ]
+    }
+  ]
+}

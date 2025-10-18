@@ -1,0 +1,35 @@
+{
+  "id": "phoenix-lords",
+  "name": "Phoenix Lords",
+  "description": "The immortal champions of the Aeldari, each Phoenix Lord an embodiment of an aspect of war",
+  "books": [
+    {
+      "id": "pl-01",
+      "title": "Jain Zar: The Storm of Silence",
+      "author": "Gav Thorpe",
+      "orderInSeries": 1,
+      "faction": [
+        "Aeldari"
+      ],
+      "tags": [
+        "Eldar",
+        "Phoenix Lords",
+        "Howling Banshees"
+      ]
+    },
+    {
+      "id": "pl-02",
+      "title": "Asurmen: Hand of Asuryan",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": [
+        "Aeldari"
+      ],
+      "tags": [
+        "Eldar",
+        "Phoenix Lords",
+        "Dire Avengers"
+      ]
+    }
+  ]
+}
