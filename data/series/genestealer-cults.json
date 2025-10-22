@@ -1,0 +1,23 @@
+{
+  "id": "genestealer-cults",
+  "name": "Genestealer Cults",
+  "description": "Insidious genestealer cults infiltrate Imperial worlds, spreading their alien taint as they prepare the way for the Tyranid hive fleets",
+  "books": [
+    {
+      "id": "gsc-01",
+      "title": "Cult of the Warmason",
+      "author": "C.L. Werner",
+      "orderInSeries": 1,
+      "faction": ["Genestealer Cults"],
+      "tags": ["Genestealer Cults", "Tyranids", "Cult"]
+    },
+    {
+      "id": "gsc-02",
+      "title": "Cult of the Spiral Dawn",
+      "author": "Peter Fehervari",
+      "orderInSeries": 2,
+      "faction": ["Genestealer Cults"],
+      "tags": ["Genestealer Cults", "Tyranids", "Cult", "Dark Coil"]
+    }
+  ]
+}

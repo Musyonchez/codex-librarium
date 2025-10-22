@@ -1,53 +1,31 @@
 {
   "id": "night-lords",
   "name": "Night Lords",
-  "description": "The dark tale of Talos and the 10th Company Night Lords, traitor Space Marines struggling to survive in the Long War after the Heresy",
+  "description": "The savage Night Lords Traitor Legion wages war from the shadows, their bonds of brotherhood tested as they flee the Long War",
   "books": [
     {
       "id": "nl-01",
       "title": "Soul Hunter",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 1,
-      "faction": [
-        "Night Lords",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Talos",
-        "Night Lords",
-        "Traitor Legions"
-      ]
+      "faction": ["Night Lords", "Chaos"],
+      "tags": ["Night Lords", "Chaos Space Marines", "Talos"]
     },
     {
       "id": "nl-02",
       "title": "Blood Reaver",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 2,
-      "faction": [
-        "Night Lords",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Talos",
-        "Night Lords",
-        "Red Corsairs"
-      ]
+      "faction": ["Night Lords", "Chaos"],
+      "tags": ["Night Lords", "Chaos Space Marines", "Talos"]
     },
     {
       "id": "nl-03",
       "title": "Void Stalker",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 3,
-      "faction": [
-        "Night Lords",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Talos",
-        "Night Lords",
-        "Curze",
-        "Prophecy"
-      ]
+      "faction": ["Night Lords", "Chaos"],
+      "tags": ["Night Lords", "Chaos Space Marines", "Talos", "Curze"]
     }
   ]
 }

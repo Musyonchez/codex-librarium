@@ -1,0 +1,23 @@
+{
+  "id": "adeptus-mechanicus",
+  "name": "Adeptus Mechanicus",
+  "description": "Follow the Tech-Priests of Mars as they seek forbidden knowledge and ancient technology in service to the Omnissiah",
+  "books": [
+    {
+      "id": "am-01",
+      "title": "Skitarius",
+      "author": "Rob Sanders",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Tech-Priests", "Skitarii", "Mars"]
+    },
+    {
+      "id": "am-02",
+      "title": "Tech-Priest",
+      "author": "Rob Sanders",
+      "orderInSeries": 2,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Tech-Priests", "Mechanicus", "Technology"]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "iron-hands",
+  "name": "Iron Hands",
+  "description": "The cold, machine-focused Iron Hands Chapter struggles with their humanity and the legacy of their Primarch Ferrus Manus",
+  "books": [
+    {
+      "id": "ih-01",
+      "title": "The Eye of Medusa",
+      "author": "David Guymer",
+      "orderInSeries": 1,
+      "faction": ["Iron Hands"],
+      "tags": ["Iron Hands", "Mechanicus", "Clan Raukaan"]
+    },
+    {
+      "id": "ih-02",
+      "title": "The Voice of Mars",
+      "author": "David Guymer",
+      "orderInSeries": 2,
+      "faction": ["Iron Hands"],
+      "tags": ["Iron Hands", "Mechanicus", "Mars"]
+    }
+  ]
+}

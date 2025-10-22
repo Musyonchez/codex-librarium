@@ -1,0 +1,23 @@
+{
+  "id": "lucille-von-shard",
+  "name": "Lucille von Shard",
+  "description": "Rogue Trader Lucille von Shard navigates the dangerous politics and treacherous frontiers of the Imperium",
+  "books": [
+    {
+      "id": "lvs-01",
+      "title": "Outgunned",
+      "author": "Denny Flowers",
+      "orderInSeries": 1,
+      "faction": ["Rogue Traders"],
+      "tags": ["Rogue Traders", "Lucille von Shard"]
+    },
+    {
+      "id": "lvs-02",
+      "title": "Above and Beyond",
+      "author": "Denny Flowers",
+      "orderInSeries": 2,
+      "faction": ["Rogue Traders"],
+      "tags": ["Rogue Traders", "Lucille von Shard"]
+    }
+  ]
+}

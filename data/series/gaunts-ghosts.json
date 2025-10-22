@@ -1,240 +1,135 @@
 {
   "id": "gaunts-ghosts",
   "name": "Gaunt's Ghosts",
-  "description": "Follow Colonel-Commissar Ibram Gaunt and the Tanith First-and-Only through the brutal Sabbat Worlds Crusade",
+  "description": "Colonel-Commissar Ibram Gaunt leads the Tanith First and Only through the brutal Sabbat Worlds Crusade in one of the Imperium's greatest military sagas",
   "books": [
     {
       "id": "gg-01",
       "title": "First and Only",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Sabbat Worlds Crusade"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Sabbat Worlds"]
     },
     {
       "id": "gg-02",
       "title": "Ghostmaker",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Anthology Format"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Sabbat Worlds"]
     },
     {
       "id": "gg-03",
       "title": "Necropolis",
       "author": "Dan Abnett",
       "orderInSeries": 3,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Siege"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Siege"]
     },
     {
       "id": "gg-04",
       "title": "Honour Guard",
       "author": "Dan Abnett",
       "orderInSeries": 4,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Saint"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Saint Sabbat"]
     },
     {
       "id": "gg-05",
       "title": "The Guns of Tanith",
       "author": "Dan Abnett",
       "orderInSeries": 5,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Homecoming"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
       "id": "gg-06",
       "title": "Straight Silver",
       "author": "Dan Abnett",
       "orderInSeries": 6,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Jungle Warfare"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
       "id": "gg-07",
       "title": "Sabbat Martyr",
       "author": "Dan Abnett",
       "orderInSeries": 7,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Saint Sabbat"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Saint Sabbat"]
     },
     {
       "id": "gg-08",
       "title": "Traitor General",
       "author": "Dan Abnett",
       "orderInSeries": 8,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Behind Enemy Lines"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Gereon"]
     },
     {
       "id": "gg-09",
       "title": "His Last Command",
       "author": "Dan Abnett",
       "orderInSeries": 9,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Leadership"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
       "id": "gg-10",
       "title": "The Armour of Contempt",
       "author": "Dan Abnett",
       "orderInSeries": 10,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Infiltration"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Gereon"]
     },
     {
       "id": "gg-11",
       "title": "Only in Death",
       "author": "Dan Abnett",
       "orderInSeries": 11,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Haunted Fortress"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Jago"]
     },
     {
       "id": "gg-12",
-      "title": "The Iron Star",
+      "title": "Blood Pact",
       "author": "Dan Abnett",
       "orderInSeries": 12,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Short Story"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Blood Pact"]
     },
     {
       "id": "gg-13",
-      "title": "Blood Pact",
+      "title": "Salvation's Reach",
       "author": "Dan Abnett",
       "orderInSeries": 13,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Blood Pact"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Blood Pact"]
     },
     {
       "id": "gg-14",
-      "title": "Salvation's Reach",
+      "title": "The Warmaster",
       "author": "Dan Abnett",
       "orderInSeries": 14,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Raid"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Warmaster"]
     },
     {
       "id": "gg-15",
-      "title": "The Warmaster",
+      "title": "The Anarch",
       "author": "Dan Abnett",
       "orderInSeries": 15,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Warmaster"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Anarch"]
     },
     {
       "id": "gg-16",
-      "title": "Anarch",
+      "title": "The Vincula Insurgency",
       "author": "Dan Abnett",
       "orderInSeries": 16,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Tanith First-and-Only",
-        "Gaunt",
-        "Anarch"
-      ]
+      "faction": ["Astra Militarum", "Tanith"],
+      "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     }
   ]
 }

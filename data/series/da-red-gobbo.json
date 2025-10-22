@@ -1,0 +1,47 @@
+{
+  "id": "da-red-gobbo",
+  "name": "Da Red Gobbo",
+  "description": "The revolutionary gretchin known as Da Red Gobbo leads revolts against Ork oppression in humorous and chaotic adventures",
+  "books": [
+    {
+      "id": "drg-01",
+      "title": "Da Gobbo's Revenge",
+      "author": "Mike Brooks",
+      "orderInSeries": 1,
+      "faction": ["Orks"],
+      "tags": ["Gretchin", "Orks", "Humor", "Revolution"]
+    },
+    {
+      "id": "drg-02",
+      "title": "Da Gobbo's Demise",
+      "author": "Denny Flowers",
+      "orderInSeries": 2,
+      "faction": ["Orks"],
+      "tags": ["Gretchin", "Orks", "Humor", "Revolution"]
+    },
+    {
+      "id": "drg-03",
+      "title": "Da Gobbo Rides Again",
+      "author": "Rhuairidh James",
+      "orderInSeries": 3,
+      "faction": ["Orks"],
+      "tags": ["Gretchin", "Orks", "Humor", "Revolution"]
+    },
+    {
+      "id": "drg-04",
+      "title": "Long Live Da Red Gobbo",
+      "author": "Justin Woolley",
+      "orderInSeries": 4,
+      "faction": ["Orks"],
+      "tags": ["Gretchin", "Orks", "Humor", "Revolution"]
+    },
+    {
+      "id": "drg-05",
+      "title": "Da Red Gobbo's Last Stand",
+      "author": "Andi Ewington",
+      "orderInSeries": 5,
+      "faction": ["Orks"],
+      "tags": ["Gretchin", "Orks", "Humor", "Revolution"]
+    }
+  ]
+}

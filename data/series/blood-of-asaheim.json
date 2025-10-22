@@ -1,0 +1,31 @@
+{
+  "id": "blood-of-asaheim",
+  "name": "Blood of Asaheim",
+  "description": "A Space Wolves pack from Asaheim fights across the galaxy, bound by brotherhood and the savage warrior code of Fenris",
+  "books": [
+    {
+      "id": "boa-01",
+      "title": "Blood of Asaheim",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": ["Space Wolves"],
+      "tags": ["Space Wolves", "Fenris", "Pack"]
+    },
+    {
+      "id": "boa-02",
+      "title": "Stormcaller",
+      "author": "Chris Wraight",
+      "orderInSeries": 2,
+      "faction": ["Space Wolves"],
+      "tags": ["Space Wolves", "Fenris", "Psykers"]
+    },
+    {
+      "id": "boa-03",
+      "title": "The Helwinter Gate",
+      "author": "Chris Wraight",
+      "orderInSeries": 3,
+      "faction": ["Space Wolves"],
+      "tags": ["Space Wolves", "Fenris", "Winter"]
+    }
+  ]
+}

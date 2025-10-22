@@ -1,0 +1,31 @@
+{
+  "id": "shira-calpurnia",
+  "name": "Shira Calpurnia",
+  "description": "Arbitrator Shira Calpurnia enforces Imperial law and investigates high crimes across the Hydraphur system",
+  "books": [
+    {
+      "id": "sc-01",
+      "title": "Crossfire",
+      "author": "Matthew Farrer",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Arbites"],
+      "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
+    },
+    {
+      "id": "sc-02",
+      "title": "Legacy",
+      "author": "Matthew Farrer",
+      "orderInSeries": 2,
+      "faction": ["Adeptus Arbites"],
+      "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
+    },
+    {
+      "id": "sc-03",
+      "title": "Blind",
+      "author": "Matthew Farrer",
+      "orderInSeries": 3,
+      "faction": ["Adeptus Arbites"],
+      "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
+    }
+  ]
+}

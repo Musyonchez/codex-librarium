@@ -1,0 +1,39 @@
+{
+  "id": "farsight",
+  "name": "Farsight",
+  "description": "Commander Farsight of the T'au Empire breaks from the Greater Good to forge his own destiny in the Farsight Enclaves",
+  "books": [
+    {
+      "id": "fs-01",
+      "title": "Farsight",
+      "author": "Phil Kelly",
+      "orderInSeries": 1,
+      "faction": ["T'au"],
+      "tags": ["Farsight", "T'au", "Commander"]
+    },
+    {
+      "id": "fs-02",
+      "title": "Crisis of Faith",
+      "author": "Phil Kelly",
+      "orderInSeries": 2,
+      "faction": ["T'au"],
+      "tags": ["Farsight", "T'au", "Greater Good"]
+    },
+    {
+      "id": "fs-03",
+      "title": "Empire of Lies",
+      "author": "Phil Kelly",
+      "orderInSeries": 3,
+      "faction": ["T'au"],
+      "tags": ["Farsight", "T'au", "Enclaves"]
+    },
+    {
+      "id": "fs-04",
+      "title": "Blade of Truth",
+      "author": "Phil Kelly",
+      "orderInSeries": 4,
+      "faction": ["T'au"],
+      "tags": ["Farsight", "T'au", "Dawn Blade"]
+    }
+  ]
+}

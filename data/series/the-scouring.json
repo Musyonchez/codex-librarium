@@ -1,0 +1,15 @@
+{
+  "id": "the-scouring",
+  "name": "The Horus Heresy: The Scouring",
+  "description": "The aftermath of the Horus Heresy as the Imperium hunts down the traitor Legions and rebuilds from the ashes of galactic civil war",
+  "books": [
+    {
+      "id": "sc-01",
+      "title": "Ashes of the Imperium",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": ["Various"],
+      "tags": ["The Scouring", "Post-Heresy", "Rebuilding"]
+    }
+  ]
+}

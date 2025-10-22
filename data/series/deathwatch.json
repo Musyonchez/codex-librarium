@@ -1,0 +1,39 @@
+{
+  "id": "deathwatch",
+  "name": "Deathwatch",
+  "description": "Elite Space Marines from various Chapters serve in the Deathwatch, the Chamber Militant of the Ordo Xenos, hunting the galaxy's most dangerous aliens",
+  "books": [
+    {
+      "id": "dw-01",
+      "title": "Warrior Brood",
+      "author": "C.S. Goto",
+      "orderInSeries": 1,
+      "faction": ["Deathwatch"],
+      "tags": ["Deathwatch", "Xenos", "Tyranids"]
+    },
+    {
+      "id": "dw-02",
+      "title": "Warrior Coven",
+      "author": "C.S. Goto",
+      "orderInSeries": 2,
+      "faction": ["Deathwatch"],
+      "tags": ["Deathwatch", "Xenos", "Eldar"]
+    },
+    {
+      "id": "dw-03",
+      "title": "Deathwatch",
+      "author": "Steve Parker",
+      "orderInSeries": 3,
+      "faction": ["Deathwatch"],
+      "tags": ["Deathwatch", "Xenos", "Orks"]
+    },
+    {
+      "id": "dw-04",
+      "title": "Shadowbreaker",
+      "author": "Steve Parker",
+      "orderInSeries": 4,
+      "faction": ["Deathwatch"],
+      "tags": ["Deathwatch", "Xenos", "T'au"]
+    }
+  ]
+}

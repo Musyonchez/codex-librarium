@@ -1,0 +1,31 @@
+{
+  "id": "belisarius-cawl",
+  "name": "Belisarius Cawl",
+  "description": "The ancient Archmagos Belisarius Cawl, architect of the Primaris Space Marines, pursues his secretive goals across ten thousand years of Imperial history",
+  "books": [
+    {
+      "id": "bc-01",
+      "title": "The Great Work",
+      "author": "Guy Haley",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
+    },
+    {
+      "id": "bc-02",
+      "title": "Genefather",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
+    },
+    {
+      "id": "bc-03",
+      "title": "Archmagos",
+      "author": "Guy Haley",
+      "orderInSeries": 3,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
+    }
+  ]
+}

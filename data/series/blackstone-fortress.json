@@ -1,21 +1,23 @@
 {
   "id": "blackstone-fortress",
   "name": "Blackstone Fortress",
-  "description": "Explorers venture into the mysterious Blackstone Fortress seeking treasure and ancient technology",
+  "description": "Explorers, treasure hunters, and rogue traders delve into the mysterious and deadly Blackstone Fortress in search of ancient technology and forbidden secrets",
   "books": [
     {
       "id": "bsf-01",
-      "title": "The Omnibus",
+      "title": "Blackstone Fortress",
       "author": "Darius Hinks",
       "orderInSeries": 1,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Blackstone Fortress",
-        "Exploration",
-        "Ancient Technology"
-      ]
+      "faction": ["Various"],
+      "tags": ["Blackstone Fortress", "Exploration", "Mystery"]
+    },
+    {
+      "id": "bsf-02",
+      "title": "Ascension",
+      "author": "Darius Hinks",
+      "orderInSeries": 2,
+      "faction": ["Various"],
+      "tags": ["Blackstone Fortress", "Exploration", "Mystery"]
     }
   ]
 }

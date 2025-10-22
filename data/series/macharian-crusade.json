@@ -1,49 +1,31 @@
 {
   "id": "macharian-crusade",
   "name": "The Macharian Crusade",
-  "description": "The legendary conquests of Lord Commander Solar Macharius, seen through the eyes of a soldier in his personal guard",
+  "description": "The legendary conquests of Lord Solar Macharius, the greatest Imperial commander since the Emperor himself, as seen through the eyes of his soldiers",
   "books": [
     {
       "id": "mc-01",
       "title": "Angel of Fire",
       "author": "William King",
       "orderInSeries": 1,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Macharius",
-        "Imperial Guard",
-        "Crusade"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Macharius", "Imperial Guard", "Crusade"]
     },
     {
       "id": "mc-02",
       "title": "Fist of Demetrius",
       "author": "William King",
       "orderInSeries": 2,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Macharius",
-        "Imperial Guard",
-        "Crusade"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Macharius", "Imperial Guard", "Crusade"]
     },
     {
       "id": "mc-03",
       "title": "Fall of Macharius",
       "author": "William King",
       "orderInSeries": 3,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Macharius",
-        "Imperial Guard",
-        "Tragedy"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Macharius", "Imperial Guard", "Crusade"]
     }
   ]
 }

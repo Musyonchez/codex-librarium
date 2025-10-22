@@ -1,51 +1,31 @@
 {
   "id": "path-of-the-eldar",
   "name": "Path of the Eldar",
-  "description": "Three Eldar from Craftworld Alaitoc walk different paths in their ancient and dying civilization",
+  "description": "Eldar of Craftworld Alaitoc walk different Paths in service to their people, from Warrior to Seer to Outcast",
   "books": [
     {
       "id": "pote-01",
       "title": "Path of the Warrior",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": [
-        "Aeldari"
-      ],
-      "tags": [
-        "Eldar",
-        "Alaitoc",
-        "Aspect Warriors"
-      ]
+      "faction": ["Aeldari"],
+      "tags": ["Eldar", "Craftworlds", "Aspect Warriors"]
     },
     {
       "id": "pote-02",
       "title": "Path of the Seer",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": [
-        "Aeldari"
-      ],
-      "tags": [
-        "Eldar",
-        "Alaitoc",
-        "Farseers",
-        "Psychic Powers"
-      ]
+      "faction": ["Aeldari"],
+      "tags": ["Eldar", "Craftworlds", "Farseers"]
     },
     {
       "id": "pote-03",
       "title": "Path of the Outcast",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": [
-        "Aeldari"
-      ],
-      "tags": [
-        "Eldar",
-        "Alaitoc",
-        "Rangers",
-        "Outcasts"
-      ]
+      "faction": ["Aeldari"],
+      "tags": ["Eldar", "Craftworlds", "Rangers"]
     }
   ]
 }

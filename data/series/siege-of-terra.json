@@ -1,154 +1,87 @@
 {
   "id": "siege-of-terra",
-  "name": "The Siege of Terra",
-  "description": "The final battle for the Imperial Palace",
+  "name": "The Horus Heresy: Siege of Terra",
+  "description": "The final apocalyptic battle as Horus and the traitor Legions lay siege to the Imperial Palace on Terra, culminating in the ultimate confrontation between Horus and the Emperor",
   "books": [
     {
-      "id": "sot-01",
+      "id": "st-01",
       "title": "The Solar War",
       "author": "John French",
       "orderInSeries": 1,
-      "faction": [
-        "Imperial Fists",
-        "Various Traitors"
-      ],
-      "tags": [
-        "Sol System",
-        "Defense",
-        "Beginning"
-      ]
+      "faction": ["Imperial Fists", "Chaos"],
+      "tags": ["Siege of Terra", "Solar System", "Space Combat"]
     },
     {
-      "id": "sot-02",
+      "id": "st-02",
       "title": "The Lost and the Damned",
       "author": "Guy Haley",
       "orderInSeries": 2,
-      "faction": [
-        "Imperial Fists",
-        "Various Traitors"
-      ],
-      "tags": [
-        "Terra",
-        "Outer Palace",
-        "Siege Begins"
-      ]
+      "faction": ["Imperial Fists", "Chaos"],
+      "tags": ["Siege of Terra", "Terra", "Traitor Guard"]
     },
     {
-      "id": "sot-03",
+      "id": "st-03",
       "title": "The First Wall",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": [
-        "Imperial Fists",
-        "Iron Warriors"
-      ],
-      "tags": [
-        "Rogal Dorn",
-        "Walls",
-        "Defense"
-      ]
+      "faction": ["Imperial Fists", "Chaos"],
+      "tags": ["Siege of Terra", "Imperial Palace", "Rogal Dorn"]
     },
     {
-      "id": "sot-04",
+      "id": "st-04",
       "title": "Saturnine",
       "author": "Dan Abnett",
       "orderInSeries": 4,
-      "faction": [
-        "Imperial Fists",
-        "Alpha Legion"
-      ],
-      "tags": [
-        "Saturnine Gate",
-        "Turning Point"
-      ]
+      "faction": ["Imperial Fists", "Chaos"],
+      "tags": ["Siege of Terra", "Saturnine", "Betrayal"]
     },
     {
-      "id": "sot-05",
+      "id": "st-05",
       "title": "Mortis",
       "author": "John French",
       "orderInSeries": 5,
-      "faction": [
-        "Death Guard",
-        "Collegia Titanica"
-      ],
-      "tags": [
-        "Titans",
-        "Mortis",
-        "Mars"
-      ]
+      "faction": ["Titans", "Chaos"],
+      "tags": ["Siege of Terra", "Titans", "Mechanicum"]
     },
     {
-      "id": "sot-06",
+      "id": "st-06",
       "title": "Warhawk",
       "author": "Chris Wraight",
       "orderInSeries": 6,
-      "faction": [
-        "White Scars",
-        "Death Guard"
-      ],
-      "tags": [
-        "Jaghatai Khan",
-        "Mortarion",
-        "Duel"
-      ]
+      "faction": ["White Scars", "Chaos"],
+      "tags": ["Siege of Terra", "Jaghatai Khan", "White Scars"]
     },
     {
-      "id": "sot-07",
+      "id": "st-07",
       "title": "Echoes of Eternity",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 7,
-      "faction": [
-        "Blood Angels",
-        "World Eaters"
-      ],
-      "tags": [
-        "Sanguinius",
-        "Angron",
-        "Ultimate Gate"
-      ]
+      "faction": ["Blood Angels", "Chaos"],
+      "tags": ["Siege of Terra", "Sanguinius", "Blood Angels"]
     },
     {
-      "id": "sot-08",
+      "id": "st-08",
       "title": "The End and the Death: Volume I",
       "author": "Dan Abnett",
       "orderInSeries": 8,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Final Battle",
-        "Emperor",
-        "Horus"
-      ]
+      "faction": ["Various"],
+      "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     },
     {
-      "id": "sot-09",
+      "id": "st-09",
       "title": "The End and the Death: Volume II",
       "author": "Dan Abnett",
       "orderInSeries": 9,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Final Battle",
-        "Emperor",
-        "Horus"
-      ]
+      "faction": ["Various"],
+      "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     },
     {
-      "id": "sot-10",
+      "id": "st-10",
       "title": "The End and the Death: Volume III",
       "author": "Dan Abnett",
       "orderInSeries": 10,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Final Battle",
-        "Emperor",
-        "Horus",
-        "Conclusion"
-      ]
+      "faction": ["Various"],
+      "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     }
   ]
 }

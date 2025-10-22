@@ -1,0 +1,31 @@
+{
+  "id": "rogue-trader",
+  "name": "Rogue Trader",
+  "description": "Rogue Trader Lucian Gerrit explores the frontier of Imperial space, seeking profit and glory among the stars",
+  "books": [
+    {
+      "id": "rt-01",
+      "title": "Rogue Star",
+      "author": "Andy Hoare",
+      "orderInSeries": 1,
+      "faction": ["Rogue Traders"],
+      "tags": ["Rogue Traders", "Exploration", "Trade"]
+    },
+    {
+      "id": "rt-02",
+      "title": "Star of Damocles",
+      "author": "Andy Hoare",
+      "orderInSeries": 2,
+      "faction": ["Rogue Traders"],
+      "tags": ["Rogue Traders", "Exploration", "T'au"]
+    },
+    {
+      "id": "rt-03",
+      "title": "Savage Scars",
+      "author": "Andy Hoare",
+      "orderInSeries": 3,
+      "faction": ["Rogue Traders"],
+      "tags": ["Rogue Traders", "Exploration"]
+    }
+  ]
+}

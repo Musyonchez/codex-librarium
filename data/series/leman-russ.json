@@ -1,0 +1,23 @@
+{
+  "id": "leman-russ",
+  "name": "Leman Russ",
+  "description": "Tank commanders and their crews wage armored warfare in the legendary Leman Russ battle tanks of the Astra Militarum",
+  "books": [
+    {
+      "id": "lr-01",
+      "title": "Steel Tread",
+      "author": "Andy Clark",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Tanks", "Leman Russ"]
+    },
+    {
+      "id": "lr-02",
+      "title": "Demolisher",
+      "author": "Andy Clark",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Tanks", "Leman Russ"]
+    }
+  ]
+}

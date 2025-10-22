@@ -1,0 +1,47 @@
+{
+  "id": "cadia",
+  "name": "Cadia",
+  "description": "Minka Lesk of the Cadian 101st fights for survival as Cadia falls and beyond, witnessing the destruction of her homeworld and the birth of the Great Rift",
+  "books": [
+    {
+      "id": "cad-01",
+      "title": "Cadia Stands",
+      "author": "Justin D. Hill",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Cadia"],
+      "tags": ["Cadia", "Imperial Guard", "Fall of Cadia", "Minka Lesk"]
+    },
+    {
+      "id": "cad-02",
+      "title": "Cadian Honour",
+      "author": "Justin D. Hill",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Cadia"],
+      "tags": ["Cadia", "Imperial Guard", "Minka Lesk"]
+    },
+    {
+      "id": "cad-03",
+      "title": "Traitor Rock",
+      "author": "Justin D. Hill",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum", "Cadia"],
+      "tags": ["Cadia", "Imperial Guard", "Minka Lesk", "Chaos"]
+    },
+    {
+      "id": "cad-04",
+      "title": "Shadow of the Eighth",
+      "author": "Justin D. Hill",
+      "orderInSeries": 4,
+      "faction": ["Astra Militarum", "Cadia"],
+      "tags": ["Cadia", "Imperial Guard", "Minka Lesk", "Night Lords"]
+    },
+    {
+      "id": "cad-05",
+      "title": "Hell's Last",
+      "author": "Justin D. Hill",
+      "orderInSeries": 5,
+      "faction": ["Astra Militarum", "Cadia"],
+      "tags": ["Cadia", "Imperial Guard", "Minka Lesk"]
+    }
+  ]
+}

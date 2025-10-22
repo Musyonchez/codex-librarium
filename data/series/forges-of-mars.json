@@ -1,0 +1,31 @@
+{
+  "id": "forges-of-mars",
+  "name": "Forges of Mars",
+  "description": "A massive Adeptus Mechanicus explorator fleet ventures beyond the Imperium in search of ancient technology and forbidden knowledge",
+  "books": [
+    {
+      "id": "fom-01",
+      "title": "Priests of Mars",
+      "author": "Graham McNeill",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
+    },
+    {
+      "id": "fom-02",
+      "title": "Lords of Mars",
+      "author": "Graham McNeill",
+      "orderInSeries": 2,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
+    },
+    {
+      "id": "fom-03",
+      "title": "Gods of Mars",
+      "author": "Graham McNeill",
+      "orderInSeries": 3,
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
+    }
+  ]
+}

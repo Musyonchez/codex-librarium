@@ -1,0 +1,31 @@
+{
+  "id": "word-bearers",
+  "name": "Word Bearers",
+  "description": "Dark Apostle Marduk's rise to power as the daemon-worshipping Word Bearers wage war across the galaxy",
+  "books": [
+    {
+      "id": "wb-01",
+      "title": "Dark Apostle",
+      "author": "Anthony Reynolds",
+      "orderInSeries": 1,
+      "faction": ["Word Bearers", "Chaos"],
+      "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
+    },
+    {
+      "id": "wb-02",
+      "title": "Dark Disciple",
+      "author": "Anthony Reynolds",
+      "orderInSeries": 2,
+      "faction": ["Word Bearers", "Chaos"],
+      "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
+    },
+    {
+      "id": "wb-03",
+      "title": "Dark Creed",
+      "author": "Anthony Reynolds",
+      "orderInSeries": 3,
+      "faction": ["Word Bearers", "Chaos"],
+      "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
+    }
+  ]
+}

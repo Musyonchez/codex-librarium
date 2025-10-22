@@ -1,0 +1,31 @@
+{
+  "id": "bastion-wars",
+  "name": "Bastion Wars",
+  "description": "Imperial forces battle across the Bastion Stars against xenos threats and the corrupting influence of Chaos",
+  "books": [
+    {
+      "id": "bw-01",
+      "title": "Emperor's Mercy",
+      "author": "Henry Zou",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Inquisition"],
+      "tags": ["Imperial Guard", "Chaos", "Inquisition"]
+    },
+    {
+      "id": "bw-02",
+      "title": "Flesh and Iron",
+      "author": "Henry Zou",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Chaos", "War"]
+    },
+    {
+      "id": "bw-03",
+      "title": "Blood Gorgons",
+      "author": "Henry Zou",
+      "orderInSeries": 3,
+      "faction": ["Chaos"],
+      "tags": ["Chaos Space Marines", "Blood Gorgons"]
+    }
+  ]
+}

@@ -1,53 +1,23 @@
 {
   "id": "rise-of-the-ynnari",
   "name": "Rise of the Ynnari",
-  "description": "Yvraine awakens the God of the Dead and leads a new faction of Aeldari to save their dying race",
+  "description": "Yvraine and the Ynnari seek to awaken the god Ynnead and unite the scattered Aeldari against the threat of Chaos",
   "books": [
     {
-      "id": "roy-01",
+      "id": "roty-01",
       "title": "Ghost Warrior",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": [
-        "Aeldari",
-        "Ynnari"
-      ],
-      "tags": [
-        "Eldar",
-        "Ynnari",
-        "Yvraine",
-        "Ynnead"
-      ]
+      "faction": ["Aeldari", "Ynnari"],
+      "tags": ["Ynnari", "Yvraine", "Eldar"]
     },
     {
-      "id": "roy-02",
+      "id": "roty-02",
       "title": "Wild Rider",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": [
-        "Aeldari",
-        "Ynnari"
-      ],
-      "tags": [
-        "Eldar",
-        "Ynnari",
-        "Saim-Hann"
-      ]
-    },
-    {
-      "id": "roy-03",
-      "title": "Ghost Warrior Trilogy",
-      "author": "Gav Thorpe",
-      "orderInSeries": 3,
-      "faction": [
-        "Aeldari",
-        "Ynnari"
-      ],
-      "tags": [
-        "Eldar",
-        "Ynnari",
-        "Conclusion"
-      ]
+      "faction": ["Aeldari", "Ynnari"],
+      "tags": ["Ynnari", "Yvraine", "Eldar"]
     }
   ]
 }

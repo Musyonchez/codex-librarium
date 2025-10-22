@@ -1,70 +1,47 @@
 {
   "id": "ahriman",
   "name": "Ahriman",
-  "description": "The Arch-Sorcerer of the Thousand Sons seeks to undo the Rubric and restore his fallen Legion, no matter the cost",
+  "description": "The sorcerer Ahriman of the Thousand Sons seeks to undo the Rubric that damned his Legion, journeying through time and space in his quest for forbidden knowledge",
   "books": [
     {
       "id": "ahr-01",
       "title": "Ahriman: Exile",
       "author": "John French",
       "orderInSeries": 1,
-      "faction": [
-        "Thousand Sons",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Ahriman",
-        "Thousand Sons",
-        "Sorcery",
-        "Tzeentch"
-      ]
+      "faction": ["Thousand Sons", "Chaos"],
+      "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {
       "id": "ahr-02",
       "title": "Ahriman: Sorcerer",
       "author": "John French",
       "orderInSeries": 2,
-      "faction": [
-        "Thousand Sons",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Ahriman",
-        "Thousand Sons",
-        "Sorcery",
-        "Black Library"
-      ]
+      "faction": ["Thousand Sons", "Chaos"],
+      "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {
       "id": "ahr-03",
       "title": "Ahriman: Unchanged",
       "author": "John French",
       "orderInSeries": 3,
-      "faction": [
-        "Thousand Sons",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Ahriman",
-        "Thousand Sons",
-        "Rubric",
-        "Tzeentch"
-      ]
+      "faction": ["Thousand Sons", "Chaos"],
+      "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {
       "id": "ahr-04",
       "title": "Ahriman: Eternal",
       "author": "John French",
       "orderInSeries": 4,
-      "faction": [
-        "Thousand Sons",
-        "Chaos Space Marines"
-      ],
-      "tags": [
-        "Ahriman",
-        "Thousand Sons",
-        "Sorcery"
-      ]
+      "faction": ["Thousand Sons", "Chaos"],
+      "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
+    },
+    {
+      "id": "ahr-05",
+      "title": "Ahriman: Undying",
+      "author": "John French",
+      "orderInSeries": 5,
+      "faction": ["Thousand Sons", "Chaos"],
+      "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     }
   ]
 }

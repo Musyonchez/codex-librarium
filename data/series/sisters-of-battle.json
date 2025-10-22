@@ -1,0 +1,23 @@
+{
+  "id": "sisters-of-battle",
+  "name": "Sisters of Battle",
+  "description": "The Adepta Sororitas wage holy war in the Emperor's name, their faith as powerful as their bolters",
+  "books": [
+    {
+      "id": "sob-01",
+      "title": "Faith and Fire",
+      "author": "James Swallow",
+      "orderInSeries": 1,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Faith", "Miriya"]
+    },
+    {
+      "id": "sob-02",
+      "title": "Hammer and Anvil",
+      "author": "James Swallow",
+      "orderInSeries": 2,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Faith", "Miriya"]
+    }
+  ]
+}

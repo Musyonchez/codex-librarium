@@ -1,0 +1,23 @@
+{
+  "id": "carcharodons",
+  "name": "Carcharodons",
+  "description": "The mysterious Carcharodons Space Marine Chapter emerges from the void to wage brutal wars on the fringes of Imperial space",
+  "books": [
+    {
+      "id": "car-01",
+      "title": "Carcharodons: Red Tithe",
+      "author": "Robbie MacNiven",
+      "orderInSeries": 1,
+      "faction": ["Carcharodons"],
+      "tags": ["Carcharodons", "Space Sharks", "Mystery"]
+    },
+    {
+      "id": "car-02",
+      "title": "Carcharodons: Outer Dark",
+      "author": "Robbie MacNiven",
+      "orderInSeries": 2,
+      "faction": ["Carcharodons"],
+      "tags": ["Carcharodons", "Space Sharks", "Tyranids"]
+    }
+  ]
+}

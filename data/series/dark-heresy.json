@@ -1,0 +1,23 @@
+{
+  "id": "dark-heresy",
+  "name": "Dark Heresy",
+  "description": "Inquisitorial acolytes hunt heretics and uncover conspiracies in the dark underbelly of the Imperium",
+  "books": [
+    {
+      "id": "dh-01",
+      "title": "Scourge the Heretic",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 1,
+      "faction": ["Inquisition"],
+      "tags": ["Inquisition", "Heresy", "Investigation"]
+    },
+    {
+      "id": "dh-02",
+      "title": "Innocence Proves Nothing",
+      "author": "Sandy Mitchell",
+      "orderInSeries": 2,
+      "faction": ["Inquisition"],
+      "tags": ["Inquisition", "Heresy", "Investigation"]
+    }
+  ]
+}

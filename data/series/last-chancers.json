@@ -1,0 +1,39 @@
+{
+  "id": "last-chancers",
+  "name": "Last Chancers",
+  "description": "Condemned Imperial Guardsmen given one last chance at redemption through suicide missions under the command of brutal Lieutenant Kage",
+  "books": [
+    {
+      "id": "lc-01",
+      "title": "13th Legion",
+      "author": "Gav Thorpe",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum"],
+      "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
+    },
+    {
+      "id": "lc-02",
+      "title": "Kill Team",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
+    },
+    {
+      "id": "lc-03",
+      "title": "Annihilation Squad",
+      "author": "Gav Thorpe",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum"],
+      "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
+    },
+    {
+      "id": "lc-04",
+      "title": "Armageddon Saint",
+      "author": "Gav Thorpe",
+      "orderInSeries": 4,
+      "faction": ["Astra Militarum"],
+      "tags": ["Last Chancers", "Imperial Guard", "Armageddon"]
+    }
+  ]
+}

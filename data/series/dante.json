@@ -1,0 +1,23 @@
+{
+  "id": "dante",
+  "name": "Dante",
+  "description": "Commander Dante, oldest living Space Marine and Chapter Master of the Blood Angels, defends Baal and faces the burden of his millennia-long service",
+  "books": [
+    {
+      "id": "dan-01",
+      "title": "Dante",
+      "author": "Guy Haley",
+      "orderInSeries": 1,
+      "faction": ["Blood Angels"],
+      "tags": ["Dante", "Blood Angels", "Chapter Master"]
+    },
+    {
+      "id": "dan-02",
+      "title": "Darkness in the Blood",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": ["Blood Angels"],
+      "tags": ["Dante", "Blood Angels", "Black Rage"]
+    }
+  ]
+}

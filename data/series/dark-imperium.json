@@ -1,0 +1,31 @@
+{
+  "id": "dark-imperium",
+  "name": "Dark Imperium",
+  "description": "Primarch Roboute Guilliman returns to lead the Imperium in the wake of the Great Rift, facing plague wars and the corrupted Mortarion",
+  "books": [
+    {
+      "id": "di-01",
+      "title": "Dark Imperium",
+      "author": "Guy Haley",
+      "orderInSeries": 1,
+      "faction": ["Ultramarines", "Death Guard"],
+      "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Nurgle"]
+    },
+    {
+      "id": "di-02",
+      "title": "Plague War",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": ["Ultramarines", "Death Guard"],
+      "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Mortarion"]
+    },
+    {
+      "id": "di-03",
+      "title": "Godblight",
+      "author": "Guy Haley",
+      "orderInSeries": 3,
+      "faction": ["Ultramarines", "Death Guard"],
+      "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Mortarion", "Nurgle"]
+    }
+  ]
+}

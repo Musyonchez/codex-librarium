@@ -1,0 +1,47 @@
+{
+  "id": "augusta-santorus",
+  "name": "Augusta Santorus",
+  "description": "Follow Sister Superior Augusta Santorus and her squad through deadly battles across the Imperium as they defend humanity in the name of the Emperor",
+  "books": [
+    {
+      "id": "as-01",
+      "title": "The Bloodied Rose",
+      "author": "Danie Ware",
+      "orderInSeries": 1,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
+    },
+    {
+      "id": "as-02",
+      "title": "Wreck and Ruin",
+      "author": "Danie Ware",
+      "orderInSeries": 2,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
+    },
+    {
+      "id": "as-03",
+      "title": "The Rose in Anger",
+      "author": "Danie Ware",
+      "orderInSeries": 3,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
+    },
+    {
+      "id": "as-04",
+      "title": "The Rose at War",
+      "author": "Danie Ware",
+      "orderInSeries": 4,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
+    },
+    {
+      "id": "as-05",
+      "title": "The Rose in Darkness",
+      "author": "Danie Ware",
+      "orderInSeries": 5,
+      "faction": ["Adepta Sororitas"],
+      "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
+    }
+  ]
+}

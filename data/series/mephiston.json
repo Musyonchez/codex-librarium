@@ -1,50 +1,31 @@
 {
   "id": "mephiston",
   "name": "Mephiston",
-  "description": "The Lord of Death, Chief Librarian of the Blood Angels, battles the Black Rage and the enemies of mankind",
+  "description": "Lord of Death Mephiston, Chief Librarian of the Blood Angels, battles his inner darkness and external threats in equal measure",
   "books": [
     {
-      "id": "mph-01",
+      "id": "meph-01",
       "title": "Mephiston: Blood of Sanguinius",
       "author": "Darius Hinks",
       "orderInSeries": 1,
-      "faction": [
-        "Blood Angels"
-      ],
-      "tags": [
-        "Mephiston",
-        "Blood Angels",
-        "Black Rage",
-        "Sanguinius"
-      ]
+      "faction": ["Blood Angels"],
+      "tags": ["Mephiston", "Blood Angels", "Psyker", "Black Rage"]
     },
     {
-      "id": "mph-02",
+      "id": "meph-02",
       "title": "Mephiston: Revenant Crusade",
       "author": "Darius Hinks",
       "orderInSeries": 2,
-      "faction": [
-        "Blood Angels"
-      ],
-      "tags": [
-        "Mephiston",
-        "Blood Angels",
-        "Primaris"
-      ]
+      "faction": ["Blood Angels"],
+      "tags": ["Mephiston", "Blood Angels", "Psyker"]
     },
     {
-      "id": "mph-03",
+      "id": "meph-03",
       "title": "Mephiston: City of Light",
       "author": "Darius Hinks",
       "orderInSeries": 3,
-      "faction": [
-        "Blood Angels"
-      ],
-      "tags": [
-        "Mephiston",
-        "Blood Angels",
-        "Psychic Powers"
-      ]
+      "faction": ["Blood Angels"],
+      "tags": ["Mephiston", "Blood Angels", "Psyker"]
     }
   ]
 }

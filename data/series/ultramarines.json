@@ -1,112 +1,63 @@
 {
   "id": "ultramarines",
   "name": "Ultramarines",
-  "description": "Captain Uriel Ventris of the Ultramarines faces trials that test his loyalty to the Codex Astartes and the Emperor",
+  "description": "Captain Uriel Ventris of the Ultramarines fights to redeem his honor and serve the Imperium across the galaxy",
   "books": [
     {
       "id": "um-01",
       "title": "Nightbringer",
       "author": "Graham McNeill",
       "orderInSeries": 1,
-      "faction": [
-        "Ultramarines",
-        "Necrons"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "C'tan"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "Necrons"]
     },
     {
       "id": "um-02",
       "title": "Warriors of Ultramar",
       "author": "Graham McNeill",
       "orderInSeries": 2,
-      "faction": [
-        "Ultramarines",
-        "Tyranids"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Tyranids"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "Tyranids"]
     },
     {
       "id": "um-03",
       "title": "Dead Sky, Black Sun",
       "author": "Graham McNeill",
       "orderInSeries": 3,
-      "faction": [
-        "Ultramarines",
-        "Iron Warriors",
-        "Chaos"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Daemon World",
-        "Iron Warriors"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "Chaos", "Daemon World"]
     },
     {
       "id": "um-04",
       "title": "The Killing Ground",
       "author": "Graham McNeill",
       "orderInSeries": 4,
-      "faction": [
-        "Ultramarines"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Redemption"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris"]
     },
     {
       "id": "um-05",
       "title": "Courage and Honour",
       "author": "Graham McNeill",
       "orderInSeries": 5,
-      "faction": [
-        "Ultramarines",
-        "Tau Empire"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Tau"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "T'au"]
     },
     {
       "id": "um-06",
       "title": "The Chapter's Due",
       "author": "Graham McNeill",
       "orderInSeries": 6,
-      "faction": [
-        "Ultramarines",
-        "Iron Warriors"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Iron Warriors"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "Iron Warriors"]
     },
     {
       "id": "um-07",
       "title": "The Swords of Calth",
       "author": "Graham McNeill",
       "orderInSeries": 7,
-      "faction": [
-        "Ultramarines"
-      ],
-      "tags": [
-        "Uriel Ventris",
-        "Ultramarines",
-        "Calth"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Ultramarines", "Uriel Ventris", "Calth"]
     }
   ]
 }

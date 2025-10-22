@@ -1,0 +1,23 @@
+{
+  "id": "castellan-crowe",
+  "name": "Castellan Crowe",
+  "description": "Castellan Garran Crowe of the Grey Knights bears the cursed Black Blade of Antwyr, forever struggling against its corrupting influence while serving the Emperor",
+  "books": [
+    {
+      "id": "cc-01",
+      "title": "Warden of the Blade",
+      "author": "David Annandale",
+      "orderInSeries": 1,
+      "faction": ["Grey Knights"],
+      "tags": ["Grey Knights", "Castellan Crowe", "Daemon Weapon"]
+    },
+    {
+      "id": "cc-02",
+      "title": "Castellan",
+      "author": "David Annandale",
+      "orderInSeries": 2,
+      "faction": ["Grey Knights"],
+      "tags": ["Grey Knights", "Castellan Crowe", "Daemon Weapon"]
+    }
+  ]
+}

@@ -1,777 +1,335 @@
 {
   "id": "horus-heresy",
-  "name": "The Horus Heresy",
-  "description": "The galaxy-spanning civil war that tore the Imperium apart",
+  "name": "Horus Heresy",
+  "description": "The galaxy-spanning civil war that tore the Imperium apart as Warmaster Horus turned against the Emperor, leading half the Space Marine Legions into damnation",
   "books": [
     {
       "id": "hh-01",
       "title": "Horus Rising",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": [
-        "Luna Wolves/Sons of Horus"
-      ],
-      "tags": [
-        "Great Crusade",
-        "Horus",
-        "Loken"
-      ]
+      "faction": ["Luna Wolves"],
+      "tags": ["Horus Heresy", "Great Crusade", "Horus", "Luna Wolves"]
     },
     {
       "id": "hh-02",
       "title": "False Gods",
       "author": "Graham McNeill",
       "orderInSeries": 2,
-      "faction": [
-        "Sons of Horus"
-      ],
-      "tags": [
-        "Corruption",
-        "Horus Fall"
-      ]
+      "faction": ["Luna Wolves"],
+      "tags": ["Horus Heresy", "Horus", "Corruption", "Chaos"]
     },
     {
       "id": "hh-03",
       "title": "Galaxy in Flames",
       "author": "Ben Counter",
       "orderInSeries": 3,
-      "faction": [
-        "Sons of Horus",
-        "Emperor's Children",
-        "Death Guard",
-        "World Eaters"
-      ],
-      "tags": [
-        "Isstvan III",
-        "Betrayal"
-      ]
+      "faction": ["Sons of Horus"],
+      "tags": ["Horus Heresy", "Isstvan III", "Betrayal"]
     },
     {
       "id": "hh-04",
       "title": "The Flight of the Eisenstein",
       "author": "James Swallow",
       "orderInSeries": 4,
-      "faction": [
-        "Death Guard"
-      ],
-      "tags": [
-        "Garro",
-        "Isstvan III",
-        "Warning"
-      ]
+      "faction": ["Death Guard"],
+      "tags": ["Horus Heresy", "Death Guard", "Nathaniel Garro"]
     },
     {
       "id": "hh-05",
       "title": "Fulgrim",
       "author": "Graham McNeill",
       "orderInSeries": 5,
-      "faction": [
-        "Emperor's Children",
-        "Iron Hands"
-      ],
-      "tags": [
-        "Slaanesh",
-        "Ferrus Manus",
-        "Isstvan V"
-      ]
+      "faction": ["Emperor's Children"],
+      "tags": ["Horus Heresy", "Fulgrim", "Emperor's Children", "Slaanesh"]
     },
     {
       "id": "hh-06",
       "title": "Descent of Angels",
       "author": "Mitchel Scanlon",
       "orderInSeries": 6,
-      "faction": [
-        "Dark Angels"
-      ],
-      "tags": [
-        "Caliban",
-        "Luther",
-        "Lion El'Jonson"
-      ]
+      "faction": ["Dark Angels"],
+      "tags": ["Horus Heresy", "Dark Angels", "Caliban"]
     },
     {
       "id": "hh-07",
       "title": "Legion",
       "author": "Dan Abnett",
       "orderInSeries": 7,
-      "faction": [
-        "Alpha Legion"
-      ],
-      "tags": [
-        "Alpharius",
-        "Cabal",
-        "Mystery"
-      ]
+      "faction": ["Alpha Legion"],
+      "tags": ["Horus Heresy", "Alpha Legion", "Cabal"]
     },
     {
       "id": "hh-08",
       "title": "Battle for the Abyss",
       "author": "Ben Counter",
       "orderInSeries": 8,
-      "faction": [
-        "Word Bearers",
-        "Ultramarines",
-        "Space Wolves",
-        "Thousand Sons"
-      ],
-      "tags": [
-        "Furious Abyss",
-        "Calth"
-      ]
+      "faction": ["Word Bearers", "Ultramarines"],
+      "tags": ["Horus Heresy", "Word Bearers", "Ultramarines"]
     },
     {
       "id": "hh-09",
       "title": "Mechanicum",
       "author": "Graham McNeill",
       "orderInSeries": 9,
-      "faction": [
-        "Adeptus Mechanicus"
-      ],
-      "tags": [
-        "Mars",
-        "Adeptus Mechanicus",
-        "Schism"
-      ]
-    },
-    {
-      "id": "hh-10",
-      "title": "Tales of Heresy",
-      "author": "Various",
-      "orderInSeries": 10,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Adeptus Mechanicus"],
+      "tags": ["Horus Heresy", "Mechanicum", "Mars"]
     },
     {
       "id": "hh-11",
       "title": "Fallen Angels",
       "author": "Mike Lee",
       "orderInSeries": 11,
-      "faction": [
-        "Dark Angels"
-      ],
-      "tags": [
-        "Caliban",
-        "Luther",
-        "Zahariel"
-      ]
+      "faction": ["Dark Angels"],
+      "tags": ["Horus Heresy", "Dark Angels", "Caliban"]
     },
     {
       "id": "hh-12",
       "title": "A Thousand Sons",
       "author": "Graham McNeill",
       "orderInSeries": 12,
-      "faction": [
-        "Thousand Sons",
-        "Space Wolves"
-      ],
-      "tags": [
-        "Magnus",
-        "Prospero",
-        "Psychic Powers"
-      ]
+      "faction": ["Thousand Sons"],
+      "tags": ["Horus Heresy", "Thousand Sons", "Magnus", "Prospero"]
     },
     {
       "id": "hh-13",
       "title": "Nemesis",
       "author": "James Swallow",
       "orderInSeries": 13,
-      "faction": [
-        "Officio Assassinorum"
-      ],
-      "tags": [
-        "Assassins",
-        "Terra",
-        "Malcador"
-      ]
+      "faction": ["Assassins"],
+      "tags": ["Horus Heresy", "Assassins", "Officio Assassinorum"]
     },
     {
       "id": "hh-14",
       "title": "The First Heretic",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 14,
-      "faction": [
-        "Word Bearers"
-      ],
-      "tags": [
-        "Lorgar",
-        "Chaos",
-        "Origins"
-      ]
+      "faction": ["Word Bearers"],
+      "tags": ["Horus Heresy", "Word Bearers", "Lorgar", "Chaos"]
     },
     {
       "id": "hh-15",
       "title": "Prospero Burns",
       "author": "Dan Abnett",
       "orderInSeries": 15,
-      "faction": [
-        "Space Wolves"
-      ],
-      "tags": [
-        "Prospero",
-        "Leman Russ",
-        "Executioners"
-      ]
-    },
-    {
-      "id": "hh-16",
-      "title": "Age of Darkness",
-      "author": "Various",
-      "orderInSeries": 16,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Space Wolves"],
+      "tags": ["Horus Heresy", "Space Wolves", "Prospero", "Leman Russ"]
     },
     {
       "id": "hh-17",
       "title": "The Outcast Dead",
       "author": "Graham McNeill",
       "orderInSeries": 17,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Terra",
-        "Astropaths",
-        "Prison"
-      ]
+      "faction": ["Various"],
+      "tags": ["Horus Heresy", "Terra", "Astropaths"]
     },
     {
       "id": "hh-18",
       "title": "Deliverance Lost",
       "author": "Gav Thorpe",
       "orderInSeries": 18,
-      "faction": [
-        "Raven Guard"
-      ],
-      "tags": [
-        "Corax",
-        "Isstvan V",
-        "Gene-seed"
-      ]
+      "faction": ["Raven Guard"],
+      "tags": ["Horus Heresy", "Raven Guard", "Corax"]
     },
     {
       "id": "hh-19",
       "title": "Know No Fear",
       "author": "Dan Abnett",
       "orderInSeries": 19,
-      "faction": [
-        "Ultramarines",
-        "Word Bearers"
-      ],
-      "tags": [
-        "Calth",
-        "Guilliman",
-        "Betrayal"
-      ]
-    },
-    {
-      "id": "hh-20",
-      "title": "The Primarchs",
-      "author": "Various",
-      "orderInSeries": 20,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Primarchs",
-        "Short Stories"
-      ]
+      "faction": ["Ultramarines", "Word Bearers"],
+      "tags": ["Horus Heresy", "Ultramarines", "Calth", "Betrayal"]
     },
     {
       "id": "hh-21",
       "title": "Fear to Tread",
       "author": "James Swallow",
       "orderInSeries": 21,
-      "faction": [
-        "Blood Angels"
-      ],
-      "tags": [
-        "Sanguinius",
-        "Ka'Bandha",
-        "Signus"
-      ]
-    },
-    {
-      "id": "hh-22",
-      "title": "Shadows of Treachery",
-      "author": "Various",
-      "orderInSeries": 22,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Blood Angels"],
+      "tags": ["Horus Heresy", "Blood Angels", "Sanguinius", "Signus"]
     },
     {
       "id": "hh-23",
       "title": "Angel Exterminatus",
       "author": "Graham McNeill",
       "orderInSeries": 23,
-      "faction": [
-        "Iron Warriors",
-        "Emperor's Children"
-      ],
-      "tags": [
-        "Perturabo",
-        "Fulgrim",
-        "Iydris"
-      ]
+      "faction": ["Iron Warriors", "Emperor's Children"],
+      "tags": ["Horus Heresy", "Iron Warriors", "Perturabo", "Fulgrim"]
     },
     {
       "id": "hh-24",
       "title": "Betrayer",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 24,
-      "faction": [
-        "World Eaters",
-        "Word Bearers"
-      ],
-      "tags": [
-        "Angron",
-        "Lorgar",
-        "Shadow Crusade"
-      ]
-    },
-    {
-      "id": "hh-25",
-      "title": "Mark of Calth",
-      "author": "Various",
-      "orderInSeries": 25,
-      "faction": [
-        "Ultramarines",
-        "Word Bearers"
-      ],
-      "tags": [
-        "Anthology",
-        "Calth",
-        "Short Stories"
-      ]
+      "faction": ["World Eaters", "Word Bearers"],
+      "tags": ["Horus Heresy", "World Eaters", "Angron", "Lorgar"]
     },
     {
       "id": "hh-26",
       "title": "Vulkan Lives",
       "author": "Nick Kyme",
       "orderInSeries": 26,
-      "faction": [
-        "Salamanders",
-        "Night Lords"
-      ],
-      "tags": [
-        "Vulkan",
-        "Curze",
-        "Perpetual"
-      ]
+      "faction": ["Salamanders"],
+      "tags": ["Horus Heresy", "Salamanders", "Vulkan", "Primarch"]
     },
     {
       "id": "hh-27",
       "title": "The Unremembered Empire",
       "author": "Dan Abnett",
       "orderInSeries": 27,
-      "faction": [
-        "Ultramarines",
-        "Dark Angels",
-        "Blood Angels"
-      ],
-      "tags": [
-        "Imperium Secundus",
-        "Macragge",
-        "Guilliman"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Horus Heresy", "Ultramarines", "Guilliman", "Imperium Secundus"]
     },
     {
       "id": "hh-28",
       "title": "Scars",
       "author": "Chris Wraight",
       "orderInSeries": 28,
-      "faction": [
-        "White Scars"
-      ],
-      "tags": [
-        "Jaghatai Khan",
-        "Prospero",
-        "Choice"
-      ]
+      "faction": ["White Scars"],
+      "tags": ["Horus Heresy", "White Scars", "Jaghatai Khan"]
     },
     {
       "id": "hh-29",
       "title": "Vengeful Spirit",
       "author": "Graham McNeill",
       "orderInSeries": 29,
-      "faction": [
-        "Sons of Horus"
-      ],
-      "tags": [
-        "Horus",
-        "Molech",
-        "Power"
-      ]
+      "faction": ["Sons of Horus"],
+      "tags": ["Horus Heresy", "Horus", "Molech"]
     },
     {
       "id": "hh-30",
       "title": "The Damnation of Pythos",
       "author": "David Annandale",
       "orderInSeries": 30,
-      "faction": [
-        "Iron Hands"
-      ],
-      "tags": [
-        "Pythos",
-        "Daemons",
-        "Despair"
-      ]
-    },
-    {
-      "id": "hh-31",
-      "title": "Legacies of Betrayal",
-      "author": "Various",
-      "orderInSeries": 31,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Iron Hands"],
+      "tags": ["Horus Heresy", "Iron Hands", "Daemons"]
     },
     {
       "id": "hh-32",
       "title": "Deathfire",
       "author": "Nick Kyme",
       "orderInSeries": 32,
-      "faction": [
-        "Salamanders"
-      ],
-      "tags": [
-        "Vulkan",
-        "Return",
-        "Nocturne"
-      ]
-    },
-    {
-      "id": "hh-33",
-      "title": "War Without End",
-      "author": "Various",
-      "orderInSeries": 33,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Salamanders"],
+      "tags": ["Horus Heresy", "Salamanders", "Vulkan"]
     },
     {
       "id": "hh-34",
       "title": "Pharos",
       "author": "Guy Haley",
       "orderInSeries": 34,
-      "faction": [
-        "Ultramarines",
-        "Night Lords"
-      ],
-      "tags": [
-        "Sotha",
-        "Pharos Device",
-        "Curze"
-      ]
-    },
-    {
-      "id": "hh-35",
-      "title": "Eye of Terra",
-      "author": "Various",
-      "orderInSeries": 35,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Ultramarines"],
+      "tags": ["Horus Heresy", "Ultramarines", "Pharos", "Night Lords"]
     },
     {
       "id": "hh-36",
       "title": "The Path of Heaven",
       "author": "Chris Wraight",
       "orderInSeries": 36,
-      "faction": [
-        "White Scars",
-        "Death Guard"
-      ],
-      "tags": [
-        "Jaghatai Khan",
-        "Swordstorm",
-        "Chase"
-      ]
-    },
-    {
-      "id": "hh-37",
-      "title": "The Silent War",
-      "author": "Various",
-      "orderInSeries": 37,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories",
-        "Intrigue"
-      ]
+      "faction": ["White Scars"],
+      "tags": ["Horus Heresy", "White Scars", "Jaghatai Khan"]
     },
     {
       "id": "hh-38",
       "title": "Angels of Caliban",
       "author": "Gav Thorpe",
       "orderInSeries": 38,
-      "faction": [
-        "Dark Angels"
-      ],
-      "tags": [
-        "Lion El'Jonson",
-        "Luther",
-        "Caliban"
-      ]
+      "faction": ["Dark Angels"],
+      "tags": ["Horus Heresy", "Dark Angels", "Lion El'Jonson", "Caliban"]
     },
     {
       "id": "hh-39",
       "title": "Praetorian of Dorn",
       "author": "John French",
       "orderInSeries": 39,
-      "faction": [
-        "Imperial Fists",
-        "Alpha Legion"
-      ],
-      "tags": [
-        "Rogal Dorn",
-        "Alpharius",
-        "Terra"
-      ]
-    },
-    {
-      "id": "hh-40",
-      "title": "Corax",
-      "author": "Gav Thorpe",
-      "orderInSeries": 40,
-      "faction": [
-        "Raven Guard"
-      ],
-      "tags": [
-        "Corax",
-        "Anthology"
-      ]
+      "faction": ["Imperial Fists", "Alpha Legion"],
+      "tags": ["Horus Heresy", "Imperial Fists", "Rogal Dorn", "Alpha Legion"]
     },
     {
       "id": "hh-41",
-      "title": "The Master of Mankind",
+      "title": "Master of Mankind",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 41,
-      "faction": [
-        "Custodes",
-        "Sisters of Silence",
-        "Adeptus Mechanicus"
-      ],
-      "tags": [
-        "Emperor",
-        "Webway War",
-        "Terra"
-      ]
+      "faction": ["Adeptus Custodes"],
+      "tags": ["Horus Heresy", "Emperor", "Webway War", "Custodes"]
     },
     {
       "id": "hh-42",
       "title": "Garro",
       "author": "James Swallow",
       "orderInSeries": 42,
-      "faction": [
-        "Knights-Errant"
-      ],
-      "tags": [
-        "Garro",
-        "Anthology",
-        "Malcador"
-      ]
-    },
-    {
-      "id": "hh-43",
-      "title": "Shattered Legions",
-      "author": "Various",
-      "orderInSeries": 43,
-      "faction": [
-        "Iron Hands",
-        "Raven Guard",
-        "Salamanders"
-      ],
-      "tags": [
-        "Anthology",
-        "Isstvan V Survivors"
-      ]
+      "faction": ["Death Guard"],
+      "tags": ["Horus Heresy", "Nathaniel Garro", "Knights-Errant"]
     },
     {
       "id": "hh-44",
       "title": "The Crimson King",
       "author": "Graham McNeill",
       "orderInSeries": 44,
-      "faction": [
-        "Thousand Sons"
-      ],
-      "tags": [
-        "Magnus",
-        "Planet of Sorcerers",
-        "Daemon Prince"
-      ]
+      "faction": ["Thousand Sons"],
+      "tags": ["Horus Heresy", "Thousand Sons", "Magnus"]
     },
     {
       "id": "hh-45",
       "title": "Tallarn",
       "author": "John French",
       "orderInSeries": 45,
-      "faction": [
-        "Iron Warriors",
-        "Imperial Army"
-      ],
-      "tags": [
-        "Tallarn",
-        "Tank Warfare",
-        "Anthology"
-      ]
+      "faction": ["Iron Warriors", "Imperial Army"],
+      "tags": ["Horus Heresy", "Tallarn", "Tank Warfare"]
     },
     {
       "id": "hh-46",
       "title": "Ruinstorm",
       "author": "David Annandale",
       "orderInSeries": 46,
-      "faction": [
-        "Blood Angels",
-        "Dark Angels",
-        "Ultramarines"
-      ],
-      "tags": [
-        "Imperium Secundus",
-        "Ruinstorm",
-        "Journey to Terra"
-      ]
+      "faction": ["Blood Angels", "Dark Angels", "Ultramarines"],
+      "tags": ["Horus Heresy", "Ruinstorm", "Sanguinius", "Lion", "Guilliman"]
     },
     {
       "id": "hh-47",
       "title": "Old Earth",
       "author": "Nick Kyme",
       "orderInSeries": 47,
-      "faction": [
-        "Salamanders"
-      ],
-      "tags": [
-        "Vulkan",
-        "Terra",
-        "Talisman"
-      ]
-    },
-    {
-      "id": "hh-48",
-      "title": "The Burden of Loyalty",
-      "author": "Various",
-      "orderInSeries": 48,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Short Stories"
-      ]
+      "faction": ["Salamanders"],
+      "tags": ["Horus Heresy", "Salamanders", "Vulkan", "Terra"]
     },
     {
       "id": "hh-49",
       "title": "Wolfsbane",
       "author": "Guy Haley",
       "orderInSeries": 49,
-      "faction": [
-        "Space Wolves",
-        "Sons of Horus"
-      ],
-      "tags": [
-        "Leman Russ",
-        "Horus",
-        "Duel"
-      ]
+      "faction": ["Space Wolves"],
+      "tags": ["Horus Heresy", "Space Wolves", "Leman Russ", "Horus"]
     },
     {
       "id": "hh-50",
       "title": "Born of Flame",
       "author": "Nick Kyme",
       "orderInSeries": 50,
-      "faction": [
-        "Salamanders"
-      ],
-      "tags": [
-        "Anthology",
-        "Novella"
-      ]
+      "faction": ["Salamanders"],
+      "tags": ["Horus Heresy", "Salamanders"]
     },
     {
       "id": "hh-51",
       "title": "Slaves to Darkness",
       "author": "John French",
       "orderInSeries": 51,
-      "faction": [
-        "Sons of Horus",
-        "Various Traitors"
-      ],
-      "tags": [
-        "Horus",
-        "Ullanor",
-        "Chaos Ascendant"
-      ]
-    },
-    {
-      "id": "hh-52",
-      "title": "Heralds of the Siege",
-      "author": "Various",
-      "orderInSeries": 52,
-      "faction": [
-        "Various"
-      ],
-      "tags": [
-        "Anthology",
-        "Pre-Siege"
-      ]
+      "faction": ["Sons of Horus", "Chaos"],
+      "tags": ["Horus Heresy", "Horus", "Chaos", "Traitor Legions"]
     },
     {
       "id": "hh-53",
       "title": "Titandeath",
       "author": "Guy Haley",
       "orderInSeries": 53,
-      "faction": [
-        "Collegia Titanica"
-      ],
-      "tags": [
-        "Beta-Garmon",
-        "Titans",
-        "War"
-      ]
+      "faction": ["Titans"],
+      "tags": ["Horus Heresy", "Titans", "Beta-Garmon"]
     },
     {
       "id": "hh-54",
       "title": "The Buried Dagger",
       "author": "James Swallow",
       "orderInSeries": 54,
-      "faction": [
-        "Death Guard"
-      ],
-      "tags": [
-        "Mortarion",
-        "Typhus",
-        "Plague",
-        "Final Heresy Book"
-      ]
+      "faction": ["Death Guard"],
+      "tags": ["Horus Heresy", "Death Guard", "Mortarion", "Nurgle"]
     }
   ]
 }

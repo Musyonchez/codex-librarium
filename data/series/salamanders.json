@@ -1,0 +1,39 @@
+{
+  "id": "salamanders",
+  "name": "Tome of Fire (Salamanders)",
+  "description": "The Salamanders Space Marine Chapter fights to defend humanity while searching for the lost relics of their Primarch Vulkan",
+  "books": [
+    {
+      "id": "sal-01",
+      "title": "Salamander",
+      "author": "Nick Kyme",
+      "orderInSeries": 1,
+      "faction": ["Salamanders"],
+      "tags": ["Salamanders", "Vulkan", "Fire"]
+    },
+    {
+      "id": "sal-02",
+      "title": "Firedrake",
+      "author": "Nick Kyme",
+      "orderInSeries": 2,
+      "faction": ["Salamanders"],
+      "tags": ["Salamanders", "Vulkan", "Terminators"]
+    },
+    {
+      "id": "sal-03",
+      "title": "Nocturne",
+      "author": "Nick Kyme",
+      "orderInSeries": 3,
+      "faction": ["Salamanders"],
+      "tags": ["Salamanders", "Vulkan", "Nocturne"]
+    },
+    {
+      "id": "sal-04",
+      "title": "Salamanders: Rebirth",
+      "author": "Nick Kyme",
+      "orderInSeries": 4,
+      "faction": ["Salamanders"],
+      "tags": ["Salamanders", "Vulkan"]
+    }
+  ]
+}

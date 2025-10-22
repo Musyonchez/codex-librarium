@@ -1,0 +1,39 @@
+{
+  "id": "warhammer-crime",
+  "name": "Warhammer Crime",
+  "description": "Crime, mystery, and noir in the underbelly of the Imperium, where corruption and violence rule the streets",
+  "books": [
+    {
+      "id": "wc-01",
+      "title": "Bloodlines",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": ["Various"],
+      "tags": ["Crime", "Mystery", "Varangantua"]
+    },
+    {
+      "id": "wc-02",
+      "title": "Flesh and Steel",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": ["Various"],
+      "tags": ["Crime", "Mystery", "Varangantua", "Investigation"]
+    },
+    {
+      "id": "wc-03",
+      "title": "Grim Repast",
+      "author": "Marc Collins",
+      "orderInSeries": 3,
+      "faction": ["Various"],
+      "tags": ["Crime", "Mystery", "Horror"]
+    },
+    {
+      "id": "wc-04",
+      "title": "The King of the Spoil",
+      "author": "Justin D. Hill",
+      "orderInSeries": 4,
+      "faction": ["Various"],
+      "tags": ["Crime", "Mystery"]
+    }
+  ]
+}

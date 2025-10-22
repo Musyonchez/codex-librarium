@@ -1,0 +1,31 @@
+{
+  "id": "dark-eldar",
+  "name": "Dark Eldar",
+  "description": "The twisted politics and deadly raids of Commorragh's Dark Eldar as they seek power and souls in the dark city",
+  "books": [
+    {
+      "id": "de-01",
+      "title": "Path of the Renegade",
+      "author": "Andy Chambers",
+      "orderInSeries": 1,
+      "faction": ["Drukhari"],
+      "tags": ["Dark Eldar", "Commorragh", "Drukhari"]
+    },
+    {
+      "id": "de-02",
+      "title": "Path of the Incubus",
+      "author": "Andy Chambers",
+      "orderInSeries": 2,
+      "faction": ["Drukhari"],
+      "tags": ["Dark Eldar", "Incubus", "Drukhari"]
+    },
+    {
+      "id": "de-03",
+      "title": "Path of the Archon",
+      "author": "Andy Chambers",
+      "orderInSeries": 3,
+      "faction": ["Drukhari"],
+      "tags": ["Dark Eldar", "Archon", "Drukhari"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "death-korps-of-krieg",
+  "name": "Death Korps of Krieg",
+  "description": "The grim and fatalistic soldiers of the Death Korps of Krieg wage brutal siege warfare to atone for their world's ancient betrayal",
+  "books": [
+    {
+      "id": "dkok-01",
+      "title": "Krieg",
+      "author": "Steve Lyons",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "tags": ["Death Korps", "Krieg", "Siege Warfare"]
+    },
+    {
+      "id": "dkok-02",
+      "title": "Siege of Vraks",
+      "author": "Steve Lyons",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "tags": ["Death Korps", "Krieg", "Vraks", "Siege"]
+    },
+    {
+      "id": "dkok-03",
+      "title": "The Relentless Dead",
+      "author": "Steve Lyons",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "tags": ["Death Korps", "Krieg"]
+    }
+  ]
+}

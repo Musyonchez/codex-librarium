@@ -1,0 +1,31 @@
+{
+  "id": "yarrick",
+  "name": "Yarrick",
+  "description": "Commissar Sebastian Yarrick, the legendary Hero of Hades Hive, wages eternal war against the Ork warlord Ghazghkull Thraka",
+  "books": [
+    {
+      "id": "yar-01",
+      "title": "Chains of Golgotha",
+      "author": "David Annandale",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum"],
+      "tags": ["Yarrick", "Imperial Guard", "Orks"]
+    },
+    {
+      "id": "yar-02",
+      "title": "Imperial Creed",
+      "author": "David Annandale",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Yarrick", "Imperial Guard", "Orks"]
+    },
+    {
+      "id": "yar-03",
+      "title": "The Pyres of Armageddon",
+      "author": "David Annandale",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum"],
+      "tags": ["Yarrick", "Imperial Guard", "Orks", "Armageddon"]
+    }
+  ]
+}

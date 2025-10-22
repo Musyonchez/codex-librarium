@@ -1,0 +1,31 @@
+{
+  "id": "inquisition-war",
+  "name": "Inquisition War",
+  "description": "Early Warhammer 40,000 novels following Inquisitor Jaq Draco and his unlikely companions through bizarre and psychedelic adventures",
+  "books": [
+    {
+      "id": "iw-01",
+      "title": "Inquisitor",
+      "author": "Ian Watson",
+      "orderInSeries": 1,
+      "faction": ["Inquisition"],
+      "tags": ["Inquisition", "Jaq Draco", "Classic"]
+    },
+    {
+      "id": "iw-02",
+      "title": "Harlequin",
+      "author": "Ian Watson",
+      "orderInSeries": 2,
+      "faction": ["Inquisition", "Harlequins"],
+      "tags": ["Inquisition", "Jaq Draco", "Harlequins"]
+    },
+    {
+      "id": "iw-03",
+      "title": "Chaos Child",
+      "author": "Ian Watson",
+      "orderInSeries": 3,
+      "faction": ["Inquisition"],
+      "tags": ["Inquisition", "Jaq Draco", "Chaos"]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "gothic-war",
+  "name": "Gothic War",
+  "description": "The Imperial Navy fights desperate void battles in the Gothic Sector against Chaos fleets led by Abaddon the Despoiler",
+  "books": [
+    {
+      "id": "gw-01",
+      "title": "Execution Hour",
+      "author": "Gordon Rennie",
+      "orderInSeries": 1,
+      "faction": ["Imperial Navy", "Chaos"],
+      "tags": ["Imperial Navy", "Gothic War", "Space Combat"]
+    },
+    {
+      "id": "gw-02",
+      "title": "Shadow Point",
+      "author": "Gordon Rennie",
+      "orderInSeries": 2,
+      "faction": ["Imperial Navy", "Chaos"],
+      "tags": ["Imperial Navy", "Gothic War", "Space Combat"]
+    }
+  ]
+}

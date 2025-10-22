@@ -1,38 +1,23 @@
 {
   "id": "bequin",
   "name": "Bequin",
-  "description": "The final chapter of the Inquisition trilogy, following Alizebeth Bequin as she navigates the shadowy world between Eisenhorn and Ravenor",
+  "description": "Beta Bequin, a blank and former associate of Eisenhorn, becomes embroiled in the dark games between rival Inquisitors in the sprawling city of Queen Mab",
   "books": [
     {
       "id": "beq-01",
       "title": "Pariah",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": [
-        "Inquisition"
-      ],
-      "tags": [
-        "Bequin",
-        "Inquisition",
-        "Blank",
-        "Eisenhorn",
-        "Ravenor"
-      ]
+      "faction": ["Inquisition"],
+      "tags": ["Bequin", "Inquisition", "Blank", "Pariah"]
     },
     {
       "id": "beq-02",
       "title": "Penitent",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": [
-        "Inquisition"
-      ],
-      "tags": [
-        "Bequin",
-        "Inquisition",
-        "Eisenhorn",
-        "Ravenor"
-      ]
+      "faction": ["Inquisition"],
+      "tags": ["Bequin", "Inquisition", "Blank", "Eisenhorn"]
     }
   ]
 }

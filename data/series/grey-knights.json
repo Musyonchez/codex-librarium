@@ -1,0 +1,31 @@
+{
+  "id": "grey-knights",
+  "name": "Grey Knights",
+  "description": "The Grey Knights, the Imperium's most elite daemon hunters, battle the forces of Chaos across the galaxy",
+  "books": [
+    {
+      "id": "gk-01",
+      "title": "Grey Knights",
+      "author": "Ben Counter",
+      "orderInSeries": 1,
+      "faction": ["Grey Knights"],
+      "tags": ["Grey Knights", "Daemons", "Chaos"]
+    },
+    {
+      "id": "gk-02",
+      "title": "Dark Adeptus",
+      "author": "Ben Counter",
+      "orderInSeries": 2,
+      "faction": ["Grey Knights"],
+      "tags": ["Grey Knights", "Daemons", "Chaos"]
+    },
+    {
+      "id": "gk-03",
+      "title": "Hammer of Daemons",
+      "author": "Ben Counter",
+      "orderInSeries": 3,
+      "faction": ["Grey Knights"],
+      "tags": ["Grey Knights", "Daemons", "Chaos", "Warp"]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ufthak-blackhawk",
+  "name": "Ufthak Blackhawk",
+  "description": "Ork mekboy Ufthak Blackhawk seeks to build the biggest and best war machines in the galaxy",
+  "books": [
+    {
+      "id": "ub-01",
+      "title": "Brutal Kunnin",
+      "author": "Mike Brooks",
+      "orderInSeries": 1,
+      "faction": ["Orks"],
+      "tags": ["Orks", "Mekboy", "Humor"]
+    },
+    {
+      "id": "ub-02",
+      "title": "Da Big Dakka",
+      "author": "Mike Brooks",
+      "orderInSeries": 2,
+      "faction": ["Orks"],
+      "tags": ["Orks", "Mekboy", "Humor"]
+    }
+  ]
+}

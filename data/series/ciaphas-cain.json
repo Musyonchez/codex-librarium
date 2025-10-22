@@ -1,169 +1,95 @@
 {
   "id": "ciaphas-cain",
   "name": "Ciaphas Cain",
-  "description": "The darkly comedic memoirs of Commissar Ciaphas Cain, self-proclaimed coward and accidental hero of the Imperium",
+  "description": "The supposedly heroic exploits of Commissar Ciaphas Cain, HERO OF THE IMPERIUM, as he accidentally stumbles into glory while trying to save his own skin",
   "books": [
     {
       "id": "cc-01",
       "title": "For the Emperor",
       "author": "Sandy Mitchell",
       "orderInSeries": 1,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Commissar"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Humor"]
     },
     {
       "id": "cc-02",
       "title": "Caves of Ice",
       "author": "Sandy Mitchell",
       "orderInSeries": 2,
-      "faction": [
-        "Astra Militarum",
-        "Necrons"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Necrons"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Necrons"]
     },
     {
       "id": "cc-03",
       "title": "The Traitor's Hand",
       "author": "Sandy Mitchell",
       "orderInSeries": 3,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Chaos"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Chaos"]
     },
     {
       "id": "cc-04",
       "title": "Death or Glory",
       "author": "Sandy Mitchell",
       "orderInSeries": 4,
-      "faction": [
-        "Astra Militarum",
-        "Orks"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Orks"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Orks"]
     },
     {
       "id": "cc-05",
       "title": "Duty Calls",
       "author": "Sandy Mitchell",
       "orderInSeries": 5,
-      "faction": [
-        "Astra Militarum",
-        "Tau Empire"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Tau"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Tyranids"]
     },
     {
       "id": "cc-06",
       "title": "Cain's Last Stand",
       "author": "Sandy Mitchell",
       "orderInSeries": 6,
-      "faction": [
-        "Astra Militarum",
-        "Tyranids"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Tyranids"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Chaos"]
     },
     {
       "id": "cc-07",
       "title": "The Emperor's Finest",
       "author": "Sandy Mitchell",
       "orderInSeries": 7,
-      "faction": [
-        "Astra Militarum",
-        "Space Marines"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Space Marines"
-      ]
+      "faction": ["Astra Militarum", "Reclaimers"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Space Marines", "Tyranids"]
     },
     {
       "id": "cc-08",
       "title": "The Last Ditch",
       "author": "Sandy Mitchell",
       "orderInSeries": 8,
-      "faction": [
-        "Astra Militarum",
-        "Chaos"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Chaos"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Chaos"]
     },
     {
       "id": "cc-09",
       "title": "The Greater Good",
       "author": "Sandy Mitchell",
       "orderInSeries": 9,
-      "faction": [
-        "Astra Militarum",
-        "Tau Empire"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Tau"
-      ]
+      "faction": ["Astra Militarum", "T'au"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "T'au"]
     },
     {
       "id": "cc-10",
       "title": "Choose Your Enemies",
       "author": "Sandy Mitchell",
       "orderInSeries": 10,
-      "faction": [
-        "Astra Militarum",
-        "Necrons"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy",
-        "Necrons"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard", "Orks"]
     },
     {
       "id": "cc-11",
       "title": "Vainglorious",
       "author": "Sandy Mitchell",
       "orderInSeries": 11,
-      "faction": [
-        "Astra Militarum"
-      ],
-      "tags": [
-        "Ciaphas Cain",
-        "Comedy"
-      ]
+      "faction": ["Astra Militarum"],
+      "tags": ["Ciaphas Cain", "Commissar", "Imperial Guard"]
     }
   ]
 }

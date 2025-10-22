@@ -1,0 +1,23 @@
+{
+  "id": "baggit-and-clodde",
+  "name": "Baggit and Clodde",
+  "description": "The misadventures of two Ork mekboyz navigating the dangerous and unpredictable world of greenskin technology and warfare",
+  "books": [
+    {
+      "id": "bc-01",
+      "title": "Dredge Runners",
+      "author": "Alec Worley",
+      "orderInSeries": 1,
+      "faction": ["Orks"],
+      "tags": ["Orks", "Mekboyz", "Humor"]
+    },
+    {
+      "id": "bc-02",
+      "title": "The Wraithbone Phoenix",
+      "author": "Alec Worley",
+      "orderInSeries": 2,
+      "faction": ["Orks"],
+      "tags": ["Orks", "Mekboyz", "Humor"]
+    }
+  ]
+}

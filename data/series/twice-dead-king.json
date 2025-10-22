@@ -1,36 +1,23 @@
 {
   "id": "twice-dead-king",
-  "name": "The Twice-Dead King",
-  "description": "A Necron prince fights for survival and vengeance in a galaxy that has moved on without his ancient empire",
+  "name": "The Twice Dead King",
+  "description": "Necron Overlord Oltyx struggles to save his dynasty from destruction while grappling with the curse of immortality and the loss of his soul",
   "books": [
     {
       "id": "tdk-01",
-      "title": "The Twice-Dead King: Ruin",
+      "title": "Ruin",
       "author": "Nate Crowley",
       "orderInSeries": 1,
-      "faction": [
-        "Necrons"
-      ],
-      "tags": [
-        "Necrons",
-        "Oltyx",
-        "Xenos"
-      ]
+      "faction": ["Necrons"],
+      "tags": ["Necrons", "Oltyx", "Dynasty"]
     },
     {
       "id": "tdk-02",
-      "title": "The Twice-Dead King: Reign",
+      "title": "Reign",
       "author": "Nate Crowley",
       "orderInSeries": 2,
-      "faction": [
-        "Necrons"
-      ],
-      "tags": [
-        "Necrons",
-        "Oltyx",
-        "Xenos",
-        "Flayer Curse"
-      ]
+      "faction": ["Necrons"],
+      "tags": ["Necrons", "Oltyx", "Dynasty"]
     }
   ]
 }

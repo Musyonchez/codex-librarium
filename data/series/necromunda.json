@@ -1,36 +1,79 @@
 {
   "id": "necromunda",
   "name": "Necromunda",
-  "description": "In the hive world undercity, gangs fight for survival and supremacy in the darkness below",
+  "description": "Gang warfare, bounty hunters, and deadly intrigue in the hive city of Necromunda, where survival is everything",
   "books": [
     {
       "id": "nec-01",
-      "title": "Necromunda",
-      "author": "Various",
+      "title": "Wanted: Dead",
+      "author": "Mike Brooks",
       "orderInSeries": 1,
-      "faction": [
-        "Gangs"
-      ],
-      "tags": [
-        "Necromunda",
-        "Hive World",
-        "Underhive",
-        "Anthology"
-      ]
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Gangs"]
     },
     {
       "id": "nec-02",
-      "title": "Survival Instinct",
-      "author": "Andy Chambers",
+      "title": "Sinners Bounty",
+      "author": "Josh Reynolds",
       "orderInSeries": 2,
-      "faction": [
-        "Gangs"
-      ],
-      "tags": [
-        "Necromunda",
-        "Hive World",
-        "Gang Warfare"
-      ]
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Gangs"]
+    },
+    {
+      "id": "nec-03",
+      "title": "Terminal Overkill",
+      "author": "Justin D. Hill",
+      "orderInSeries": 3,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Gangs"]
+    },
+    {
+      "id": "nec-04",
+      "title": "Low Lives",
+      "author": "Denny Flowers",
+      "orderInSeries": 4,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Underhive"]
+    },
+    {
+      "id": "nec-05",
+      "title": "Road to Redemption",
+      "author": "Mike Brooks",
+      "orderInSeries": 5,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Redemption"]
+    },
+    {
+      "id": "nec-06",
+      "title": "Soulless Fury",
+      "author": "Will McDermott",
+      "orderInSeries": 6,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City"]
+    },
+    {
+      "id": "nec-07",
+      "title": "Uprising",
+      "author": "Denny Flowers",
+      "orderInSeries": 7,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Rebellion"]
+    },
+    {
+      "id": "nec-08",
+      "title": "Spark of Revolution",
+      "author": "Gary Kloster",
+      "orderInSeries": 8,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City", "Revolution"]
+    },
+    {
+      "id": "nec-09",
+      "title": "Fire Made Flesh",
+      "author": "Denny Flowers",
+      "orderInSeries": 9,
+      "faction": ["Various"],
+      "tags": ["Necromunda", "Hive City"]
     }
   ]
 }

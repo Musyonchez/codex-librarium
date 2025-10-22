@@ -1,0 +1,23 @@
+{
+  "id": "phantine-air-corps",
+  "name": "Phantine Air Corps",
+  "description": "Elite fighter pilots of the Phantine Air Corps wage aerial warfare in the skies of the Sabbat Worlds",
+  "books": [
+    {
+      "id": "pac-01",
+      "title": "Double Eagle",
+      "author": "Dan Abnett",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Phantine"],
+      "tags": ["Imperial Guard", "Phantine", "Fighter Pilots", "Aerial Combat"]
+    },
+    {
+      "id": "pac-02",
+      "title": "Interceptor City",
+      "author": "Dan Abnett",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Phantine"],
+      "tags": ["Imperial Guard", "Phantine", "Fighter Pilots", "Aerial Combat"]
+    }
+  ]
+}

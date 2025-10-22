@@ -1,0 +1,39 @@
+{
+  "id": "blood-angels",
+  "name": "Blood Angels (Rafen)",
+  "description": "Blood Angels Space Marine Rafen confronts his brother Arkio's heretical claim to be the reincarnation of Sanguinius, battling corruption within and without",
+  "books": [
+    {
+      "id": "ba-01",
+      "title": "Deus Encarmine",
+      "author": "James Swallow",
+      "orderInSeries": 1,
+      "faction": ["Blood Angels"],
+      "tags": ["Blood Angels", "Rafen", "Arkio", "Chaos"]
+    },
+    {
+      "id": "ba-02",
+      "title": "Deus Sanguinius",
+      "author": "James Swallow",
+      "orderInSeries": 2,
+      "faction": ["Blood Angels"],
+      "tags": ["Blood Angels", "Rafen", "Arkio", "Sanguinius"]
+    },
+    {
+      "id": "ba-03",
+      "title": "Red Fury",
+      "author": "James Swallow",
+      "orderInSeries": 3,
+      "faction": ["Blood Angels"],
+      "tags": ["Blood Angels", "Rafen", "Black Rage"]
+    },
+    {
+      "id": "ba-04",
+      "title": "Black Tide",
+      "author": "James Swallow",
+      "orderInSeries": 4,
+      "faction": ["Blood Angels"],
+      "tags": ["Blood Angels", "Rafen", "Chaos"]
+    }
+  ]
+}

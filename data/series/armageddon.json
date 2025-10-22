@@ -1,0 +1,23 @@
+{
+  "id": "armageddon",
+  "name": "Armageddon",
+  "description": "The wars for Armageddon, where the Imperium battles endlessly against the Ork warlord Ghazghkull Thraka for control of this vital hive world",
+  "books": [
+    {
+      "id": "arm-01",
+      "title": "Crusade for Armageddon",
+      "author": "Jonathan Green",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Armageddon", "Orks", "Imperial Guard", "War"]
+    },
+    {
+      "id": "arm-02",
+      "title": "Conquest of Armageddon",
+      "author": "Jonathan Green",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Armageddon", "Orks", "Imperial Guard", "War"]
+    }
+  ]
+}

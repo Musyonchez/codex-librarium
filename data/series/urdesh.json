@@ -1,0 +1,23 @@
+{
+  "id": "urdesh",
+  "name": "Urdesh",
+  "description": "Imperial forces wage war for the fortress world of Urdesh in the climactic battles of the Sabbat Worlds Crusade",
+  "books": [
+    {
+      "id": "ur-01",
+      "title": "The Serpent and the Saint",
+      "author": "Matthew Farrer",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum"],
+      "tags": ["Urdesh", "Sabbat Worlds", "Imperial Guard"]
+    },
+    {
+      "id": "ur-02",
+      "title": "The Magister and the Martyr",
+      "author": "Matthew Farrer",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Urdesh", "Sabbat Worlds", "Imperial Guard"]
+    }
+  ]
+}

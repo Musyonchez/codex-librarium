@@ -1,51 +1,47 @@
 {
   "id": "dawn-of-war",
   "name": "Dawn of War",
-  "description": "The Blood Ravens Space Marines battle across the galaxy in this series based on the popular video games",
+  "description": "Novelizations and tie-ins to the Dawn of War video game series, following the Blood Ravens Chapter and their battles across the galaxy",
   "books": [
     {
       "id": "dow-01",
       "title": "Dawn of War",
       "author": "C.S. Goto",
       "orderInSeries": 1,
-      "faction": [
-        "Blood Ravens",
-        "Orks"
-      ],
-      "tags": [
-        "Blood Ravens",
-        "Orks",
-        "Tartarus"
-      ]
+      "faction": ["Blood Ravens"],
+      "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     },
     {
       "id": "dow-02",
-      "title": "Dawn of War: Ascension",
+      "title": "Ascension",
       "author": "C.S. Goto",
       "orderInSeries": 2,
-      "faction": [
-        "Blood Ravens",
-        "Eldar"
-      ],
-      "tags": [
-        "Blood Ravens",
-        "Eldar",
-        "Chaos"
-      ]
+      "faction": ["Blood Ravens"],
+      "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     },
     {
       "id": "dow-03",
-      "title": "Dawn of War II",
+      "title": "Tempest",
       "author": "C.S. Goto",
       "orderInSeries": 3,
-      "faction": [
-        "Blood Ravens",
-        "Tyranids"
-      ],
-      "tags": [
-        "Blood Ravens",
-        "Tyranids"
-      ]
+      "faction": ["Blood Ravens"],
+      "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
+    },
+    {
+      "id": "dow-04",
+      "title": "Dawn of War II",
+      "author": "Chris Roberson",
+      "orderInSeries": 4,
+      "faction": ["Blood Ravens"],
+      "tags": ["Blood Ravens", "Dawn of War", "Video Game", "Tyranids"]
+    },
+    {
+      "id": "dow-05",
+      "title": "Dawn of War III",
+      "author": "Robbie MacNiven",
+      "orderInSeries": 5,
+      "faction": ["Blood Ravens"],
+      "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     }
   ]
 }

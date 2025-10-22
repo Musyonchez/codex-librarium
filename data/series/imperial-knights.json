@@ -1,0 +1,23 @@
+{
+  "id": "imperial-knights",
+  "name": "Imperial Knights",
+  "description": "Noble houses pilot towering war machines called Imperial Knights, defending their worlds and honor in the name of the Emperor",
+  "books": [
+    {
+      "id": "ik-01",
+      "title": "Kingsblade",
+      "author": "Andy Clark",
+      "orderInSeries": 1,
+      "faction": ["Imperial Knights"],
+      "tags": ["Imperial Knights", "Noble Houses", "War Machines"]
+    },
+    {
+      "id": "ik-02",
+      "title": "Knightsblade",
+      "author": "Andy Clark",
+      "orderInSeries": 2,
+      "faction": ["Imperial Knights"],
+      "tags": ["Imperial Knights", "Noble Houses", "War Machines"]
+    }
+  ]
+}

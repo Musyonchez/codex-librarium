@@ -1,0 +1,39 @@
+{
+  "id": "horus-heresy-characters",
+  "name": "Horus Heresy: Character Series",
+  "description": "Character-focused novels exploring key figures of the Horus Heresy beyond the Primarchs",
+  "books": [
+    {
+      "id": "hhc-01",
+      "title": "Valdor: Birth of the Imperium",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Custodes"],
+      "tags": ["Constantin Valdor", "Custodes", "Unification Wars"]
+    },
+    {
+      "id": "hhc-02",
+      "title": "Luther: First of the Fallen",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": ["Dark Angels"],
+      "tags": ["Luther", "Dark Angels", "Caliban", "Fallen"]
+    },
+    {
+      "id": "hhc-03",
+      "title": "Sigismund: The Eternal Crusader",
+      "author": "John French",
+      "orderInSeries": 3,
+      "faction": ["Imperial Fists"],
+      "tags": ["Sigismund", "Imperial Fists", "Black Templars"]
+    },
+    {
+      "id": "hhc-04",
+      "title": "Eidolon: The Auric Hammer",
+      "author": "Marc Collins",
+      "orderInSeries": 4,
+      "faction": ["Emperor's Children"],
+      "tags": ["Eidolon", "Emperor's Children", "Chaos"]
+    }
+  ]
+}

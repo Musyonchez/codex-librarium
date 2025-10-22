@@ -1,0 +1,15 @@
+{
+  "id": "cypher",
+  "name": "Cypher",
+  "description": "The enigmatic Fallen Angel known as Cypher pursues his mysterious goals across the galaxy, hunted by the Dark Angels",
+  "books": [
+    {
+      "id": "cyp-01",
+      "title": "Lord of the Fallen",
+      "author": "John French",
+      "orderInSeries": 1,
+      "faction": ["Dark Angels", "Chaos"],
+      "tags": ["Cypher", "Dark Angels", "Fallen", "Mystery"]
+    }
+  ]
+}

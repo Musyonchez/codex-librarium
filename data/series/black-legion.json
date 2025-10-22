@@ -1,0 +1,23 @@
+{
+  "id": "black-legion",
+  "name": "Black Legion",
+  "description": "The rise of Abaddon the Despoiler and the formation of the Black Legion from the ashes of the Sons of Horus",
+  "books": [
+    {
+      "id": "bl-01",
+      "title": "Abaddon: Talon of Horus",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 1,
+      "faction": ["Chaos", "Black Legion"],
+      "tags": ["Abaddon", "Black Legion", "Chaos Space Marines", "Horus"]
+    },
+    {
+      "id": "bl-02",
+      "title": "Black Legion",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 2,
+      "faction": ["Chaos", "Black Legion"],
+      "tags": ["Abaddon", "Black Legion", "Chaos Space Marines"]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "warhammer-horror",
+  "name": "Warhammer Horror",
+  "description": "A collection of standalone horror novels and anthologies set in the Warhammer universes, exploring dark, unsettling, and terrifying tales",
+  "books": [
+    {
+      "id": "wh-01",
+      "title": "The Wicked and the Damned",
+      "author": "Various",
+      "orderInSeries": 1,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology", "Chaos"]
+    },
+    {
+      "id": "wh-02",
+      "title": "Maledictions",
+      "author": "Various",
+      "orderInSeries": 2,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology"]
+    },
+    {
+      "id": "wh-03",
+      "title": "The House of Night and Chain",
+      "author": "David Annandale",
+      "orderInSeries": 3,
+      "faction": ["Chaos"],
+      "tags": ["Horror", "Dark"]
+    },
+    {
+      "id": "wh-04",
+      "title": "Invocations",
+      "author": "Various",
+      "orderInSeries": 4,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology"]
+    },
+    {
+      "id": "wh-05",
+      "title": "The Colonel's Monograph",
+      "author": "Graham McNeill",
+      "orderInSeries": 5,
+      "faction": ["Astra Militarum"],
+      "tags": ["Horror", "Imperial Guard"]
+    },
+    {
+      "id": "wh-06",
+      "title": "The Oubliette",
+      "author": "J.C. Stearns",
+      "orderInSeries": 6,
+      "faction": ["Chaos"],
+      "tags": ["Horror", "Torture"]
+    },
+    {
+      "id": "wh-07",
+      "title": "Anathemas",
+      "author": "Various",
+      "orderInSeries": 7,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology"]
+    },
+    {
+      "id": "wh-08",
+      "title": "Sepulturum",
+      "author": "Nick Kyme",
+      "orderInSeries": 8,
+      "faction": ["Necrons"],
+      "tags": ["Horror", "Necrons"]
+    },
+    {
+      "id": "wh-09",
+      "title": "The Reverie",
+      "author": "Peter Fehervari",
+      "orderInSeries": 9,
+      "faction": ["Astra Militarum"],
+      "tags": ["Horror", "Dark Coil", "Imperial Guard"]
+    },
+    {
+      "id": "wh-10",
+      "title": "The Deacon of Wounds",
+      "author": "David Annandale",
+      "orderInSeries": 10,
+      "faction": ["Chaos"],
+      "tags": ["Horror", "Nurgle"]
+    },
+    {
+      "id": "wh-11",
+      "title": "The Accursed",
+      "author": "Various",
+      "orderInSeries": 11,
+      "faction": ["Various"],
+      "tags": ["Horror"]
+    },
+    {
+      "id": "wh-12",
+      "title": "The Bookkeeper's Skull",
+      "author": "Justin D. Hill",
+      "orderInSeries": 12,
+      "faction": ["Chaos"],
+      "tags": ["Horror", "Books"]
+    },
+    {
+      "id": "wh-13",
+      "title": "The Resting Places",
+      "author": "Various",
+      "orderInSeries": 13,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology"]
+    },
+    {
+      "id": "wh-14",
+      "title": "Unholy",
+      "author": "Various",
+      "orderInSeries": 14,
+      "faction": ["Various"],
+      "tags": ["Horror", "Anthology"]
+    }
+  ]
+}

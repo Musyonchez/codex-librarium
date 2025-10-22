@@ -1,135 +1,79 @@
 {
   "id": "dawn-of-fire",
   "name": "Dawn of Fire",
-  "description": "The Indomitus Crusade launches to reclaim the Imperium in the wake of the Great Rift, featuring the returned Primarch Roboute Guilliman",
+  "description": "The Indomitus Crusade launches into the dark Imperium as Guilliman leads the Primaris Space Marines and Imperial forces to reclaim lost worlds",
   "books": [
     {
       "id": "dof-01",
       "title": "Avenging Son",
       "author": "Guy Haley",
       "orderInSeries": 1,
-      "faction": [
-        "Ultramarines",
-        "Primaris Space Marines"
-      ],
-      "tags": [
-        "Guilliman",
-        "Indomitus Crusade",
-        "Great Rift"
-      ]
+      "faction": ["Ultramarines", "Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris", "Guilliman"]
     },
     {
       "id": "dof-02",
       "title": "The Gate of Bones",
       "author": "Andy Clark",
       "orderInSeries": 2,
-      "faction": [
-        "Imperial Fists",
-        "Chaos"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Nachmund Gauntlet"
-      ]
+      "faction": ["Necrons", "Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris", "Necrons"]
     },
     {
       "id": "dof-03",
       "title": "The Wolftime",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": [
-        "Space Wolves"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Fenris",
-        "Space Wolves"
-      ]
+      "faction": ["Space Wolves", "Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris", "Space Wolves"]
     },
     {
       "id": "dof-04",
       "title": "Throne of Light",
       "author": "Guy Haley",
       "orderInSeries": 4,
-      "faction": [
-        "Ultramarines",
-        "Necrons"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Guilliman",
-        "Necrons"
-      ]
+      "faction": ["Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris"]
     },
     {
       "id": "dof-05",
       "title": "The Iron Kingdom",
       "author": "Nick Kyme",
       "orderInSeries": 5,
-      "faction": [
-        "Salamanders"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Salamanders"
-      ]
+      "faction": ["Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris", "Necrons"]
     },
     {
       "id": "dof-06",
       "title": "The Martyr's Tomb",
       "author": "Marc Collins",
       "orderInSeries": 6,
-      "faction": [
-        "Adepta Sororitas"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Sisters of Battle"
-      ]
+      "faction": ["Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris"]
     },
     {
       "id": "dof-07",
       "title": "Sea of Souls",
       "author": "Chris Wraight",
       "orderInSeries": 7,
-      "faction": [
-        "White Scars"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Warp",
-        "White Scars"
-      ]
+      "faction": ["Primaris"],
+      "tags": ["Indomitus Crusade", "Primaris", "Warp"]
     },
     {
       "id": "dof-08",
       "title": "Hand of Abaddon",
       "author": "Nick Kyme",
       "orderInSeries": 8,
-      "faction": [
-        "Black Legion",
-        "Chaos"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Abaddon",
-        "Black Legion"
-      ]
+      "faction": ["Primaris", "Chaos"],
+      "tags": ["Indomitus Crusade", "Primaris", "Abaddon", "Chaos"]
     },
     {
       "id": "dof-09",
       "title": "The Silent King",
       "author": "Guy Haley",
       "orderInSeries": 9,
-      "faction": [
-        "Necrons",
-        "Ultramarines"
-      ],
-      "tags": [
-        "Indomitus Crusade",
-        "Necrons",
-        "Silent King"
-      ]
+      "faction": ["Primaris", "Necrons"],
+      "tags": ["Indomitus Crusade", "Primaris", "Necrons", "Silent King"]
     }
   ]
 }

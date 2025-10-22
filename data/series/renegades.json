@@ -1,0 +1,23 @@
+{
+  "id": "renegades",
+  "name": "Renegades",
+  "description": "Chaos warbands and renegade Space Marines pursue their own agendas in the Long War",
+  "books": [
+    {
+      "id": "ren-01",
+      "title": "Harrowmaster",
+      "author": "Mike Brooks",
+      "orderInSeries": 1,
+      "faction": ["Alpha Legion", "Chaos"],
+      "tags": ["Alpha Legion", "Chaos Space Marines"]
+    },
+    {
+      "id": "ren-02",
+      "title": "Lord of Excess",
+      "author": "Rich McCormick",
+      "orderInSeries": 2,
+      "faction": ["Emperor's Children", "Chaos"],
+      "tags": ["Emperor's Children", "Chaos Space Marines", "Slaanesh"]
+    }
+  ]
+}

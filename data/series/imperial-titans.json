@@ -1,0 +1,23 @@
+{
+  "id": "imperial-titans",
+  "name": "Imperial Titans",
+  "description": "God-machines of the Adeptus Titanicus walk to war, their machine spirits and princeps bound together in deadly symbiosis",
+  "books": [
+    {
+      "id": "it-01",
+      "title": "Warlord: Fury of the God-Machine",
+      "author": "David Annandale",
+      "orderInSeries": 1,
+      "faction": ["Adeptus Titanicus"],
+      "tags": ["Titans", "Warlord", "Mechanicus"]
+    },
+    {
+      "id": "it-02",
+      "title": "Imperator: Wrath of the Omnissiah",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": ["Adeptus Titanicus"],
+      "tags": ["Titans", "Imperator", "Mechanicus"]
+    }
+  ]
+}
