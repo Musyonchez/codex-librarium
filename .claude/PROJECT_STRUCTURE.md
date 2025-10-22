@@ -25,23 +25,38 @@ war_hammer_novels/
 │   ├── AUTHENTICATION.md      # Auth system guide
 │   ├── DATABASE.md            # Database schema
 │   ├── DESIGN_SYSTEM.md       # Colors, styles, patterns
-│   └── PROJECT_STRUCTURE.md   # This file
+│   ├── PROJECT_STRUCTURE.md   # This file
+│   └── READING_ORDER.md       # Reading order information
 ├── app/                        # Next.js App Router pages
 │   ├── api/                   # API routes
-│   │   ├── books/             # Get books
+│   │   ├── anthologies/       # Get anthologies
+│   │   ├── books/             # Get series with books
 │   │   ├── filters/           # Get tags/factions
 │   │   ├── import/            # Import JSON files
+│   │   │   ├── check-admin/   # Admin verification
 │   │   │   └── list/          # List available files
-│   │   └── reading/           # Reading progress
+│   │   ├── novellas/          # Get novellas
+│   │   ├── reading/           # Reading progress (series books)
+│   │   │   ├── anthologies/   # Anthologies reading progress
+│   │   │   ├── novellas/      # Novellas reading progress
+│   │   │   └── singles/       # Singles reading progress
+│   │   └── singles/           # Get singles
 │   ├── auth/                  # Authentication
 │   │   └── callback/          # OAuth callback
-│   ├── dashboard/             # User dashboard
-│   ├── import/                # Import page
+│   ├── dashboard/             # User dashboards (tabbed)
+│   │   ├── page.tsx           # Series dashboard
+│   │   ├── singles/           # Singles dashboard
+│   │   ├── novellas/          # Novellas dashboard
+│   │   └── anthologies/       # Anthologies dashboard
+│   ├── import/                # Import page (admin)
 │   ├── order/                 # Book browsing pages
-│   │   ├── factions/          # By factions
-│   │   ├── name/              # Alphabetical
-│   │   ├── series/            # By series
-│   │   └── tags/              # By tags
+│   │   ├── anthologies/       # Anthologies list
+│   │   ├── factions/          # Filter by factions
+│   │   ├── name/              # Alphabetical sorting
+│   │   ├── novellas/          # Novellas list
+│   │   ├── series/            # Series books
+│   │   ├── singles/           # Singles list
+│   │   └── tags/              # Filter by tags
 │   ├── timeline/              # Chronological view
 │   ├── favicon.ico            # Site icon
 │   ├── globals.css            # Global styles
@@ -50,19 +65,28 @@ war_hammer_novels/
 │   └── page.tsx               # Landing page
 ├── components/                 # React components
 │   ├── AppLayout.tsx          # Main layout wrapper
-│   ├── Dashboard.tsx          # Dashboard component
+│   ├── BookDetailsModal.tsx   # Book details modal
+│   ├── Dashboard.tsx          # Series dashboard component
+│   ├── DashboardTabs.tsx      # Dashboard category tabs
 │   ├── Footer.tsx             # Footer
 │   ├── Navbar.tsx             # Navigation bar
-│   ├── OrderTabs.tsx          # Order page tabs
+│   ├── OrderTabs.tsx          # Sorting tabs (Name/Tags/Factions)
 │   └── SeriesView.tsx         # Series accordion
-├── data/                       # JSON data files
-│   ├── series/                # Book series JSONs
-│   │   ├── horus-heresy.json
-│   │   ├── primarchs.json
-│   │   └── siege-of-terra.json
-│   ├── factions.json          # Canonical factions list
-│   └── tags.json              # Canonical tags list
+├── data/                       # JSON data files (source of truth)
+│   ├── anthologies/           # Anthology JSON files
+│   │   ├── _meta/             # tags.json, factions.json
+│   │   └── *.json             # Individual anthology files
+│   ├── novellas/              # Novella JSON files
+│   │   ├── _meta/             # tags.json, factions.json
+│   │   └── *.json             # Individual novella files
+│   ├── series/                # Series JSON files
+│   │   ├── _meta/             # tags.json, factions.json (master)
+│   │   └── *.json             # Individual series files
+│   └── singles/               # Singles JSON files
+│       ├── _meta/             # tags.json, factions.json
+│       └── *.json             # Individual single files
 ├── lib/                        # Shared utilities
+│   ├── admin.ts               # Admin email verification
 │   ├── design-system.ts       # Design tokens
 │   ├── supabase/              # Supabase clients
 │   │   ├── client.ts          # Browser client
@@ -70,10 +94,12 @@ war_hammer_novels/
 │   │   └── server.ts          # Server client
 │   └── types.ts               # TypeScript types
 ├── public/                     # Static assets
-├── scripts/                    # Utility scripts
-│   └── extract-filters.js     # Generate tag/faction lists
 ├── supabase/                   # Supabase config
 │   └── migrations/            # Database migrations
+│       ├── 001_initial_schema.sql
+│       ├── 002_rename_legion_to_faction.sql
+│       ├── 003_add_singles_novellas_anthologies.sql
+│       └── 004_complete_fresh_schema.sql
 ├── .env.local                  # Environment variables
 ├── .env.local.example          # Env template
 ├── .gitignore                  # Git ignore rules
@@ -94,34 +120,49 @@ All pages and API routes follow App Router conventions.
 
 **Pages:**
 - `/` - Landing page (public)
-- `/dashboard` - User dashboard (protected)
-- `/order/series` - Books by series (protected)
+- `/dashboard` - Series dashboard (protected)
+- `/dashboard/singles` - Singles dashboard (protected)
+- `/dashboard/novellas` - Novellas dashboard (protected)
+- `/dashboard/anthologies` - Anthologies dashboard (protected)
+- `/order/series` - Series books (protected)
+- `/order/singles` - Single novels (protected)
+- `/order/novellas` - Novellas (protected)
+- `/order/anthologies` - Anthologies (protected)
 - `/order/name` - Books alphabetically (protected)
 - `/order/tags` - Books by tags (protected)
 - `/order/factions` - Books by factions (protected)
-- `/import` - Import data (protected)
+- `/import` - Import data (protected, admin only)
 - `/timeline` - Chronological timeline (protected)
 
 **API Routes:**
-- `GET /api/books` - Get all books
-- `GET /api/reading` - Get user progress
-- `POST /api/reading` - Update progress
+- `GET /api/books` - Get all series with books
+- `GET /api/singles` - Get all singles
+- `GET /api/novellas` - Get all novellas
+- `GET /api/anthologies` - Get all anthologies
+- `GET /api/reading` - Get series books progress
+- `POST /api/reading` - Update series book progress
+- `GET /api/reading/singles` - Get singles progress
+- `GET /api/reading/novellas` - Get novellas progress
+- `GET /api/reading/anthologies` - Get anthologies progress
 - `GET /api/filters` - Get tags/factions
 - `GET /api/import/list` - List importable files
-- `POST /api/import` - Import files
+- `POST /api/import` - Import files (all categories)
+- `GET /api/import/check-admin` - Check admin status
 - `GET /auth/callback` - OAuth callback
 
 ### `/components` - Reusable Components
 
 **Layout Components:**
 - `AppLayout` - Wraps pages, handles auth
-- `Navbar` - Navigation with auth controls
+- `Navbar` - Navigation with auth controls and category links
 - `Footer` - Site footer
-- `OrderTabs` - Tab navigation for order pages
+- `OrderTabs` - Tab navigation for order pages (By Series/Name/Tags/Factions)
+- `DashboardTabs` - Tab navigation for dashboards (Series/Singles/Novellas/Anthologies)
 
 **Feature Components:**
 - `SeriesView` - Expandable series with books
-- `Dashboard` - Statistics and progress
+- `Dashboard` - Statistics and progress for series books
+- `BookDetailsModal` - Detailed book information modal
 
 **Component Patterns:**
 - All components are Client Components (`'use client'`)
@@ -131,15 +172,21 @@ All pages and API routes follow App Router conventions.
 ### `/data` - Source of Truth
 
 **Structure:**
-- `series/` - One JSON per series
-- `tags.json` - 107 canonical tags
-- `factions.json` - 28 canonical factions
+- `series/` - One JSON per series (76 series)
+- `singles/` - One JSON per standalone novel (85 singles)
+- `novellas/` - One JSON per novella (97 novellas)
+- `anthologies/` - One JSON per anthology (129 anthologies)
+- Each category has `_meta/` folder with:
+  - `tags.json` - Canonical tags list
+  - `factions.json` - Canonical factions list
+- `series/_meta/` is the master source for normalization
 
 **Workflow:**
-1. Edit JSON files locally
+1. Edit JSON files locally in appropriate category folder
 2. Commit to git (version control)
-3. Import via web interface
+3. Import via web interface (select specific files to import)
 4. Database syncs with JSON
+5. Tags/factions auto-normalize and update all `_meta/` folders
 
 ### `/lib` - Shared Code
 
@@ -170,25 +217,35 @@ Next.js 15 App Router with file-based routing:
 ```
 app/
 ├── page.tsx                    → /
-├── dashboard/page.tsx          → /dashboard
+├── dashboard/
+│   ├── page.tsx                → /dashboard (Series)
+│   ├── singles/page.tsx        → /dashboard/singles
+│   ├── novellas/page.tsx       → /dashboard/novellas
+│   └── anthologies/page.tsx    → /dashboard/anthologies
 ├── order/
 │   ├── series/page.tsx         → /order/series
+│   ├── singles/page.tsx        → /order/singles
+│   ├── novellas/page.tsx       → /order/novellas
+│   ├── anthologies/page.tsx    → /order/anthologies
 │   ├── name/page.tsx           → /order/name
 │   ├── tags/page.tsx           → /order/tags
 │   └── factions/page.tsx       → /order/factions
 └── api/
-    └── books/route.ts          → /api/books
+    ├── books/route.ts          → /api/books
+    ├── singles/route.ts        → /api/singles
+    ├── novellas/route.ts       → /api/novellas
+    └── anthologies/route.ts    → /api/anthologies
 ```
 
 ### Protected Routes
 
 Routes requiring authentication:
-- `/dashboard`
-- `/order/*`
-- `/import`
+- `/dashboard` and all dashboard tabs
+- `/order/*` all order pages
+- `/import` (admin only)
 - `/timeline`
-- `/api/reading`
-- `/api/import`
+- `/api/reading/*` all reading progress endpoints
+- `/api/import` (admin only)
 
 Protection handled by:
 1. `AppLayout` with `requireAuth={true}`
@@ -226,15 +283,15 @@ User clicks book → cycleStatus()
 ```
 User selects files → POST /api/import
                         ↓
-                  Read JSON files from disk
+                  Read JSON files from disk (series/singles/novellas/anthologies)
                         ↓
-                  Normalize tags/factions
+                  Normalize tags/factions against series/_meta/ (master)
                         ↓
-                  Upsert to database (service role)
+                  Upsert to database (service role, bypasses RLS)
                         ↓
-                  Update canonical lists
+                  Update all _meta/ folders in all four categories
                         ↓
-                  Return results
+                  Return results (success count + errors)
 ```
 
 ---

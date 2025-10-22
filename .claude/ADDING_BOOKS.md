@@ -1,43 +1,63 @@
 # Adding Books to the Tracker
 
-This guide explains how to add new books or create new series in the Warhammer 40K Reading Tracker.
+This guide explains how to add books to the Warhammer 40K Reading Tracker across all four book categories: Series, Singles, Novellas, and Anthologies.
 
 ## Overview
 
-Books are stored as JSON files in the `data/series/` directory. Each series has its own JSON file. After editing the JSON files, you import them through the web interface to sync changes to the database.
+Books are stored as JSON files in four category directories:
+- `data/series/` - Series with multiple books (76 series)
+- `data/singles/` - Standalone novels (85 singles)
+- `data/novellas/` - Novella-length stories (97 novellas)
+- `data/anthologies/` - Collections and omnibus editions (129 anthologies)
 
-## Tag and Faction Consistency
-
-The system maintains canonical lists of all tags and factions:
-- `data/tags.json` - All valid tags (107 tags, alphabetically sorted)
-- `data/factions.json` - All valid factions (28 factions, alphabetically sorted)
-
-**How it works:**
-- When importing books, the system automatically normalizes tag/faction names (case-insensitive matching)
-- If you use "blood angels" instead of "Blood Angels", it will auto-correct to the canonical version
-- New tags/factions are automatically added to these files during import and sorted
-- This prevents duplicates like "Space Wolves", "space wolves", "Space wolves" appearing as different factions
-
-**Best Practice:**
-- Check `data/tags.json` and `data/factions.json` before adding new tags/factions
-- Use existing tags/factions when possible to maintain consistency
-- The import process will handle minor variations (case, spacing) automatically
-- If you add a genuinely new tag/faction, it will be automatically added to the canonical list
+After editing JSON files, you import them through the web interface (`/import` page) to sync changes to the database.
 
 ---
 
-## Adding Books to an Existing Series
+## Tag and Faction Consistency
 
-### Step 1: Edit the Series JSON File
+The system maintains canonical lists of all tags and factions in `_meta/` folders:
+
+**Master Source:**
+- `data/series/_meta/tags.json` - Master canonical tags list
+- `data/series/_meta/factions.json` - Master canonical factions list
+
+**Category-Specific (Auto-Updated):**
+- `data/singles/_meta/tags.json` & `factions.json`
+- `data/novellas/_meta/tags.json` & `factions.json`
+- `data/anthologies/_meta/tags.json` & `factions.json`
+
+**How it works:**
+- `series/_meta/` is the master source for normalization
+- When importing books, the system automatically normalizes tag/faction names (case-insensitive matching)
+- If you use "blood angels" instead of "Blood Angels", it will auto-correct to the canonical version
+- New tags/factions are automatically added to ALL `_meta/` folders during import and sorted
+- This prevents duplicates like "Space Wolves", "space wolves", "Space wolves" appearing as different factions
+- All four category `_meta/` folders are kept in sync
+
+**Best Practice:**
+- Check `data/series/_meta/tags.json` and `factions.json` before adding new tags/factions
+- Use existing tags/factions when possible to maintain consistency
+- The import process will handle minor variations (case, spacing) automatically
+- If you add a genuinely new tag/faction, it will be automatically added to all canonical lists
+
+---
+
+## Category 1: Series Books
+
+### Adding Books to an Existing Series
+
+#### Step 1: Edit the Series JSON File
 
 Navigate to `data/series/` and open the appropriate series file:
 - `horus-heresy.json` - The Horus Heresy series
 - `siege-of-terra.json` - The Siege of Terra series
 - `primarchs.json` - The Primarchs series
+- etc.
 
-### Step 2: Add the Book Entry
+#### Step 2: Add the Book Entry
 
-Add a new book object to the `books` array following this format:
+Add a new book object to the `books` array:
 
 ```json
 {
@@ -50,7 +70,7 @@ Add a new book object to the `books` array following this format:
 }
 ```
 
-### Field Descriptions:
+**Field Descriptions:**
 
 - **id** (required): Unique identifier
   - Format: `{series-prefix}-{number}`
@@ -61,74 +81,39 @@ Add a new book object to the `books` array following this format:
   - Example: `"The Solar War"`
 
 - **author** (required): Author name
-  - For anthologies, use `"Various"`
+  - For anthologies within series, use `"Various"`
 
 - **orderInSeries** (required): Position in reading order
   - Must be a number
   - Determines display order in the UI
 
-- **faction** (optional): Array of factions featured in the book
+- **faction** (optional): Array of factions featured
   - Examples: `["Space Wolves"]`, `["Ultramarines", "Word Bearers"]`
-  - Use proper faction names:
-    - Space Marine Legions: `"Imperial Fists"`, `"Blood Angels"`, etc.
-    - Imperial Forces: `"Adeptus Mechanicus"`, `"Custodes"`, `"Officio Assassinorum"`
-    - Others: `"Collegia Titanica"`, `"Imperial Army"`, `"Various"`
-  - For anthologies or multi-faction books: `["Various"]`
+  - Use `["Various"]` for multi-faction books
 
 - **tags** (optional): Array of keywords/themes
   - Examples: `["Terra", "Siege", "Primarchs"]`
   - Used for searching and categorization
 
-### Example - Adding a Book:
-
-```json
-{
-  "id": "horus-heresy",
-  "name": "The Horus Heresy",
-  "description": "The galaxy-spanning civil war that tore the Imperium apart",
-  "books": [
-    {
-      "id": "hh-01",
-      "title": "Horus Rising",
-      "author": "Dan Abnett",
-      "orderInSeries": 1,
-      "faction": ["Luna Wolves/Sons of Horus"],
-      "tags": ["Great Crusade", "Horus", "Loken"]
-    },
-    {
-      "id": "hh-55",
-      "title": "The New Book",
-      "author": "New Author",
-      "orderInSeries": 55,
-      "faction": ["Death Guard", "White Scars"],
-      "tags": ["Battle", "Betrayal"]
-    }
-  ]
-}
-```
-
-### Step 3: Import to Database
+#### Step 3: Import to Database
 
 1. Open the website and sign in
-2. Click on your username in the navbar
-3. Select "Import Books" from the dropdown
-4. Click "Import from JSON Files" button
+2. Navigate to `/import` page
+3. Select files to import from the "Series" folder
+4. Click "Import Selected Files"
 5. Review the import results
-6. Your new book will now appear on the website!
 
 ---
 
-## Creating a New Series
+### Creating a New Series
 
-### Step 1: Create a New JSON File
+#### Step 1: Create a New JSON File
 
 Create a new file in `data/series/` with a descriptive name:
 - Use kebab-case: `war-of-the-beast.json`
 - Name should match the series ID
 
-### Step 2: Add Series Structure
-
-Use this template:
+#### Step 2: Add Series Structure
 
 ```json
 {
@@ -156,58 +141,248 @@ Use this template:
 }
 ```
 
-### Series Field Descriptions:
+**Series Field Descriptions:**
 
-- **id** (required): Unique series identifier
-  - Use kebab-case
-  - Example: `"war-of-the-beast"`
-
+- **id** (required): Unique series identifier (kebab-case)
 - **name** (required): Display name of the series
-  - Example: `"The War of the Beast"`
-
-- **description** (required): Brief description of the series
-  - One or two sentences
-  - Example: `"The Imperium faces its greatest threat since the Horus Heresy"`
-
+- **description** (required): Brief description (1-2 sentences)
 - **books** (required): Array of book objects
-  - Follow the book format described above
 
-### Step 3: Choose Book ID Prefix
+#### Step 3: Import to Database
 
-Select a consistent prefix for all books in the series:
-- `hh-` = Horus Heresy
-- `sot-` = Siege of Terra
-- `p-` = Primarchs
-- `wotb-` = War of the Beast (example)
+Follow the import steps above to add your new series.
 
-### Step 4: Import to Database
+---
 
-Follow the same import steps as adding books (see above).
+## Category 2: Singles (Standalone Novels)
+
+### Adding a Single Novel
+
+#### Step 1: Create a JSON File
+
+Create a new file in `data/singles/` directory:
+- Use kebab-case: `space-marine.json`
+- Name should match the book ID
+
+#### Step 2: Add Book Data
+
+Singles do NOT have `orderInSeries`, `series`, or `publicationYear` fields. Use this format:
+
+```json
+{
+  "id": "space-marine",
+  "title": "Space Marine",
+  "author": "Ian Watson",
+  "faction": ["Space Marines", "Inquisition"],
+  "tags": ["Inquisition War", "Space Marines", "Classic"]
+}
+```
+
+**Field Descriptions:**
+
+- **id** (required): Unique identifier
+  - Format: Kebab-case matching filename
+  - Examples: `space-marine`, `fire-caste`, `valdor-birth-of-the-imperium`
+  - Must be unique across all singles
+
+- **title** (required): Full book title
+  - Example: `"Space Marine"`
+
+- **author** (required): Author name
+  - Example: `"Ian Watson"`
+
+- **faction** (optional): Array of factions featured
+  - Examples: `["Space Marines"]`, `["Astra Militarum", "Orks"]`
+
+- **tags** (optional): Array of keywords/themes
+  - Examples: `["Inquisition War", "Classic", "First Contact"]`
+
+#### Step 3: Import to Database
+
+1. Navigate to `/import` page
+2. Select files to import from the "Singles" folder
+3. Click "Import Selected Files"
+4. Review the import results
+
+**Example - Complete Single:**
+
+```json
+{
+  "id": "fire-caste",
+  "title": "Fire Caste",
+  "author": "Peter Fehervari",
+  "faction": ["Astra Militarum", "T'au Empire"],
+  "tags": ["T'au", "War", "Psychological Horror", "Dark Imperium"]
+}
+```
+
+---
+
+## Category 3: Novellas
+
+### Adding a Novella
+
+#### Step 1: Create a JSON File
+
+Create a new file in `data/novellas/` directory:
+- Use kebab-case: `aurelian.json`
+- Name should match the novella ID
+
+#### Step 2: Add Novella Data
+
+Novellas use the same format as singles (no `orderInSeries`):
+
+```json
+{
+  "id": "aurelian",
+  "title": "Aurelian",
+  "author": "Aaron Dembski-Bowden",
+  "faction": ["Word Bearers", "Chaos", "Daemons"],
+  "tags": ["Lorgar", "Word Bearers", "Horus Heresy", "Chaos"]
+}
+```
+
+**Field Descriptions:**
+
+Same as singles category:
+- **id** (required): Unique identifier (kebab-case)
+- **title** (required): Full novella title
+- **author** (required): Author name
+- **faction** (optional): Array of factions featured
+- **tags** (optional): Array of keywords/themes
+
+#### Step 3: Import to Database
+
+1. Navigate to `/import` page
+2. Select files to import from the "Novellas" folder
+3. Click "Import Selected Files"
+4. Review the import results
+
+**Example - Complete Novella:**
+
+```json
+{
+  "id": "the-purge",
+  "title": "The Purge",
+  "author": "Anthony Reynolds",
+  "faction": ["Death Guard", "World Eaters"],
+  "tags": ["Death Guard", "World Eaters", "Horus Heresy", "Betrayal"]
+}
+```
+
+---
+
+## Category 4: Anthologies
+
+### Adding an Anthology
+
+#### Step 1: Create a JSON File
+
+Create a new file in `data/anthologies/` directory:
+- Use kebab-case: `let-the-galaxy-burn.json`
+- Name should match the anthology ID
+
+#### Step 2: Add Anthology Data
+
+Anthologies use the same format as singles and novellas:
+
+```json
+{
+  "id": "let-the-galaxy-burn",
+  "title": "Let the Galaxy Burn",
+  "author": "Various",
+  "faction": ["Various"],
+  "tags": ["Anthology", "Various", "Classic"]
+}
+```
+
+**Field Descriptions:**
+
+Same as singles/novellas:
+- **id** (required): Unique identifier (kebab-case)
+- **title** (required): Full anthology title
+- **author** (required): Usually `"Various"` for collections
+- **faction** (optional): Usually `["Various"]` for multi-faction collections
+- **tags** (optional): Always include `"Anthology"` tag
+
+#### Step 3: Import to Database
+
+1. Navigate to `/import` page
+2. Select files to import from the "Anthologies" folder
+3. Click "Import Selected Files"
+4. Review the import results
+
+**Example - Complete Anthology:**
+
+```json
+{
+  "id": "sons-of-the-emperor",
+  "title": "Sons of the Emperor",
+  "author": "Various",
+  "faction": ["Various", "Space Marines"],
+  "tags": ["Anthology", "Space Marines", "Horus Heresy", "Primarchs"]
+}
+```
+
+---
+
+## Import Workflow
+
+### Using the Import Interface
+
+1. **Navigate to Import Page**
+   - Sign in as admin
+   - Go to `/import`
+
+2. **Select Files to Import**
+   - Four folder sections: Series, Singles, Novellas, Anthologies
+   - Check individual files you want to import
+   - You can import multiple files from multiple categories at once
+
+3. **Import Files**
+   - Click "Import Selected Files" button
+   - Wait for processing
+
+4. **Review Results**
+   - Success message shows counts: `"Import completed: 2 series, 64 books, 5 singles, 3 novellas, 2 anthologies"`
+   - Error messages list any issues
+   - Tags and factions are automatically normalized and updated in all `_meta/` folders
+
+### What Happens During Import
+
+1. **Read JSON Files** - Reads selected files from disk
+2. **Normalize Tags/Factions** - Matches against `series/_meta/` (master source)
+3. **Upsert to Database** - Inserts new or updates existing records
+4. **Update Meta Files** - Updates ALL `_meta/` folders with new canonical values
+5. **Return Results** - Shows success count and any errors
 
 ---
 
 ## Best Practices
 
 ### ID Conventions
-- Keep IDs short and descriptive
-- Use consistent prefixes per series
-- Number books sequentially: `01`, `02`, `03` (or just `1`, `2`, `3`)
 
-### Order Numbers
-- Use the official Black Library publication order
-- For simultaneous releases, order by preference
-- Leave gaps if you plan to add books later
+**Series Books:**
+- Use consistent prefixes: `hh-`, `sot-`, `p-`, etc.
+- Number sequentially: `hh-01`, `hh-02`, `hh-03`
+
+**Singles/Novellas/Anthologies:**
+- Use kebab-case matching book title
+- Examples: `space-marine`, `aurelian`, `let-the-galaxy-burn`
 
 ### Factions
-- Use official faction names
-- Include all major factions featured in the book
+
+- Use official faction names from `series/_meta/factions.json`
+- Include all major factions featured
 - Use `"Various"` for anthologies with multiple factions
 - Avoid using `"None"` - find an appropriate faction instead
 
 ### Tags
-- Be consistent with existing tags
+
+- Check `series/_meta/tags.json` for existing tags
 - Use title case: `"Great Crusade"` not `"great crusade"`
 - 3-5 tags per book is ideal
+- For anthologies, always include `"Anthology"` tag
 - Include:
   - Major characters/Primarchs
   - Key locations
@@ -215,6 +390,7 @@ Follow the same import steps as adding books (see above).
   - Story themes
 
 ### JSON Formatting
+
 - Use 2-space indentation
 - Keep array items on separate lines
 - Maintain consistent structure across files
@@ -227,8 +403,8 @@ Follow the same import steps as adding books (see above).
 ### Common Errors
 
 **Duplicate ID Error**
-- Each book ID must be unique across ALL series
-- Check if the ID already exists in other series files
+- Each book ID must be unique within its category
+- Check if the ID already exists
 
 **Invalid JSON**
 - Missing commas between objects
@@ -238,78 +414,98 @@ Follow the same import steps as adding books (see above).
 
 **Import Failed**
 - Check the import results page for specific error messages
-- Verify all required fields are present
-- Ensure orderInSeries is a number, not a string
+- Verify all required fields are present (`id`, `title`, `author`)
+- For series: ensure `orderInSeries` is a number, not a string
 
 ### Validation Checklist
 
 Before importing, verify:
 - [ ] All required fields are present
-- [ ] IDs are unique
-- [ ] orderInSeries values are numbers
+- [ ] IDs are unique within category
+- [ ] For series: `orderInSeries` values are numbers
 - [ ] JSON is valid (no syntax errors)
 - [ ] Faction names are consistent with existing data
-- [ ] File is saved in `data/series/` directory
+- [ ] Tags use proper capitalization
+- [ ] File is saved in correct category directory
 
 ---
 
-## Example: Complete New Series
+## Category-Specific Summary
 
-Here's a complete example of adding a new series:
+| Category | Location | Required Fields | Optional Fields | Example ID |
+|----------|----------|----------------|----------------|------------|
+| **Series** | `data/series/` | id, title, author, orderInSeries | faction, tags | `hh-01` |
+| **Singles** | `data/singles/` | id, title, author | faction, tags | `space-marine` |
+| **Novellas** | `data/novellas/` | id, title, author | faction, tags | `aurelian` |
+| **Anthologies** | `data/anthologies/` | id, title, author | faction, tags | `let-the-galaxy-burn` |
 
-**File: `data/series/beast-arises.json`**
+**Key Differences:**
+- Series books have `orderInSeries` field
+- Singles, novellas, and anthologies do NOT have `orderInSeries`, `series`, or `publicationYear`
+- Anthologies usually use `"Various"` for author and faction
 
+---
+
+## Complete Examples
+
+### Series Book
+
+**File: `data/series/horus-heresy.json`**
 ```json
 {
-  "id": "beast-arises",
-  "name": "The Beast Arises",
-  "description": "A 12-book series set 1,500 years after the Horus Heresy, as the Imperium faces a massive Ork invasion",
+  "id": "horus-heresy",
+  "name": "The Horus Heresy",
+  "description": "The galaxy-spanning civil war that tore the Imperium apart",
   "books": [
     {
-      "id": "ba-01",
-      "title": "I Am Slaughter",
+      "id": "hh-01",
+      "title": "Horus Rising",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": ["Imperial Fists", "Orks"],
-      "tags": ["Terra", "Invasion", "Magneric"]
-    },
-    {
-      "id": "ba-02",
-      "title": "Predator, Prey",
-      "author": "Rob Sanders",
-      "orderInSeries": 2,
-      "faction": ["Iron Warriors", "Fists Exemplar"],
-      "tags": ["Space Marines", "Orks", "Investigation"]
+      "faction": ["Luna Wolves/Sons of Horus"],
+      "tags": ["Great Crusade", "Horus", "Loken"]
     }
   ]
 }
 ```
 
-After creating this file, import it through the web interface and it will appear as a new series!
+### Single Novel
 
----
+**File: `data/singles/space-marine.json`**
+```json
+{
+  "id": "space-marine",
+  "title": "Space Marine",
+  "author": "Ian Watson",
+  "faction": ["Space Marines", "Inquisition"],
+  "tags": ["Inquisition War", "Space Marines", "Classic"]
+}
+```
 
-## Workflow Summary
+### Novella
 
-```bash
-# 1. Edit or create JSON file
-code data/series/horus-heresy.json
+**File: `data/novellas/aurelian.json`**
+```json
+{
+  "id": "aurelian",
+  "title": "Aurelian",
+  "author": "Aaron Dembski-Bowden",
+  "faction": ["Word Bearers", "Chaos", "Daemons"],
+  "tags": ["Lorgar", "Word Bearers", "Horus Heresy", "Chaos"]
+}
+```
 
-# 2. Add/modify book data
-# (Use the format examples above)
+### Anthology
 
-# 3. Save the file
-
-# 4. Go to website
-# - Sign in
-# - Click username → "Import Books"
-# - Click "Import from JSON Files"
-
-# 5. Verify import succeeded
-# Check the results page for any errors
-
-# 6. View your changes
-# Navigate to the series page to see the new books
+**File: `data/anthologies/let-the-galaxy-burn.json`**
+```json
+{
+  "id": "let-the-galaxy-burn",
+  "title": "Let the Galaxy Burn",
+  "author": "Various",
+  "faction": ["Various"],
+  "tags": ["Anthology", "Various", "Classic"]
+}
 ```
 
 ---
@@ -321,5 +517,7 @@ code data/series/horus-heresy.json
 - **Bulk Edits**: Edit multiple books/series at once, then import all changes together
 - **User Progress**: User reading progress is stored separately and won't be affected by imports
 - **Upserts**: Importing existing books will update them, not duplicate them
+- **Selective Import**: Only import files you've changed, no need to import everything
+- **Cross-Category Consistency**: Tags and factions are automatically kept consistent across all four categories
 
 For questions or issues, check the import results page for detailed error messages.
