@@ -1,0 +1,7 @@
+{
+  "id": "ravenlord",
+  "title": "Ravenlord",
+  "author": "Gav Thorpe",
+  "faction": ["Raven Guard", "Alpha Legion"],
+  "tags": ["Corax", "Raven Guard", "Horus Heresy"]
+}

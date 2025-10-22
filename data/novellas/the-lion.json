@@ -1,0 +1,7 @@
+{
+  "id": "the-lion",
+  "title": "The Lion",
+  "author": "Gav Thorpe",
+  "faction": ["Dark Angels", "Night Lords"],
+  "tags": ["Lion El'Jonson", "Dark Angels", "Horus Heresy"]
+}

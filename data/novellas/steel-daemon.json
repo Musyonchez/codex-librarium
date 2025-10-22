@@ -1,0 +1,7 @@
+{
+  "id": "steel-daemon",
+  "title": "Steel Daemon",
+  "author": "Ian St. Martin",
+  "faction": ["Astra Militarum", "Chaos"],
+  "tags": ["Imperial Guard", "Tanks", "Chaos"]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "prisoners-of-waaagh",
+  "title": "Prisoners of Waaagh!",
+  "author": "Justin Woolley",
+  "faction": ["Orks", "Astra Militarum"],
+  "tags": ["Orks", "Imperial Guard", "Prisoners"]
+}

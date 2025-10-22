@@ -1,0 +1,7 @@
+{
+  "id": "forge-master",
+  "title": "Forge Master",
+  "author": "David Annandale",
+  "faction": ["Salamanders", "Necrons"],
+  "tags": ["Salamanders", "Space Marine Battles", "Necrons"]
+}

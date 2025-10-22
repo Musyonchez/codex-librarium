@@ -1,0 +1,7 @@
+{
+  "id": "lords-of-caliban",
+  "title": "Lords of Caliban",
+  "author": "Gav Thorpe",
+  "faction": ["Dark Angels", "Fallen Angels"],
+  "tags": ["Dark Angels", "Fallen", "Caliban"]
+}

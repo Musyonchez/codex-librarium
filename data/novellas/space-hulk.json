@@ -1,0 +1,7 @@
+{
+  "id": "space-hulk",
+  "title": "Space Hulk",
+  "author": "Gav Thorpe",
+  "faction": ["Blood Angels", "Genestealers"],
+  "tags": ["Blood Angels", "Space Hulk", "Genestealers"]
+}

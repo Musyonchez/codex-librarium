@@ -1,0 +1,7 @@
+{
+  "id": "knights-of-the-imperium",
+  "title": "Knights of the Imperium",
+  "author": "Graham McNeill",
+  "faction": ["Imperial Knights", "Chaos"],
+  "tags": ["Imperial Knights", "Titan Legions"]
+}

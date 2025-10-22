@@ -1,0 +1,7 @@
+{
+  "id": "iron-warrior",
+  "title": "Iron Warrior",
+  "author": "Graham McNeill",
+  "faction": ["Iron Warriors", "Chaos"],
+  "tags": ["Iron Warriors", "Chaos Space Marines"]
+}
