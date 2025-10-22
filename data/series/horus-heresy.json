@@ -120,7 +120,7 @@
       "title": "The Outcast Dead",
       "author": "Graham McNeill",
       "orderInSeries": 17,
-      "faction": ["Various"],
+      "faction": ["World Eaters", "Thousand Sons", "Emperor's Children", "Death Guard"],
       "tags": ["Horus Heresy", "Terra", "Astropaths"]
     },
     {

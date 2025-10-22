@@ -16,7 +16,7 @@
       "title": "The Gate of Bones",
       "author": "Andy Clark",
       "orderInSeries": 2,
-      "faction": ["Necrons", "Primaris"],
+      "faction": ["Necrons", "Adepta Sororitas", "Black Templars"],
       "tags": ["Indomitus Crusade", "Primaris", "Necrons"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Throne of Light",
       "author": "Guy Haley",
       "orderInSeries": 4,
-      "faction": ["Primaris"],
+      "faction": ["Ultramarines", "Adepta Sororitas"],
       "tags": ["Indomitus Crusade", "Primaris"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "The Iron Kingdom",
       "author": "Nick Kyme",
       "orderInSeries": 5,
-      "faction": ["Primaris"],
+      "faction": ["Salamanders", "Necrons"],
       "tags": ["Indomitus Crusade", "Primaris", "Necrons"]
     },
     {
@@ -48,7 +48,7 @@
       "title": "The Martyr's Tomb",
       "author": "Marc Collins",
       "orderInSeries": 6,
-      "faction": ["Primaris"],
+      "faction": ["Adepta Sororitas", "Astra Militarum"],
       "tags": ["Indomitus Crusade", "Primaris"]
     },
     {
@@ -56,7 +56,7 @@
       "title": "Sea of Souls",
       "author": "Chris Wraight",
       "orderInSeries": 7,
-      "faction": ["Primaris"],
+      "faction": ["White Scars", "Imperial Navy"],
       "tags": ["Indomitus Crusade", "Primaris", "Warp"]
     },
     {
@@ -64,7 +64,7 @@
       "title": "Hand of Abaddon",
       "author": "Nick Kyme",
       "orderInSeries": 8,
-      "faction": ["Primaris", "Chaos"],
+      "faction": ["Salamanders", "Black Legion", "Chaos"],
       "tags": ["Indomitus Crusade", "Primaris", "Abaddon", "Chaos"]
     },
     {
@@ -72,7 +72,7 @@
       "title": "The Silent King",
       "author": "Guy Haley",
       "orderInSeries": 9,
-      "faction": ["Primaris", "Necrons"],
+      "faction": ["Blood Angels", "Necrons"],
       "tags": ["Indomitus Crusade", "Primaris", "Necrons", "Silent King"]
     }
   ]

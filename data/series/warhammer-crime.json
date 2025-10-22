@@ -8,7 +8,7 @@
       "title": "Bloodlines",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Various"],
+      "faction": ["Adeptus Arbites", "Criminals"],
       "tags": ["Crime", "Mystery", "Varangantua"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Flesh and Steel",
       "author": "Guy Haley",
       "orderInSeries": 2,
-      "faction": ["Various"],
+      "faction": ["Adeptus Arbites", "Adeptus Mechanicus"],
       "tags": ["Crime", "Mystery", "Varangantua", "Investigation"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Grim Repast",
       "author": "Marc Collins",
       "orderInSeries": 3,
-      "faction": ["Various"],
+      "faction": ["Ecclesiarchy", "Criminals"],
       "tags": ["Crime", "Mystery", "Horror"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "The King of the Spoil",
       "author": "Justin D. Hill",
       "orderInSeries": 4,
-      "faction": ["Various"],
+      "faction": ["Criminals", "Gangs"],
       "tags": ["Crime", "Mystery"]
     }
   ]

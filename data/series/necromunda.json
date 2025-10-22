@@ -8,7 +8,7 @@
       "title": "Wanted: Dead",
       "author": "Mike Brooks",
       "orderInSeries": 1,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs"],
       "tags": ["Necromunda", "Hive City", "Gangs"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Sinners Bounty",
       "author": "Josh Reynolds",
       "orderInSeries": 2,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs"],
       "tags": ["Necromunda", "Hive City", "Gangs"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Terminal Overkill",
       "author": "Justin D. Hill",
       "orderInSeries": 3,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs", "Enforcers"],
       "tags": ["Necromunda", "Hive City", "Gangs"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Low Lives",
       "author": "Denny Flowers",
       "orderInSeries": 4,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs"],
       "tags": ["Necromunda", "Hive City", "Underhive"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Road to Redemption",
       "author": "Mike Brooks",
       "orderInSeries": 5,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs", "Cawdor"],
       "tags": ["Necromunda", "Hive City", "Redemption"]
     },
     {
@@ -48,7 +48,7 @@
       "title": "Soulless Fury",
       "author": "Will McDermott",
       "orderInSeries": 6,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs", "Van Saar"],
       "tags": ["Necromunda", "Hive City"]
     },
     {
@@ -56,7 +56,7 @@
       "title": "Uprising",
       "author": "Denny Flowers",
       "orderInSeries": 7,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs", "Genestealer Cults"],
       "tags": ["Necromunda", "Hive City", "Rebellion"]
     },
     {
@@ -64,7 +64,7 @@
       "title": "Spark of Revolution",
       "author": "Gary Kloster",
       "orderInSeries": 8,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs"],
       "tags": ["Necromunda", "Hive City", "Revolution"]
     },
     {
@@ -72,7 +72,7 @@
       "title": "Fire Made Flesh",
       "author": "Denny Flowers",
       "orderInSeries": 9,
-      "faction": ["Various"],
+      "faction": ["Necromunda Gangs", "Escher"],
       "tags": ["Necromunda", "Hive City"]
     }
   ]

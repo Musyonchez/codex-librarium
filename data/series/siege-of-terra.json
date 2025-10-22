@@ -64,7 +64,7 @@
       "title": "The End and the Death: Volume I",
       "author": "Dan Abnett",
       "orderInSeries": 8,
-      "faction": ["Various"],
+      "faction": ["Imperial Fists", "Blood Angels", "Adeptus Custodes", "Sons of Horus", "Chaos"],
       "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     },
     {
@@ -72,7 +72,7 @@
       "title": "The End and the Death: Volume II",
       "author": "Dan Abnett",
       "orderInSeries": 9,
-      "faction": ["Various"],
+      "faction": ["Imperial Fists", "Blood Angels", "Adeptus Custodes", "Sons of Horus", "Chaos"],
       "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     },
     {
@@ -80,7 +80,7 @@
       "title": "The End and the Death: Volume III",
       "author": "Dan Abnett",
       "orderInSeries": 10,
-      "faction": ["Various"],
+      "faction": ["Imperial Fists", "Blood Angels", "Adeptus Custodes", "Sons of Horus", "Chaos"],
       "tags": ["Siege of Terra", "Emperor", "Horus", "Finale"]
     }
   ]

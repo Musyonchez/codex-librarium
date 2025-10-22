@@ -8,7 +8,7 @@
       "title": "The Wicked and the Damned",
       "author": "Various",
       "orderInSeries": 1,
-      "faction": ["Various"],
+      "faction": ["Chaos", "Imperium"],
       "tags": ["Horror", "Anthology", "Chaos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Maledictions",
       "author": "Various",
       "orderInSeries": 2,
-      "faction": ["Various"],
+      "faction": ["Space Marines", "Chaos", "Imperium"],
       "tags": ["Horror", "Anthology"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Invocations",
       "author": "Various",
       "orderInSeries": 4,
-      "faction": ["Various"],
+      "faction": ["Chaos", "Imperium", "Xenos"],
       "tags": ["Horror", "Anthology"]
     },
     {
@@ -56,7 +56,7 @@
       "title": "Anathemas",
       "author": "Various",
       "orderInSeries": 7,
-      "faction": ["Various"],
+      "faction": ["Imperium", "Chaos"],
       "tags": ["Horror", "Anthology"]
     },
     {
@@ -88,7 +88,7 @@
       "title": "The Accursed",
       "author": "Various",
       "orderInSeries": 11,
-      "faction": ["Various"],
+      "faction": ["Chaos", "Flesh-Eater Courts"],
       "tags": ["Horror"]
     },
     {
@@ -104,7 +104,7 @@
       "title": "The Resting Places",
       "author": "Various",
       "orderInSeries": 13,
-      "faction": ["Various"],
+      "faction": ["Imperium", "Chaos", "Xenos"],
       "tags": ["Horror", "Anthology"]
     },
     {
@@ -112,7 +112,7 @@
       "title": "Unholy",
       "author": "Various",
       "orderInSeries": 14,
-      "faction": ["Various"],
+      "faction": ["Imperium", "Chaos"],
       "tags": ["Horror", "Anthology"]
     }
   ]

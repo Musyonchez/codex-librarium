@@ -8,7 +8,7 @@
       "title": "Ashes of the Imperium",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Various"],
+      "faction": ["Space Marines", "Chaos"],
       "tags": ["The Scouring", "Post-Heresy", "Rebuilding"]
     }
   ]

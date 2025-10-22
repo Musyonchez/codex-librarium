@@ -8,7 +8,7 @@
       "title": "Blackstone Fortress",
       "author": "Darius Hinks",
       "orderInSeries": 1,
-      "faction": ["Various"],
+      "faction": ["Rogue Traders", "Kroot", "Astra Militarum"],
       "tags": ["Blackstone Fortress", "Exploration", "Mystery"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ascension",
       "author": "Darius Hinks",
       "orderInSeries": 2,
-      "faction": ["Various"],
+      "faction": ["Rogue Traders", "Kroot", "Astra Militarum"],
       "tags": ["Blackstone Fortress", "Exploration", "Mystery"]
     }
   ]
