@@ -14,7 +14,6 @@ interface NavbarProps {
 export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
   const pathname = usePathname();
   const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [showOrderDropdown, setShowOrderDropdown] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
   // Check admin status when user changes
@@ -80,58 +79,47 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
               </Link>
             ))}
 
-            {/* Order By Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setShowOrderDropdown(!showOrderDropdown)}
-                onMouseEnter={() => setShowOrderDropdown(true)}
-                onMouseLeave={() => setShowOrderDropdown(false)}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  pathname.startsWith("/order") || pathname.startsWith("/series")
-                    ? `${styles.textGold} bg-slate-700`
-                    : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
-                }`}
-              >
-                Order by
-              </button>
-
-              {showOrderDropdown && (
-                <div
-                  className="absolute left-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg py-2 z-50"
-                  onMouseEnter={() => setShowOrderDropdown(true)}
-                  onMouseLeave={() => setShowOrderDropdown(false)}
-                >
-                  <Link
-                    href="/order/series"
-                    onClick={() => setShowOrderDropdown(false)}
-                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
-                  >
-                    By Series
-                  </Link>
-                  <Link
-                    href="/order/name"
-                    onClick={() => setShowOrderDropdown(false)}
-                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
-                  >
-                    By Name
-                  </Link>
-                  <Link
-                    href="/order/tags"
-                    onClick={() => setShowOrderDropdown(false)}
-                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
-                  >
-                    By Tags
-                  </Link>
-                  <Link
-                    href="/order/factions"
-                    onClick={() => setShowOrderDropdown(false)}
-                    className="block px-4 py-2 text-slate-300 hover:bg-slate-700 hover:text-slate-50 transition-colors"
-                  >
-                    By Factions
-                  </Link>
-                </div>
-              )}
-            </div>
+            {/* Book Category Links */}
+            <Link
+              href="/order/series"
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                pathname === "/order/series"
+                  ? `${styles.textGold} bg-slate-700`
+                  : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+              }`}
+            >
+              Series
+            </Link>
+            <Link
+              href="/order/singles"
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                pathname === "/order/singles"
+                  ? `${styles.textGold} bg-slate-700`
+                  : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+              }`}
+            >
+              Singles
+            </Link>
+            <Link
+              href="/order/novellas"
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                pathname === "/order/novellas"
+                  ? `${styles.textGold} bg-slate-700`
+                  : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+              }`}
+            >
+              Novellas
+            </Link>
+            <Link
+              href="/order/anthologies"
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                pathname === "/order/anthologies"
+                  ? `${styles.textGold} bg-slate-700`
+                  : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+              }`}
+            >
+              Anthologies
+            </Link>
           </div>
 
           {/* Auth Section */}
@@ -168,12 +156,45 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         href="/order/series"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname.startsWith('/order') || pathname.startsWith('/series')
+                          pathname === '/order/series'
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
                       >
-                        Order by
+                        Series
+                      </Link>
+                      <Link
+                        href="/order/singles"
+                        onClick={() => setShowUserDropdown(false)}
+                        className={`block px-4 py-2 ${
+                          pathname === '/order/singles'
+                            ? `${styles.textGold}`
+                            : 'text-slate-300'
+                        } hover:bg-slate-700 transition-colors`}
+                      >
+                        Singles
+                      </Link>
+                      <Link
+                        href="/order/novellas"
+                        onClick={() => setShowUserDropdown(false)}
+                        className={`block px-4 py-2 ${
+                          pathname === '/order/novellas'
+                            ? `${styles.textGold}`
+                            : 'text-slate-300'
+                        } hover:bg-slate-700 transition-colors`}
+                      >
+                        Novellas
+                      </Link>
+                      <Link
+                        href="/order/anthologies"
+                        onClick={() => setShowUserDropdown(false)}
+                        className={`block px-4 py-2 ${
+                          pathname === '/order/anthologies'
+                            ? `${styles.textGold}`
+                            : 'text-slate-300'
+                        } hover:bg-slate-700 transition-colors`}
+                      >
+                        Anthologies
                       </Link>
                     </div>
 

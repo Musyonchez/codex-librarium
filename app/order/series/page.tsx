@@ -70,7 +70,7 @@ export default function OrderBySeriesPage() {
     <AppLayout requireAuth={true}>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-[#D4AF37] mb-2">Books by Series</h1>
+          <h1 className="text-4xl font-bold text-[#D4AF37] mb-2">Series Books</h1>
           <p className="text-slate-400">
             Browse all Warhammer 40K books organized by series in Black Library publication order
           </p>
