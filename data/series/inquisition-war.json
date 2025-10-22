@@ -8,7 +8,7 @@
       "title": "Inquisitor",
       "author": "Ian Watson",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Jaq Draco", "Classic"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Harlequin",
       "author": "Ian Watson",
       "orderInSeries": 2,
-      "faction": ["Inquisition", "Harlequins"],
+      "faction": ["Inquisition", "Harlequins", "Chaos"],
       "tags": ["Inquisition", "Jaq Draco", "Harlequins"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Chaos Child",
       "author": "Ian Watson",
       "orderInSeries": 3,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Jaq Draco", "Chaos"]
     }
   ]

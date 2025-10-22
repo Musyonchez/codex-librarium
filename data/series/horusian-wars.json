@@ -8,7 +8,7 @@
       "title": "Resurrection",
       "author": "John French",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos", "Daemons"],
       "tags": ["Inquisition", "Horusian", "Daemons"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Incarnation",
       "author": "John French",
       "orderInSeries": 2,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos", "Daemons"],
       "tags": ["Inquisition", "Horusian", "Daemons"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Divination",
       "author": "John French",
       "orderInSeries": 3,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos", "Daemons"],
       "tags": ["Inquisition", "Horusian", "Daemons"]
     }
   ]

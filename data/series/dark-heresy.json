@@ -8,7 +8,7 @@
       "title": "Scourge the Heretic",
       "author": "Sandy Mitchell",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Heresy", "Investigation"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Innocence Proves Nothing",
       "author": "Sandy Mitchell",
       "orderInSeries": 2,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Heresy", "Investigation"]
     }
   ]

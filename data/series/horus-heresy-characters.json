@@ -8,7 +8,7 @@
       "title": "Valdor: Birth of the Imperium",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Adeptus Custodes"],
+      "faction": ["Adeptus Custodes", "Thunder Warriors"],
       "tags": ["Constantin Valdor", "Custodes", "Unification Wars"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Luther: First of the Fallen",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Dark Angels"],
+      "faction": ["Dark Angels", "Chaos"],
       "tags": ["Luther", "Dark Angels", "Caliban", "Fallen"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Sigismund: The Eternal Crusader",
       "author": "John French",
       "orderInSeries": 3,
-      "faction": ["Imperial Fists"],
+      "faction": ["Imperial Fists", "Chaos"],
       "tags": ["Sigismund", "Imperial Fists", "Black Templars"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Eidolon: The Auric Hammer",
       "author": "Marc Collins",
       "orderInSeries": 4,
-      "faction": ["Emperor's Children"],
+      "faction": ["Emperor's Children", "Chaos"],
       "tags": ["Eidolon", "Emperor's Children", "Chaos"]
     }
   ]

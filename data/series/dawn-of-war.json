@@ -8,7 +8,7 @@
       "title": "Dawn of War",
       "author": "C.S. Goto",
       "orderInSeries": 1,
-      "faction": ["Blood Ravens"],
+      "faction": ["Blood Ravens", "Orks", "Chaos"],
       "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ascension",
       "author": "C.S. Goto",
       "orderInSeries": 2,
-      "faction": ["Blood Ravens"],
+      "faction": ["Blood Ravens", "Chaos", "Eldar"],
       "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Tempest",
       "author": "C.S. Goto",
       "orderInSeries": 3,
-      "faction": ["Blood Ravens"],
+      "faction": ["Blood Ravens", "Necrons"],
       "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Dawn of War II",
       "author": "Chris Roberson",
       "orderInSeries": 4,
-      "faction": ["Blood Ravens"],
+      "faction": ["Blood Ravens", "Tyranids"],
       "tags": ["Blood Ravens", "Dawn of War", "Video Game", "Tyranids"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Dawn of War III",
       "author": "Robbie MacNiven",
       "orderInSeries": 5,
-      "faction": ["Blood Ravens"],
+      "faction": ["Blood Ravens", "Orks", "Eldar"],
       "tags": ["Blood Ravens", "Dawn of War", "Video Game"]
     }
   ]
