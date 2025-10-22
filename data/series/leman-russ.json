@@ -8,7 +8,7 @@
       "title": "Steel Tread",
       "author": "Andy Clark",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Imperial Guard", "Tanks", "Leman Russ"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Demolisher",
       "author": "Andy Clark",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Imperial Guard", "Tanks", "Leman Russ"]
     }
   ]

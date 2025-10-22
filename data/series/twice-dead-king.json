@@ -8,7 +8,7 @@
       "title": "Ruin",
       "author": "Nate Crowley",
       "orderInSeries": 1,
-      "faction": ["Necrons"],
+      "faction": ["Necrons", "Orks"],
       "tags": ["Necrons", "Oltyx", "Dynasty"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Reign",
       "author": "Nate Crowley",
       "orderInSeries": 2,
-      "faction": ["Necrons"],
+      "faction": ["Necrons", "Orks", "Aeldari"],
       "tags": ["Necrons", "Oltyx", "Dynasty"]
     }
   ]

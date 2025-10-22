@@ -8,7 +8,7 @@
       "title": "Double Eagle",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Phantine"],
+      "faction": ["Astra Militarum", "Phantine", "Chaos"],
       "tags": ["Imperial Guard", "Phantine", "Fighter Pilots", "Aerial Combat"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Interceptor City",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum", "Phantine"],
+      "faction": ["Astra Militarum", "Phantine", "Chaos"],
       "tags": ["Imperial Guard", "Phantine", "Fighter Pilots", "Aerial Combat"]
     }
   ]

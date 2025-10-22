@@ -8,7 +8,7 @@
       "title": "Harrowmaster",
       "author": "Mike Brooks",
       "orderInSeries": 1,
-      "faction": ["Alpha Legion", "Chaos"],
+      "faction": ["Alpha Legion", "Chaos", "Genestealer Cults"],
       "tags": ["Alpha Legion", "Chaos Space Marines"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Lord of Excess",
       "author": "Rich McCormick",
       "orderInSeries": 2,
-      "faction": ["Emperor's Children", "Chaos"],
+      "faction": ["Emperor's Children", "Chaos", "Aeldari"],
       "tags": ["Emperor's Children", "Chaos Space Marines", "Slaanesh"]
     }
   ]

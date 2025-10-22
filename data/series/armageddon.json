@@ -8,7 +8,7 @@
       "title": "Crusade for Armageddon",
       "author": "Jonathan Green",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Orks"],
+      "faction": ["Astra Militarum", "Space Marines", "Orks"],
       "tags": ["Armageddon", "Orks", "Imperial Guard", "War"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Conquest of Armageddon",
       "author": "Jonathan Green",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum", "Orks"],
+      "faction": ["Astra Militarum", "Space Marines", "Orks"],
       "tags": ["Armageddon", "Orks", "Imperial Guard", "War"]
     }
   ]

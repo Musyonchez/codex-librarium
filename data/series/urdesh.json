@@ -8,7 +8,7 @@
       "title": "The Serpent and the Saint",
       "author": "Matthew Farrer",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Urdesh", "Sabbat Worlds", "Imperial Guard"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Magister and the Martyr",
       "author": "Matthew Farrer",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Urdesh", "Sabbat Worlds", "Imperial Guard"]
     }
   ]

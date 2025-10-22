@@ -8,7 +8,7 @@
       "title": "Warden of the Blade",
       "author": "David Annandale",
       "orderInSeries": 1,
-      "faction": ["Grey Knights"],
+      "faction": ["Grey Knights", "Chaos", "Daemons"],
       "tags": ["Grey Knights", "Castellan Crowe", "Daemon Weapon"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Castellan",
       "author": "David Annandale",
       "orderInSeries": 2,
-      "faction": ["Grey Knights"],
+      "faction": ["Grey Knights", "Chaos", "Daemons"],
       "tags": ["Grey Knights", "Castellan Crowe", "Daemon Weapon"]
     }
   ]

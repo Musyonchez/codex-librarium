@@ -8,7 +8,7 @@
       "title": "Execution Hour",
       "author": "Gordon Rennie",
       "orderInSeries": 1,
-      "faction": ["Imperial Navy", "Chaos"],
+      "faction": ["Imperial Navy", "Chaos", "Black Legion"],
       "tags": ["Imperial Navy", "Gothic War", "Space Combat"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Shadow Point",
       "author": "Gordon Rennie",
       "orderInSeries": 2,
-      "faction": ["Imperial Navy", "Chaos"],
+      "faction": ["Imperial Navy", "Chaos", "Black Legion"],
       "tags": ["Imperial Navy", "Gothic War", "Space Combat"]
     }
   ]

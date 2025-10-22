@@ -8,7 +8,7 @@
       "title": "Blood of Asaheim",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Dark Eldar"],
       "tags": ["Space Wolves", "Fenris", "Pack"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Stormcaller",
       "author": "Chris Wraight",
       "orderInSeries": 2,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos", "Daemons"],
       "tags": ["Space Wolves", "Fenris", "Psykers"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Helwinter Gate",
       "author": "Chris Wraight",
       "orderInSeries": 3,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos"],
       "tags": ["Space Wolves", "Fenris", "Winter"]
     }
   ]

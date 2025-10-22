@@ -8,7 +8,7 @@
       "title": "Lord of the Fallen",
       "author": "John French",
       "orderInSeries": 1,
-      "faction": ["Dark Angels", "Chaos"],
+      "faction": ["Fallen Angels", "Dark Angels", "Chaos"],
       "tags": ["Cypher", "Dark Angels", "Fallen", "Mystery"]
     }
   ]

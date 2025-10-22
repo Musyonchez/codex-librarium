@@ -8,7 +8,7 @@
       "title": "Cadia Stands",
       "author": "Justin D. Hill",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Cadia"],
+      "faction": ["Astra Militarum", "Cadia", "Chaos", "Black Legion"],
       "tags": ["Cadia", "Imperial Guard", "Fall of Cadia", "Minka Lesk"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Cadian Honour",
       "author": "Justin D. Hill",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum", "Cadia"],
+      "faction": ["Astra Militarum", "Cadia", "Chaos"],
       "tags": ["Cadia", "Imperial Guard", "Minka Lesk"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Traitor Rock",
       "author": "Justin D. Hill",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum", "Cadia"],
+      "faction": ["Astra Militarum", "Cadia", "Chaos"],
       "tags": ["Cadia", "Imperial Guard", "Minka Lesk", "Chaos"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Shadow of the Eighth",
       "author": "Justin D. Hill",
       "orderInSeries": 4,
-      "faction": ["Astra Militarum", "Cadia"],
+      "faction": ["Astra Militarum", "Cadia", "Night Lords", "Chaos"],
       "tags": ["Cadia", "Imperial Guard", "Minka Lesk", "Night Lords"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Hell's Last",
       "author": "Justin D. Hill",
       "orderInSeries": 5,
-      "faction": ["Astra Militarum", "Cadia"],
+      "faction": ["Astra Militarum", "Cadia", "Chaos"],
       "tags": ["Cadia", "Imperial Guard", "Minka Lesk"]
     }
   ]
