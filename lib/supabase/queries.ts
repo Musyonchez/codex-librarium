@@ -18,7 +18,7 @@ export async function getSeriesWithBooks() {
     .from('series')
     .select(`
       *,
-      books (*)
+      series_books (*)
     `)
     .order('created_at');
 
@@ -29,7 +29,7 @@ export async function getSeriesWithBooks() {
     id: series.id,
     name: series.name,
     description: series.description,
-    books: series.books
+    books: series.series_books
       .sort((a: { order_in_series: number }, b: { order_in_series: number }) =>
         a.order_in_series - b.order_in_series
       )
@@ -54,7 +54,7 @@ export async function getSeriesWithBooks() {
 export async function getUserReadingProgress(userId: string) {
   const supabase = await createClient();
   const { data, error } = await supabase
-    .from('reading_progress')
+    .from('reading_progress_series_books')
     .select('*')
     .eq('user_id', userId);
 
@@ -71,7 +71,7 @@ export async function upsertReadingProgress(
 
   // Check if there's an existing entry
   const { data: existing } = await supabase
-    .from('reading_progress')
+    .from('reading_progress_series_books')
     .select('*')
     .eq('user_id', userId)
     .eq('book_id', bookId)
@@ -98,7 +98,7 @@ export async function upsertReadingProgress(
   }
 
   const { data, error } = await supabase
-    .from('reading_progress')
+    .from('reading_progress_series_books')
     .upsert(dataToUpsert, {
       onConflict: 'user_id,book_id',
     })
