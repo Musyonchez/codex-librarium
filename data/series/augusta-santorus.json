@@ -8,7 +8,7 @@
       "title": "The Bloodied Rose",
       "author": "Danie Ware",
       "orderInSeries": 1,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Orks"],
       "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Wreck and Ruin",
       "author": "Danie Ware",
       "orderInSeries": 2,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Chaos"],
       "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Rose in Anger",
       "author": "Danie Ware",
       "orderInSeries": 3,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Chaos"],
       "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "The Rose at War",
       "author": "Danie Ware",
       "orderInSeries": 4,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Chaos"],
       "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "The Rose in Darkness",
       "author": "Danie Ware",
       "orderInSeries": 5,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Genestealer Cults"],
       "tags": ["Sisters of Battle", "Augusta Santorus", "Faith"]
     }
   ]

@@ -8,7 +8,7 @@
       "title": "Emperor's Mercy",
       "author": "Henry Zou",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Inquisition"],
+      "faction": ["Astra Militarum", "Inquisition", "Chaos"],
       "tags": ["Imperial Guard", "Chaos", "Inquisition"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Flesh and Iron",
       "author": "Henry Zou",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Imperial Guard", "Chaos", "War"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Blood Gorgons",
       "author": "Henry Zou",
       "orderInSeries": 3,
-      "faction": ["Chaos"],
+      "faction": ["Blood Gorgons", "Chaos", "Genestealers"],
       "tags": ["Chaos Space Marines", "Blood Gorgons"]
     }
   ]

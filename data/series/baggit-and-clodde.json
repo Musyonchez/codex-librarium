@@ -8,7 +8,7 @@
       "title": "Dredge Runners",
       "author": "Alec Worley",
       "orderInSeries": 1,
-      "faction": ["Orks"],
+      "faction": ["Orks", "Astra Militarum"],
       "tags": ["Orks", "Mekboyz", "Humor"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Wraithbone Phoenix",
       "author": "Alec Worley",
       "orderInSeries": 2,
-      "faction": ["Orks"],
+      "faction": ["Orks", "Aeldari"],
       "tags": ["Orks", "Mekboyz", "Humor"]
     }
   ]

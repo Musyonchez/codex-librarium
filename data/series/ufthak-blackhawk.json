@@ -8,7 +8,7 @@
       "title": "Brutal Kunnin",
       "author": "Mike Brooks",
       "orderInSeries": 1,
-      "faction": ["Orks"],
+      "faction": ["Orks", "Astra Militarum"],
       "tags": ["Orks", "Mekboy", "Humor"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Da Big Dakka",
       "author": "Mike Brooks",
       "orderInSeries": 2,
-      "faction": ["Orks"],
+      "faction": ["Orks", "Space Marines"],
       "tags": ["Orks", "Mekboy", "Humor"]
     }
   ]
