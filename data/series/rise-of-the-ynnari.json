@@ -8,7 +8,7 @@
       "title": "Ghost Warrior",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": ["Aeldari", "Ynnari"],
+      "faction": ["Aeldari", "Ynnari", "Chaos"],
       "tags": ["Ynnari", "Yvraine", "Eldar"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Wild Rider",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Aeldari", "Ynnari"],
+      "faction": ["Aeldari", "Ynnari", "Chaos"],
       "tags": ["Ynnari", "Yvraine", "Eldar"]
     }
   ]

@@ -8,7 +8,7 @@
       "title": "Ravenwing",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": ["Dark Angels"],
+      "faction": ["Dark Angels", "Chaos", "Fallen Angels"],
       "tags": ["Dark Angels", "Ravenwing", "Fallen"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Master of Sanctity",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Dark Angels"],
+      "faction": ["Dark Angels", "Chaos", "Fallen Angels"],
       "tags": ["Dark Angels", "Deathwing", "Fallen"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Unforgiven",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": ["Dark Angels"],
+      "faction": ["Dark Angels", "Chaos", "Fallen Angels"],
       "tags": ["Dark Angels", "Azrael", "Fallen"]
     }
   ]

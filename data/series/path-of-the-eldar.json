@@ -8,7 +8,7 @@
       "title": "Path of the Warrior",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": ["Aeldari"],
+      "faction": ["Aeldari", "Dark Eldar"],
       "tags": ["Eldar", "Craftworlds", "Aspect Warriors"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Path of the Seer",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Aeldari"],
+      "faction": ["Aeldari", "Chaos"],
       "tags": ["Eldar", "Craftworlds", "Farseers"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Path of the Outcast",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": ["Aeldari"],
+      "faction": ["Aeldari", "Dark Eldar"],
       "tags": ["Eldar", "Craftworlds", "Rangers"]
     }
   ]

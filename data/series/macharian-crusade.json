@@ -8,7 +8,7 @@
       "title": "Angel of Fire",
       "author": "William King",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos", "Heretics"],
       "tags": ["Macharius", "Imperial Guard", "Crusade"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Fist of Demetrius",
       "author": "William King",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Macharius", "Imperial Guard", "Crusade"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Fall of Macharius",
       "author": "William King",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Macharius", "Imperial Guard", "Crusade"]
     }
   ]

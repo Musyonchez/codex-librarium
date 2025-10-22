@@ -8,7 +8,7 @@
       "title": "Rogue Star",
       "author": "Andy Hoare",
       "orderInSeries": 1,
-      "faction": ["Rogue Traders"],
+      "faction": ["Rogue Traders", "Chaos"],
       "tags": ["Rogue Traders", "Exploration", "Trade"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Star of Damocles",
       "author": "Andy Hoare",
       "orderInSeries": 2,
-      "faction": ["Rogue Traders"],
+      "faction": ["Rogue Traders", "T'au", "White Scars"],
       "tags": ["Rogue Traders", "Exploration", "T'au"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Savage Scars",
       "author": "Andy Hoare",
       "orderInSeries": 3,
-      "faction": ["Rogue Traders"],
+      "faction": ["Rogue Traders", "White Scars", "Chaos"],
       "tags": ["Rogue Traders", "Exploration"]
     }
   ]

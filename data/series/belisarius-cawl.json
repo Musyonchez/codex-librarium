@@ -8,7 +8,7 @@
       "title": "The Great Work",
       "author": "Guy Haley",
       "orderInSeries": 1,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Necrons"],
       "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Genefather",
       "author": "Guy Haley",
       "orderInSeries": 2,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Genestealer Cults", "Tyranids"],
       "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Archmagos",
       "author": "Guy Haley",
       "orderInSeries": 3,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Chaos"],
       "tags": ["Belisarius Cawl", "Mechanicus", "Primaris"]
     }
   ]

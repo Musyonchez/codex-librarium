@@ -8,7 +8,7 @@
       "title": "Priests of Mars",
       "author": "Graham McNeill",
       "orderInSeries": 1,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Black Templars", "Eldar"],
       "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Lords of Mars",
       "author": "Graham McNeill",
       "orderInSeries": 2,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Black Templars", "Eldar"],
       "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Gods of Mars",
       "author": "Graham McNeill",
       "orderInSeries": 3,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Black Templars", "Eldar"],
       "tags": ["Mechanicus", "Explorator", "Quest for Knowledge"]
     }
   ]

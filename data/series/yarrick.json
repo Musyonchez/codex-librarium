@@ -8,7 +8,7 @@
       "title": "Chains of Golgotha",
       "author": "David Annandale",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Yarrick", "Imperial Guard", "Orks"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Imperial Creed",
       "author": "David Annandale",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Yarrick", "Imperial Guard", "Orks"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Pyres of Armageddon",
       "author": "David Annandale",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Yarrick", "Imperial Guard", "Orks", "Armageddon"]
     }
   ]

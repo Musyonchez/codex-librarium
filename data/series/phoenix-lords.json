@@ -8,7 +8,7 @@
       "title": "Asurmen: Hand of Asuryan",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": ["Aeldari"],
+      "faction": ["Aeldari", "Chaos"],
       "tags": ["Phoenix Lords", "Asurmen", "Eldar"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Jain Zar: The Storm of Silence",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Aeldari"],
+      "faction": ["Aeldari", "Dark Eldar", "Chaos"],
       "tags": ["Phoenix Lords", "Jain Zar", "Eldar"]
     }
   ]

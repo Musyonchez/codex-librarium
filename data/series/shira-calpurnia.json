@@ -8,7 +8,7 @@
       "title": "Crossfire",
       "author": "Matthew Farrer",
       "orderInSeries": 1,
-      "faction": ["Adeptus Arbites"],
+      "faction": ["Adeptus Arbites", "Criminals"],
       "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Legacy",
       "author": "Matthew Farrer",
       "orderInSeries": 2,
-      "faction": ["Adeptus Arbites"],
+      "faction": ["Adeptus Arbites", "Space Marines", "Criminals"],
       "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Blind",
       "author": "Matthew Farrer",
       "orderInSeries": 3,
-      "faction": ["Adeptus Arbites"],
+      "faction": ["Adeptus Arbites", "Psykers"],
       "tags": ["Arbites", "Law Enforcement", "Shira Calpurnia"]
     }
   ]

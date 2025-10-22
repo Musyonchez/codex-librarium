@@ -8,7 +8,7 @@
       "title": "Faith and Fire",
       "author": "James Swallow",
       "orderInSeries": 1,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Chaos"],
       "tags": ["Sisters of Battle", "Faith", "Miriya"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Hammer and Anvil",
       "author": "James Swallow",
       "orderInSeries": 2,
-      "faction": ["Adepta Sororitas"],
+      "faction": ["Adepta Sororitas", "Necrons"],
       "tags": ["Sisters of Battle", "Faith", "Miriya"]
     }
   ]

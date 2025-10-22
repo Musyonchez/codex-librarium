@@ -8,7 +8,7 @@
       "title": "Path of the Renegade",
       "author": "Andy Chambers",
       "orderInSeries": 1,
-      "faction": ["Drukhari"],
+      "faction": ["Drukhari", "Aeldari"],
       "tags": ["Dark Eldar", "Commorragh", "Drukhari"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Path of the Incubus",
       "author": "Andy Chambers",
       "orderInSeries": 2,
-      "faction": ["Drukhari"],
+      "faction": ["Drukhari", "Aeldari"],
       "tags": ["Dark Eldar", "Incubus", "Drukhari"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Path of the Archon",
       "author": "Andy Chambers",
       "orderInSeries": 3,
-      "faction": ["Drukhari"],
+      "faction": ["Drukhari", "Space Marines"],
       "tags": ["Dark Eldar", "Archon", "Drukhari"]
     }
   ]

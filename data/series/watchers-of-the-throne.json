@@ -8,7 +8,7 @@
       "title": "The Emperor's Legion",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Adeptus Custodes", "Sisters of Silence"],
+      "faction": ["Adeptus Custodes", "Sisters of Silence", "Chaos"],
       "tags": ["Custodes", "Sisters of Silence", "Terra"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Regent's Shadow",
       "author": "Chris Wraight",
       "orderInSeries": 2,
-      "faction": ["Adeptus Custodes", "Sisters of Silence"],
+      "faction": ["Adeptus Custodes", "Sisters of Silence", "Genestealer Cults"],
       "tags": ["Custodes", "Sisters of Silence", "Terra", "Guilliman"]
     }
   ]

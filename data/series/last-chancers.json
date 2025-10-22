@@ -8,7 +8,7 @@
       "title": "13th Legion",
       "author": "Gav Thorpe",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Chaos"],
       "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Kill Team",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Annihilation Squad",
       "author": "Gav Thorpe",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Tyranids"],
       "tags": ["Last Chancers", "Imperial Guard", "Penal Legion"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Armageddon Saint",
       "author": "Gav Thorpe",
       "orderInSeries": 4,
-      "faction": ["Astra Militarum"],
+      "faction": ["Astra Militarum", "Orks"],
       "tags": ["Last Chancers", "Imperial Guard", "Armageddon"]
     }
   ]

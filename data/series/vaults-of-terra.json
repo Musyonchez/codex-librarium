@@ -8,7 +8,7 @@
       "title": "The Carrion Throne",
       "author": "Chris Wraight",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Genestealer Cults"],
       "tags": ["Inquisition", "Terra", "Investigation", "Crowl"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Hollow Mountain",
       "author": "Chris Wraight",
       "orderInSeries": 2,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Terra", "Investigation", "Crowl"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Dark City",
       "author": "Chris Wraight",
       "orderInSeries": 3,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Inquisition", "Terra", "Investigation", "Crowl"]
     }
   ]
