@@ -147,13 +147,13 @@ export async function POST(request: Request) {
 
           importResults.series++;
 
-          // Upsert books
+          // Upsert series books
           for (const book of data.books) {
             const normalizedTags = normalizeTags(book.tags);
             const normalizedFactions = normalizeFactions(book.faction);
 
             const { error: bookError } = await supabase
-              .from('books')
+              .from('series_books')
               .upsert({
                 id: book.id,
                 series_id: data.id,
