@@ -1,0 +1,10 @@
+{
+  "id": "longshot",
+  "title": "Longshot",
+  "author": "Rob Young",
+  "publicationYear": 2023,
+  "faction": ["Astra Militarum", "Orks"],
+  "tags": ["Imperial Guard", "Ratlings", "Orks"],
+  "series": null,
+  "orderInSeries": null
+}

@@ -1,0 +1,10 @@
+{
+  "id": "space-marine",
+  "title": "Space Marine",
+  "author": "Ian Watson",
+  "publicationYear": 1993,
+  "faction": ["Space Marines", "Inquisition"],
+  "tags": ["Inquisition War", "Space Marines", "Classic"],
+  "series": null,
+  "orderInSeries": null
+}

@@ -1,0 +1,10 @@
+{
+  "id": "daemon-world",
+  "title": "Daemon World",
+  "author": "Ben Counter",
+  "publicationYear": 2003,
+  "faction": ["Word Bearers", "Chaos", "Daemons"],
+  "tags": ["Word Bearers", "Chaos", "Daemon World"],
+  "series": null,
+  "orderInSeries": null
+}

@@ -1,0 +1,10 @@
+{
+  "id": "leviathan",
+  "title": "Leviathan",
+  "author": "Darius Hinks",
+  "publicationYear": 2023,
+  "faction": ["Ultramarines", "Tyranids"],
+  "tags": ["Ultramarines", "Tyranids", "Leviathan"],
+  "series": null,
+  "orderInSeries": null
+}

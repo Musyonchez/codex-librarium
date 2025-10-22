@@ -1,0 +1,10 @@
+{
+  "id": "warboss",
+  "title": "Warboss",
+  "author": "Mike Brooks",
+  "publicationYear": 2022,
+  "faction": ["Orks", "Astra Militarum"],
+  "tags": ["Orks", "Warboss", "Imperial Guard"],
+  "series": null,
+  "orderInSeries": null
+}

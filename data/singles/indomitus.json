@@ -1,0 +1,10 @@
+{
+  "id": "indomitus",
+  "title": "Indomitus",
+  "author": "Gav Thorpe",
+  "publicationYear": 2020,
+  "faction": ["Ultramarines", "Necrons"],
+  "tags": ["Indomitus Crusade", "Primaris", "Necrons"],
+  "series": null,
+  "orderInSeries": null
+}

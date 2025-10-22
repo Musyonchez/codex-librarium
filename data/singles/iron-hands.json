@@ -1,0 +1,10 @@
+{
+  "id": "iron-hands",
+  "title": "Iron Hands",
+  "author": "Jonathan Green",
+  "publicationYear": 2004,
+  "faction": ["Iron Hands", "Orks"],
+  "tags": ["Iron Hands", "Space Marines"],
+  "series": null,
+  "orderInSeries": null
+}
