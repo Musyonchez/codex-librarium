@@ -2,7 +2,18 @@
 
 The application uses **Supabase** (PostgreSQL) as its database with Row Level Security (RLS) enabled for data protection.
 
-## Tables
+## Tables Overview
+
+The database is organized into four book categories, each with its own table and reading progress tracking:
+
+- **Series Books**: `series` + `series_books` + `reading_progress_series_books`
+- **Singles**: `singles` + `reading_progress_singles`
+- **Novellas**: `novellas` + `reading_progress_novellas`
+- **Anthologies**: `anthologies` + `reading_progress_anthologies`
+
+---
+
+## Book Tables
 
 ### `series`
 
@@ -16,27 +27,20 @@ Stores book series information (Horus Heresy, Siege of Terra, etc.)
 | `created_at` | timestamptz | DEFAULT now() | Auto-generated timestamp |
 
 **Example:**
-```sql
+```json
 {
-  id: 'horus-heresy',
-  name: 'The Horus Heresy',
-  description: 'The galaxy-spanning civil war...',
-  created_at: '2024-01-01T00:00:00Z'
+  "id": "horus-heresy",
+  "name": "The Horus Heresy",
+  "description": "The galaxy-spanning civil war...",
+  "created_at": "2024-01-01T00:00:00Z"
 }
 ```
 
-**Indexes:**
-- Primary key on `id`
-
-**RLS Policies:**
-- Public read access
-- No write access (managed through import API)
-
 ---
 
-### `books`
+### `series_books`
 
-Stores individual book information with metadata
+Stores individual books that are part of a series
 
 | Column | Type | Constraints | Description |
 |--------|------|-------------|-------------|
@@ -50,80 +54,156 @@ Stores individual book information with metadata
 | `created_at` | timestamptz | DEFAULT now() | Auto-generated timestamp |
 
 **Example:**
-```sql
+```json
 {
-  id: 'hh-01',
-  series_id: 'horus-heresy',
-  title: 'Horus Rising',
-  author: 'Dan Abnett',
-  order_in_series: 1,
-  faction: ['Luna Wolves/Sons of Horus'],
-  tags: ['Great Crusade', 'Horus', 'Loken'],
-  created_at: '2024-01-01T00:00:00Z'
+  "id": "hh-01",
+  "series_id": "horus-heresy",
+  "title": "Horus Rising",
+  "author": "Dan Abnett",
+  "order_in_series": 1,
+  "faction": ["Luna Wolves/Sons of Horus"],
+  "tags": ["Great Crusade", "Horus", "Loken"]
 }
 ```
 
 **Indexes:**
 - Primary key on `id`
-- Foreign key on `series_id`
+- Foreign key index on `series_id`
 - Index on `order_in_series` for sorting
-
-**RLS Policies:**
-- Public read access
-- No write access (managed through import API)
 
 ---
 
-### `reading_progress`
+### `singles`
 
-Tracks user reading status for each book
+Stores standalone novels (not part of a series)
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| `id` | text | PRIMARY KEY | Unique identifier |
+| `title` | text | NOT NULL | Book title |
+| `author` | text | NOT NULL | Author name |
+| `faction` | text[] | | Array of factions featured |
+| `tags` | text[] | | Array of keywords/themes |
+| `created_at` | timestamptz | DEFAULT now() | Auto-generated timestamp |
+
+**Example:**
+```json
+{
+  "id": "space-marine",
+  "title": "Space Marine",
+  "author": "Ian Watson",
+  "faction": ["Space Marines", "Inquisition"],
+  "tags": ["Inquisition War", "Space Marines", "Classic"]
+}
+```
+
+---
+
+### `novellas`
+
+Stores novella-length stories
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| `id` | text | PRIMARY KEY | Unique identifier |
+| `title` | text | NOT NULL | Novella title |
+| `author` | text | NOT NULL | Author name |
+| `faction` | text[] | | Array of factions featured |
+| `tags` | text[] | | Array of keywords/themes |
+| `created_at` | timestamptz | DEFAULT now() | Auto-generated timestamp |
+
+---
+
+### `anthologies`
+
+Stores anthology collections and omnibus editions
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| `id` | text | PRIMARY KEY | Unique identifier |
+| `title` | text | NOT NULL | Collection title |
+| `author` | text | NOT NULL | Author name (often "Various") |
+| `faction` | text[] | | Array of factions featured |
+| `tags` | text[] | | Array of keywords/themes |
+| `created_at` | timestamptz | DEFAULT now() | Auto-generated timestamp |
+
+---
+
+## Reading Progress Tables
+
+### `reading_progress_series_books`
+
+Tracks user reading status for series books
 
 | Column | Type | Constraints | Description |
 |--------|------|-------------|-------------|
 | `id` | uuid | PRIMARY KEY | Auto-generated UUID |
 | `user_id` | uuid | FOREIGN KEY → auth.users(id) | Owner user |
-| `book_id` | text | FOREIGN KEY → books(id) | Book being tracked |
+| `book_id` | text | FOREIGN KEY → series_books(id) | Book being tracked |
 | `status` | text | NOT NULL | 'unread', 'reading', or 'completed' |
-| `updated_at` | timestamptz | DEFAULT now() | Last status change |
+| `rating` | integer | CHECK (1-5) | User rating (optional) |
+| `notes` | text | | User notes (optional) |
+| `started_at` | timestamptz | | When user started reading |
+| `completed_at` | timestamptz | | When user completed |
 | `created_at` | timestamptz | DEFAULT now() | First tracked date |
+| `updated_at` | timestamptz | DEFAULT now() | Last update |
 
 **Constraints:**
 - UNIQUE(`user_id`, `book_id`) - One status per user per book
+- CHECK status IN ('unread', 'reading', 'completed')
+- CHECK rating BETWEEN 1 AND 5
 
-**Example:**
-```sql
-{
-  id: '550e8400-e29b-41d4-a716-446655440000',
-  user_id: '123e4567-e89b-12d3-a456-426614174000',
-  book_id: 'hh-01',
-  status: 'completed',
-  updated_at: '2024-01-15T10:30:00Z',
-  created_at: '2024-01-10T08:00:00Z'
-}
-```
+**Triggers:**
+- Auto-update `updated_at` on UPDATE
 
-**Indexes:**
-- Primary key on `id`
-- Unique index on `(user_id, book_id)`
-- Index on `user_id` for user queries
+---
 
-**RLS Policies:**
-- Users can only read their own data
-- Users can only insert/update their own data
-- Delete is disabled (status cycling only)
+### `reading_progress_singles`
+
+Same structure as `reading_progress_series_books` but tracks singles
+
+**Key Differences:**
+- `single_id` instead of `book_id`
+- Foreign key references `singles(id)`
+
+---
+
+### `reading_progress_novellas`
+
+Same structure but tracks novellas
+
+**Key Differences:**
+- `novella_id` instead of `book_id`
+- Foreign key references `novellas(id)`
+
+---
+
+### `reading_progress_anthologies`
+
+Same structure but tracks anthologies
+
+**Key Differences:**
+- `anthology_id` instead of `book_id`
+- Foreign key references `anthologies(id)`
 
 ---
 
 ## Relationships
 
 ```
-series (1) ──< (many) books
-             └──< (many) reading_progress >── (1) auth.users
+series (1) ──< (many) series_books ──< (many) reading_progress_series_books >── (1) auth.users
+
+singles (1) ──< (many) reading_progress_singles >── (1) auth.users
+
+novellas (1) ──< (many) reading_progress_novellas >── (1) auth.users
+
+anthologies (1) ──< (many) reading_progress_anthologies >── (1) auth.users
 ```
 
 **Cascade Behavior:**
-- Deleting a series → cascades to books → cascades to reading_progress
-- Deleting a user → cascades to reading_progress (via RLS)
+- Deleting a series → cascades to series_books → cascades to reading_progress
+- Deleting a single/novella/anthology → cascades to its reading_progress
+- Deleting a user → cascades to all their reading_progress records
 
 ---
 
@@ -131,82 +211,86 @@ series (1) ──< (many) books
 
 ### Philosophy
 
-- **Public Read**: Series and books are public data
-- **Private Write**: Only authenticated imports can modify books/series
+- **Public Read**: All books (series, singles, novellas, anthologies) are public data
+- **Private Write**: Only authenticated imports (service role) can modify books
 - **User Isolation**: Reading progress is strictly per-user
 
 ### Policy Details
 
-**`series` table:**
+**Book tables (series, series_books, singles, novellas, anthologies):**
 ```sql
 -- Allow public read
-CREATE POLICY "Allow public read" ON series
-  FOR SELECT USING (true);
+CREATE POLICY "Books are viewable by everyone"
+  ON <table_name> FOR SELECT
+  USING (true);
 
--- No insert/update/delete policies (admin-only via service role)
+-- Allow anyone to insert (service role handles auth at API level)
+CREATE POLICY "Anyone can insert books"
+  ON <table_name> FOR INSERT
+  WITH CHECK (true);
 ```
 
-**`books` table:**
-```sql
--- Allow public read
-CREATE POLICY "Allow public read" ON books
-  FOR SELECT USING (true);
-
--- No insert/update/delete policies (admin-only via service role)
-```
-
-**`reading_progress` table:**
+**Reading progress tables:**
 ```sql
 -- Users can read only their own progress
-CREATE POLICY "Users can read own progress" ON reading_progress
-  FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users can view their own reading progress"
+  ON <table_name> FOR SELECT
+  USING (auth.uid() = user_id);
 
 -- Users can insert their own progress
-CREATE POLICY "Users can insert own progress" ON reading_progress
-  FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Users can insert their own reading progress"
+  ON <table_name> FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
 
 -- Users can update their own progress
-CREATE POLICY "Users can update own progress" ON reading_progress
-  FOR UPDATE USING (auth.uid() = user_id);
+CREATE POLICY "Users can update their own reading progress"
+  ON <table_name> FOR UPDATE
+  USING (auth.uid() = user_id)
+  WITH CHECK (auth.uid() = user_id);
+
+-- Users can delete their own progress
+CREATE POLICY "Users can delete their own reading progress"
+  ON <table_name> FOR DELETE
+  USING (auth.uid() = user_id);
 ```
+
+---
+
+## Indexes
+
+### Performance Indexes
+
+**Series Books:**
+- `idx_series_books_series_id` - ON series_books(series_id)
+- `idx_series_books_order` - ON series_books(order_in_series)
+
+**Reading Progress:**
+- `idx_reading_progress_series_books_user_id` - User queries
+- `idx_reading_progress_series_books_book_id` - Book queries
+- `idx_reading_progress_series_books_status` - Status filtering
+- Similar indexes for singles, novellas, anthologies
 
 ---
 
 ## Database Functions
 
-### Aggregate Queries
+### Triggers
 
-**Get all books with reading status for a user:**
+**Auto-update timestamps:**
 ```sql
-SELECT
-  b.*,
-  COALESCE(rp.status, 'unread') as reading_status
-FROM books b
-LEFT JOIN reading_progress rp
-  ON b.id = rp.book_id
-  AND rp.user_id = auth.uid()
-ORDER BY b.order_in_series;
-```
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
-**Get series with book count:**
-```sql
-SELECT
-  s.*,
-  COUNT(b.id) as book_count
-FROM series s
-LEFT JOIN books b ON s.id = b.series_id
-GROUP BY s.id
-ORDER BY s.name;
-```
-
-**Get user statistics:**
-```sql
-SELECT
-  COUNT(*) FILTER (WHERE status = 'completed') as completed_count,
-  COUNT(*) FILTER (WHERE status = 'reading') as reading_count,
-  COUNT(*) FILTER (WHERE status = 'unread') as unread_count
-FROM reading_progress
-WHERE user_id = auth.uid();
+-- Applied to all reading_progress tables
+CREATE TRIGGER update_reading_progress_series_books_updated_at
+  BEFORE UPDATE ON reading_progress_series_books
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
 ```
 
 ---
@@ -215,45 +299,80 @@ WHERE user_id = auth.uid();
 
 ### Tags and Factions
 
-Tags and factions are stored as PostgreSQL arrays (`text[]`) for simplicity. A normalization system exists at the application level:
+Tags and factions are stored as PostgreSQL arrays (`text[]`) with application-level normalization:
 
-**Canonical lists:**
-- `data/tags.json` - 107 unique tags
-- `data/factions.json` - 28 unique factions
+**Canonical lists location:**
+- `data/series/_meta/tags.json`
+- `data/series/_meta/factions.json`
+- `data/singles/_meta/tags.json`
+- `data/singles/_meta/factions.json`
+- `data/novellas/_meta/tags.json`
+- `data/novellas/_meta/factions.json`
+- `data/anthologies/_meta/tags.json`
+- `data/anthologies/_meta/factions.json`
 
-**Normalization process:**
-1. Import reads canonical lists
+**Normalization process during import:**
+1. Import reads canonical lists from `series/_meta/` (master source)
 2. Case-insensitive matching finds existing versions
 3. New tags/factions are added automatically
-4. All values are sorted alphabetically
+4. All `_meta/` folders are updated with new canonical values
+5. All values are sorted alphabetically
 
 **Benefits:**
 - Prevents "Blood Angels" vs "blood angels" duplicates
-- Maintains consistency across imports
+- Maintains consistency across all categories
 - Self-maintaining (auto-updates canonical lists)
+- Cross-category consistency
 
 ---
 
 ## Migrations
 
-### Location
+### Migration Files
 
-Migration files: `supabase/migrations/`
+Location: `supabase/migrations/`
 
-### Migration History
-
-**001_initial_schema.sql** - Created tables and RLS policies
-**002_rename_legion_to_faction.sql** - Renamed `legion` column to `faction`
+**Migration History:**
+1. `001_initial_schema.sql` - Created series and books tables with RLS
+2. `002_rename_legion_to_faction.sql` - Renamed legion → faction column
+3. `003_add_singles_novellas_anthologies.sql` - Added new category tables
+4. `004_complete_fresh_schema.sql` - Complete schema (series_books rename + all categories)
 
 ### Running Migrations
 
 ```bash
-# Local development
-supabase db reset
+# Apply all migrations
+npx supabase db push
 
-# Production (via Supabase dashboard)
-# Copy SQL from migration file and run in SQL editor
+# Reset database (development only)
+npx supabase db reset
 ```
+
+**Current Migration (004):**
+- Creates all tables from scratch
+- Includes all RLS policies
+- All indexes for performance
+- All triggers for auto-updates
+
+---
+
+## Current Scale
+
+### Book Statistics
+- **76 series** with books
+- **85 standalone novels**
+- **97 novellas**
+- **129 anthologies**
+- **387+ total books**
+
+### Expected Users
+- 100-1000 users expected
+- ~10,000-50,000 reading progress records
+
+### Query Performance
+- All queries return in <50ms at current scale
+- Indexes ensure fast lookups
+- No optimization needed yet
 
 ---
 
@@ -261,60 +380,30 @@ supabase db reset
 
 ### JSON Files as Master Data
 
-The `data/series/*.json` files serve as the source of truth for books and series:
+The `data/` directory serves as the source of truth:
 
 - Version controlled in git
 - Easy to edit and review
 - Human-readable backup
-- Imported to database via web UI
+- Organized by category (series, singles, novellas, anthologies)
 
 **Workflow:**
 1. Edit JSON files locally
 2. Commit to git (history + backup)
-3. Import via web interface
+3. Import via `/import` page (selective file import)
 4. Database is synced
 
 ### User Data Backup
 
-User reading progress should be backed up separately:
+User reading progress should be backed up separately via Supabase:
 
 ```sql
--- Export user progress
-SELECT * FROM reading_progress WHERE user_id = '...';
-
--- Restore user progress
-INSERT INTO reading_progress (user_id, book_id, status)
-VALUES (...);
+-- Export user progress (all categories)
+SELECT * FROM reading_progress_series_books WHERE user_id = '...';
+SELECT * FROM reading_progress_singles WHERE user_id = '...';
+SELECT * FROM reading_progress_novellas WHERE user_id = '...';
+SELECT * FROM reading_progress_anthologies WHERE user_id = '...';
 ```
-
-Consider implementing periodic exports via Supabase scheduled functions.
-
----
-
-## Performance Considerations
-
-### Current Scale
-
-- ~80 books across 3 series
-- Multiple users (100-1000 expected)
-- ~100-1000 reading progress records
-
-### Optimization
-
-**Indexes:**
-- All foreign keys are indexed
-- Unique constraints create indexes automatically
-- Additional indexes on `order_in_series` for sorting
-
-**Query Performance:**
-- All queries return in <50ms at current scale
-- No need for additional optimization yet
-- Consider adding indexes if slow queries emerge
-
-**Future Scaling:**
-- Add pagination when books > 500
-- Consider materialized views for statistics
-- Add caching layer if needed (Redis)
 
 ---
 
@@ -335,62 +424,12 @@ SUPABASE_SERVICE_ROLE_KEY=[service-role-key]  # For imports
 **Anon Client (Browser):**
 - Used by default in client components
 - Subject to RLS policies
-- Can read public data, write own progress
+- Can read public books, write own progress
 
-**Service Role Client (Server):**
+**Service Role Client (Server - Import API only):**
 - Used in import API only
 - Bypasses RLS
 - Full database access
-
-### Connection Code
-
-```typescript
-// Browser client
-import { createClient } from '@/lib/supabase/client';
-const supabase = createClient();
-
-// Server client (respects RLS)
-import { createClient } from '@/lib/supabase/server';
-const supabase = await createClient();
-
-// Service role (bypasses RLS)
-import { createClient } from '@supabase/supabase-js';
-const supabase = createClient(url, serviceRoleKey);
-```
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-**RLS Policy Errors:**
-- Check if user is authenticated
-- Verify policy allows the operation
-- Use service role for admin operations
-
-**Duplicate Key Errors:**
-- Book IDs must be unique across all series
-- `(user_id, book_id)` must be unique in reading_progress
-
-**Foreign Key Violations:**
-- Ensure series exists before adding books
-- Ensure book exists before adding reading progress
-
-### Debug Queries
-
-```sql
--- Check RLS policies
-SELECT * FROM pg_policies WHERE tablename = 'reading_progress';
-
--- Check current user
-SELECT auth.uid();
-
--- Count records per table
-SELECT COUNT(*) FROM series;
-SELECT COUNT(*) FROM books;
-SELECT COUNT(*) FROM reading_progress;
-```
 
 ---
 
@@ -398,11 +437,11 @@ SELECT COUNT(*) FROM reading_progress;
 
 Potential schema additions:
 
-1. **User preferences table** - Store settings per user
-2. **Book reviews table** - Allow users to rate/review books
+1. **User preferences table** - Store UI settings per user
+2. **Book reviews/ratings table** - Detailed reviews beyond simple ratings
 3. **Reading sessions** - Track time spent reading
 4. **Reading goals** - Set monthly/yearly targets
-5. **Book recommendations** - Store ML-generated suggestions
-6. **Audiobook links** - Add external resource links
+5. **Book recommendations** - ML-generated suggestions
+6. **External links** - Audiobook, Kindle, physical book links
 
 All future additions should maintain RLS principles and keep data separated by user.
