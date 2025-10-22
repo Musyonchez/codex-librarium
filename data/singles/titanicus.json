@@ -2,9 +2,14 @@
   "id": "titanicus",
   "title": "Titanicus",
   "author": "Dan Abnett",
-  "publicationYear": 2008,
-  "faction": ["Collegia Titanica", "Chaos", "Dark Mechanicum"],
-  "tags": ["Titans", "Sabbat Worlds Crusade", "Mechanicus"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Collegia Titanica",
+    "Chaos",
+    "Dark Mechanicum"
+  ],
+  "tags": [
+    "Titans",
+    "Sabbat Worlds Crusade",
+    "Mechanicus"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "day-of-ascension",
   "title": "Day of Ascension",
   "author": "Adrian Tchaikovsky",
-  "publicationYear": 2022,
-  "faction": ["Genestealer Cults", "Adeptus Mechanicus"],
-  "tags": ["Genestealer Cults", "Adeptus Mechanicus", "Uprising"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Genestealer Cults",
+    "Adeptus Mechanicus"
+  ],
+  "tags": [
+    "Genestealer Cults",
+    "Adeptus Mechanicus",
+    "Uprising"
+  ]
 }

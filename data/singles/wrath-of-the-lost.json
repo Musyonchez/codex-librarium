@@ -2,9 +2,13 @@
   "id": "wrath-of-the-lost",
   "title": "Wrath of the Lost",
   "author": "Chris Forrester",
-  "publicationYear": 2023,
-  "faction": ["Flesh Tearers", "Tyranids"],
-  "tags": ["Flesh Tearers", "Blood Angels Successors", "Tyranids"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Flesh Tearers",
+    "Tyranids"
+  ],
+  "tags": [
+    "Flesh Tearers",
+    "Blood Angels Successors",
+    "Tyranids"
+  ]
 }

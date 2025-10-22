@@ -2,9 +2,13 @@
   "id": "fire-warrior",
   "title": "Fire Warrior",
   "author": "Simon Spurrier",
-  "publicationYear": 2003,
-  "faction": ["T'au", "Chaos"],
-  "tags": ["T'au", "Fire Warriors", "Video Game"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "T'au",
+    "Chaos"
+  ],
+  "tags": [
+    "T'au",
+    "Fire Warriors",
+    "Video Game"
+  ]
 }

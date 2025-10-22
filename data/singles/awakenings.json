@@ -2,9 +2,13 @@
   "id": "awakenings",
   "title": "Awakenings",
   "author": "George Mann",
-  "publicationYear": 2022,
-  "faction": ["Inquisition", "Chaos"],
-  "tags": ["Inquisition", "Astor Sabbathiel", "Investigation"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Inquisition",
+    "Chaos"
+  ],
+  "tags": [
+    "Inquisition",
+    "Astor Sabbathiel",
+    "Investigation"
+  ]
 }

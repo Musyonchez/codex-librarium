@@ -2,9 +2,13 @@
   "id": "helbrecht-knight-of-the-throne",
   "title": "Helbrecht: Knight of the Throne",
   "author": "Marc Collins",
-  "publicationYear": 2022,
-  "faction": ["Black Templars", "Orks"],
-  "tags": ["Black Templars", "Helbrecht", "High Marshal"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Black Templars",
+    "Orks"
+  ],
+  "tags": [
+    "Black Templars",
+    "Helbrecht",
+    "High Marshal"
+  ]
 }

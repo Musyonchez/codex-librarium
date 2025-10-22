@@ -2,9 +2,12 @@
   "id": "lord-of-the-night",
   "title": "Lord of the Night",
   "author": "Simon Spurrier",
-  "publicationYear": 2005,
-  "faction": ["Night Lords", "Chaos"],
-  "tags": ["Night Lords", "Chaos Space Marines"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Night Lords",
+    "Chaos"
+  ],
+  "tags": [
+    "Night Lords",
+    "Chaos Space Marines"
+  ]
 }

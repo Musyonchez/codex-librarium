@@ -2,9 +2,15 @@
   "id": "blood-of-iax",
   "title": "Blood of Iax",
   "author": "Robbie Macniven",
-  "publicationYear": 2018,
-  "faction": ["Ultramarines", "Death Guard", "Chaos"],
-  "tags": ["Ultramarines", "Death Guard", "Ultramar", "Plague War"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Ultramarines",
+    "Death Guard",
+    "Chaos"
+  ],
+  "tags": [
+    "Ultramarines",
+    "Death Guard",
+    "Ultramar",
+    "Plague War"
+  ]
 }

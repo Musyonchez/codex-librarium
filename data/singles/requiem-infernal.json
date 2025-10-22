@@ -2,9 +2,14 @@
   "id": "requiem-infernal",
   "title": "Requiem Infernal",
   "author": "Peter Fehervari",
-  "publicationYear": 2019,
-  "faction": ["Adepta Sororitas", "Chaos"],
-  "tags": ["Sisters of Battle", "Dark", "Chaos", "Horror"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adepta Sororitas",
+    "Chaos"
+  ],
+  "tags": [
+    "Sisters of Battle",
+    "Dark",
+    "Chaos",
+    "Horror"
+  ]
 }

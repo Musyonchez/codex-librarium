@@ -2,9 +2,13 @@
   "id": "master-of-rites",
   "title": "Master of Rites",
   "author": "Rob Young",
-  "publicationYear": 2025,
-  "faction": ["Ultramarines", "Chaos"],
-  "tags": ["Ultramarines", "Chaplain", "Rites"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Ultramarines",
+    "Chaos"
+  ],
+  "tags": [
+    "Ultramarines",
+    "Chaplain",
+    "Rites"
+  ]
 }

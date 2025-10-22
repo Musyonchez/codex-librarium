@@ -2,9 +2,13 @@
   "id": "final-deployment",
   "title": "Final Deployment",
   "author": "R.S. Wilt",
-  "publicationYear": 2025,
-  "faction": ["Astra Militarum", "Chaos"],
-  "tags": ["Imperial Guard", "Astra Militarum", "War"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Astra Militarum",
+    "Chaos"
+  ],
+  "tags": [
+    "Imperial Guard",
+    "Astra Militarum",
+    "War"
+  ]
 }

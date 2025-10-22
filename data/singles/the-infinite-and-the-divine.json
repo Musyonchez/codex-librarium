@@ -2,9 +2,13 @@
   "id": "the-infinite-and-the-divine",
   "title": "The Infinite and the Divine",
   "author": "Robert Rath",
-  "publicationYear": 2020,
-  "faction": ["Necrons"],
-  "tags": ["Necrons", "Trazyn", "Orikan", "Comedy"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Necrons"
+  ],
+  "tags": [
+    "Necrons",
+    "Trazyn",
+    "Orikan",
+    "Comedy"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "sons-of-the-hydra",
   "title": "Sons of the Hydra",
   "author": "Rob Sanders",
-  "publicationYear": 2017,
-  "faction": ["Alpha Legion", "Chaos"],
-  "tags": ["Alpha Legion", "Chaos Space Marines", "Intrigue"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Alpha Legion",
+    "Chaos"
+  ],
+  "tags": [
+    "Alpha Legion",
+    "Chaos Space Marines",
+    "Intrigue"
+  ]
 }

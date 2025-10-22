@@ -2,9 +2,13 @@
   "id": "legacy-of-dorn",
   "title": "Legacy of Dorn",
   "author": "Mike Lee",
-  "publicationYear": 2018,
-  "faction": ["Crimson Fists", "Orks"],
-  "tags": ["Crimson Fists", "Imperial Fists Successors", "Orks"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Crimson Fists",
+    "Orks"
+  ],
+  "tags": [
+    "Crimson Fists",
+    "Imperial Fists Successors",
+    "Orks"
+  ]
 }

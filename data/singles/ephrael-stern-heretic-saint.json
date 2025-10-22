@@ -2,9 +2,14 @@
   "id": "ephrael-stern-heretic-saint",
   "title": "Ephrael Stern: Heretic Saint",
   "author": "David Annandale",
-  "publicationYear": 2020,
-  "faction": ["Adepta Sororitas", "Chaos", "Daemons"],
-  "tags": ["Ephrael Stern", "Sisters of Battle", "Daemons"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adepta Sororitas",
+    "Chaos",
+    "Daemons"
+  ],
+  "tags": [
+    "Ephrael Stern",
+    "Sisters of Battle",
+    "Daemons"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "broken-crusade",
   "title": "Broken Crusade",
   "author": "Steven B. Fischer",
-  "publicationYear": 2024,
-  "faction": ["Black Templars", "Chaos"],
-  "tags": ["Black Templars", "Crusade", "Chaos"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Black Templars",
+    "Chaos"
+  ],
+  "tags": [
+    "Black Templars",
+    "Crusade",
+    "Chaos"
+  ]
 }

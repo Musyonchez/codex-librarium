@@ -2,9 +2,13 @@
   "id": "eye-of-terror",
   "title": "Eye of Terror",
   "author": "Barrington J. Bayley",
-  "publicationYear": 1999,
-  "faction": ["Rogue Trader", "Chaos"],
-  "tags": ["Rogue Trader", "Eye of Terror", "Chaos"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Rogue Trader",
+    "Chaos"
+  ],
+  "tags": [
+    "Rogue Trader",
+    "Eye of Terror",
+    "Chaos"
+  ]
 }

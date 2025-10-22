@@ -2,9 +2,15 @@
   "id": "daemonhammer",
   "title": "Daemonhammer",
   "author": "Darius Hinks",
-  "publicationYear": 2024,
-  "faction": ["Inquisition", "Grey Knights", "Daemons"],
-  "tags": ["Inquisition", "Coteaz", "Daemons", "Grey Knights"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Inquisition",
+    "Grey Knights",
+    "Daemons"
+  ],
+  "tags": [
+    "Inquisition",
+    "Coteaz",
+    "Daemons",
+    "Grey Knights"
+  ]
 }

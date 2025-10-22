@@ -2,9 +2,13 @@
   "id": "the-lion-son-of-the-forest",
   "title": "The Lion: Son of the Forest",
   "author": "Mike Brooks",
-  "publicationYear": 2023,
-  "faction": ["Dark Angels", "Chaos"],
-  "tags": ["Lion El'Jonson", "Dark Angels", "Primarch Returns"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Dark Angels",
+    "Chaos"
+  ],
+  "tags": [
+    "Lion El'Jonson",
+    "Dark Angels",
+    "Primarch Returns"
+  ]
 }

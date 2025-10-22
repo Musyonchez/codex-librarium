@@ -2,9 +2,14 @@
   "id": "angron-the-red-angel",
   "title": "Angron: The Red Angel",
   "author": "David Guymer",
-  "publicationYear": 2023,
-  "faction": ["World Eaters", "Chaos", "Daemons"],
-  "tags": ["Angron", "World Eaters", "Daemon Primarch"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "World Eaters",
+    "Chaos",
+    "Daemons"
+  ],
+  "tags": [
+    "Angron",
+    "World Eaters",
+    "Daemon Primarch"
+  ]
 }

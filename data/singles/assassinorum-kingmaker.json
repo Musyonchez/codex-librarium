@@ -2,9 +2,13 @@
   "id": "assassinorum-kingmaker",
   "title": "Assassinorum: Kingmaker",
   "author": "Robert Rath",
-  "publicationYear": 2022,
-  "faction": ["Officio Assassinorum", "Necrons"],
-  "tags": ["Assassins", "Officio Assassinorum", "Necrons"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Officio Assassinorum",
+    "Necrons"
+  ],
+  "tags": [
+    "Assassins",
+    "Officio Assassinorum",
+    "Necrons"
+  ]
 }

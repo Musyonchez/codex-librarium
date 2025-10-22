@@ -2,9 +2,13 @@
   "id": "the-triumph-of-saint-katherine",
   "title": "The Triumph of Saint Katherine",
   "author": "Danie Ware",
-  "publicationYear": 2022,
-  "faction": ["Adepta Sororitas", "Necrons"],
-  "tags": ["Sisters of Battle", "Saint Katherine", "Necrons"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adepta Sororitas",
+    "Necrons"
+  ],
+  "tags": [
+    "Sisters of Battle",
+    "Saint Katherine",
+    "Necrons"
+  ]
 }

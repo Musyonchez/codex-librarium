@@ -2,9 +2,13 @@
   "id": "honourbound",
   "title": "Honourbound",
   "author": "Rachel Harrison",
-  "publicationYear": 2019,
-  "faction": ["Astra Militarum", "Orks"],
-  "tags": ["Commissariat", "Severina Raine", "Imperial Guard"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Astra Militarum",
+    "Orks"
+  ],
+  "tags": [
+    "Commissariat",
+    "Severina Raine",
+    "Imperial Guard"
+  ]
 }

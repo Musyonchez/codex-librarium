@@ -2,9 +2,14 @@
   "id": "lucius-the-faultless-blade",
   "title": "Lucius: The Faultless Blade",
   "author": "Ian St. Martin",
-  "publicationYear": 2017,
-  "faction": ["Emperor's Children", "Chaos", "Slaanesh"],
-  "tags": ["Lucius", "Emperor's Children", "Slaanesh"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Emperor's Children",
+    "Chaos",
+    "Slaanesh"
+  ],
+  "tags": [
+    "Lucius",
+    "Emperor's Children",
+    "Slaanesh"
+  ]
 }

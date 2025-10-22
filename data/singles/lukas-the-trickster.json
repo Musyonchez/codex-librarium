@@ -2,9 +2,13 @@
   "id": "lukas-the-trickster",
   "title": "Lukas the Trickster",
   "author": "Josh Reynolds",
-  "publicationYear": 2018,
-  "faction": ["Space Wolves", "Dark Eldar"],
-  "tags": ["Space Wolves", "Lukas", "Dark Eldar"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Space Wolves",
+    "Dark Eldar"
+  ],
+  "tags": [
+    "Space Wolves",
+    "Lukas",
+    "Dark Eldar"
+  ]
 }

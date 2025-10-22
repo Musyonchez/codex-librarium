@@ -2,9 +2,13 @@
   "id": "voidscarred",
   "title": "Voidscarred",
   "author": "Mike Brooks",
-  "publicationYear": 2025,
-  "faction": ["Eldar", "Eldar Corsairs"],
-  "tags": ["Eldar Corsairs", "Pirates", "Eldar"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Eldar",
+    "Eldar Corsairs"
+  ],
+  "tags": [
+    "Eldar Corsairs",
+    "Pirates",
+    "Eldar"
+  ]
 }

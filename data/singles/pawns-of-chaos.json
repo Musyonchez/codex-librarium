@@ -2,9 +2,12 @@
   "id": "pawns-of-chaos",
   "title": "Pawns of Chaos",
   "author": "Brian Craig",
-  "publicationYear": 2001,
-  "faction": ["Chaos", "Chaos Cultists"],
-  "tags": ["Chaos", "Cultists"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Chaos",
+    "Chaos Cultists"
+  ],
+  "tags": [
+    "Chaos",
+    "Cultists"
+  ]
 }

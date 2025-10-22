@@ -2,9 +2,13 @@
   "id": "silent-hunters",
   "title": "Silent Hunters",
   "author": "Edoardo Albert",
-  "publicationYear": 2021,
-  "faction": ["Carcharodons", "Tyranids"],
-  "tags": ["Carcharodons", "Space Sharks", "Tyranids"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Carcharodons",
+    "Tyranids"
+  ],
+  "tags": [
+    "Carcharodons",
+    "Space Sharks",
+    "Tyranids"
+  ]
 }

@@ -2,9 +2,14 @@
   "id": "fulgrim-the-perfect-son",
   "title": "Fulgrim: The Perfect Son",
   "author": "Jude Reid",
-  "publicationYear": 2025,
-  "faction": ["Emperor's Children", "Chaos", "Slaanesh"],
-  "tags": ["Fulgrim", "Emperor's Children", "Daemon Primarch"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Emperor's Children",
+    "Chaos",
+    "Slaanesh"
+  ],
+  "tags": [
+    "Fulgrim",
+    "Emperor's Children",
+    "Daemon Primarch"
+  ]
 }

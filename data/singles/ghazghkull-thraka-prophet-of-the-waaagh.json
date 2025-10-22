@@ -2,9 +2,13 @@
   "id": "ghazghkull-thraka-prophet-of-the-waaagh",
   "title": "Ghazghkull Thraka: Prophet of the Waaagh!",
   "author": "Nate Crowley",
-  "publicationYear": 2021,
-  "faction": ["Orks", "Astra Militarum"],
-  "tags": ["Ghazghkull", "Orks", "Warboss"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Orks",
+    "Astra Militarum"
+  ],
+  "tags": [
+    "Ghazghkull",
+    "Orks",
+    "Warboss"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "valedor",
   "title": "Valedor",
   "author": "Guy Haley",
-  "publicationYear": 2014,
-  "faction": ["Eldar", "Tyranids"],
-  "tags": ["Eldar", "Tyranids", "Apocalypse"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Eldar",
+    "Tyranids"
+  ],
+  "tags": [
+    "Eldar",
+    "Tyranids",
+    "Apocalypse"
+  ]
 }

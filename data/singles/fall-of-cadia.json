@@ -2,9 +2,16 @@
   "id": "fall-of-cadia",
   "title": "Fall of Cadia",
   "author": "Robert Rath",
-  "publicationYear": 2023,
-  "faction": ["Astra Militarum", "Cadia", "Chaos", "Black Legion"],
-  "tags": ["Cadia", "13th Black Crusade", "Abaddon", "Fall of Cadia"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Astra Militarum",
+    "Cadia",
+    "Chaos",
+    "Black Legion"
+  ],
+  "tags": [
+    "Cadia",
+    "13th Black Crusade",
+    "Abaddon",
+    "Fall of Cadia"
+  ]
 }

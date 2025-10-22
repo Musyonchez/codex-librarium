@@ -2,9 +2,13 @@
   "id": "volpone-glory",
   "title": "Volpone Glory",
   "author": "Nick Kyme",
-  "publicationYear": 2021,
-  "faction": ["Astra Militarum", "Orks"],
-  "tags": ["Imperial Guard", "Volpone Bluebloods", "Orks"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Astra Militarum",
+    "Orks"
+  ],
+  "tags": [
+    "Imperial Guard",
+    "Volpone Bluebloods",
+    "Orks"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "morvenn-vahl-spear-of-faith",
   "title": "Morvenn Vahl: Spear of Faith",
   "author": "Jude Reid",
-  "publicationYear": 2024,
-  "faction": ["Adepta Sororitas", "Chaos"],
-  "tags": ["Morvenn Vahl", "Sisters of Battle", "Abbess"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adepta Sororitas",
+    "Chaos"
+  ],
+  "tags": [
+    "Morvenn Vahl",
+    "Sisters of Battle",
+    "Abbess"
+  ]
 }

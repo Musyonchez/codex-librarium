@@ -2,9 +2,13 @@
   "id": "farseer",
   "title": "Farseer",
   "author": "William King",
-  "publicationYear": 2002,
-  "faction": ["Eldar", "Chaos"],
-  "tags": ["Eldar", "Farseer", "Alaitoc"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Eldar",
+    "Chaos"
+  ],
+  "tags": [
+    "Eldar",
+    "Farseer",
+    "Alaitoc"
+  ]
 }

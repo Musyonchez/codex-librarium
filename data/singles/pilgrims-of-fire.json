@@ -2,9 +2,13 @@
   "id": "pilgrims-of-fire",
   "title": "Pilgrims of Fire",
   "author": "Justin D. Hill",
-  "publicationYear": 2023,
-  "faction": ["Adepta Sororitas", "Chaos"],
-  "tags": ["Sisters of Battle", "Pilgrimage", "Faith"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adepta Sororitas",
+    "Chaos"
+  ],
+  "tags": [
+    "Sisters of Battle",
+    "Pilgrimage",
+    "Faith"
+  ]
 }

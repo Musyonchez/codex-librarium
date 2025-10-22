@@ -2,9 +2,14 @@
   "id": "fire-caste",
   "title": "Fire Caste",
   "author": "Peter Fehervari",
-  "publicationYear": 2013,
-  "faction": ["Astra Militarum", "T'au"],
-  "tags": ["Imperial Guard", "T'au", "Jungle Warfare", "Dark"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Astra Militarum",
+    "T'au"
+  ],
+  "tags": [
+    "Imperial Guard",
+    "T'au",
+    "Jungle Warfare",
+    "Dark"
+  ]
 }

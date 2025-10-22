@@ -2,9 +2,14 @@
   "id": "curse-of-the-wulfen",
   "title": "Curse of the Wulfen",
   "author": "David Annandale",
-  "publicationYear": 2016,
-  "faction": ["Space Wolves", "Chaos", "Daemons"],
-  "tags": ["Space Wolves", "Wulfen", "War Zone Fenris"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Space Wolves",
+    "Chaos",
+    "Daemons"
+  ],
+  "tags": [
+    "Space Wolves",
+    "Wulfen",
+    "War Zone Fenris"
+  ]
 }

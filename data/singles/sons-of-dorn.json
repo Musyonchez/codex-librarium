@@ -2,9 +2,13 @@
   "id": "sons-of-dorn",
   "title": "Sons of Dorn",
   "author": "Chris Roberson",
-  "publicationYear": 2010,
-  "faction": ["Imperial Fists", "Orks"],
-  "tags": ["Imperial Fists", "Space Marines", "Recruitment"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Imperial Fists",
+    "Orks"
+  ],
+  "tags": [
+    "Imperial Fists",
+    "Space Marines",
+    "Recruitment"
+  ]
 }

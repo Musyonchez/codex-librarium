@@ -2,9 +2,13 @@
   "id": "shadowsun-the-patient-hunter",
   "title": "Shadowsun: The Patient Hunter",
   "author": "Phil Kelly",
-  "publicationYear": 2022,
-  "faction": ["T'au", "Space Marines"],
-  "tags": ["Shadowsun", "T'au", "Commander"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "T'au",
+    "Space Marines"
+  ],
+  "tags": [
+    "Shadowsun",
+    "T'au",
+    "Commander"
+  ]
 }

@@ -2,9 +2,13 @@
   "id": "tomb-world",
   "title": "Tomb World",
   "author": "Jonathan D. Beer",
-  "publicationYear": 2025,
-  "faction": ["Necrons", "Astra Militarum"],
-  "tags": ["Necrons", "Tomb World", "Awakening"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Necrons",
+    "Astra Militarum"
+  ],
+  "tags": [
+    "Necrons",
+    "Tomb World",
+    "Awakening"
+  ]
 }

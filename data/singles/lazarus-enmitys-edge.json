@@ -2,9 +2,13 @@
   "id": "lazarus-enmitys-edge",
   "title": "Lazarus: Enmity's Edge",
   "author": "Gary Kloster",
-  "publicationYear": 2024,
-  "faction": ["Dark Angels", "Chaos"],
-  "tags": ["Lazarus", "Dark Angels", "Primaris"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Dark Angels",
+    "Chaos"
+  ],
+  "tags": [
+    "Lazarus",
+    "Dark Angels",
+    "Primaris"
+  ]
 }

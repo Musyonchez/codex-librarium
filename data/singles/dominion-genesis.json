@@ -2,9 +2,13 @@
   "id": "dominion-genesis",
   "title": "Dominion Genesis",
   "author": "Jonathan D. Beer",
-  "publicationYear": 2024,
-  "faction": ["Adeptus Mechanicus", "Tyranids"],
-  "tags": ["Adeptus Mechanicus", "Tech-Priests", "Tyranids"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Adeptus Mechanicus",
+    "Tyranids"
+  ],
+  "tags": [
+    "Adeptus Mechanicus",
+    "Tech-Priests",
+    "Tyranids"
+  ]
 }

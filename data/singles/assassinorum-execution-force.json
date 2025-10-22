@@ -2,9 +2,13 @@
   "id": "assassinorum-execution-force",
   "title": "Assassinorum: Execution Force",
   "author": "Joe Parrino",
-  "publicationYear": 2015,
-  "faction": ["Officio Assassinorum", "Chaos"],
-  "tags": ["Assassins", "Officio Assassinorum", "Chaos"],
-  "series": null,
-  "orderInSeries": null
+  "faction": [
+    "Officio Assassinorum",
+    "Chaos"
+  ],
+  "tags": [
+    "Assassins",
+    "Officio Assassinorum",
+    "Chaos"
+  ]
 }
