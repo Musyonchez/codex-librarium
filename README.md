@@ -5,7 +5,10 @@ A comprehensive web application for tracking your progress through the vast Warh
 ## Features
 
 ### 📚 Extensive Book Collection
-- **32 complete series** with over **150+ books**
+- **76 complete series** with over **387 books total**
+- **85 standalone novels**
+- **97 novellas**
+- **129 anthologies and collections**
 - Major series including:
   - The Horus Heresy (54 books)
   - Siege of Terra (8 books)
@@ -16,15 +19,19 @@ A comprehensive web application for tracking your progress through the vast Warh
   - Xenos-focused series: Path of the Eldar, Twice-Dead King, Phoenix Lords
 
 ### 🎯 Smart Organization
-- **Browse by Series** - Follow Black Library publication order
-- **Browse by Name** - Alphabetically sorted complete catalog
-- **Browse by Tags** - Find books by themes (e.g., "Primarchs", "Siege", "Investigation")
-- **Browse by Factions** - Filter by your favorite armies and factions
+- **Four Book Categories** - Separate navigation for Series, Singles, Novellas, and Anthologies
+- **Multiple Sorting Options** - Browse by Series, Name, Tags, or Factions
+- **By Series** - Follow Black Library publication order
+- **By Name** - Alphabetically sorted complete catalog
+- **By Tags** - Find books by themes (e.g., "Primarchs", "Siege", "Investigation")
+- **By Factions** - Filter by your favorite armies and factions
 
 ### 📊 Progress Tracking
 - Three reading states: Unread, Reading, Completed
-- Visual progress indicators for each series
-- Dashboard with statistics and series completion rates
+- **Tabbed Dashboard** - Separate dashboards for Series, Singles, Novellas, and Anthologies
+- Visual progress indicators and completion rates
+- Statistics for each category (Total, Completed, Reading, Unread)
+- Currently Reading and Completed Books sections
 - Real-time sync across all your devices
 
 ### 🎨 Premium UI/UX
@@ -40,10 +47,12 @@ A comprehensive web application for tracking your progress through the vast Warh
 - Secure API endpoints
 
 ### ⚙️ Admin Features
-- JSON-based book import system
+- JSON-based book import system with file selection
+- Support for importing Series, Singles, Novellas, and Anthologies
 - Automatic tag and faction normalization
-- Folder-based organization for easy management
-- Real-time updates to canonical tag/faction lists
+- Folder-based organization (_meta folders) for easy management
+- Real-time updates to canonical tag/faction lists across all categories
+- Selective import (choose specific files to import)
 
 ## Tech Stack
 
@@ -100,13 +109,32 @@ npm run dev
 ```
 ├── app/                    # Next.js app directory
 │   ├── api/               # API routes
-│   ├── dashboard/         # Dashboard page
+│   │   ├── books/         # Series books API
+│   │   ├── singles/       # Singles API
+│   │   ├── novellas/      # Novellas API
+│   │   ├── anthologies/   # Anthologies API
+│   │   ├── reading/       # Reading progress APIs
+│   │   └── import/        # Import system APIs
+│   ├── dashboard/         # Dashboard pages
+│   │   ├── page.tsx       # Series dashboard
+│   │   ├── singles/       # Singles dashboard
+│   │   ├── novellas/      # Novellas dashboard
+│   │   └── anthologies/   # Anthologies dashboard
 │   ├── import/            # Admin import page
 │   ├── order/             # Book browsing pages
+│   │   ├── series/        # Series books
+│   │   ├── singles/       # Single novels
+│   │   ├── novellas/      # Novellas
+│   │   ├── anthologies/   # Anthologies
+│   │   ├── name/          # Browse by name
+│   │   ├── tags/          # Browse by tags
+│   │   └── factions/      # Browse by factions
 │   └── auth/              # Authentication callbacks
 ├── components/            # React components
 │   ├── AppLayout.tsx      # Main layout wrapper
 │   ├── BookDetailsModal.tsx
+│   ├── DashboardTabs.tsx  # Dashboard category tabs
+│   ├── OrderTabs.tsx      # Sorting tabs
 │   ├── Navbar.tsx
 │   └── SeriesView.tsx
 ├── lib/                   # Utilities and types
@@ -114,9 +142,16 @@ npm run dev
 │   ├── design-system.ts   # Theming and styles
 │   └── types.ts           # TypeScript definitions
 ├── data/                  # Book data
-│   ├── series/            # Individual series JSON files
-│   ├── tags.json          # Canonical tag list
-│   └── factions.json      # Canonical faction list
+│   ├── series/            # Series JSON files
+│   │   └── _meta/         # tags.json, factions.json
+│   ├── singles/           # Singles JSON files
+│   │   └── _meta/         # tags.json, factions.json
+│   ├── novellas/          # Novellas JSON files
+│   │   └── _meta/         # tags.json, factions.json
+│   └── anthologies/       # Anthologies JSON files
+│       └── _meta/         # tags.json, factions.json
+├── supabase/              # Database migrations
+│   └── migrations/        # SQL migration files
 └── .claude/               # Documentation
     ├── DESIGN_SYSTEM.md
     ├── DATABASE.md
@@ -126,32 +161,36 @@ npm run dev
 
 ## Database Setup
 
-The app requires two Supabase tables:
+Run the migrations in the `supabase/migrations/` directory to set up the database:
 
-### `reading_tracker` table
-```sql
-CREATE TABLE reading_tracker (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES auth.users NOT NULL,
-  book_id TEXT NOT NULL,
-  status TEXT NOT NULL CHECK (status IN ('unread', 'reading', 'completed')),
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW(),
-  UNIQUE(user_id, book_id)
-);
+```bash
+npx supabase db push
 ```
 
-See `.claude/DATABASE.md` for complete schema and RLS policies.
+The database includes:
+- **Book Tables**: `series`, `series_books`, `singles`, `novellas`, `anthologies`
+- **Reading Progress Tables**: `reading_progress_series_books`, `reading_progress_singles`, `reading_progress_novellas`, `reading_progress_anthologies`
+- **Row Level Security (RLS)** on all tables
+- **Indexes** for optimal query performance
+
+See `supabase/migrations/004_complete_fresh_schema.sql` for the complete schema.
 
 ## Adding Books
 
-Books are stored as JSON files in `data/series/`. To add a new series:
+Books are stored as JSON files in four category directories:
 
-1. Create a new JSON file in `data/series/`
-2. Follow the schema in `.claude/ADDING_BOOKS.md`
-3. Tags and factions will auto-normalize against canonical lists
+- `data/series/` - Series with books
+- `data/singles/` - Standalone novels
+- `data/novellas/` - Novellas
+- `data/anthologies/` - Anthologies and collections
 
-For admin access, use the `/import` page to upload JSON files directly.
+To add books:
+
+1. Create a new JSON file in the appropriate category folder
+2. Follow the schema for that category
+3. Tags and factions will auto-normalize against canonical lists in `_meta/` folders
+
+For admin access, use the `/import` page to selectively import JSON files.
 
 ## Documentation
 

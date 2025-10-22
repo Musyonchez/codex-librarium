@@ -14,7 +14,7 @@ export default function Home() {
             Codex Librarium
           </h1>
           <p className={`text-xl md:text-2xl mb-8 ${styles.textSecondary} max-w-3xl mx-auto`}>
-            Track your journey through 150+ books across 32 Black Library series.
+            Track your journey through 387+ books across 76 series, 85 singles, 97 novellas, and 129 anthologies.
             Organize your reading, monitor progress, and never lose your place in the grim darkness of the far future.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
@@ -35,31 +35,31 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className={`${styles.card} p-6`}>
             <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
-              32 Complete Series
+              Massive Collection
             </h3>
             <p className={styles.textSecondary}>
-              Browse 150+ books across 32 series including The Horus Heresy, Dawn of Fire, Gaunt&apos;s Ghosts,
-              Eisenhorn, Night Lords, and many more. Follow Black Library publication order.
+              387+ books across 76 series including The Horus Heresy, Dawn of Fire, Gaunt&apos;s Ghosts,
+              plus 85 singles, 97 novellas, and 129 anthologies. Follow Black Library publication order.
             </p>
           </div>
 
           <div className={`${styles.card} p-6`}>
             <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
-              Track Progress
+              Organized by Category
             </h3>
             <p className={styles.textSecondary}>
-              Mark books as unread, reading, or completed. View your progress statistics
-              and see which books to tackle next in your collection.
+              Browse books by Series, Singles, Novellas, or Anthologies. Filter by Name, Tags, or Factions
+              to find exactly what you&apos;re looking for.
             </p>
           </div>
 
           <div className={`${styles.card} p-6`}>
             <h3 className={`text-xl font-bold mb-3 ${styles.textGold}`}>
-              Sync Across Devices
+              Tabbed Dashboards
             </h3>
             <p className={styles.textSecondary}>
-              Sign in with Google to sync your reading progress across all your devices.
-              Never lose track of where you are in the series.
+              Separate dashboards for each category with progress tracking, statistics, and completion rates.
+              Sync across all your devices with Google sign-in.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
               <div>
                 <h4 className={`font-semibold mb-1 ${styles.textPrimary}`}>Browse Books</h4>
                 <p className={styles.textSecondary}>
-                  Explore the complete collection organized by series and reading order.
+                  Explore Series, Singles, Novellas, and Anthologies. Filter by Name, Tags, or Factions.
                 </p>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
               <div>
                 <h4 className={`font-semibold mb-1 ${styles.textPrimary}`}>Monitor Stats</h4>
                 <p className={styles.textSecondary}>
-                  View your dashboard to see completion rates, series progress, and recommendations for what to read next.
+                  View tabbed dashboards for each category to see completion rates, progress statistics, and what to read next.
                 </p>
               </div>
             </div>
