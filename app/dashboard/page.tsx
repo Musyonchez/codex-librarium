@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import AppLayout from '@/components/AppLayout';
 import Dashboard from '@/components/Dashboard';
+import DashboardTabs from '@/components/DashboardTabs';
 import { ReadingTracker, BooksMetadata } from '@/lib/types';
 
 export default function DashboardPage() {
@@ -55,6 +56,8 @@ export default function DashboardPage() {
             Track your progress and see statistics about your reading journey
           </p>
         </div>
+
+        <DashboardTabs />
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
