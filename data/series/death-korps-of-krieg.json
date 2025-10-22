@@ -8,7 +8,7 @@
       "title": "Krieg",
       "author": "Steve Lyons",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "faction": ["Astra Militarum", "Death Korps of Krieg", "Orks"],
       "tags": ["Death Korps", "Krieg", "Siege Warfare"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Siege of Vraks",
       "author": "Steve Lyons",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "faction": ["Astra Militarum", "Death Korps of Krieg", "Chaos"],
       "tags": ["Death Korps", "Krieg", "Vraks", "Siege"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "The Relentless Dead",
       "author": "Steve Lyons",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum", "Death Korps of Krieg"],
+      "faction": ["Astra Militarum", "Death Korps of Krieg", "Necrons"],
       "tags": ["Death Korps", "Krieg"]
     }
   ]

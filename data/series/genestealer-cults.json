@@ -8,7 +8,7 @@
       "title": "Cult of the Warmason",
       "author": "C.L. Werner",
       "orderInSeries": 1,
-      "faction": ["Genestealer Cults"],
+      "faction": ["Genestealer Cults", "Astra Militarum", "Tyranids"],
       "tags": ["Genestealer Cults", "Tyranids", "Cult"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Cult of the Spiral Dawn",
       "author": "Peter Fehervari",
       "orderInSeries": 2,
-      "faction": ["Genestealer Cults"],
+      "faction": ["Genestealer Cults", "Astra Militarum", "Tyranids"],
       "tags": ["Genestealer Cults", "Tyranids", "Cult", "Dark Coil"]
     }
   ]

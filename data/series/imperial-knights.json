@@ -8,7 +8,7 @@
       "title": "Kingsblade",
       "author": "Andy Clark",
       "orderInSeries": 1,
-      "faction": ["Imperial Knights"],
+      "faction": ["Imperial Knights", "Chaos", "Orks"],
       "tags": ["Imperial Knights", "Noble Houses", "War Machines"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Knightsblade",
       "author": "Andy Clark",
       "orderInSeries": 2,
-      "faction": ["Imperial Knights"],
+      "faction": ["Imperial Knights", "Tyranids"],
       "tags": ["Imperial Knights", "Noble Houses", "War Machines"]
     }
   ]

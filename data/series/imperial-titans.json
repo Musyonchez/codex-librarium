@@ -8,7 +8,7 @@
       "title": "Warlord: Fury of the God-Machine",
       "author": "David Annandale",
       "orderInSeries": 1,
-      "faction": ["Adeptus Titanicus"],
+      "faction": ["Adeptus Titanicus", "Orks"],
       "tags": ["Titans", "Warlord", "Mechanicus"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Imperator: Wrath of the Omnissiah",
       "author": "Gav Thorpe",
       "orderInSeries": 2,
-      "faction": ["Adeptus Titanicus"],
+      "faction": ["Adeptus Titanicus", "Chaos", "Traitor Titans"],
       "tags": ["Titans", "Imperator", "Mechanicus"]
     }
   ]

@@ -8,7 +8,7 @@
       "title": "Farsight",
       "author": "Phil Kelly",
       "orderInSeries": 1,
-      "faction": ["T'au"],
+      "faction": ["T'au", "Orks"],
       "tags": ["Farsight", "T'au", "Commander"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Crisis of Faith",
       "author": "Phil Kelly",
       "orderInSeries": 2,
-      "faction": ["T'au"],
+      "faction": ["T'au", "Chaos", "Daemons"],
       "tags": ["Farsight", "T'au", "Greater Good"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Empire of Lies",
       "author": "Phil Kelly",
       "orderInSeries": 3,
-      "faction": ["T'au"],
+      "faction": ["T'au", "Chaos"],
       "tags": ["Farsight", "T'au", "Enclaves"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Blade of Truth",
       "author": "Phil Kelly",
       "orderInSeries": 4,
-      "faction": ["T'au"],
+      "faction": ["T'au", "Chaos"],
       "tags": ["Farsight", "T'au", "Dawn Blade"]
     }
   ]
