@@ -74,14 +74,18 @@ export async function POST(request: Request) {
     const importResults = {
       series: 0,
       books: 0,
+      singles: 0,
+      novellas: 0,
+      anthologies: 0,
       errors: [] as string[],
     };
 
     const dataDir = path.join(process.cwd(), 'data');
 
-    // Load canonical lists
-    const tagsFilePath = path.join(dataDir, 'tags.json');
-    const factionsFilePath = path.join(dataDir, 'factions.json');
+    // Load canonical lists from _meta folder (use series as reference)
+    const metaDir = path.join(dataDir, 'series', '_meta');
+    const tagsFilePath = path.join(metaDir, 'tags.json');
+    const factionsFilePath = path.join(metaDir, 'factions.json');
 
     let canonicalTags: string[] = [];
     let canonicalFactions: string[] = [];
@@ -106,60 +110,133 @@ export async function POST(request: Request) {
       try {
         const filePath = path.join(dataDir, fileInfo.folder, fileInfo.file);
         const fileContent = await fs.readFile(filePath, 'utf-8');
-        const seriesData = JSON.parse(fileContent);
+        const data = JSON.parse(fileContent);
 
-        // Upsert series
-        const { error: seriesError } = await supabase
-          .from('series')
-          .upsert({
-            id: seriesData.id,
-            name: seriesData.name,
-            description: seriesData.description,
-          }, {
-            onConflict: 'id',
-          });
-
-        if (seriesError) {
-          importResults.errors.push(`Series ${seriesData.id}: ${seriesError.message}`);
-          continue;
-        }
-
-        importResults.series++;
-
-        // Upsert books
-        for (const book of seriesData.books) {
-          // Normalize tags
-          const normalizedTags = (book.tags || []).map((tag: string) => {
+        // Normalize tags and factions helper
+        const normalizeTags = (tags: string[]) =>
+          (tags || []).map((tag: string) => {
             const canonical = findCanonical(tag, canonicalTags);
             newTags.add(canonical);
             return canonical;
           });
 
-          // Normalize factions
-          const normalizedFactions = (book.faction || []).map((faction: string) => {
+        const normalizeFactions = (factions: string[]) =>
+          (factions || []).map((faction: string) => {
             const canonical = findCanonical(faction, canonicalFactions);
             newFactions.add(canonical);
             return canonical;
           });
 
-          const { error: bookError } = await supabase
-            .from('books')
+        // Handle different folder types
+        if (fileInfo.folder === 'series') {
+          // Series with books
+          const { error: seriesError } = await supabase
+            .from('series')
             .upsert({
-              id: book.id,
-              series_id: seriesData.id,
-              title: book.title,
-              author: book.author,
-              order_in_series: book.orderInSeries,
+              id: data.id,
+              name: data.name,
+              description: data.description,
+            }, {
+              onConflict: 'id',
+            });
+
+          if (seriesError) {
+            importResults.errors.push(`Series ${data.id}: ${seriesError.message}`);
+            continue;
+          }
+
+          importResults.series++;
+
+          // Upsert books
+          for (const book of data.books) {
+            const normalizedTags = normalizeTags(book.tags);
+            const normalizedFactions = normalizeFactions(book.faction);
+
+            const { error: bookError } = await supabase
+              .from('books')
+              .upsert({
+                id: book.id,
+                series_id: data.id,
+                title: book.title,
+                author: book.author,
+                order_in_series: book.orderInSeries,
+                faction: normalizedFactions,
+                tags: normalizedTags,
+              }, {
+                onConflict: 'id',
+              });
+
+            if (bookError) {
+              importResults.errors.push(`Book ${book.id}: ${bookError.message}`);
+            } else {
+              importResults.books++;
+            }
+          }
+        } else if (fileInfo.folder === 'singles') {
+          // Single novels
+          const normalizedTags = normalizeTags(data.tags);
+          const normalizedFactions = normalizeFactions(data.faction);
+
+          const { error } = await supabase
+            .from('singles')
+            .upsert({
+              id: data.id,
+              title: data.title,
+              author: data.author,
               faction: normalizedFactions,
               tags: normalizedTags,
             }, {
               onConflict: 'id',
             });
 
-          if (bookError) {
-            importResults.errors.push(`Book ${book.id}: ${bookError.message}`);
+          if (error) {
+            importResults.errors.push(`Single ${data.id}: ${error.message}`);
           } else {
-            importResults.books++;
+            importResults.singles++;
+          }
+        } else if (fileInfo.folder === 'novellas') {
+          // Novellas
+          const normalizedTags = normalizeTags(data.tags);
+          const normalizedFactions = normalizeFactions(data.faction);
+
+          const { error } = await supabase
+            .from('novellas')
+            .upsert({
+              id: data.id,
+              title: data.title,
+              author: data.author,
+              faction: normalizedFactions,
+              tags: normalizedTags,
+            }, {
+              onConflict: 'id',
+            });
+
+          if (error) {
+            importResults.errors.push(`Novella ${data.id}: ${error.message}`);
+          } else {
+            importResults.novellas++;
+          }
+        } else if (fileInfo.folder === 'anthologies') {
+          // Anthologies
+          const normalizedTags = normalizeTags(data.tags);
+          const normalizedFactions = normalizeFactions(data.faction);
+
+          const { error } = await supabase
+            .from('anthologies')
+            .upsert({
+              id: data.id,
+              title: data.title,
+              author: data.author,
+              faction: normalizedFactions,
+              tags: normalizedTags,
+            }, {
+              onConflict: 'id',
+            });
+
+          if (error) {
+            importResults.errors.push(`Anthology ${data.id}: ${error.message}`);
+          } else {
+            importResults.anthologies++;
           }
         }
       } catch (error) {
@@ -171,19 +248,46 @@ export async function POST(request: Request) {
     const updatedTags = Array.from(newTags).sort();
     const updatedFactions = Array.from(newFactions).sort();
 
-    if (updatedTags.length !== canonicalTags.length ||
-        !updatedTags.every((tag, i) => tag === canonicalTags[i])) {
-      await fs.writeFile(tagsFilePath, JSON.stringify(updatedTags, null, 2) + '\n');
+    const hasTagsChanged = updatedTags.length !== canonicalTags.length ||
+        !updatedTags.every((tag, i) => tag === canonicalTags[i]);
+    const hasFactionsChanged = updatedFactions.length !== canonicalFactions.length ||
+        !updatedFactions.every((faction, i) => faction === canonicalFactions[i]);
+
+    if (hasTagsChanged || hasFactionsChanged) {
+      // Update all _meta folders
+      const metaFolders = ['series', 'singles', 'novellas', 'anthologies'];
+      for (const folder of metaFolders) {
+        const metaPath = path.join(dataDir, folder, '_meta');
+        if (hasTagsChanged) {
+          await fs.writeFile(
+            path.join(metaPath, 'tags.json'),
+            JSON.stringify(updatedTags, null, 2) + '\n'
+          );
+        }
+        if (hasFactionsChanged) {
+          await fs.writeFile(
+            path.join(metaPath, 'factions.json'),
+            JSON.stringify(updatedFactions, null, 2) + '\n'
+          );
+        }
+      }
     }
 
-    if (updatedFactions.length !== canonicalFactions.length ||
-        !updatedFactions.every((faction, i) => faction === canonicalFactions[i])) {
-      await fs.writeFile(factionsFilePath, JSON.stringify(updatedFactions, null, 2) + '\n');
-    }
+    // Build summary message
+    const parts = [];
+    if (importResults.series > 0) parts.push(`${importResults.series} series`);
+    if (importResults.books > 0) parts.push(`${importResults.books} books`);
+    if (importResults.singles > 0) parts.push(`${importResults.singles} singles`);
+    if (importResults.novellas > 0) parts.push(`${importResults.novellas} novellas`);
+    if (importResults.anthologies > 0) parts.push(`${importResults.anthologies} anthologies`);
+
+    const message = parts.length > 0
+      ? `Import completed: ${parts.join(', ')}`
+      : 'No items imported';
 
     return NextResponse.json({
       success: true,
-      message: `Import completed: ${importResults.series} series, ${importResults.books} books`,
+      message,
       results: importResults,
     });
   } catch (error) {

@@ -13,6 +13,9 @@ interface ImportResult {
   results?: {
     series: number;
     books: number;
+    singles: number;
+    novellas: number;
+    anthologies: number;
     errors: string[];
   };
   error?: string;
@@ -326,12 +329,31 @@ export default function ImportPage() {
 
                   {result.results && (
                     <div className="space-y-2 mb-4">
-                      <p className={styles.textSecondary}>
-                        <span className="font-semibold">Series imported:</span> {result.results.series}
-                      </p>
-                      <p className={styles.textSecondary}>
-                        <span className="font-semibold">Books imported:</span> {result.results.books}
-                      </p>
+                      {result.results.series > 0 && (
+                        <p className={styles.textSecondary}>
+                          <span className="font-semibold">Series imported:</span> {result.results.series}
+                        </p>
+                      )}
+                      {result.results.books > 0 && (
+                        <p className={styles.textSecondary}>
+                          <span className="font-semibold">Books imported:</span> {result.results.books}
+                        </p>
+                      )}
+                      {result.results.singles > 0 && (
+                        <p className={styles.textSecondary}>
+                          <span className="font-semibold">Singles imported:</span> {result.results.singles}
+                        </p>
+                      )}
+                      {result.results.novellas > 0 && (
+                        <p className={styles.textSecondary}>
+                          <span className="font-semibold">Novellas imported:</span> {result.results.novellas}
+                        </p>
+                      )}
+                      {result.results.anthologies > 0 && (
+                        <p className={styles.textSecondary}>
+                          <span className="font-semibold">Anthologies imported:</span> {result.results.anthologies}
+                        </p>
+                      )}
                     </div>
                   )}
 
