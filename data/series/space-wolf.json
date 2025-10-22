@@ -8,7 +8,7 @@
       "title": "Space Wolf",
       "author": "William King",
       "orderInSeries": 1,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Fenris"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ragnar's Claw",
       "author": "William King",
       "orderInSeries": 2,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos", "Thousand Sons"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Fenris"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Grey Hunter",
       "author": "William King",
       "orderInSeries": 3,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Fenris"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Wolfblade",
       "author": "William King",
       "orderInSeries": 4,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos", "Dark Eldar"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Terra"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Sons of Fenris",
       "author": "Lee Lightner",
       "orderInSeries": 5,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos", "Thousand Sons"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Fenris"]
     },
     {
@@ -48,7 +48,7 @@
       "title": "Wolf's Honour",
       "author": "Lee Lightner",
       "orderInSeries": 6,
-      "faction": ["Space Wolves"],
+      "faction": ["Space Wolves", "Chaos", "Thousand Sons"],
       "tags": ["Space Wolves", "Ragnar Blackmane", "Fenris"]
     }
   ]

@@ -8,7 +8,7 @@
       "title": "Soul Hunter",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 1,
-      "faction": ["Night Lords", "Chaos"],
+      "faction": ["Night Lords", "Chaos", "Space Marines"],
       "tags": ["Night Lords", "Chaos Space Marines", "Talos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Blood Reaver",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 2,
-      "faction": ["Night Lords", "Chaos"],
+      "faction": ["Night Lords", "Chaos", "Marines Errant"],
       "tags": ["Night Lords", "Chaos Space Marines", "Talos"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Void Stalker",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 3,
-      "faction": ["Night Lords", "Chaos"],
+      "faction": ["Night Lords", "Chaos", "Eldar"],
       "tags": ["Night Lords", "Chaos Space Marines", "Talos", "Curze"]
     }
   ]

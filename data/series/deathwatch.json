@@ -8,7 +8,7 @@
       "title": "Warrior Brood",
       "author": "C.S. Goto",
       "orderInSeries": 1,
-      "faction": ["Deathwatch"],
+      "faction": ["Deathwatch", "Tyranids"],
       "tags": ["Deathwatch", "Xenos", "Tyranids"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Warrior Coven",
       "author": "C.S. Goto",
       "orderInSeries": 2,
-      "faction": ["Deathwatch"],
+      "faction": ["Deathwatch", "Eldar"],
       "tags": ["Deathwatch", "Xenos", "Eldar"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Deathwatch",
       "author": "Steve Parker",
       "orderInSeries": 3,
-      "faction": ["Deathwatch"],
+      "faction": ["Deathwatch", "Orks"],
       "tags": ["Deathwatch", "Xenos", "Orks"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Shadowbreaker",
       "author": "Steve Parker",
       "orderInSeries": 4,
-      "faction": ["Deathwatch"],
+      "faction": ["Deathwatch", "T'au"],
       "tags": ["Deathwatch", "Xenos", "T'au"]
     }
   ]

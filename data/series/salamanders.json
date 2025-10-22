@@ -8,7 +8,7 @@
       "title": "Salamander",
       "author": "Nick Kyme",
       "orderInSeries": 1,
-      "faction": ["Salamanders"],
+      "faction": ["Salamanders", "Dark Eldar"],
       "tags": ["Salamanders", "Vulkan", "Fire"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Firedrake",
       "author": "Nick Kyme",
       "orderInSeries": 2,
-      "faction": ["Salamanders"],
+      "faction": ["Salamanders", "Dark Eldar"],
       "tags": ["Salamanders", "Vulkan", "Terminators"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Nocturne",
       "author": "Nick Kyme",
       "orderInSeries": 3,
-      "faction": ["Salamanders"],
+      "faction": ["Salamanders", "Chaos", "Daemons"],
       "tags": ["Salamanders", "Vulkan", "Nocturne"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Salamanders: Rebirth",
       "author": "Nick Kyme",
       "orderInSeries": 4,
-      "faction": ["Salamanders"],
+      "faction": ["Salamanders", "Chaos"],
       "tags": ["Salamanders", "Vulkan"]
     }
   ]

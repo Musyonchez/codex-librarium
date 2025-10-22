@@ -8,7 +8,7 @@
       "title": "Grey Knights",
       "author": "Ben Counter",
       "orderInSeries": 1,
-      "faction": ["Grey Knights"],
+      "faction": ["Grey Knights", "Chaos", "Daemons"],
       "tags": ["Grey Knights", "Daemons", "Chaos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Dark Adeptus",
       "author": "Ben Counter",
       "orderInSeries": 2,
-      "faction": ["Grey Knights"],
+      "faction": ["Grey Knights", "Chaos", "Daemons", "Adeptus Mechanicus"],
       "tags": ["Grey Knights", "Daemons", "Chaos"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Hammer of Daemons",
       "author": "Ben Counter",
       "orderInSeries": 3,
-      "faction": ["Grey Knights"],
+      "faction": ["Grey Knights", "Chaos", "Daemons"],
       "tags": ["Grey Knights", "Daemons", "Chaos", "Warp"]
     }
   ]

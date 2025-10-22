@@ -8,7 +8,7 @@
       "title": "Carcharodons: Red Tithe",
       "author": "Robbie MacNiven",
       "orderInSeries": 1,
-      "faction": ["Carcharodons"],
+      "faction": ["Carcharodons", "Chaos"],
       "tags": ["Carcharodons", "Space Sharks", "Mystery"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Carcharodons: Outer Dark",
       "author": "Robbie MacNiven",
       "orderInSeries": 2,
-      "faction": ["Carcharodons"],
+      "faction": ["Carcharodons", "Tyranids"],
       "tags": ["Carcharodons", "Space Sharks", "Tyranids"]
     }
   ]

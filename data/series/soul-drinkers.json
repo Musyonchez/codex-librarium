@@ -8,7 +8,7 @@
       "title": "Soul Drinker",
       "author": "Ben Counter",
       "orderInSeries": 1,
-      "faction": ["Soul Drinkers"],
+      "faction": ["Soul Drinkers", "Chaos"],
       "tags": ["Soul Drinkers", "Renegade", "Sarpedon"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Bleeding Chalice",
       "author": "Ben Counter",
       "orderInSeries": 2,
-      "faction": ["Soul Drinkers"],
+      "faction": ["Soul Drinkers", "Chaos", "Word Bearers"],
       "tags": ["Soul Drinkers", "Renegade", "Sarpedon"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Crimson Tears",
       "author": "Ben Counter",
       "orderInSeries": 3,
-      "faction": ["Soul Drinkers"],
+      "faction": ["Soul Drinkers", "Adeptus Mechanicus", "Dark Eldar"],
       "tags": ["Soul Drinkers", "Renegade", "Sarpedon"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Chapter War",
       "author": "Ben Counter",
       "orderInSeries": 4,
-      "faction": ["Soul Drinkers"],
+      "faction": ["Soul Drinkers", "Howling Griffons", "Crimson Fists"],
       "tags": ["Soul Drinkers", "Renegade", "Sarpedon"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Hellforged",
       "author": "Ben Counter",
       "orderInSeries": 5,
-      "faction": ["Soul Drinkers"],
+      "faction": ["Soul Drinkers", "Chaos", "Iron Warriors"],
       "tags": ["Soul Drinkers", "Renegade", "Sarpedon"]
     },
     {

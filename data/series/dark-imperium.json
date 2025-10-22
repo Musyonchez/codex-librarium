@@ -8,7 +8,7 @@
       "title": "Dark Imperium",
       "author": "Guy Haley",
       "orderInSeries": 1,
-      "faction": ["Ultramarines", "Death Guard"],
+      "faction": ["Ultramarines", "Death Guard", "Chaos"],
       "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Nurgle"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Plague War",
       "author": "Guy Haley",
       "orderInSeries": 2,
-      "faction": ["Ultramarines", "Death Guard"],
+      "faction": ["Ultramarines", "Death Guard", "Chaos"],
       "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Mortarion"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Godblight",
       "author": "Guy Haley",
       "orderInSeries": 3,
-      "faction": ["Ultramarines", "Death Guard"],
+      "faction": ["Ultramarines", "Death Guard", "Chaos"],
       "tags": ["Guilliman", "Primarch", "Ultramarines", "Death Guard", "Mortarion", "Nurgle"]
     }
   ]

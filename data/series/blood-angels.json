@@ -8,7 +8,7 @@
       "title": "Deus Encarmine",
       "author": "James Swallow",
       "orderInSeries": 1,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Chaos", "Word Bearers"],
       "tags": ["Blood Angels", "Rafen", "Arkio", "Chaos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Deus Sanguinius",
       "author": "James Swallow",
       "orderInSeries": 2,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Chaos"],
       "tags": ["Blood Angels", "Rafen", "Arkio", "Sanguinius"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Red Fury",
       "author": "James Swallow",
       "orderInSeries": 3,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Necrons"],
       "tags": ["Blood Angels", "Rafen", "Black Rage"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Black Tide",
       "author": "James Swallow",
       "orderInSeries": 4,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Chaos", "Tyranids"],
       "tags": ["Blood Angels", "Rafen", "Chaos"]
     }
   ]

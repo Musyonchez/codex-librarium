@@ -8,7 +8,7 @@
       "title": "Mephiston: Blood of Sanguinius",
       "author": "Darius Hinks",
       "orderInSeries": 1,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Daemons", "Chaos"],
       "tags": ["Mephiston", "Blood Angels", "Psyker", "Black Rage"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Mephiston: Revenant Crusade",
       "author": "Darius Hinks",
       "orderInSeries": 2,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Word Bearers", "Chaos"],
       "tags": ["Mephiston", "Blood Angels", "Psyker"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Mephiston: City of Light",
       "author": "Darius Hinks",
       "orderInSeries": 3,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Necrons"],
       "tags": ["Mephiston", "Blood Angels", "Psyker"]
     }
   ]

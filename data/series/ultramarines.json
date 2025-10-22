@@ -8,7 +8,7 @@
       "title": "Nightbringer",
       "author": "Graham McNeill",
       "orderInSeries": 1,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Necrons"],
       "tags": ["Ultramarines", "Uriel Ventris", "Necrons"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Warriors of Ultramar",
       "author": "Graham McNeill",
       "orderInSeries": 2,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Tyranids"],
       "tags": ["Ultramarines", "Uriel Ventris", "Tyranids"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Dead Sky, Black Sun",
       "author": "Graham McNeill",
       "orderInSeries": 3,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Iron Warriors", "Chaos"],
       "tags": ["Ultramarines", "Uriel Ventris", "Chaos", "Daemon World"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "The Killing Ground",
       "author": "Graham McNeill",
       "orderInSeries": 4,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Chaos"],
       "tags": ["Ultramarines", "Uriel Ventris"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "Courage and Honour",
       "author": "Graham McNeill",
       "orderInSeries": 5,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "T'au"],
       "tags": ["Ultramarines", "Uriel Ventris", "T'au"]
     },
     {
@@ -48,7 +48,7 @@
       "title": "The Chapter's Due",
       "author": "Graham McNeill",
       "orderInSeries": 6,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Iron Warriors", "Chaos"],
       "tags": ["Ultramarines", "Uriel Ventris", "Iron Warriors"]
     },
     {
@@ -56,7 +56,7 @@
       "title": "The Swords of Calth",
       "author": "Graham McNeill",
       "orderInSeries": 7,
-      "faction": ["Ultramarines"],
+      "faction": ["Ultramarines", "Word Bearers", "Chaos"],
       "tags": ["Ultramarines", "Uriel Ventris", "Calth"]
     }
   ]

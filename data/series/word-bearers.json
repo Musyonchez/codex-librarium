@@ -8,7 +8,7 @@
       "title": "Dark Apostle",
       "author": "Anthony Reynolds",
       "orderInSeries": 1,
-      "faction": ["Word Bearers", "Chaos"],
+      "faction": ["Word Bearers", "Chaos", "Imperial Guard"],
       "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Dark Disciple",
       "author": "Anthony Reynolds",
       "orderInSeries": 2,
-      "faction": ["Word Bearers", "Chaos"],
+      "faction": ["Word Bearers", "Chaos", "Necrons"],
       "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Dark Creed",
       "author": "Anthony Reynolds",
       "orderInSeries": 3,
-      "faction": ["Word Bearers", "Chaos"],
+      "faction": ["Word Bearers", "Chaos", "Astra Militarum"],
       "tags": ["Word Bearers", "Chaos Space Marines", "Marduk"]
     }
   ]

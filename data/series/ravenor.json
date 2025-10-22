@@ -8,7 +8,7 @@
       "title": "Ravenor",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Ravenor", "Inquisition", "Psyker"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ravenor Returned",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Ravenor", "Inquisition", "Conspiracy"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Ravenor Rogue",
       "author": "Dan Abnett",
       "orderInSeries": 3,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Ravenor", "Inquisition", "Rogue"]
     }
   ]

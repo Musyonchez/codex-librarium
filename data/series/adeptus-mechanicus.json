@@ -8,7 +8,7 @@
       "title": "Skitarius",
       "author": "Rob Sanders",
       "orderInSeries": 1,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Necrons"],
       "tags": ["Tech-Priests", "Skitarii", "Mars"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Tech-Priest",
       "author": "Rob Sanders",
       "orderInSeries": 2,
-      "faction": ["Adeptus Mechanicus"],
+      "faction": ["Adeptus Mechanicus", "Chaos"],
       "tags": ["Tech-Priests", "Mechanicus", "Technology"]
     }
   ]

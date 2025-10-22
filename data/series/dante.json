@@ -8,7 +8,7 @@
       "title": "Dante",
       "author": "Guy Haley",
       "orderInSeries": 1,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Tyranids"],
       "tags": ["Dante", "Blood Angels", "Chapter Master"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Darkness in the Blood",
       "author": "Guy Haley",
       "orderInSeries": 2,
-      "faction": ["Blood Angels"],
+      "faction": ["Blood Angels", "Chaos"],
       "tags": ["Dante", "Blood Angels", "Black Rage"]
     }
   ]

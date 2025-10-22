@@ -8,7 +8,7 @@
       "title": "First and Only",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Sabbat Worlds"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ghostmaker",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Sabbat Worlds"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Necropolis",
       "author": "Dan Abnett",
       "orderInSeries": 3,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Siege"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "Honour Guard",
       "author": "Dan Abnett",
       "orderInSeries": 4,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Saint Sabbat"]
     },
     {
@@ -40,7 +40,7 @@
       "title": "The Guns of Tanith",
       "author": "Dan Abnett",
       "orderInSeries": 5,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
@@ -48,7 +48,7 @@
       "title": "Straight Silver",
       "author": "Dan Abnett",
       "orderInSeries": 6,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
@@ -56,7 +56,7 @@
       "title": "Sabbat Martyr",
       "author": "Dan Abnett",
       "orderInSeries": 7,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Saint Sabbat"]
     },
     {
@@ -64,7 +64,7 @@
       "title": "Traitor General",
       "author": "Dan Abnett",
       "orderInSeries": 8,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Gereon"]
     },
     {
@@ -72,7 +72,7 @@
       "title": "His Last Command",
       "author": "Dan Abnett",
       "orderInSeries": 9,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     },
     {
@@ -80,7 +80,7 @@
       "title": "The Armour of Contempt",
       "author": "Dan Abnett",
       "orderInSeries": 10,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Gereon"]
     },
     {
@@ -88,7 +88,7 @@
       "title": "Only in Death",
       "author": "Dan Abnett",
       "orderInSeries": 11,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Jago"]
     },
     {
@@ -96,7 +96,7 @@
       "title": "Blood Pact",
       "author": "Dan Abnett",
       "orderInSeries": 12,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Blood Pact", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Blood Pact"]
     },
     {
@@ -104,7 +104,7 @@
       "title": "Salvation's Reach",
       "author": "Dan Abnett",
       "orderInSeries": 13,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Blood Pact", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Blood Pact"]
     },
     {
@@ -112,7 +112,7 @@
       "title": "The Warmaster",
       "author": "Dan Abnett",
       "orderInSeries": 14,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Warmaster"]
     },
     {
@@ -120,7 +120,7 @@
       "title": "The Anarch",
       "author": "Dan Abnett",
       "orderInSeries": 15,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith", "Anarch"]
     },
     {
@@ -128,7 +128,7 @@
       "title": "The Vincula Insurgency",
       "author": "Dan Abnett",
       "orderInSeries": 16,
-      "faction": ["Astra Militarum", "Tanith"],
+      "faction": ["Astra Militarum", "Tanith", "Chaos"],
       "tags": ["Gaunt's Ghosts", "Imperial Guard", "Tanith"]
     }
   ]

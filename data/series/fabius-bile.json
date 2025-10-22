@@ -8,7 +8,7 @@
       "title": "Primogenitor",
       "author": "Josh Reynolds",
       "orderInSeries": 1,
-      "faction": ["Chaos", "Emperor's Children"],
+      "faction": ["Emperor's Children", "Chaos", "Space Marines"],
       "tags": ["Fabius Bile", "Chaos", "Clonelord"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Clonelord",
       "author": "Josh Reynolds",
       "orderInSeries": 2,
-      "faction": ["Chaos", "Emperor's Children"],
+      "faction": ["Emperor's Children", "Chaos", "Iron Warriors"],
       "tags": ["Fabius Bile", "Chaos", "Clonelord"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Manflayer",
       "author": "Josh Reynolds",
       "orderInSeries": 3,
-      "faction": ["Chaos", "Emperor's Children"],
+      "faction": ["Emperor's Children", "Chaos", "Aeldari"],
       "tags": ["Fabius Bile", "Chaos", "Clonelord"]
     }
   ]

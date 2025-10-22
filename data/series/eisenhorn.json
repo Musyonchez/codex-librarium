@@ -8,7 +8,7 @@
       "title": "Xenos",
       "author": "Dan Abnett",
       "orderInSeries": 1,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Eisenhorn", "Inquisition", "Xenos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Malleus",
       "author": "Dan Abnett",
       "orderInSeries": 2,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos", "Daemons"],
       "tags": ["Eisenhorn", "Inquisition", "Daemons"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Hereticus",
       "author": "Dan Abnett",
       "orderInSeries": 3,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Chaos"],
       "tags": ["Eisenhorn", "Inquisition", "Heresy"]
     },
     {
@@ -32,7 +32,7 @@
       "title": "The Magos",
       "author": "Dan Abnett",
       "orderInSeries": 4,
-      "faction": ["Inquisition"],
+      "faction": ["Inquisition", "Adeptus Mechanicus", "Chaos"],
       "tags": ["Eisenhorn", "Inquisition", "Mechanicus"]
     }
   ]

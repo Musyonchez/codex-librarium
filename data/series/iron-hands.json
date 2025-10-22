@@ -8,7 +8,7 @@
       "title": "The Eye of Medusa",
       "author": "David Guymer",
       "orderInSeries": 1,
-      "faction": ["Iron Hands"],
+      "faction": ["Iron Hands", "Adeptus Mechanicus", "Chaos"],
       "tags": ["Iron Hands", "Mechanicus", "Clan Raukaan"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "The Voice of Mars",
       "author": "David Guymer",
       "orderInSeries": 2,
-      "faction": ["Iron Hands"],
+      "faction": ["Iron Hands", "Adeptus Mechanicus", "Chaos"],
       "tags": ["Iron Hands", "Mechanicus", "Mars"]
     }
   ]

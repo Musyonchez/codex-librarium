@@ -8,7 +8,7 @@
       "title": "Storm of Iron",
       "author": "Graham McNeill",
       "orderInSeries": 1,
-      "faction": ["Iron Warriors", "Chaos"],
+      "faction": ["Iron Warriors", "Chaos", "Imperial Fists", "Astra Militarum"],
       "tags": ["Iron Warriors", "Chaos Space Marines", "Siege", "Honsou"]
     }
   ]

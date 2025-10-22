@@ -8,7 +8,7 @@
       "title": "Ahriman: Exile",
       "author": "John French",
       "orderInSeries": 1,
-      "faction": ["Thousand Sons", "Chaos"],
+      "faction": ["Thousand Sons", "Chaos", "Space Wolves"],
       "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Ahriman: Sorcerer",
       "author": "John French",
       "orderInSeries": 2,
-      "faction": ["Thousand Sons", "Chaos"],
+      "faction": ["Thousand Sons", "Chaos", "Black Legion"],
       "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {
@@ -24,7 +24,7 @@
       "title": "Ahriman: Unchanged",
       "author": "John French",
       "orderInSeries": 3,
-      "faction": ["Thousand Sons", "Chaos"],
+      "faction": ["Thousand Sons", "Chaos", "Space Marines"],
       "tags": ["Ahriman", "Sorcery", "Thousand Sons", "Chaos"]
     },
     {

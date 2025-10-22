@@ -8,7 +8,7 @@
       "title": "Abaddon: Talon of Horus",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 1,
-      "faction": ["Chaos", "Black Legion"],
+      "faction": ["Black Legion", "Chaos", "Emperor's Children"],
       "tags": ["Abaddon", "Black Legion", "Chaos Space Marines", "Horus"]
     },
     {
@@ -16,7 +16,7 @@
       "title": "Black Legion",
       "author": "Aaron Dembski-Bowden",
       "orderInSeries": 2,
-      "faction": ["Chaos", "Black Legion"],
+      "faction": ["Black Legion", "Chaos", "Space Marines"],
       "tags": ["Abaddon", "Black Legion", "Chaos Space Marines"]
     }
   ]
