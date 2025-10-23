@@ -14,7 +14,7 @@ interface Novella {
 }
 
 interface ReadingProgress {
-  novella_id: string;
+  book_id: string;
   status: 'unread' | 'reading' | 'completed';
   rating?: number;
   notes?: string;
@@ -74,7 +74,7 @@ export default function NovellasDashboardPage() {
   const getBooksByStatus = (status: 'reading' | 'completed') => {
     return progress
       .filter(p => p.status === status)
-      .map(p => novellas.find(n => n.id === p.novella_id))
+      .map(p => novellas.find(n => n.id === p.book_id))
       .filter(Boolean) as Novella[];
   };
 

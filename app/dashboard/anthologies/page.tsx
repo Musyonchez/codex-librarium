@@ -14,7 +14,7 @@ interface Anthology {
 }
 
 interface ReadingProgress {
-  anthology_id: string;
+  book_id: string;
   status: 'unread' | 'reading' | 'completed';
   rating?: number;
   notes?: string;
@@ -74,7 +74,7 @@ export default function AnthologiesDashboardPage() {
   const getBooksByStatus = (status: 'reading' | 'completed') => {
     return progress
       .filter(p => p.status === status)
-      .map(p => anthologies.find(a => a.id === p.anthology_id))
+      .map(p => anthologies.find(a => a.id === p.book_id))
       .filter(Boolean) as Anthology[];
   };
 

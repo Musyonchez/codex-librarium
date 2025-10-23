@@ -14,7 +14,7 @@ interface Single {
 }
 
 interface ReadingProgress {
-  single_id: string;
+  book_id: string;
   status: 'unread' | 'reading' | 'completed';
   rating?: number;
   notes?: string;
@@ -74,7 +74,7 @@ export default function SinglesDashboardPage() {
   const getBooksByStatus = (status: 'reading' | 'completed') => {
     return progress
       .filter(p => p.status === status)
-      .map(p => singles.find(s => s.id === p.single_id))
+      .map(p => singles.find(s => s.id === p.book_id))
       .filter(Boolean) as Single[];
   };
 
