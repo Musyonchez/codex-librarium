@@ -3,7 +3,10 @@
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
 import OrderTabs from '@/components/OrderTabs';
-import { styles } from '@/lib/design-system';
+import BookDetailsModal from '@/components/BookDetailsModal';
+import { ReadingStatus } from '@/lib/types';
+import { styles, statusIcons, statusLabels } from '@/lib/design-system';
+import { toast } from 'sonner';
 
 interface Novella {
   id: string;
@@ -13,16 +16,31 @@ interface Novella {
   tags: string[];
 }
 
+interface ReadingProgress {
+  book_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+}
+
 export default function NovellasByNamePage() {
   const [novellas, setNovellas] = useState<Novella[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
+  const [selectedNovella, setSelectedNovella] = useState<Novella | null>(null);
   const itemsPerPage = 20;
 
   useEffect(() => {
-    fetchNovellas();
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    await Promise.all([fetchNovellas(), fetchReadingProgress()]);
+    setLoading(false);
+  };
 
   const fetchNovellas = async () => {
     try {
@@ -31,9 +49,55 @@ export default function NovellasByNamePage() {
       setNovellas(data.novellas || []);
     } catch (error) {
       console.error('Failed to fetch novellas:', error);
-    } finally {
-      setLoading(false);
     }
+  };
+
+  const fetchReadingProgress = async () => {
+    try {
+      const response = await fetch('/api/reading/novellas');
+      if (!response.ok) {
+        setReadingProgress([]);
+        return;
+      }
+      const data = await response.json();
+      setReadingProgress(data.progress || []);
+    } catch (error) {
+      console.error('Failed to fetch reading progress:', error);
+      setReadingProgress([]);
+    }
+  };
+
+  const updateReadingStatus = async (bookId: string, status: ReadingStatus) => {
+    try {
+      const response = await fetch('/api/reading/novellas', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bookId, status }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to update status');
+        return;
+      }
+
+      await fetchReadingProgress();
+    } catch (error) {
+      console.error('Failed to update status:', error);
+    }
+  };
+
+  const getStatus = (bookId: string): ReadingStatus => {
+    const entry = readingProgress.find(r => r.book_id === bookId);
+    return entry?.status || 'unread';
+  };
+
+  const handleStatusChange = (bookId: string, bookTitle: string, status: ReadingStatus) => {
+    updateReadingStatus(bookId, status);
+    setSelectedNovella(null);
+
+    toast.success(`${bookTitle}`, {
+      description: `Marked as ${statusLabels[status]}`,
+    });
   };
 
   // Sort alphabetically
@@ -110,37 +174,52 @@ export default function NovellasByNamePage() {
             ) : (
               <>
                 <div className="grid gap-2">
-                  {paginatedNovellas.map((novella) => (
-                  <div
-                    key={novella.id}
-                    className={`${styles.card} p-6 hover:${styles.bgElevated} transition-colors cursor-pointer`}
-                  >
-                    <h3 className={`text-xl font-bold ${styles.textGold} mb-2`}>
-                      {novella.title}
-                    </h3>
-                    <p className={`${styles.textSecondary} mb-4`}>
-                      by {novella.author}
-                    </p>
-                    {novella.faction && novella.faction.length > 0 && (
-                      <div className="mb-2">
-                        <span className={`text-sm ${styles.textSecondary}`}>Factions: </span>
-                        <span className={styles.textPrimary}>{novella.faction.join(', ')}</span>
+                  {paginatedNovellas.map((novella) => {
+                    const status = getStatus(novella.id);
+                    const statusIcon = statusIcons[status];
+
+                    return (
+                      <div
+                        key={novella.id}
+                        className={styles.bookCard}
+                        onClick={() => setSelectedNovella(novella)}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 text-center">
+                            <span className={`text-2xl ${styles.textGold}`}>{statusIcon}</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
+                              {novella.title}
+                            </h3>
+                            <div className={`flex flex-wrap gap-3 text-sm ${styles.textSecondary}`}>
+                              <span>by {novella.author}</span>
+                              {novella.faction && novella.faction.length > 0 && (
+                                <span className={styles.textMuted}>
+                                  • {novella.faction.join(', ')}
+                                </span>
+                              )}
+                            </div>
+                            {novella.tags && novella.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-2 mt-2">
+                                {novella.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className={`flex-shrink-0 text-xs ${styles.textMuted} uppercase tracking-wider`}>
+                            {statusLabels[status]}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                    {novella.tags && novella.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {novella.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                    );
+                  })}
                 </div>
 
                 {/* Pagination Controls */}
@@ -190,6 +269,16 @@ export default function NovellasByNamePage() {
               </>
             )}
           </>
+        )}
+
+        {/* Book Details Modal */}
+        {selectedNovella && (
+          <BookDetailsModal
+            book={selectedNovella}
+            currentStatus={getStatus(selectedNovella.id)}
+            onClose={() => setSelectedNovella(null)}
+            onStatusChange={(status) => handleStatusChange(selectedNovella.id, selectedNovella.title, status)}
+          />
         )}
       </div>
     </AppLayout>

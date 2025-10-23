@@ -3,7 +3,10 @@
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
 import OrderTabs from '@/components/OrderTabs';
-import { styles } from '@/lib/design-system';
+import BookDetailsModal from '@/components/BookDetailsModal';
+import { ReadingStatus } from '@/lib/types';
+import { styles, statusIcons, statusLabels } from '@/lib/design-system';
+import { toast } from 'sonner';
 
 interface Anthology {
   id: string;
@@ -13,16 +16,31 @@ interface Anthology {
   tags: string[];
 }
 
+interface ReadingProgress {
+  book_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+}
+
 export default function AnthologiesByNamePage() {
   const [anthologies, setAnthologies] = useState<Anthology[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
+  const [selectedAnthology, setSelectedAnthology] = useState<Anthology | null>(null);
   const itemsPerPage = 20;
 
   useEffect(() => {
-    fetchAnthologies();
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    await Promise.all([fetchAnthologies(), fetchReadingProgress()]);
+    setLoading(false);
+  };
 
   const fetchAnthologies = async () => {
     try {
@@ -31,9 +49,55 @@ export default function AnthologiesByNamePage() {
       setAnthologies(data.anthologies || []);
     } catch (error) {
       console.error('Failed to fetch anthologies:', error);
-    } finally {
-      setLoading(false);
     }
+  };
+
+  const fetchReadingProgress = async () => {
+    try {
+      const response = await fetch('/api/reading/anthologies');
+      if (!response.ok) {
+        setReadingProgress([]);
+        return;
+      }
+      const data = await response.json();
+      setReadingProgress(data.progress || []);
+    } catch (error) {
+      console.error('Failed to fetch reading progress:', error);
+      setReadingProgress([]);
+    }
+  };
+
+  const updateReadingStatus = async (bookId: string, status: ReadingStatus) => {
+    try {
+      const response = await fetch('/api/reading/anthologies', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bookId, status }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to update status');
+        return;
+      }
+
+      await fetchReadingProgress();
+    } catch (error) {
+      console.error('Failed to update status:', error);
+    }
+  };
+
+  const getStatus = (bookId: string): ReadingStatus => {
+    const entry = readingProgress.find(r => r.book_id === bookId);
+    return entry?.status || 'unread';
+  };
+
+  const handleStatusChange = (bookId: string, bookTitle: string, status: ReadingStatus) => {
+    updateReadingStatus(bookId, status);
+    setSelectedAnthology(null);
+
+    toast.success(`${bookTitle}`, {
+      description: `Marked as ${statusLabels[status]}`,
+    });
   };
 
   // Sort alphabetically
@@ -110,37 +174,52 @@ export default function AnthologiesByNamePage() {
             ) : (
               <>
                 <div className="grid gap-2">
-                  {paginatedAnthologies.map((anthology) => (
-                  <div
-                    key={anthology.id}
-                    className={`${styles.card} p-6 hover:${styles.bgElevated} transition-colors cursor-pointer`}
-                  >
-                    <h3 className={`text-xl font-bold ${styles.textGold} mb-2`}>
-                      {anthology.title}
-                    </h3>
-                    <p className={`${styles.textSecondary} mb-4`}>
-                      by {anthology.author}
-                    </p>
-                    {anthology.faction && anthology.faction.length > 0 && (
-                      <div className="mb-2">
-                        <span className={`text-sm ${styles.textSecondary}`}>Factions: </span>
-                        <span className={styles.textPrimary}>{anthology.faction.join(', ')}</span>
+                  {paginatedAnthologies.map((anthology) => {
+                    const status = getStatus(anthology.id);
+                    const statusIcon = statusIcons[status];
+
+                    return (
+                      <div
+                        key={anthology.id}
+                        className={styles.bookCard}
+                        onClick={() => setSelectedAnthology(anthology)}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 text-center">
+                            <span className={`text-2xl ${styles.textGold}`}>{statusIcon}</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
+                              {anthology.title}
+                            </h3>
+                            <div className={`flex flex-wrap gap-3 text-sm ${styles.textSecondary}`}>
+                              <span>by {anthology.author}</span>
+                              {anthology.faction && anthology.faction.length > 0 && (
+                                <span className={styles.textMuted}>
+                                  • {anthology.faction.join(', ')}
+                                </span>
+                              )}
+                            </div>
+                            {anthology.tags && anthology.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-2 mt-2">
+                                {anthology.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className={`flex-shrink-0 text-xs ${styles.textMuted} uppercase tracking-wider`}>
+                            {statusLabels[status]}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                    {anthology.tags && anthology.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {anthology.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                    );
+                  })}
                 </div>
 
                 {/* Pagination Controls */}
@@ -190,6 +269,16 @@ export default function AnthologiesByNamePage() {
               </>
             )}
           </>
+        )}
+
+        {/* Book Details Modal */}
+        {selectedAnthology && (
+          <BookDetailsModal
+            book={selectedAnthology}
+            currentStatus={getStatus(selectedAnthology.id)}
+            onClose={() => setSelectedAnthology(null)}
+            onStatusChange={(status) => handleStatusChange(selectedAnthology.id, selectedAnthology.title, status)}
+          />
         )}
       </div>
     </AppLayout>
