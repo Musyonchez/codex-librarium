@@ -24,6 +24,8 @@ export default function AnthologiesDashboardPage() {
   const [anthologies, setAnthologies] = useState<Anthology[]>([]);
   const [progress, setProgress] = useState<ReadingProgress[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showReading, setShowReading] = useState(false);
+  const [showCompleted, setShowCompleted] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -141,39 +143,63 @@ export default function AnthologiesDashboardPage() {
 
             {/* Currently Reading */}
             {readingBooks.length > 0 && (
-              <div className={`${styles.card} p-6`}>
-                <h2 className={`text-2xl font-bold ${styles.textGold} mb-4`}>
-                  Currently Reading ({readingBooks.length})
-                </h2>
-                <div className="space-y-2">
-                  {readingBooks.map((book) => (
-                    <div key={book.id} className="bg-slate-800 rounded-lg p-4">
-                      <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
-                        {book.title}
-                      </h3>
-                      <p className={`text-sm ${styles.textSecondary}`}>{book.author}</p>
+              <div className={`${styles.card} overflow-hidden`}>
+                <button
+                  onClick={() => setShowReading(!showReading)}
+                  className="w-full p-6 text-left hover:bg-slate-800 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className={`${styles.textGold} text-2xl`}>{showReading ? '−' : '+'}</span>
+                      <h2 className={`text-2xl font-bold ${styles.textGold}`}>Currently Reading</h2>
+                      <span className={`text-lg ${styles.textSecondary}`}>({readingBooks.length})</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                </button>
+
+                {showReading && (
+                  <div className="px-6 pb-6 space-y-2">
+                    {readingBooks.map((book) => (
+                      <div key={book.id} className="bg-slate-800 rounded-lg p-4">
+                        <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
+                          {book.title}
+                        </h3>
+                        <p className={`text-sm ${styles.textSecondary}`}>{book.author}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
             {/* Completed Books */}
             {completedBooks.length > 0 && (
-              <div className={`${styles.card} p-6`}>
-                <h2 className={`text-2xl font-bold ${styles.textGold} mb-4`}>
-                  Completed Books ({completedBooks.length})
-                </h2>
-                <div className="space-y-2">
-                  {completedBooks.map((book) => (
-                    <div key={book.id} className="bg-slate-800 rounded-lg p-4">
-                      <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
-                        {book.title}
-                      </h3>
-                      <p className={`text-sm ${styles.textSecondary}`}>{book.author}</p>
+              <div className={`${styles.card} overflow-hidden`}>
+                <button
+                  onClick={() => setShowCompleted(!showCompleted)}
+                  className="w-full p-6 text-left hover:bg-slate-800 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className={`${styles.textGold} text-2xl`}>{showCompleted ? '−' : '+'}</span>
+                      <h2 className={`text-2xl font-bold ${styles.textGold}`}>Completed Books</h2>
+                      <span className={`text-lg ${styles.textSecondary}`}>({completedBooks.length})</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                </button>
+
+                {showCompleted && (
+                  <div className="px-6 pb-6 space-y-2">
+                    {completedBooks.map((book) => (
+                      <div key={book.id} className="bg-slate-800 rounded-lg p-4">
+                        <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
+                          {book.title}
+                        </h3>
+                        <p className={`text-sm ${styles.textSecondary}`}>{book.author}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
