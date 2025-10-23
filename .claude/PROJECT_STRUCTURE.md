@@ -50,13 +50,26 @@ war_hammer_novels/
 │   │   └── anthologies/       # Anthologies dashboard
 │   ├── import/                # Import page (admin)
 │   ├── order/                 # Book browsing pages
-│   │   ├── anthologies/       # Anthologies list
-│   │   ├── factions/          # Filter by factions
-│   │   ├── name/              # Alphabetical sorting
-│   │   ├── novellas/          # Novellas list
-│   │   ├── series/            # Series books
-│   │   ├── singles/           # Singles list
-│   │   └── tags/              # Filter by tags
+│   │   ├── anthologies/       # Anthologies category
+│   │   │   ├── page.tsx       # Redirects to /name
+│   │   │   ├── name/          # Browse by name
+│   │   │   ├── tags/          # Browse by tags
+│   │   │   └── factions/      # Browse by factions
+│   │   ├── novellas/          # Novellas category
+│   │   │   ├── page.tsx       # Redirects to /name
+│   │   │   ├── name/          # Browse by name
+│   │   │   ├── tags/          # Browse by tags
+│   │   │   └── factions/      # Browse by factions
+│   │   ├── series/            # Series category
+│   │   │   ├── page.tsx       # Browse by series (default)
+│   │   │   ├── name/          # Browse by name
+│   │   │   ├── tags/          # Browse by tags
+│   │   │   └── factions/      # Browse by factions
+│   │   └── singles/           # Singles category
+│   │       ├── page.tsx       # Redirects to /name
+│   │       ├── name/          # Browse by name
+│   │       ├── tags/          # Browse by tags
+│   │       └── factions/      # Browse by factions
 │   ├── timeline/              # Chronological view
 │   ├── favicon.ico            # Site icon
 │   ├── globals.css            # Global styles
@@ -124,13 +137,19 @@ All pages and API routes follow App Router conventions.
 - `/dashboard/singles` - Singles dashboard (protected)
 - `/dashboard/novellas` - Novellas dashboard (protected)
 - `/dashboard/anthologies` - Anthologies dashboard (protected)
-- `/order/series` - Series books (protected)
-- `/order/singles` - Single novels (protected)
-- `/order/novellas` - Novellas (protected)
-- `/order/anthologies` - Anthologies (protected)
-- `/order/name` - Books alphabetically (protected)
-- `/order/tags` - Books by tags (protected)
-- `/order/factions` - Books by factions (protected)
+- `/order/series` - Browse series books (protected)
+- `/order/series/name` - Series alphabetically (protected)
+- `/order/series/tags` - Series by tags (protected)
+- `/order/series/factions` - Series by factions (protected)
+- `/order/singles/name` - Singles alphabetically (protected)
+- `/order/singles/tags` - Singles by tags (protected)
+- `/order/singles/factions` - Singles by factions (protected)
+- `/order/novellas/name` - Novellas alphabetically (protected)
+- `/order/novellas/tags` - Novellas by tags (protected)
+- `/order/novellas/factions` - Novellas by factions (protected)
+- `/order/anthologies/name` - Anthologies alphabetically (protected)
+- `/order/anthologies/tags` - Anthologies by tags (protected)
+- `/order/anthologies/factions` - Anthologies by factions (protected)
 - `/import` - Import data (protected, admin only)
 - `/timeline` - Chronological timeline (protected)
 
@@ -141,9 +160,12 @@ All pages and API routes follow App Router conventions.
 - `GET /api/anthologies` - Get all anthologies
 - `GET /api/reading` - Get series books progress
 - `POST /api/reading` - Update series book progress
-- `GET /api/reading/singles` - Get singles progress
-- `GET /api/reading/novellas` - Get novellas progress
-- `GET /api/reading/anthologies` - Get anthologies progress
+- `GET /api/reading/singles` - Get singles progress (returns book_id)
+- `POST /api/reading/singles` - Update singles progress (uses single_id)
+- `GET /api/reading/novellas` - Get novellas progress (returns book_id)
+- `POST /api/reading/novellas` - Update novellas progress (uses novella_id)
+- `GET /api/reading/anthologies` - Get anthologies progress (returns book_id)
+- `POST /api/reading/anthologies` - Update anthologies progress (uses anthology_id)
 - `GET /api/filters` - Get tags/factions
 - `GET /api/import/list` - List importable files
 - `POST /api/import` - Import files (all categories)
@@ -216,25 +238,43 @@ Next.js 15 App Router with file-based routing:
 
 ```
 app/
-├── page.tsx                    → /
+├── page.tsx                           → /
 ├── dashboard/
-│   ├── page.tsx                → /dashboard (Series)
-│   ├── singles/page.tsx        → /dashboard/singles
-│   ├── novellas/page.tsx       → /dashboard/novellas
-│   └── anthologies/page.tsx    → /dashboard/anthologies
+│   ├── page.tsx                       → /dashboard (Series)
+│   ├── singles/page.tsx               → /dashboard/singles
+│   ├── novellas/page.tsx              → /dashboard/novellas
+│   └── anthologies/page.tsx           → /dashboard/anthologies
 ├── order/
-│   ├── series/page.tsx         → /order/series
-│   ├── singles/page.tsx        → /order/singles
-│   ├── novellas/page.tsx       → /order/novellas
-│   ├── anthologies/page.tsx    → /order/anthologies
-│   ├── name/page.tsx           → /order/name
-│   ├── tags/page.tsx           → /order/tags
-│   └── factions/page.tsx       → /order/factions
+│   ├── series/
+│   │   ├── page.tsx                   → /order/series
+│   │   ├── name/page.tsx              → /order/series/name
+│   │   ├── tags/page.tsx              → /order/series/tags
+│   │   └── factions/page.tsx          → /order/series/factions
+│   ├── singles/
+│   │   ├── page.tsx                   → /order/singles (redirects to /name)
+│   │   ├── name/page.tsx              → /order/singles/name
+│   │   ├── tags/page.tsx              → /order/singles/tags
+│   │   └── factions/page.tsx          → /order/singles/factions
+│   ├── novellas/
+│   │   ├── page.tsx                   → /order/novellas (redirects to /name)
+│   │   ├── name/page.tsx              → /order/novellas/name
+│   │   ├── tags/page.tsx              → /order/novellas/tags
+│   │   └── factions/page.tsx          → /order/novellas/factions
+│   └── anthologies/
+│       ├── page.tsx                   → /order/anthologies (redirects to /name)
+│       ├── name/page.tsx              → /order/anthologies/name
+│       ├── tags/page.tsx              → /order/anthologies/tags
+│       └── factions/page.tsx          → /order/anthologies/factions
 └── api/
-    ├── books/route.ts          → /api/books
-    ├── singles/route.ts        → /api/singles
-    ├── novellas/route.ts       → /api/novellas
-    └── anthologies/route.ts    → /api/anthologies
+    ├── books/route.ts                 → /api/books
+    ├── singles/route.ts               → /api/singles
+    ├── novellas/route.ts              → /api/novellas
+    ├── anthologies/route.ts           → /api/anthologies
+    └── reading/
+        ├── route.ts                   → /api/reading
+        ├── singles/route.ts           → /api/reading/singles
+        ├── novellas/route.ts          → /api/reading/novellas
+        └── anthologies/route.ts       → /api/reading/anthologies
 ```
 
 ### Protected Routes

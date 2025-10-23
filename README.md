@@ -20,18 +20,21 @@ A comprehensive web application for tracking your progress through the vast Warh
 
 ### 🎯 Smart Organization
 - **Four Book Categories** - Separate navigation for Series, Singles, Novellas, and Anthologies
-- **Multiple Sorting Options** - Browse by Series, Name, Tags, or Factions
-- **By Series** - Follow Black Library publication order
-- **By Name** - Alphabetically sorted complete catalog
-- **By Tags** - Find books by themes (e.g., "Primarchs", "Siege", "Investigation")
-- **By Factions** - Filter by your favorite armies and factions
+- **Multiple Sorting Options per Category** - Each category supports browsing:
+  - **By Series** (Series only) - Follow Black Library publication order
+  - **By Name** - Alphabetically sorted complete catalog
+  - **By Tags** - Find books by themes (e.g., "Primarchs", "Siege", "Investigation")
+  - **By Factions** - Filter by your favorite armies and factions
+- **Pagination** - 20 items per page for easy browsing
+- **Search Functionality** - Quick filtering within tags and factions views
 
 ### 📊 Progress Tracking
 - Three reading states: Unread, Reading, Completed
 - **Tabbed Dashboard** - Separate dashboards for Series, Singles, Novellas, and Anthologies
 - Visual progress indicators and completion rates
 - Statistics for each category (Total, Completed, Reading, Unread)
-- Currently Reading and Completed Books sections
+- **Collapsible Sections** - Currently Reading and Completed Books sections with expand/collapse functionality
+- **Rating and Notes** - Add ratings (1-5 stars) and personal notes for Singles, Novellas, and Anthologies
 - Real-time sync across all your devices
 
 ### 🎨 Premium UI/UX
@@ -114,6 +117,10 @@ npm run dev
 │   │   ├── novellas/      # Novellas API
 │   │   ├── anthologies/   # Anthologies API
 │   │   ├── reading/       # Reading progress APIs
+│   │   │   ├── route.ts   # Series progress (GET/POST)
+│   │   │   ├── singles/   # Singles progress (GET/POST)
+│   │   │   ├── novellas/  # Novellas progress (GET/POST)
+│   │   │   └── anthologies/ # Anthologies progress (GET/POST)
 │   │   └── import/        # Import system APIs
 │   ├── dashboard/         # Dashboard pages
 │   │   ├── page.tsx       # Series dashboard
@@ -123,12 +130,26 @@ npm run dev
 │   ├── import/            # Admin import page
 │   ├── order/             # Book browsing pages
 │   │   ├── series/        # Series books
+│   │   │   ├── page.tsx   # Redirect to /series
+│   │   │   ├── series/    # Browse by series
+│   │   │   ├── name/      # Browse by name
+│   │   │   ├── tags/      # Browse by tags
+│   │   │   └── factions/  # Browse by factions
 │   │   ├── singles/       # Single novels
+│   │   │   ├── page.tsx   # Redirect to /name
+│   │   │   ├── name/      # Browse by name
+│   │   │   ├── tags/      # Browse by tags
+│   │   │   └── factions/  # Browse by factions
 │   │   ├── novellas/      # Novellas
-│   │   ├── anthologies/   # Anthologies
-│   │   ├── name/          # Browse by name
-│   │   ├── tags/          # Browse by tags
-│   │   └── factions/      # Browse by factions
+│   │   │   ├── page.tsx   # Redirect to /name
+│   │   │   ├── name/      # Browse by name
+│   │   │   ├── tags/      # Browse by tags
+│   │   │   └── factions/  # Browse by factions
+│   │   └── anthologies/   # Anthologies
+│   │       ├── page.tsx   # Redirect to /name
+│   │       ├── name/      # Browse by name
+│   │       ├── tags/      # Browse by tags
+│   │       └── factions/  # Browse by factions
 │   └── auth/              # Authentication callbacks
 ├── components/            # React components
 │   ├── AppLayout.tsx      # Main layout wrapper

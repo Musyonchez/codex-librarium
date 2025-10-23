@@ -202,7 +202,7 @@ Get current user's reading progress for singles.
 {
   "progress": [
     {
-      "single_id": "space-marine",
+      "book_id": "space-marine",
       "status": "completed",
       "rating": 4
     }
@@ -211,6 +211,44 @@ Get current user's reading progress for singles.
 ```
 
 **Implementation:** `app/api/reading/singles/route.ts`
+
+**Note:** Database stores `single_id`, but API transforms to `book_id` for frontend consistency.
+
+---
+
+### `POST /api/reading/singles`
+
+Update reading status for a single novel.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "bookId": "space-marine",
+  "status": "completed",
+  "rating": 4,
+  "notes": "Classic 40K novel"
+}
+```
+
+**Parameters:**
+- `bookId` (string, required) - Book identifier
+- `status` (string, required) - One of: "unread", "reading", "completed"
+- `rating` (integer, optional) - 1-5 rating
+- `notes` (string, optional) - User notes
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": { ... }
+}
+```
+
+**Implementation:** `app/api/reading/singles/route.ts`
+
+**Note:** Uses upsert logic with `single_id` in database.
 
 ---
 
@@ -225,7 +263,7 @@ Get current user's reading progress for novellas.
 {
   "progress": [
     {
-      "novella_id": "aurelian",
+      "book_id": "aurelian",
       "status": "reading"
     }
   ]
@@ -233,6 +271,36 @@ Get current user's reading progress for novellas.
 ```
 
 **Implementation:** `app/api/reading/novellas/route.ts`
+
+**Note:** Database stores `novella_id`, but API transforms to `book_id` for frontend consistency.
+
+---
+
+### `POST /api/reading/novellas`
+
+Update reading status for a novella.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "bookId": "aurelian",
+  "status": "completed"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": { ... }
+}
+```
+
+**Implementation:** `app/api/reading/novellas/route.ts`
+
+**Note:** Uses upsert logic with `novella_id` in database.
 
 ---
 
@@ -247,7 +315,7 @@ Get current user's reading progress for anthologies.
 {
   "progress": [
     {
-      "anthology_id": "let-the-galaxy-burn",
+      "book_id": "let-the-galaxy-burn",
       "status": "completed",
       "rating": 5
     }
@@ -256,6 +324,37 @@ Get current user's reading progress for anthologies.
 ```
 
 **Implementation:** `app/api/reading/anthologies/route.ts`
+
+**Note:** Database stores `anthology_id`, but API transforms to `book_id` for frontend consistency.
+
+---
+
+### `POST /api/reading/anthologies`
+
+Update reading status for an anthology.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "bookId": "let-the-galaxy-burn",
+  "status": "completed",
+  "rating": 5
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": { ... }
+}
+```
+
+**Implementation:** `app/api/reading/anthologies/route.ts`
+
+**Note:** Uses upsert logic with `anthology_id` in database.
 
 ---
 
@@ -501,8 +600,11 @@ OAuth callback handler for Google Sign-In.
 | `/api/reading` | GET | Required | Get series books progress |
 | `/api/reading` | POST | Required | Update series book status |
 | `/api/reading/singles` | GET | Required | Get singles progress |
+| `/api/reading/singles` | POST | Required | Update singles status |
 | `/api/reading/novellas` | GET | Required | Get novellas progress |
+| `/api/reading/novellas` | POST | Required | Update novellas status |
 | `/api/reading/anthologies` | GET | Required | Get anthologies progress |
+| `/api/reading/anthologies` | POST | Required | Update anthologies status |
 
 ### Admin Endpoints
 
@@ -615,15 +717,12 @@ fetch('/api/reading', {
 
 Potential additions:
 
-1. **`POST /api/reading/singles`** - Update singles reading progress
-2. **`POST /api/reading/novellas`** - Update novellas reading progress
-3. **`POST /api/reading/anthologies`** - Update anthologies reading progress
-4. **`GET /api/stats`** - Combined user statistics across all categories
-5. **`POST /api/books/search`** - Full-text search across all books
-6. **`GET /api/recommendations`** - Suggest next books to read
-7. **`POST /api/export`** - Export user progress as JSON
-8. **`GET /api/timeline`** - Chronological timeline of events
-9. **`POST /api/reviews`** - Submit book reviews
+1. **`GET /api/stats`** - Combined user statistics across all categories
+2. **`POST /api/books/search`** - Full-text search across all books
+3. **`GET /api/recommendations`** - Suggest next books to read
+4. **`POST /api/export`** - Export user progress as JSON
+5. **`GET /api/timeline`** - Chronological timeline of events
+6. **`POST /api/reviews`** - Submit book reviews
 
 ---
 
