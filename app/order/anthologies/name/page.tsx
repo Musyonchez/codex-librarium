@@ -13,43 +13,43 @@ interface Anthology {
   tags: string[];
 }
 
-export default function AnthologysByNamePage() {
-  const [anthologys, setAnthologys] = useState<Anthology[]>([]);
+export default function AnthologiesByNamePage() {
+  const [anthologies, setAnthologies] = useState<Anthology[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetchAnthologys();
+    fetchAnthologies();
   }, []);
 
-  const fetchAnthologys = async () => {
+  const fetchAnthologies = async () => {
     try {
-      const response = await fetch('/api/anthologys');
+      const response = await fetch('/api/anthologies');
       const data = await response.json();
-      setAnthologys(data.anthologys || []);
+      setAnthologies(data.anthologies || []);
     } catch (error) {
-      console.error('Failed to fetch anthologys:', error);
+      console.error('Failed to fetch anthologies:', error);
     } finally {
       setLoading(false);
     }
   };
 
   // Sort alphabetically
-  const sortedAnthologys = useMemo(() => {
-    return [...anthologys].sort((a, b) => a.title.localeCompare(b.title));
-  }, [anthologys]);
+  const sortedAnthologies = useMemo(() => {
+    return [...anthologies].sort((a, b) => a.title.localeCompare(b.title));
+  }, [anthologies]);
 
   // Filter by search query
-  const filteredAnthologys = useMemo(() => {
-    if (!searchQuery) return sortedAnthologys;
+  const filteredAnthologies = useMemo(() => {
+    if (!searchQuery) return sortedAnthologies;
 
     const query = searchQuery.toLowerCase();
-    return sortedAnthologys.filter(
+    return sortedAnthologies.filter(
       (anthology) =>
         anthology.title.toLowerCase().includes(query) ||
         anthology.author.toLowerCase().includes(query)
     );
-  }, [sortedAnthologys, searchQuery]);
+  }, [sortedAnthologies, searchQuery]);
 
   return (
     <AppLayout requireAuth={true}>
@@ -82,19 +82,19 @@ export default function AnthologysByNamePage() {
 
             {/* Results count */}
             <div className={`mb-4 ${styles.textSecondary} text-sm`}>
-              Showing {filteredAnthologys.length} {filteredAnthologys.length === 1 ? 'anthology' : 'anthologys'}
+              Showing {filteredAnthologies.length} {filteredAnthologies.length === 1 ? 'anthology' : 'anthologies'}
             </div>
 
-            {/* Anthologys List */}
-            {filteredAnthologys.length === 0 ? (
+            {/* Anthologies List */}
+            {filteredAnthologies.length === 0 ? (
               <div className={`${styles.card} p-12 text-center`}>
                 <p className={`${styles.textSecondary} text-lg`}>
-                  No anthologys found matching &ldquo;{searchQuery}&rdquo;
+                  No anthologies found matching &ldquo;{searchQuery}&rdquo;
                 </p>
               </div>
             ) : (
               <div className="grid gap-2">
-                {filteredAnthologys.map((anthology) => (
+                {filteredAnthologies.map((anthology) => (
                   <div
                     key={anthology.id}
                     className={`${styles.card} p-6 hover:${styles.bgElevated} transition-colors cursor-pointer`}
