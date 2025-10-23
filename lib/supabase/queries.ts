@@ -29,7 +29,7 @@ export async function getSeriesWithBooks() {
     id: series.id,
     name: series.name,
     description: series.description,
-    books: series.series_books
+    books: (series.series_books || [])
       .sort((a: { order_in_series: number }, b: { order_in_series: number }) =>
         a.order_in_series - b.order_in_series
       )

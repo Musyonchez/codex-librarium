@@ -45,6 +45,7 @@ export default function ImportPage() {
   const [loadingFiles, setLoadingFiles] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [checkingAdmin, setCheckingAdmin] = useState(true);
+  const [importProgress, setImportProgress] = useState<string[]>([]);
 
   useEffect(() => {
     checkAdminAccess();
@@ -155,6 +156,18 @@ export default function ImportPage() {
 
     setImporting(true);
     setResult(null);
+    setImportProgress([]);
+
+    // Simulate progress updates for better UX
+    const progressInterval = setInterval(() => {
+      setImportProgress(prev => {
+        if (prev.length < selectedFiles.length) {
+          const nextFile = selectedFiles[prev.length];
+          return [...prev, `Processing ${nextFile.folder}/${nextFile.file}...`];
+        }
+        return prev;
+      });
+    }, 300);
 
     try {
       const response = await fetch('/api/import', {
@@ -165,6 +178,9 @@ export default function ImportPage() {
         body: JSON.stringify({ files: selectedFiles }),
       });
 
+      clearInterval(progressInterval);
+      setImportProgress([]);
+
       const data: ImportResult = await response.json();
       setResult(data);
 
@@ -174,6 +190,9 @@ export default function ImportPage() {
         toast.error(data.error || 'Import failed');
       }
     } catch (error) {
+      clearInterval(progressInterval);
+      setImportProgress([]);
+
       const errorMsg = error instanceof Error ? error.message : 'Unknown error';
       setResult({
         success: false,
@@ -317,67 +336,149 @@ export default function ImportPage() {
                 </button>
               </div>
 
+              {/* Import Progress */}
+              {importing && importProgress.length > 0 && (
+                <div className="border-t border-slate-700 pt-6">
+                  <div className={`${styles.card} p-6 bg-slate-800/50`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="animate-spin h-5 w-5 border-2 border-[#D4AF37] border-t-transparent rounded-full"></div>
+                      <h3 className={`text-lg font-bold ${styles.textGold}`}>
+                        Importing Files...
+                      </h3>
+                    </div>
+                    <div className="space-y-2 max-h-60 overflow-y-auto">
+                      {importProgress.map((message, index) => (
+                        <div
+                          key={index}
+                          className={`flex items-center gap-2 text-sm ${styles.textSecondary} animate-fade-in`}
+                        >
+                          <span className={styles.textGold}>→</span>
+                          <span>{message}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Import Results */}
               {result && (
-                <div className={`border-t border-slate-700 pt-6 ${result.success ? 'text-green-400' : 'text-red-400'}`}>
-                  <h3 className="text-xl font-bold mb-3">
-                    {result.success ? 'Import Successful' : 'Import Failed'}
-                  </h3>
-
-                  {result.message && (
-                    <p className="mb-4">{result.message}</p>
-                  )}
-
-                  {result.results && (
-                    <div className="space-y-2 mb-4">
-                      {result.results.series > 0 && (
-                        <p className={styles.textSecondary}>
-                          <span className="font-semibold">Series imported:</span> {result.results.series}
-                        </p>
-                      )}
-                      {result.results.books > 0 && (
-                        <p className={styles.textSecondary}>
-                          <span className="font-semibold">Books imported:</span> {result.results.books}
-                        </p>
-                      )}
-                      {result.results.singles > 0 && (
-                        <p className={styles.textSecondary}>
-                          <span className="font-semibold">Singles imported:</span> {result.results.singles}
-                        </p>
-                      )}
-                      {result.results.novellas > 0 && (
-                        <p className={styles.textSecondary}>
-                          <span className="font-semibold">Novellas imported:</span> {result.results.novellas}
-                        </p>
-                      )}
-                      {result.results.anthologies > 0 && (
-                        <p className={styles.textSecondary}>
-                          <span className="font-semibold">Anthologies imported:</span> {result.results.anthologies}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {result.results?.errors && result.results.errors.length > 0 && (
-                    <div className="mt-4">
-                      <p className="font-semibold text-red-400 mb-2">Errors:</p>
-                      <div className="bg-slate-800 rounded p-4 max-h-60 overflow-y-auto">
-                        <ul className="space-y-1 text-sm">
-                          {result.results.errors.map((error, index) => (
-                            <li key={index} className="text-red-300">• {error}</li>
-                          ))}
-                        </ul>
+                <div className="border-t border-slate-700 pt-6">
+                  <div className={`${styles.card} p-6 ${result.success ? 'bg-emerald-950/30 border-2 border-emerald-800/50' : 'bg-red-950/30 border-2 border-red-800/50'}`}>
+                    {/* Header */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`text-2xl ${result.success ? 'text-emerald-400' : 'text-red-400'}`}>
+                        {result.success ? '✓' : '✗'}
                       </div>
+                      <h3 className={`text-2xl font-bold ${result.success ? 'text-emerald-400' : 'text-red-400'}`}>
+                        {result.success ? 'Import Successful' : 'Import Failed'}
+                      </h3>
                     </div>
-                  )}
 
-                  {result.error && (
-                    <div className="mt-4">
-                      <p className="font-semibold text-red-400">Error: {result.error}</p>
-                      {result.details && (
-                        <p className="text-sm text-red-300 mt-2">{result.details}</p>
-                      )}
-                    </div>
-                  )}
+                    {/* Summary Message */}
+                    {result.message && (
+                      <p className={`mb-4 ${result.success ? 'text-emerald-300' : 'text-red-300'}`}>
+                        {result.message}
+                      </p>
+                    )}
+
+                    {/* Success Stats */}
+                    {result.results && (
+                      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+                        {result.results.series > 0 && (
+                          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+                            <div className={`text-2xl font-bold ${styles.textGold} mb-1`}>
+                              {result.results.series}
+                            </div>
+                            <div className={`text-xs ${styles.textSecondary} uppercase tracking-wider`}>
+                              Series
+                            </div>
+                          </div>
+                        )}
+                        {result.results.books > 0 && (
+                          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+                            <div className={`text-2xl font-bold ${styles.textGold} mb-1`}>
+                              {result.results.books}
+                            </div>
+                            <div className={`text-xs ${styles.textSecondary} uppercase tracking-wider`}>
+                              Books
+                            </div>
+                          </div>
+                        )}
+                        {result.results.singles > 0 && (
+                          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+                            <div className={`text-2xl font-bold ${styles.textGold} mb-1`}>
+                              {result.results.singles}
+                            </div>
+                            <div className={`text-xs ${styles.textSecondary} uppercase tracking-wider`}>
+                              Singles
+                            </div>
+                          </div>
+                        )}
+                        {result.results.novellas > 0 && (
+                          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+                            <div className={`text-2xl font-bold ${styles.textGold} mb-1`}>
+                              {result.results.novellas}
+                            </div>
+                            <div className={`text-xs ${styles.textSecondary} uppercase tracking-wider`}>
+                              Novellas
+                            </div>
+                          </div>
+                        )}
+                        {result.results.anthologies > 0 && (
+                          <div className="bg-slate-800/50 rounded-lg p-4 text-center">
+                            <div className={`text-2xl font-bold ${styles.textGold} mb-1`}>
+                              {result.results.anthologies}
+                            </div>
+                            <div className={`text-xs ${styles.textSecondary} uppercase tracking-wider`}>
+                              Anthologies
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Errors Section */}
+                    {result.results?.errors && result.results.errors.length > 0 && (
+                      <div className="mt-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-red-400 text-xl">⚠</span>
+                          <p className="font-semibold text-red-400">
+                            {result.results.errors.length} {result.results.errors.length === 1 ? 'Error' : 'Errors'} Encountered
+                          </p>
+                        </div>
+                        <div className="bg-slate-900/50 rounded-lg p-4 max-h-80 overflow-y-auto border border-red-900/30">
+                          <div className="space-y-2">
+                            {result.results.errors.map((error, index) => (
+                              <div
+                                key={index}
+                                className="flex items-start gap-3 text-sm p-3 bg-red-950/20 rounded border-l-2 border-red-500"
+                              >
+                                <span className="text-red-400 font-mono text-xs mt-0.5">
+                                  {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <span className="text-red-200 flex-1">{error}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* General Error */}
+                    {result.error && (
+                      <div className="mt-4 bg-red-950/30 border border-red-800/50 rounded-lg p-4">
+                        <p className="font-semibold text-red-400 mb-2">
+                          Error: {result.error}
+                        </p>
+                        {result.details && (
+                          <p className="text-sm text-red-300 font-mono bg-slate-900/50 p-3 rounded">
+                            {result.details}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

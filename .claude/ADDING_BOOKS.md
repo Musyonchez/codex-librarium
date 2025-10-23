@@ -12,6 +12,18 @@ Books are stored as JSON files in four category directories:
 
 After editing JSON files, you import them through the web interface (`/import` page) to sync changes to the database.
 
+## Quick Start Checklist
+
+When adding or editing books:
+
+1. ✏️ Edit the JSON file(s) in the appropriate `data/` directory
+2. ✅ **Run validation:** `npm run validate-data`
+3. 🔧 Fix any duplicate ID errors reported
+4. 📤 Import via the web interface at `/import`
+5. 🎉 Verify books appear correctly
+
+**The validation step is critical** - it prevents database conflicts from duplicate IDs that would cause series to show "NaN%" or books to fail importing.
+
 ---
 
 ## Tag and Faction Consistency
@@ -427,6 +439,32 @@ Before importing, verify:
 - [ ] Faction names are consistent with existing data
 - [ ] Tags use proper capitalization
 - [ ] File is saved in correct category directory
+
+**IMPORTANT: Always run the validation script after editing JSON files:**
+
+```bash
+npm run validate-data
+```
+
+This script will:
+- ✅ Check for duplicate book IDs within each category (series_books, singles, novellas, anthologies)
+- ✅ Verify all books have valid IDs
+- ⚠️ Warn if the same ID is used across different categories (not an error but may cause confusion)
+- ✅ Display total counts for each category
+
+**Example output:**
+```
+🔍 Validating IDs across all categories...
+
+✅ All IDs are valid and unique within their categories!
+   Series books: 336
+   Singles: 85
+   Novellas: 96
+   Anthologies: 129
+   Total unique IDs: 646
+```
+
+If the validation fails, you'll see detailed error messages showing which IDs are duplicated and where they appear. Fix these issues before importing to prevent database conflicts.
 
 ---
 

@@ -34,7 +34,9 @@ export default function SeriesView({ series, readingTracker, onUpdateStatus }: S
   const completedCount = series.books.filter(
     book => getStatus(book.id) === 'completed'
   ).length;
-  const progressPercent = (completedCount / series.books.length) * 100;
+  const progressPercent = series.books.length > 0
+    ? (completedCount / series.books.length) * 100
+    : 0;
 
   return (
     <div className={`${styles.card} overflow-hidden`}>

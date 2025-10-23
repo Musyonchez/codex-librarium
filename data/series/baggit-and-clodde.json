@@ -4,7 +4,7 @@
   "description": "The misadventures of two Ork mekboyz navigating the dangerous and unpredictable world of greenskin technology and warfare",
   "books": [
     {
-      "id": "bc-01",
+      "id": "baggit-01",
       "title": "Dredge Runners",
       "author": "Alec Worley",
       "orderInSeries": 1,
@@ -12,7 +12,7 @@
       "tags": ["Orks", "Mekboyz", "Humor"]
     },
     {
-      "id": "bc-02",
+      "id": "baggit-02",
       "title": "The Wraithbone Phoenix",
       "author": "Alec Worley",
       "orderInSeries": 2,

@@ -141,14 +141,17 @@ export async function POST(request: Request) {
             });
 
           if (seriesError) {
-            importResults.errors.push(`Series ${data.id}: ${seriesError.message}`);
+            importResults.errors.push(`Series ${data.id} (${data.name}): ${seriesError.message}`);
             continue;
           }
 
           importResults.series++;
 
           // Upsert series books
-          for (const book of data.books) {
+          let booksImportedForSeries = 0;
+          const booksInSeries = data.books?.length || 0;
+
+          for (const book of data.books || []) {
             const normalizedTags = normalizeTags(book.tags);
             const normalizedFactions = normalizeFactions(book.faction);
 
@@ -167,10 +170,18 @@ export async function POST(request: Request) {
               });
 
             if (bookError) {
-              importResults.errors.push(`Book ${book.id}: ${bookError.message}`);
+              importResults.errors.push(`Book ${book.id} (${book.title}) in series ${data.name}: ${bookError.message}`);
             } else {
               importResults.books++;
+              booksImportedForSeries++;
             }
+          }
+
+          // Warn if series was imported but no books were imported
+          if (booksInSeries > 0 && booksImportedForSeries === 0) {
+            importResults.errors.push(`WARNING: Series ${data.name} imported but all ${booksInSeries} books failed to import`);
+          } else if (booksImportedForSeries < booksInSeries) {
+            importResults.errors.push(`WARNING: Series ${data.name} partially imported (${booksImportedForSeries}/${booksInSeries} books succeeded)`);
           }
         } else if (fileInfo.folder === 'singles') {
           // Single novels
