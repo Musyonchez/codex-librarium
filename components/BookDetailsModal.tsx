@@ -4,7 +4,7 @@ import { Book, ReadingStatus } from '@/lib/types';
 import { styles, statusIcons, statusLabels } from '@/lib/design-system';
 
 interface BookDetailsModalProps {
-  book: Book & { seriesName?: string };
+  book: Omit<Book, 'orderInSeries'> & { orderInSeries?: number; seriesName?: string };
   currentStatus: ReadingStatus;
   onClose: () => void;
   onStatusChange: (status: ReadingStatus) => void;
@@ -41,9 +41,11 @@ export default function BookDetailsModal({
                     {book.seriesName}
                   </span>
                 )}
-                <span className={`text-sm ${styles.textGold} font-mono`}>
-                  #{book.orderInSeries}
-                </span>
+                {book.orderInSeries !== undefined && (
+                  <span className={`text-sm ${styles.textGold} font-mono`}>
+                    #{book.orderInSeries}
+                  </span>
+                )}
               </div>
               <h2 className={`text-3xl font-bold ${styles.textGold} mb-2`}>
                 {book.title}
@@ -149,10 +151,12 @@ export default function BookDetailsModal({
                   <span className={`${styles.textMuted} block mb-1`}>Book ID</span>
                   <span className={`${styles.textPrimary} font-mono`}>{book.id}</span>
                 </div>
-                <div>
-                  <span className={`${styles.textMuted} block mb-1`}>Order in Series</span>
-                  <span className={styles.textPrimary}>#{book.orderInSeries}</span>
-                </div>
+                {book.orderInSeries !== undefined && (
+                  <div>
+                    <span className={`${styles.textMuted} block mb-1`}>Order in Series</span>
+                    <span className={styles.textPrimary}>#{book.orderInSeries}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
