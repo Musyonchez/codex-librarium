@@ -92,13 +92,13 @@ export async function POST(request: Request) {
 
     try {
       canonicalTags = JSON.parse(await fs.readFile(tagsFilePath, 'utf-8'));
-    } catch (error) {
+    } catch {
       console.warn('tags.json not found, will create it');
     }
 
     try {
       canonicalFactions = JSON.parse(await fs.readFile(factionsFilePath, 'utf-8'));
-    } catch (error) {
+    } catch {
       console.warn('factions.json not found, will create it');
     }
 
