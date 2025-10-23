@@ -17,6 +17,8 @@ export default function SinglesByNamePage() {
   const [singles, setSingles] = useState<Single[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
   useEffect(() => {
     fetchSingles();
@@ -51,6 +53,18 @@ export default function SinglesByNamePage() {
     );
   }, [sortedSingles, searchQuery]);
 
+  // Pagination
+  const totalPages = Math.ceil(filteredSingles.length / itemsPerPage);
+  const paginatedSingles = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return filteredSingles.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredSingles, currentPage]);
+
+  // Reset to page 1 when search changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
+
   return (
     <AppLayout requireAuth={true}>
       <div className="container mx-auto px-4 py-8">
@@ -82,7 +96,8 @@ export default function SinglesByNamePage() {
 
             {/* Results count */}
             <div className={`mb-4 ${styles.textSecondary} text-sm`}>
-              Showing {filteredSingles.length} {filteredSingles.length === 1 ? 'novel' : 'novels'}
+              Showing {paginatedSingles.length} of {filteredSingles.length} {filteredSingles.length === 1 ? 'novel' : 'novels'}
+              {totalPages > 1 && ` (Page ${currentPage} of ${totalPages})`}
             </div>
 
             {/* Singles List */}
@@ -93,8 +108,9 @@ export default function SinglesByNamePage() {
                 </p>
               </div>
             ) : (
-              <div className="grid gap-2">
-                {filteredSingles.map((single) => (
+              <>
+                <div className="grid gap-2">
+                  {paginatedSingles.map((single) => (
                   <div
                     key={single.id}
                     className={`${styles.card} p-6 hover:${styles.bgElevated} transition-colors cursor-pointer`}
@@ -125,7 +141,53 @@ export default function SinglesByNamePage() {
                     )}
                   </div>
                 ))}
-              </div>
+                </div>
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center items-center gap-2 mt-8">
+                    <button
+                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                      className={`px-4 py-2 rounded ${
+                        currentPage === 1
+                          ? 'bg-slate-800 text-slate-600 cursor-not-allowed'
+                          : `${styles.bgElevated} ${styles.textGold} hover:bg-slate-700`
+                      }`}
+                    >
+                      Previous
+                    </button>
+
+                    <div className="flex gap-1">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <button
+                          key={page}
+                          onClick={() => setCurrentPage(page)}
+                          className={`px-3 py-2 rounded ${
+                            currentPage === page
+                              ? 'bg-[#D4AF37] text-slate-900 font-bold'
+                              : `${styles.bgElevated} ${styles.textSecondary} hover:${styles.textGold}`
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      disabled={currentPage === totalPages}
+                      className={`px-4 py-2 rounded ${
+                        currentPage === totalPages
+                          ? 'bg-slate-800 text-slate-600 cursor-not-allowed'
+                          : `${styles.bgElevated} ${styles.textGold} hover:bg-slate-700`
+                      }`}
+                    >
+                      Next
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </>
         )}
