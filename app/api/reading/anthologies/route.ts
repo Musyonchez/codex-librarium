@@ -23,13 +23,13 @@ export async function POST(request: NextRequest) {
       .from('reading_progress_anthologies')
       .upsert({
         user_id: user.id,
-        book_id: bookId,
+        anthology_id: bookId,
         status: status || 'unread',
         rating: rating || null,
         notes: notes || null,
         updated_at: new Date().toISOString(),
       }, {
-        onConflict: 'user_id,book_id'
+        onConflict: 'user_id,anthology_id'
       })
       .select()
       .single();
@@ -80,7 +80,13 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json({ progress });
+    // Transform anthology_id to book_id for frontend consistency
+    const transformedProgress = progress?.map(p => ({
+      ...p,
+      book_id: p.anthology_id
+    })) || [];
+
+    return NextResponse.json({ progress: transformedProgress });
   } catch (error) {
     console.error('Error in anthologies reading progress API:', error);
     return NextResponse.json(
