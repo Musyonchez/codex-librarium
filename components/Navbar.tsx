@@ -83,7 +83,7 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
             <Link
               href="/order/series"
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                pathname === "/order/series"
+                pathname.startsWith("/order/series")
                   ? `${styles.textGold} bg-slate-700`
                   : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
               }`}
@@ -91,9 +91,9 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
               Series
             </Link>
             <Link
-              href="/order/singles"
+              href="/order/singles/name"
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                pathname === "/order/singles"
+                pathname.startsWith("/order/singles")
                   ? `${styles.textGold} bg-slate-700`
                   : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
               }`}
@@ -101,9 +101,9 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
               Singles
             </Link>
             <Link
-              href="/order/novellas"
+              href="/order/novellas/name"
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                pathname === "/order/novellas"
+                pathname.startsWith("/order/novellas")
                   ? `${styles.textGold} bg-slate-700`
                   : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
               }`}
@@ -111,9 +111,9 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
               Novellas
             </Link>
             <Link
-              href="/order/anthologies"
+              href="/order/anthologies/name"
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                pathname === "/order/anthologies"
+                pathname.startsWith("/order/anthologies")
                   ? `${styles.textGold} bg-slate-700`
                   : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
               }`}
@@ -156,7 +156,7 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         href="/order/series"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname === '/order/series'
+                          pathname.startsWith('/order/series')
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
@@ -164,10 +164,10 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         Series
                       </Link>
                       <Link
-                        href="/order/singles"
+                        href="/order/singles/name"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname === '/order/singles'
+                          pathname.startsWith('/order/singles')
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
@@ -175,10 +175,10 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         Singles
                       </Link>
                       <Link
-                        href="/order/novellas"
+                        href="/order/novellas/name"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname === '/order/novellas'
+                          pathname.startsWith('/order/novellas')
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
@@ -186,10 +186,10 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         Novellas
                       </Link>
                       <Link
-                        href="/order/anthologies"
+                        href="/order/anthologies/name"
                         onClick={() => setShowUserDropdown(false)}
                         className={`block px-4 py-2 ${
-                          pathname === '/order/anthologies'
+                          pathname.startsWith('/order/anthologies')
                             ? `${styles.textGold}`
                             : 'text-slate-300'
                         } hover:bg-slate-700 transition-colors`}
