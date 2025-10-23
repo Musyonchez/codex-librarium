@@ -3,7 +3,10 @@
 import { useState, useEffect, useMemo } from 'react';
 import AppLayout from '@/components/AppLayout';
 import OrderTabs from '@/components/OrderTabs';
-import { styles } from '@/lib/design-system';
+import BookDetailsModal from '@/components/BookDetailsModal';
+import { ReadingStatus } from '@/lib/types';
+import { styles, statusIcons, statusLabels } from '@/lib/design-system';
+import { toast } from 'sonner';
 
 interface Single {
   id: string;
@@ -13,16 +16,31 @@ interface Single {
   tags: string[];
 }
 
+interface ReadingProgress {
+  book_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+}
+
 export default function SinglesByNamePage() {
   const [singles, setSingles] = useState<Single[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
+  const [selectedSingle, setSelectedSingle] = useState<Single | null>(null);
   const itemsPerPage = 20;
 
   useEffect(() => {
-    fetchSingles();
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    await Promise.all([fetchSingles(), fetchReadingProgress()]);
+    setLoading(false);
+  };
 
   const fetchSingles = async () => {
     try {
@@ -31,9 +49,55 @@ export default function SinglesByNamePage() {
       setSingles(data.singles || []);
     } catch (error) {
       console.error('Failed to fetch singles:', error);
-    } finally {
-      setLoading(false);
     }
+  };
+
+  const fetchReadingProgress = async () => {
+    try {
+      const response = await fetch('/api/reading/singles');
+      if (!response.ok) {
+        setReadingProgress([]);
+        return;
+      }
+      const data = await response.json();
+      setReadingProgress(data.progress || []);
+    } catch (error) {
+      console.error('Failed to fetch reading progress:', error);
+      setReadingProgress([]);
+    }
+  };
+
+  const updateReadingStatus = async (bookId: string, status: ReadingStatus) => {
+    try {
+      const response = await fetch('/api/reading/singles', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bookId, status }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to update status');
+        return;
+      }
+
+      await fetchReadingProgress();
+    } catch (error) {
+      console.error('Failed to update status:', error);
+    }
+  };
+
+  const getStatus = (bookId: string): ReadingStatus => {
+    const entry = readingProgress.find(r => r.book_id === bookId);
+    return entry?.status || 'unread';
+  };
+
+  const handleStatusChange = (bookId: string, bookTitle: string, status: ReadingStatus) => {
+    updateReadingStatus(bookId, status);
+    setSelectedSingle(null);
+
+    toast.success(`${bookTitle}`, {
+      description: `Marked as ${statusLabels[status]}`,
+    });
   };
 
   // Sort alphabetically
@@ -110,37 +174,52 @@ export default function SinglesByNamePage() {
             ) : (
               <>
                 <div className="grid gap-2">
-                  {paginatedSingles.map((single) => (
-                  <div
-                    key={single.id}
-                    className={`${styles.card} p-6 hover:${styles.bgElevated} transition-colors cursor-pointer`}
-                  >
-                    <h3 className={`text-xl font-bold ${styles.textGold} mb-2`}>
-                      {single.title}
-                    </h3>
-                    <p className={`${styles.textSecondary} mb-4`}>
-                      by {single.author}
-                    </p>
-                    {single.faction && single.faction.length > 0 && (
-                      <div className="mb-2">
-                        <span className={`text-sm ${styles.textSecondary}`}>Factions: </span>
-                        <span className={styles.textPrimary}>{single.faction.join(', ')}</span>
+                  {paginatedSingles.map((single) => {
+                    const status = getStatus(single.id);
+                    const statusIcon = statusIcons[status];
+
+                    return (
+                      <div
+                        key={single.id}
+                        className={styles.bookCard}
+                        onClick={() => setSelectedSingle(single)}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 text-center">
+                            <span className={`text-2xl ${styles.textGold}`}>{statusIcon}</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className={`text-lg font-semibold ${styles.textPrimary} mb-1`}>
+                              {single.title}
+                            </h3>
+                            <div className={`flex flex-wrap gap-3 text-sm ${styles.textSecondary}`}>
+                              <span>by {single.author}</span>
+                              {single.faction && single.faction.length > 0 && (
+                                <span className={styles.textMuted}>
+                                  • {single.faction.join(', ')}
+                                </span>
+                              )}
+                            </div>
+                            {single.tags && single.tags.length > 0 && (
+                              <div className="flex flex-wrap gap-2 mt-2">
+                                {single.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <div className={`flex-shrink-0 text-xs ${styles.textMuted} uppercase tracking-wider`}>
+                            {statusLabels[status]}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                    {single.tags && single.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {single.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className={`px-2 py-0.5 ${styles.bgMain} rounded text-xs ${styles.textMuted}`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                    );
+                  })}
                 </div>
 
                 {/* Pagination Controls */}
@@ -190,6 +269,16 @@ export default function SinglesByNamePage() {
               </>
             )}
           </>
+        )}
+
+        {/* Book Details Modal */}
+        {selectedSingle && (
+          <BookDetailsModal
+            book={selectedSingle}
+            currentStatus={getStatus(selectedSingle.id)}
+            onClose={() => setSelectedSingle(null)}
+            onStatusChange={(status) => handleStatusChange(selectedSingle.id, selectedSingle.title, status)}
+          />
         )}
       </div>
     </AppLayout>
