@@ -3,7 +3,6 @@ export interface Book {
   title: string;
   author: string;
   orderInSeries: number;
-  chronologicalOrder?: number;
   faction?: string[];
   tags?: string[];
 }
