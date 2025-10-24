@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
-import { Series, ReadingProgress } from '@/lib/types';
+import { Series, ReadingProgress, Single, Novella, Anthology } from '@/lib/types';
 
 export async function getAllSeries() {
   const supabase = await createClient();
@@ -107,4 +107,40 @@ export async function upsertReadingProgress(
 
   if (error) throw error;
   return data as ReadingProgress;
+}
+
+// Singles query functions
+export async function getAllSingles() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('singles')
+    .select('*')
+    .order('title', { ascending: true });
+
+  if (error) throw error;
+  return data as Single[];
+}
+
+// Novellas query functions
+export async function getAllNovellas() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('novellas')
+    .select('*')
+    .order('title', { ascending: true });
+
+  if (error) throw error;
+  return data as Novella[];
+}
+
+// Anthologies query functions
+export async function getAllAnthologies() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('anthologies')
+    .select('*')
+    .order('title', { ascending: true });
+
+  if (error) throw error;
+  return data as Anthology[];
 }
