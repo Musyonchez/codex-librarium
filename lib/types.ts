@@ -65,3 +65,71 @@ export interface SeriesProgress {
   percentComplete: number;
   nextToRead?: Book;
 }
+
+// Standalone book types (Singles, Novellas, Anthologies)
+export interface Single {
+  id: string;
+  title: string;
+  author: string;
+  faction: string[];
+  tags: string[];
+  created_at?: string;
+}
+
+export interface Novella {
+  id: string;
+  title: string;
+  author: string;
+  faction: string[];
+  tags: string[];
+  created_at?: string;
+}
+
+export interface Anthology {
+  id: string;
+  title: string;
+  author: string;
+  faction: string[];
+  tags: string[];
+  created_at?: string;
+}
+
+// Reading progress types for standalone books
+export interface SingleReadingProgress {
+  id: string;
+  user_id: string;
+  single_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+  started_at?: string;
+  completed_at?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface NovellaReadingProgress {
+  id: string;
+  user_id: string;
+  novella_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+  started_at?: string;
+  completed_at?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AnthologyReadingProgress {
+  id: string;
+  user_id: string;
+  anthology_id: string;
+  status: ReadingStatus;
+  rating?: number;
+  notes?: string;
+  started_at?: string;
+  completed_at?: string;
+  created_at: string;
+  updated_at: string;
+}
