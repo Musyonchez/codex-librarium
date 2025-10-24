@@ -18,17 +18,41 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'bookId is required' }, { status: 400 });
     }
 
+    // Check if there's an existing entry
+    const { data: existing } = await supabase
+      .from('reading_progress_novellas')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('novella_id', bookId)
+      .single();
+
+    const now = new Date().toISOString();
+    const dataToUpsert: Record<string, unknown> = {
+      user_id: user.id,
+      novella_id: bookId,
+      status: status || 'unread',
+      rating: rating || null,
+      notes: notes || null,
+      updated_at: now,
+    };
+
+    // Set timestamps based on status changes
+    if (status === 'reading' && !existing?.started_at) {
+      dataToUpsert.started_at = now;
+    } else if (existing?.started_at) {
+      dataToUpsert.started_at = existing.started_at;
+    }
+
+    if (status === 'completed') {
+      dataToUpsert.completed_at = now;
+    } else if (existing?.completed_at) {
+      dataToUpsert.completed_at = existing.completed_at;
+    }
+
     // Upsert reading progress
     const { data, error } = await supabase
       .from('reading_progress_novellas')
-      .upsert({
-        user_id: user.id,
-        novella_id: bookId,
-        status: status || 'unread',
-        rating: rating || null,
-        notes: notes || null,
-        updated_at: new Date().toISOString(),
-      }, {
+      .upsert(dataToUpsert, {
         onConflict: 'user_id,novella_id'
       })
       .select()
