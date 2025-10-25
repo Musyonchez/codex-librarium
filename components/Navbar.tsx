@@ -120,6 +120,16 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
             >
               Anthologies
             </Link>
+            <Link
+              href="/dashboard/requests"
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                pathname.startsWith("/dashboard/requests")
+                  ? `${styles.textGold} bg-slate-700`
+                  : `${styles.textSecondary} hover:text-slate-50 hover:bg-slate-700`
+              }`}
+            >
+              Requests
+            </Link>
           </div>
 
           {/* Auth Section */}
@@ -195,6 +205,17 @@ export default function Navbar({ user, onLogin, onLogout }: NavbarProps) {
                         } hover:bg-slate-700 transition-colors`}
                       >
                         Anthologies
+                      </Link>
+                      <Link
+                        href="/dashboard/requests"
+                        onClick={() => setShowUserDropdown(false)}
+                        className={`block px-4 py-2 ${
+                          pathname.startsWith('/dashboard/requests')
+                            ? `${styles.textGold}`
+                            : 'text-slate-300'
+                        } hover:bg-slate-700 transition-colors`}
+                      >
+                        Requests
                       </Link>
                     </div>
 
