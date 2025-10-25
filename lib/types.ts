@@ -132,3 +132,30 @@ export interface AnthologyReadingProgress {
   created_at: string;
   updated_at: string;
 }
+
+// Book Requests
+export type BookRequestStatus = 'pending' | 'waitlist' | 'approved' | 'refused';
+export type BookRequestType = 'single' | 'novella' | 'anthology' | 'series' | 'other';
+
+export interface BookRequest {
+  id: string;
+  title: string;
+  author: string;
+  book_type: BookRequestType;
+  additional_info?: string;
+  requested_by: string;
+  status: BookRequestStatus;
+  refusal_comment?: string;
+  refusal_comment_created_by?: string;
+  refusal_comment_updated_by?: string;
+  refusal_comment_created_at?: string;
+  refusal_comment_updated_at?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BookRequestWithUser extends BookRequest {
+  requester_email?: string;
+  refusal_comment_creator_email?: string;
+  refusal_comment_updater_email?: string;
+}
