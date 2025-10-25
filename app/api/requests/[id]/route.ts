@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { updateBookRequestStatus, deleteBookRequest } from '@/lib/supabase/queries';
 import { createClient } from '@/lib/supabase/server';
 import { BookRequestStatus } from '@/lib/types';
+import { isAdmin } from '@/lib/admin';
 
 export async function PATCH(
   request: NextRequest,

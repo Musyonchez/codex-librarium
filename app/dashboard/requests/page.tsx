@@ -12,6 +12,7 @@ export default function RequestsDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<SubTab>('pending');
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+  const [isAdmin, setIsAdmin] = useState(false);
 
   // Modal states
   const [selectedRequest, setSelectedRequest] = useState<BookRequest | null>(null);
@@ -20,9 +21,28 @@ export default function RequestsDashboardPage() {
   const [refusalComment, setRefusalComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Create request modal states
+  const [showCreateModal, setShowCreateModal] = useState(false);
+  const [newRequestTitle, setNewRequestTitle] = useState('');
+  const [newRequestAuthor, setNewRequestAuthor] = useState('');
+  const [newRequestType, setNewRequestType] = useState('single');
+  const [newRequestInfo, setNewRequestInfo] = useState('');
+
   useEffect(() => {
     fetchRequests();
+    checkAdmin();
   }, []);
+
+  const checkAdmin = async () => {
+    try {
+      const response = await fetch('/api/import/check-admin');
+      const data = await response.json();
+      setIsAdmin(data.isAdmin);
+    } catch (error) {
+      console.error('Failed to check admin status:', error);
+      setIsAdmin(false);
+    }
+  };
 
   const fetchRequests = async () => {
     setLoading(true);
@@ -91,6 +111,43 @@ export default function RequestsDashboardPage() {
     setShowStatusModal(true);
   };
 
+  const handleCreateRequest = async () => {
+    if (!newRequestTitle.trim() || !newRequestAuthor.trim()) {
+      alert('Title and author are required');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: newRequestTitle,
+          author: newRequestAuthor,
+          bookType: newRequestType,
+          additionalInfo: newRequestInfo
+        })
+      });
+
+      if (response.ok) {
+        await fetchRequests();
+        setShowCreateModal(false);
+        setNewRequestTitle('');
+        setNewRequestAuthor('');
+        setNewRequestType('single');
+        setNewRequestInfo('');
+      } else {
+        const error = await response.json();
+        alert(error.error || 'Failed to create request');
+      }
+    } catch (error) {
+      console.error('Error creating request:', error);
+      alert('Failed to create request');
+    }
+    setIsSubmitting(false);
+  };
+
   const getUsernameFromEmail = (email: string | undefined) => {
     if (!email) return 'Unknown';
     return email.split('@')[0];
@@ -113,12 +170,14 @@ export default function RequestsDashboardPage() {
             </p>
           )}
         </div>
-        <button
-          onClick={() => openStatusModal(request)}
-          className={`px-3 py-1 rounded ${styles.btnPrimary} text-sm`}
-        >
-          Change Status
-        </button>
+        {isAdmin && (
+          <button
+            onClick={() => openStatusModal(request)}
+            className={`px-3 py-1 rounded ${styles.btnPrimary} text-sm`}
+          >
+            Change Status
+          </button>
+        )}
       </div>
 
       <div className={`text-xs ${styles.textSecondary} pt-2 border-t border-slate-700`}>
@@ -155,11 +214,19 @@ export default function RequestsDashboardPage() {
   return (
     <AppLayout requireAuth={true}>
       <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-[#D4AF37] mb-2">Book Requests</h1>
-          <p className="text-slate-400">
-            Manage user book requests
-          </p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-4xl font-bold text-[#D4AF37] mb-2">Book Requests</h1>
+            <p className="text-slate-400">
+              Manage user book requests
+            </p>
+          </div>
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className={styles.btnPrimary}
+          >
+            + New Request
+          </button>
         </div>
 
         {/* Sub-tabs for request statuses */}
@@ -279,6 +346,94 @@ export default function RequestsDashboardPage() {
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Updating...' : 'Update Status'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Create Request Modal */}
+        {showCreateModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className={`${styles.card} max-w-md w-full p-6 space-y-4`}>
+              <h2 className={`text-2xl font-bold ${styles.textGold}`}>Request a Book</h2>
+
+              <div>
+                <label className={`block ${styles.textSecondary} text-sm mb-2`}>
+                  Book Title *
+                </label>
+                <input
+                  type="text"
+                  value={newRequestTitle}
+                  onChange={(e) => setNewRequestTitle(e.target.value)}
+                  className={`w-full px-3 py-2 ${styles.bgElevated} ${styles.textPrimary} rounded border border-slate-600`}
+                  placeholder="Enter book title..."
+                />
+              </div>
+
+              <div>
+                <label className={`block ${styles.textSecondary} text-sm mb-2`}>
+                  Author *
+                </label>
+                <input
+                  type="text"
+                  value={newRequestAuthor}
+                  onChange={(e) => setNewRequestAuthor(e.target.value)}
+                  className={`w-full px-3 py-2 ${styles.bgElevated} ${styles.textPrimary} rounded border border-slate-600`}
+                  placeholder="Enter author name..."
+                />
+              </div>
+
+              <div>
+                <label className={`block ${styles.textSecondary} text-sm mb-2`}>
+                  Book Type
+                </label>
+                <select
+                  value={newRequestType}
+                  onChange={(e) => setNewRequestType(e.target.value)}
+                  className={`w-full px-3 py-2 ${styles.bgElevated} ${styles.textPrimary} rounded border border-slate-600`}
+                >
+                  <option value="single">Single</option>
+                  <option value="novella">Novella</option>
+                  <option value="anthology">Anthology</option>
+                  <option value="series">Series</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className={`block ${styles.textSecondary} text-sm mb-2`}>
+                  Additional Information (optional)
+                </label>
+                <textarea
+                  value={newRequestInfo}
+                  onChange={(e) => setNewRequestInfo(e.target.value)}
+                  rows={3}
+                  className={`w-full px-3 py-2 ${styles.bgElevated} ${styles.textPrimary} rounded border border-slate-600`}
+                  placeholder="Any additional details about the book..."
+                />
+              </div>
+
+              <div className="flex gap-2 justify-end">
+                <button
+                  onClick={() => {
+                    setShowCreateModal(false);
+                    setNewRequestTitle('');
+                    setNewRequestAuthor('');
+                    setNewRequestType('single');
+                    setNewRequestInfo('');
+                  }}
+                  className={`px-4 py-2 ${styles.btnSecondary} rounded`}
+                  disabled={isSubmitting}
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleCreateRequest}
+                  className={`px-4 py-2 ${styles.btnPrimary} rounded`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Creating...' : 'Create Request'}
                 </button>
               </div>
             </div>
