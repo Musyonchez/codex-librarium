@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import AppLayout from '@/components/AppLayout';
-import DashboardTabs from '@/components/DashboardTabs';
 import { styles } from '@/lib/design-system';
 import { BookRequest, BookRequestStatus } from '@/lib/types';
 
@@ -162,8 +161,6 @@ export default function RequestsDashboardPage() {
             Manage user book requests
           </p>
         </div>
-
-        <DashboardTabs />
 
         {/* Sub-tabs for request statuses */}
         <div className="border-b border-slate-700 mb-6">
