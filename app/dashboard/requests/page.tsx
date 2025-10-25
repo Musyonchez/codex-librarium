@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import AppLayout from '@/components/AppLayout';
 import { styles } from '@/lib/design-system';
 import { BookRequest, BookRequestStatus } from '@/lib/types';
+import { toast } from 'sonner';
 
 type SubTab = 'pending' | 'approved' | 'waitlist' | 'refused';
 
@@ -73,7 +74,7 @@ export default function RequestsDashboardPage() {
     if (!selectedRequest) return;
 
     if (newStatus === 'refused' && !refusalComment.trim()) {
-      alert('Refusal comment is required');
+      toast.error('Refusal comment is required');
       return;
     }
 
@@ -93,13 +94,14 @@ export default function RequestsDashboardPage() {
         setShowStatusModal(false);
         setSelectedRequest(null);
         setRefusalComment('');
+        toast.success('Request status updated successfully');
       } else {
         const error = await response.json();
-        alert(error.error || 'Failed to update status');
+        toast.error(error.error || 'Failed to update status');
       }
     } catch (error) {
       console.error('Error updating status:', error);
-      alert('Failed to update status');
+      toast.error('Failed to update status');
     }
     setIsSubmitting(false);
   };
@@ -113,7 +115,7 @@ export default function RequestsDashboardPage() {
 
   const handleCreateRequest = async () => {
     if (!newRequestTitle.trim() || !newRequestAuthor.trim()) {
-      alert('Title and author are required');
+      toast.error('Title and author are required');
       return;
     }
 
@@ -137,13 +139,14 @@ export default function RequestsDashboardPage() {
         setNewRequestAuthor('');
         setNewRequestType('single');
         setNewRequestInfo('');
+        toast.success('Book request created successfully');
       } else {
         const error = await response.json();
-        alert(error.error || 'Failed to create request');
+        toast.error(error.error || 'Failed to create request');
       }
     } catch (error) {
       console.error('Error creating request:', error);
-      alert('Failed to create request');
+      toast.error('Failed to create request');
     }
     setIsSubmitting(false);
   };
@@ -191,7 +194,7 @@ export default function RequestsDashboardPage() {
           <p className={`text-sm ${styles.textSecondary}`}>{request.refusal_comment}</p>
           {request.refusal_comment_created_by && (
             <p className={`text-xs ${styles.textSecondary} mt-2`}>
-              Created by: {getUsernameFromEmail(request.refusal_comment_created_by)}
+              Refused by: {getUsernameFromEmail(request.refusal_comment_created_by)}
               {request.refusal_comment_updated_by && (
                 <span> • Last edited by: {getUsernameFromEmail(request.refusal_comment_updated_by)}</span>
               )}
@@ -249,26 +252,24 @@ export default function RequestsDashboardPage() {
         </div>
 
         {/* Sort controls */}
-        {activeTab === 'pending' && (
-          <div className="mb-4 flex gap-2">
-            <button
-              onClick={() => setSortOrder('newest')}
-              className={`px-3 py-1 rounded text-sm ${
-                sortOrder === 'newest' ? styles.btnPrimary : styles.btnSecondary
-              }`}
+        <div className="mb-4 flex items-center gap-2">
+          <label className={`text-sm ${styles.textSecondary}`}>Sort by:</label>
+          <div className="relative">
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value as 'newest' | 'oldest')}
+              className={`appearance-none px-4 py-2 pr-10 rounded ${styles.bgElevated} ${styles.textPrimary} border border-slate-600 cursor-pointer hover:border-slate-500 transition-colors`}
             >
-              Newest First
-            </button>
-            <button
-              onClick={() => setSortOrder('oldest')}
-              className={`px-3 py-1 rounded text-sm ${
-                sortOrder === 'oldest' ? styles.btnPrimary : styles.btnSecondary
-              }`}
-            >
-              Oldest First
-            </button>
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
-        )}
+        </div>
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
