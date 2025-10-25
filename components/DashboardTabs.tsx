@@ -12,7 +12,6 @@ export default function DashboardTabs() {
     { href: '/dashboard/singles', label: 'Singles' },
     { href: '/dashboard/novellas', label: 'Novellas' },
     { href: '/dashboard/anthologies', label: 'Anthologies' },
-    { href: '/dashboard/requests', label: 'Requests' },
   ];
 
   return (
