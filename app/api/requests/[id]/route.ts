@@ -16,6 +16,11 @@ export async function PATCH(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    // Only admins can change request status
+    if (!isAdmin(user.email)) {
+      return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+    }
+
     const { id } = await params;
 
     const body = await request.json();
