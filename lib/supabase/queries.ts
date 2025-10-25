@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
 import { Series, ReadingProgress, Single, Novella, Anthology, BookRequest, BookRequestStatus } from '@/lib/types';
 
 export async function getAllSeries() {
@@ -196,7 +197,8 @@ export async function updateBookRequestStatus(
   userId: string,
   refusalComment?: string
 ) {
-  const supabase = await createClient();
+  // Use admin client to bypass RLS (only admins can call this function)
+  const supabase = createAdminClient();
 
   // Get current request to check previous status
   const { data: current } = await supabase
