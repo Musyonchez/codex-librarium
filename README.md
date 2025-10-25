@@ -49,6 +49,17 @@ A comprehensive web application for tracking your progress through the vast Warh
 - Admin-only import functionality
 - Secure API endpoints
 
+### 📝 Book Requests
+- **User Requests** - Any authenticated user can request books to be added to the library
+- **Request Management** - Four status categories:
+  - **Requests** (Pending) - New requests awaiting admin review
+  - **Approved** - Requests accepted and fulfilled
+  - **Waitlist** - Requests acknowledged but not yet ready to add
+  - **Refused** - Requests rejected with admin-provided reasons
+- **Filtering** - Sort requests by newest or oldest
+- **Admin-Only Status Changes** - Only admins can move requests between statuses
+- **Refusal Comments** - Required explanations when refusing requests, with edit tracking
+
 ### ⚙️ Admin Features
 - JSON-based book import system with file selection
 - Support for importing Series, Singles, Novellas, and Anthologies
@@ -56,6 +67,7 @@ A comprehensive web application for tracking your progress through the vast Warh
 - Folder-based organization (_meta folders) for easy management
 - Real-time updates to canonical tag/faction lists across all categories
 - Selective import (choose specific files to import)
+- Book request management with status updates and refusal comments
 
 ## Tech Stack
 
@@ -121,12 +133,16 @@ npm run dev
 │   │   │   ├── singles/   # Singles progress (GET/POST)
 │   │   │   ├── novellas/  # Novellas progress (GET/POST)
 │   │   │   └── anthologies/ # Anthologies progress (GET/POST)
+│   │   ├── requests/      # Book requests APIs
+│   │   │   ├── route.ts   # List/create requests (GET/POST)
+│   │   │   └── [id]/      # Update/delete request (PATCH/DELETE)
 │   │   └── import/        # Import system APIs
 │   ├── dashboard/         # Dashboard pages
 │   │   ├── page.tsx       # Series dashboard
 │   │   ├── singles/       # Singles dashboard
 │   │   ├── novellas/      # Novellas dashboard
-│   │   └── anthologies/   # Anthologies dashboard
+│   │   ├── anthologies/   # Anthologies dashboard
+│   │   └── requests/      # Book requests dashboard
 │   ├── import/            # Admin import page
 │   ├── order/             # Book browsing pages
 │   │   ├── series/        # Series books
@@ -191,10 +207,11 @@ npx supabase db push
 The database includes:
 - **Book Tables**: `series`, `series_books`, `singles`, `novellas`, `anthologies`
 - **Reading Progress Tables**: `reading_progress_series_books`, `reading_progress_singles`, `reading_progress_novellas`, `reading_progress_anthologies`
+- **Book Requests Table**: `book_requests` - User-submitted book requests with admin management
 - **Row Level Security (RLS)** on all tables
 - **Indexes** for optimal query performance
 
-See `supabase/migrations/004_complete_fresh_schema.sql` for the complete schema.
+See `supabase/migrations/004_complete_fresh_schema.sql` for the main schema and `005_add_book_requests.sql` for the book requests feature.
 
 ## Adding Books
 

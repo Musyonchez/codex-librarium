@@ -11,6 +11,9 @@ The database is organized into four book categories, each with its own table and
 - **Novellas**: `novellas` + `reading_progress_novellas`
 - **Anthologies**: `anthologies` + `reading_progress_anthologies`
 
+Additionally:
+- **Book Requests**: `book_requests` - User-submitted requests for books to be added
+
 ---
 
 ## Book Tables
@@ -129,6 +132,46 @@ Stores anthology collections and omnibus editions
 
 ---
 
+### `book_requests`
+
+Stores user requests for books to be added to the library
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| `id` | uuid | PRIMARY KEY | Auto-generated UUID |
+| `title` | text | NOT NULL | Requested book title |
+| `author` | text | NOT NULL | Author name |
+| `book_type` | text | CHECK | 'single', 'novella', 'anthology', 'series', 'other' |
+| `additional_info` | text | | User-provided context/details |
+| `requested_by` | uuid | FOREIGN KEY → auth.users(id) | User who made request |
+| `status` | text | NOT NULL, CHECK | 'pending', 'waitlist', 'approved', 'refused' |
+| `refusal_comment` | text | | Admin explanation (only for 'refused') |
+| `refusal_comment_created_by` | uuid | FOREIGN KEY → auth.users(id) | Admin who refused |
+| `refusal_comment_updated_by` | uuid | FOREIGN KEY → auth.users(id) | Admin who edited comment |
+| `refusal_comment_created_at` | timestamptz | | When comment was created |
+| `refusal_comment_updated_at` | timestamptz | | When comment was last edited |
+| `created_at` | timestamptz | DEFAULT now() | Request creation date |
+| `updated_at` | timestamptz | DEFAULT now() | Last update |
+
+**Constraints:**
+- CHECK book_type IN ('single', 'novella', 'anthology', 'series', 'other')
+- CHECK status IN ('pending', 'waitlist', 'approved', 'refused')
+
+**Indexes:**
+- `idx_book_requests_status` - ON book_requests(status)
+- `idx_book_requests_requested_by` - ON book_requests(requested_by)
+- `idx_book_requests_created_at` - ON book_requests(created_at DESC)
+
+**Triggers:**
+- Auto-update `updated_at` on UPDATE
+
+**Refusal Comment Logic:**
+- When status → 'refused': comment required, creator tracked
+- When status changes FROM 'refused': comment automatically cleared
+- Admins can edit refusal comments, tracked as updater
+
+---
+
 ## Reading Progress Tables
 
 ### `reading_progress_series_books`
@@ -198,6 +241,10 @@ singles (1) ──< (many) reading_progress_singles >── (1) auth.users
 novellas (1) ──< (many) reading_progress_novellas >── (1) auth.users
 
 anthologies (1) ──< (many) reading_progress_anthologies >── (1) auth.users
+
+auth.users (1) ──< (many) book_requests (requested_by)
+auth.users (1) ──< (many) book_requests (refusal_comment_created_by)
+auth.users (1) ──< (many) book_requests (refusal_comment_updated_by)
 ```
 
 **Cascade Behavior:**
@@ -252,6 +299,35 @@ CREATE POLICY "Users can update their own reading progress"
 CREATE POLICY "Users can delete their own reading progress"
   ON <table_name> FOR DELETE
   USING (auth.uid() = user_id);
+```
+
+**Book Requests table:**
+```sql
+-- All authenticated users can view all requests
+CREATE POLICY "Anyone can view book requests"
+  ON book_requests FOR SELECT
+  TO authenticated
+  USING (true);
+
+-- Users can create their own requests
+CREATE POLICY "Users can create their own requests"
+  ON book_requests FOR INSERT
+  TO authenticated
+  WITH CHECK (auth.uid() = requested_by);
+
+-- Users can update/delete only their own pending requests
+CREATE POLICY "Users can update their own pending requests"
+  ON book_requests FOR UPDATE
+  TO authenticated
+  USING (auth.uid() = requested_by AND status = 'pending')
+  WITH CHECK (auth.uid() = requested_by AND status = 'pending');
+
+CREATE POLICY "Users can delete their own pending requests"
+  ON book_requests FOR DELETE
+  TO authenticated
+  USING (auth.uid() = requested_by AND status = 'pending');
+
+-- Note: Admin status updates bypass RLS via service role
 ```
 
 ---
@@ -337,6 +413,7 @@ Location: `supabase/migrations/`
 2. `002_rename_legion_to_faction.sql` - Renamed legion → faction column
 3. `003_add_singles_novellas_anthologies.sql` - Added new category tables
 4. `004_complete_fresh_schema.sql` - Complete schema (series_books rename + all categories)
+5. `005_add_book_requests.sql` - Added book_requests table for user requests
 
 ### Running Migrations
 

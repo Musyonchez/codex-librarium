@@ -40,6 +40,8 @@ war_hammer_novels/
 │   │   │   ├── anthologies/   # Anthologies reading progress
 │   │   │   ├── novellas/      # Novellas reading progress
 │   │   │   └── singles/       # Singles reading progress
+│   │   ├── requests/          # Book requests management
+│   │   │   └── [id]/          # Update/delete specific request
 │   │   └── singles/           # Get singles
 │   ├── auth/                  # Authentication
 │   │   └── callback/          # OAuth callback
@@ -47,7 +49,8 @@ war_hammer_novels/
 │   │   ├── page.tsx           # Series dashboard
 │   │   ├── singles/           # Singles dashboard
 │   │   ├── novellas/          # Novellas dashboard
-│   │   └── anthologies/       # Anthologies dashboard
+│   │   ├── anthologies/       # Anthologies dashboard
+│   │   └── requests/          # Book requests dashboard
 │   ├── import/                # Import page (admin)
 │   ├── order/                 # Book browsing pages
 │   │   ├── anthologies/       # Anthologies category
@@ -84,7 +87,8 @@ war_hammer_novels/
 │   ├── Footer.tsx             # Footer
 │   ├── Navbar.tsx             # Navigation bar
 │   ├── OrderTabs.tsx          # Sorting tabs (Name/Tags/Factions)
-│   └── SeriesView.tsx         # Series accordion
+│   ├── SeriesView.tsx         # Series accordion
+│   └── StandaloneDashboard.tsx # Shared dashboard for Singles/Novellas/Anthologies
 ├── data/                       # JSON data files (source of truth)
 │   ├── anthologies/           # Anthology JSON files
 │   │   ├── _meta/             # tags.json, factions.json
@@ -102,6 +106,7 @@ war_hammer_novels/
 │   ├── admin.ts               # Admin email verification
 │   ├── design-system.ts       # Design tokens
 │   ├── supabase/              # Supabase clients
+│   │   ├── admin.ts           # Admin client (service role, bypasses RLS)
 │   │   ├── client.ts          # Browser client
 │   │   ├── queries.ts         # Database queries
 │   │   └── server.ts          # Server client
@@ -112,7 +117,8 @@ war_hammer_novels/
 │       ├── 001_initial_schema.sql
 │       ├── 002_rename_legion_to_faction.sql
 │       ├── 003_add_singles_novellas_anthologies.sql
-│       └── 004_complete_fresh_schema.sql
+│       ├── 004_complete_fresh_schema.sql
+│       └── 005_add_book_requests.sql
 ├── .env.local                  # Environment variables
 ├── .env.local.example          # Env template
 ├── .gitignore                  # Git ignore rules
@@ -137,6 +143,7 @@ All pages and API routes follow App Router conventions.
 - `/dashboard/singles` - Singles dashboard (protected)
 - `/dashboard/novellas` - Novellas dashboard (protected)
 - `/dashboard/anthologies` - Anthologies dashboard (protected)
+- `/dashboard/requests` - Book requests management (protected)
 - `/order/series` - Browse series books (protected)
 - `/order/series/name` - Series alphabetically (protected)
 - `/order/series/tags` - Series by tags (protected)
@@ -166,6 +173,10 @@ All pages and API routes follow App Router conventions.
 - `POST /api/reading/novellas` - Update novellas progress (uses novella_id)
 - `GET /api/reading/anthologies` - Get anthologies progress (returns book_id)
 - `POST /api/reading/anthologies` - Update anthologies progress (uses anthology_id)
+- `GET /api/requests` - Get all book requests
+- `POST /api/requests` - Create new book request
+- `PATCH /api/requests/[id]` - Update request status (admin only)
+- `DELETE /api/requests/[id]` - Delete own pending request
 - `GET /api/filters` - Get tags/factions
 - `GET /api/import/list` - List importable files
 - `POST /api/import` - Import files (all categories)
@@ -184,12 +195,14 @@ All pages and API routes follow App Router conventions.
 **Feature Components:**
 - `SeriesView` - Expandable series with books
 - `Dashboard` - Statistics and progress for series books
+- `StandaloneDashboard` - Shared dashboard for Singles/Novellas/Anthologies (reduces code duplication)
 - `BookDetailsModal` - Detailed book information modal
 
 **Component Patterns:**
 - All components are Client Components (`'use client'`)
 - Use design system from `lib/design-system.ts`
 - Import types from `lib/types.ts`
+- Prefer component reusability (e.g., StandaloneDashboard serves 3 pages)
 
 ### `/data` - Source of Truth
 
@@ -224,9 +237,11 @@ All pages and API routes follow App Router conventions.
 - Ensures type safety across app
 
 **`supabase/`:**
-- Client creation for browser/server
-- Database query functions
-- Reusable patterns
+- `client.ts` - Browser client (subject to RLS)
+- `server.ts` - Server client (subject to RLS)
+- `admin.ts` - Admin client with service role (bypasses RLS, used only after admin verification)
+- `queries.ts` - Database query functions
+- Reusable patterns for data access
 
 ---
 
@@ -243,7 +258,8 @@ app/
 │   ├── page.tsx                       → /dashboard (Series)
 │   ├── singles/page.tsx               → /dashboard/singles
 │   ├── novellas/page.tsx              → /dashboard/novellas
-│   └── anthologies/page.tsx           → /dashboard/anthologies
+│   ├── anthologies/page.tsx           → /dashboard/anthologies
+│   └── requests/page.tsx              → /dashboard/requests
 ├── order/
 │   ├── series/
 │   │   ├── page.tsx                   → /order/series
@@ -270,22 +286,31 @@ app/
     ├── singles/route.ts               → /api/singles
     ├── novellas/route.ts              → /api/novellas
     ├── anthologies/route.ts           → /api/anthologies
-    └── reading/
-        ├── route.ts                   → /api/reading
-        ├── singles/route.ts           → /api/reading/singles
-        ├── novellas/route.ts          → /api/reading/novellas
-        └── anthologies/route.ts       → /api/reading/anthologies
+    ├── reading/
+    │   ├── route.ts                   → /api/reading
+    │   ├── singles/route.ts           → /api/reading/singles
+    │   ├── novellas/route.ts          → /api/reading/novellas
+    │   └── anthologies/route.ts       → /api/reading/anthologies
+    └── requests/
+        ├── route.ts                   → /api/requests
+        └── [id]/route.ts              → /api/requests/[id]
 ```
 
 ### Protected Routes
 
 Routes requiring authentication:
-- `/dashboard` and all dashboard tabs
+- `/dashboard` and all dashboard tabs (including `/dashboard/requests`)
 - `/order/*` all order pages
 - `/import` (admin only)
 - `/timeline`
 - `/api/reading/*` all reading progress endpoints
+- `/api/requests/*` all book request endpoints
 - `/api/import` (admin only)
+
+**Admin-only routes:**
+- `/import` - Import data page
+- `PATCH /api/requests/[id]` - Update request status
+- `POST /api/import` - Import files
 
 Protection handled by:
 1. `AppLayout` with `requireAuth={true}`

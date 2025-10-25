@@ -358,6 +358,185 @@ Update reading status for an anthology.
 
 ---
 
+## Book Requests API
+
+### `GET /api/requests`
+
+Get all book requests with optional status filtering.
+
+**Authentication:** Required
+
+**Query Parameters:**
+- `status` (optional) - Filter by status: "pending", "waitlist", "approved", "refused"
+
+**Response:**
+```json
+{
+  "requests": [
+    {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "title": "The Emperor's Gift",
+      "author": "Aaron Dembski-Bowden",
+      "book_type": "single",
+      "additional_info": "About the Grey Knights",
+      "requested_by": "user-uuid",
+      "status": "pending",
+      "refusal_comment": null,
+      "refusal_comment_created_by": null,
+      "refusal_comment_updated_by": null,
+      "refusal_comment_created_at": null,
+      "refusal_comment_updated_at": null,
+      "created_at": "2024-01-15T10:30:00Z",
+      "updated_at": "2024-01-15T10:30:00Z"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - User not authenticated
+- `500 Internal Server Error` - Database error
+
+**Implementation:** `app/api/requests/route.ts`
+
+**Usage:**
+- All authenticated users can view all requests
+- Used by the requests dashboard to display requests by status
+
+---
+
+### `POST /api/requests`
+
+Create a new book request.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "title": "The Emperor's Gift",
+  "author": "Aaron Dembski-Bowden",
+  "bookType": "single",
+  "additionalInfo": "About the Grey Knights"
+}
+```
+
+**Parameters:**
+- `title` (string, required) - Book title
+- `author` (string, required) - Author name
+- `bookType` (string, required) - One of: "single", "novella", "anthology", "series", "other"
+- `additionalInfo` (string, optional) - Additional context or details
+
+**Response:**
+```json
+{
+  "request": {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "title": "The Emperor's Gift",
+    "author": "Aaron Dembski-Bowden",
+    "book_type": "single",
+    "additional_info": "About the Grey Knights",
+    "requested_by": "user-uuid",
+    "status": "pending",
+    "created_at": "2024-01-15T10:30:00Z",
+    "updated_at": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+**Error Responses:**
+- `400 Bad Request` - Missing required fields
+- `401 Unauthorized` - User not authenticated
+- `500 Internal Server Error` - Database error
+
+**Implementation:** `app/api/requests/route.ts`
+
+**Note:** All new requests default to "pending" status.
+
+---
+
+### `PATCH /api/requests/[id]`
+
+Update a book request's status (admin only).
+
+**Authentication:** Required + Admin
+
+**Request Body:**
+```json
+{
+  "status": "refused",
+  "refusalComment": "This book is not part of the Warhammer 40K universe"
+}
+```
+
+**Parameters:**
+- `status` (string, required) - One of: "pending", "waitlist", "approved", "refused"
+- `refusalComment` (string, conditional) - Required when status is "refused", optional otherwise
+
+**Response:**
+```json
+{
+  "request": {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "title": "The Emperor's Gift",
+    "status": "refused",
+    "refusal_comment": "This book is not part of the Warhammer 40K universe",
+    "refusal_comment_created_by": "admin@example.com",
+    "refusal_comment_created_at": "2024-01-15T11:00:00Z",
+    "updated_at": "2024-01-15T11:00:00Z"
+  }
+}
+```
+
+**Error Responses:**
+- `400 Bad Request` - Invalid status or missing refusal comment
+- `401 Unauthorized` - User not authenticated
+- `403 Forbidden` - User is not an admin
+- `500 Internal Server Error` - Database error
+
+**Implementation:** `app/api/requests/[id]/route.ts`
+
+**Refusal Comment Logic:**
+- When status → "refused": comment required, creator tracked
+- When status changes FROM "refused": comment automatically cleared
+- Admins can edit refusal comments, tracked as updater
+- Uses admin client to bypass RLS
+
+**Admin Check:**
+```typescript
+if (!isAdmin(user.email)) {
+  return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+}
+```
+
+---
+
+### `DELETE /api/requests/[id]`
+
+Delete a book request (users can only delete their own pending requests).
+
+**Authentication:** Required
+
+**Response:**
+```json
+{
+  "success": true
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - User not authenticated
+- `403 Forbidden` - Request is not pending or not owned by user
+- `500 Internal Server Error` - Database error
+
+**Implementation:** `app/api/requests/[id]/route.ts`
+
+**RLS Policy:** Users can only delete requests where:
+- `requested_by` matches their user ID
+- `status` is "pending"
+
+---
+
 ## Import API
 
 ### `GET /api/import/list`
@@ -605,6 +784,15 @@ OAuth callback handler for Google Sign-In.
 | `/api/reading/novellas` | POST | Required | Update novellas status |
 | `/api/reading/anthologies` | GET | Required | Get anthologies progress |
 | `/api/reading/anthologies` | POST | Required | Update anthologies status |
+
+### Book Requests Endpoints
+
+| Endpoint | Method | Auth | Description |
+|----------|--------|------|-------------|
+| `/api/requests` | GET | Required | Get all book requests |
+| `/api/requests` | POST | Required | Create new book request |
+| `/api/requests/[id]` | PATCH | Admin | Update request status |
+| `/api/requests/[id]` | DELETE | Required | Delete own pending request |
 
 ### Admin Endpoints
 
