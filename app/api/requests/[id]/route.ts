@@ -5,7 +5,7 @@ import { BookRequestStatus } from '@/lib/types';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const supabase = await createClient();
@@ -14,6 +14,8 @@ export async function PATCH(
     if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    const { id } = await params;
 
     const body = await request.json();
     const { status, refusalComment } = body;
@@ -43,7 +45,7 @@ export async function PATCH(
     }
 
     const updatedRequest = await updateBookRequestStatus(
-      params.id,
+      id,
       status,
       user.id,
       refusalComment
@@ -61,7 +63,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const supabase = await createClient();
@@ -71,7 +73,9 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await deleteBookRequest(params.id, user.id);
+    const { id } = await params;
+
+    await deleteBookRequest(id, user.id);
 
     return NextResponse.json({ success: true });
   } catch (error) {

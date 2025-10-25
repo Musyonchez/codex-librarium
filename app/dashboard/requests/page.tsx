@@ -116,7 +116,7 @@ export default function RequestsDashboardPage() {
         </div>
         <button
           onClick={() => openStatusModal(request)}
-          className={`px-3 py-1 rounded ${styles.buttonPrimary} text-sm`}
+          className={`px-3 py-1 rounded ${styles.btnPrimary} text-sm`}
         >
           Change Status
         </button>
@@ -190,7 +190,7 @@ export default function RequestsDashboardPage() {
             <button
               onClick={() => setSortOrder('newest')}
               className={`px-3 py-1 rounded text-sm ${
-                sortOrder === 'newest' ? styles.buttonPrimary : styles.buttonSecondary
+                sortOrder === 'newest' ? styles.btnPrimary : styles.btnSecondary
               }`}
             >
               Newest First
@@ -198,7 +198,7 @@ export default function RequestsDashboardPage() {
             <button
               onClick={() => setSortOrder('oldest')}
               className={`px-3 py-1 rounded text-sm ${
-                sortOrder === 'oldest' ? styles.buttonPrimary : styles.buttonSecondary
+                sortOrder === 'oldest' ? styles.btnPrimary : styles.btnSecondary
               }`}
             >
               Oldest First
@@ -271,14 +271,14 @@ export default function RequestsDashboardPage() {
                     setSelectedRequest(null);
                     setRefusalComment('');
                   }}
-                  className={`px-4 py-2 ${styles.buttonSecondary} rounded`}
+                  className={`px-4 py-2 ${styles.btnSecondary} rounded`}
                   disabled={isSubmitting}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleStatusChange}
-                  className={`px-4 py-2 ${styles.buttonPrimary} rounded`}
+                  className={`px-4 py-2 ${styles.btnPrimary} rounded`}
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Updating...' : 'Update Status'}
