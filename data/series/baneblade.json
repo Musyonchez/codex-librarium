@@ -1,0 +1,23 @@
+{
+  "id": "baneblade",
+  "name": "Baneblade",
+  "description": "Tank-war epics of the Astra Militarum",
+  "books": [
+    {
+      "id": "bb-01",
+      "title": "Baneblade",
+      "author": "Guy Haley",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Tank Warfare", "Baneblade"]
+    },
+    {
+      "id": "bb-02",
+      "title": "Shadowsword",
+      "author": "Guy Haley",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard", "Tank Warfare", "Shadowsword"]
+    }
+  ]
+}

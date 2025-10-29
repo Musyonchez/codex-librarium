@@ -1,0 +1,71 @@
+{
+  "id": "space-marine-legends",
+  "name": "Space Marine Legends",
+  "description": "Stories of legendary Space Marine heroes and their epic deeds",
+  "books": [
+    {
+      "id": "sml-01",
+      "title": "Ragnar Blackmane",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 1,
+      "faction": ["Space Wolves"],
+      "tags": ["Space Marines", "Space Wolves", "Character Focus"]
+    },
+    {
+      "id": "sml-02",
+      "title": "Lemartes: Guardian of the Lost",
+      "author": "David Annandale",
+      "orderInSeries": 2,
+      "faction": ["Blood Angels"],
+      "tags": ["Space Marines", "Blood Angels", "Character Focus"]
+    },
+    {
+      "id": "sml-03",
+      "title": "Cassius",
+      "author": "Ben Counter",
+      "orderInSeries": 3,
+      "faction": ["Ultramarines"],
+      "tags": ["Space Marines", "Ultramarines", "Character Focus"]
+    },
+    {
+      "id": "sml-04",
+      "title": "Shrike",
+      "author": "George Mann",
+      "orderInSeries": 4,
+      "faction": ["Raven Guard"],
+      "tags": ["Space Marines", "Raven Guard", "Character Focus"]
+    },
+    {
+      "id": "sml-05",
+      "title": "Azrael",
+      "author": "Gav Thorpe",
+      "orderInSeries": 5,
+      "faction": ["Dark Angels"],
+      "tags": ["Space Marines", "Dark Angels", "Character Focus"]
+    },
+    {
+      "id": "sml-06",
+      "title": "Kor'sarro Khan",
+      "author": "Graeme Lyon",
+      "orderInSeries": 6,
+      "faction": ["White Scars"],
+      "tags": ["Space Marines", "White Scars", "Character Focus"]
+    },
+    {
+      "id": "sml-07",
+      "title": "Mephiston",
+      "author": "Darius Hinks",
+      "orderInSeries": 7,
+      "faction": ["Blood Angels"],
+      "tags": ["Space Marines", "Blood Angels", "Character Focus"]
+    },
+    {
+      "id": "sml-08",
+      "title": "Tyberos the Red Wake",
+      "author": "Robbie MacNiven",
+      "orderInSeries": 8,
+      "faction": ["Carcharodons"],
+      "tags": ["Space Marines", "Carcharodons", "Character Focus"]
+    }
+  ]
+}

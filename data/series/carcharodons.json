@@ -18,6 +18,14 @@
       "orderInSeries": 2,
       "faction": ["Carcharodons", "Tyranids"],
       "tags": ["Carcharodons", "Space Sharks", "Tyranids"]
+    },
+    {
+      "id": "car-03",
+      "title": "Carcharodons: Void Exile",
+      "author": "Robbie MacNiven",
+      "orderInSeries": 3,
+      "faction": ["Carcharodons"],
+      "tags": ["Carcharodons", "Space Sharks"]
     }
   ]
 }

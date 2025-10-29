@@ -1,0 +1,23 @@
+{
+  "id": "lords-of-silence",
+  "name": "Lords of Silence",
+  "description": "Slow, plague-ridden warfare from the Death Guard Chaos point of view",
+  "books": [
+    {
+      "id": "los-01",
+      "title": "The Lords of Silence",
+      "author": "Chris Wraight",
+      "orderInSeries": 1,
+      "faction": ["Death Guard", "Chaos", "Nurgle"],
+      "tags": ["Chaos Space Marines", "Death Guard", "Nurgle"]
+    },
+    {
+      "id": "los-02",
+      "title": "The Reign of Silence",
+      "author": "Chris Wraight",
+      "orderInSeries": 2,
+      "faction": ["Death Guard", "Chaos", "Nurgle"],
+      "tags": ["Chaos Space Marines", "Death Guard", "Nurgle"]
+    }
+  ]
+}

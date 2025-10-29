@@ -1,0 +1,23 @@
+{
+  "id": "black-crusade",
+  "name": "Black Crusade",
+  "description": "Tales of Chaos champions and the Black Crusades against the Imperium",
+  "books": [
+    {
+      "id": "bc-01",
+      "title": "Khârn: Eater of Worlds",
+      "author": "Anthony Reynolds",
+      "orderInSeries": 1,
+      "faction": ["World Eaters", "Chaos", "Khorne"],
+      "tags": ["Chaos Space Marines", "World Eaters", "Khârn"]
+    },
+    {
+      "id": "bc-02",
+      "title": "The Red Path",
+      "author": "Chris Dows",
+      "orderInSeries": 2,
+      "faction": ["Chaos", "Khorne"],
+      "tags": ["Chaos Space Marines", "Khorne"]
+    }
+  ]
+}

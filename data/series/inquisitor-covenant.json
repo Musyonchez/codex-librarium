@@ -1,0 +1,31 @@
+{
+  "id": "inquisitor-covenant",
+  "name": "Inquisitor Covenant",
+  "description": "John French's deep, cerebral trilogy of Ordo Malleus intrigue",
+  "books": [
+    {
+      "id": "inc-01",
+      "title": "Resurrection",
+      "author": "John French",
+      "orderInSeries": 1,
+      "faction": ["Inquisition", "Ordo Malleus"],
+      "tags": ["Inquisition", "Conspiracy"]
+    },
+    {
+      "id": "inc-02",
+      "title": "Incarnation",
+      "author": "John French",
+      "orderInSeries": 2,
+      "faction": ["Inquisition", "Ordo Malleus"],
+      "tags": ["Inquisition", "Conspiracy"]
+    },
+    {
+      "id": "inc-03",
+      "title": "Revelation",
+      "author": "John French",
+      "orderInSeries": 3,
+      "faction": ["Inquisition", "Ordo Malleus"],
+      "tags": ["Inquisition", "Conspiracy"]
+    }
+  ]
+}

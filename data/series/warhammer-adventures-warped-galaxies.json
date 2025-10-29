@@ -1,0 +1,55 @@
+{
+  "id": "warhammer-adventures-warped-galaxies",
+  "name": "Warhammer Adventures: Warped Galaxies",
+  "description": "A young adult series following the adventures of Zelia Lor and her companions as they explore the dangers of the 41st millennium",
+  "books": [
+    {
+      "id": "wawg-01",
+      "title": "Attack of the Necron",
+      "author": "Cavan Scott",
+      "orderInSeries": 1,
+      "faction": ["Necrons"],
+      "tags": ["Young Adult", "Adventure", "Necrons"]
+    },
+    {
+      "id": "wawg-02",
+      "title": "Claws of the Genestealer",
+      "author": "Cavan Scott",
+      "orderInSeries": 2,
+      "faction": ["Genestealers", "Tyranids"],
+      "tags": ["Young Adult", "Adventure", "Genestealers"]
+    },
+    {
+      "id": "wawg-03",
+      "title": "Secrets of the Tau",
+      "author": "Cavan Scott",
+      "orderInSeries": 3,
+      "faction": ["Tau"],
+      "tags": ["Young Adult", "Adventure", "Tau"]
+    },
+    {
+      "id": "wawg-04",
+      "title": "War of the Orks",
+      "author": "Cavan Scott",
+      "orderInSeries": 4,
+      "faction": ["Orks"],
+      "tags": ["Young Adult", "Adventure", "Orks"]
+    },
+    {
+      "id": "wawg-05",
+      "title": "Plague of the Nurglings",
+      "author": "Cavan Scott",
+      "orderInSeries": 5,
+      "faction": ["Chaos", "Nurgle"],
+      "tags": ["Young Adult", "Adventure", "Nurgle"]
+    },
+    {
+      "id": "wawg-06",
+      "title": "Tomb of the Necron",
+      "author": "Cavan Scott",
+      "orderInSeries": 6,
+      "faction": ["Necrons"],
+      "tags": ["Young Adult", "Adventure", "Necrons"]
+    }
+  ]
+}

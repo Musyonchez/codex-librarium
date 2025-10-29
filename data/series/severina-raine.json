@@ -1,0 +1,31 @@
+{
+  "id": "severina-raine",
+  "name": "Severina Raine",
+  "description": "Gritty Astra Militarum psychological war fiction featuring Commissar Severina Raine",
+  "books": [
+    {
+      "id": "sr-01",
+      "title": "Honourbound",
+      "author": "Rachel Harrison",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Commissar", "Astra Militarum"]
+    },
+    {
+      "id": "sr-02",
+      "title": "Killshot",
+      "author": "Rachel Harrison",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Commissar", "Short Story"]
+    },
+    {
+      "id": "sr-03",
+      "title": "The Blood Games",
+      "author": "Rachel Harrison",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Commissar", "Short Story"]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "id": "space-marine-battles",
+  "name": "Space Marine Battles",
+  "description": "Epic battles featuring Space Marines across the galaxy",
+  "books": [
+    {
+      "id": "smb-01",
+      "title": "Rynn's World",
+      "author": "Steve Parker",
+      "orderInSeries": 1,
+      "faction": ["Crimson Fists", "Orks"],
+      "tags": ["Space Marines", "Planetary Defense"]
+    },
+    {
+      "id": "smb-02",
+      "title": "Helsreach",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 2,
+      "faction": ["Black Templars", "Orks"],
+      "tags": ["Space Marines", "Siege Warfare"]
+    },
+    {
+      "id": "smb-03",
+      "title": "Hunt for Voldorius",
+      "author": "Andy Hoare",
+      "orderInSeries": 3,
+      "faction": ["White Scars", "Raven Guard", "Chaos"],
+      "tags": ["Space Marines", "Hunt"]
+    },
+    {
+      "id": "smb-04",
+      "title": "The Purging of Kadillus",
+      "author": "Gav Thorpe",
+      "orderInSeries": 4,
+      "faction": ["Dark Angels", "Orks"],
+      "tags": ["Space Marines", "Dark Angels"]
+    },
+    {
+      "id": "smb-05",
+      "title": "Fall of Damnos",
+      "author": "Nick Kyme",
+      "orderInSeries": 5,
+      "faction": ["Ultramarines", "Necrons"],
+      "tags": ["Space Marines", "Necrons"]
+    },
+    {
+      "id": "smb-06",
+      "title": "Battle of the Fang",
+      "author": "Chris Wraight",
+      "orderInSeries": 6,
+      "faction": ["Space Wolves", "Thousand Sons"],
+      "tags": ["Space Marines", "Space Wolves", "Siege Warfare"]
+    },
+    {
+      "id": "smb-07",
+      "title": "The Gildar Rift",
+      "author": "Sarah Cawkwell",
+      "orderInSeries": 7,
+      "faction": ["Silver Skulls"],
+      "tags": ["Space Marines", "Warp"]
+    },
+    {
+      "id": "smb-08",
+      "title": "Legion of the Damned",
+      "author": "Rob Sanders",
+      "orderInSeries": 8,
+      "faction": ["Excoriators", "Legion of the Damned", "Chaos"],
+      "tags": ["Space Marines", "Legion of the Damned"]
+    },
+    {
+      "id": "smb-09",
+      "title": "Architect of Fate",
+      "author": "Various",
+      "orderInSeries": 9,
+      "faction": ["Space Marines", "Chaos"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-10",
+      "title": "Wrath of Iron",
+      "author": "Chris Wraight",
+      "orderInSeries": 10,
+      "faction": ["Iron Hands", "Chaos"],
+      "tags": ["Space Marines", "Iron Hands"]
+    },
+    {
+      "id": "smb-11",
+      "title": "The Siege of Castellax",
+      "author": "C.L. Werner",
+      "orderInSeries": 11,
+      "faction": ["Iron Warriors", "Chaos"],
+      "tags": ["Chaos Space Marines", "Siege Warfare"]
+    },
+    {
+      "id": "smb-12",
+      "title": "The Death of Antagonis",
+      "author": "David Annandale",
+      "orderInSeries": 12,
+      "faction": ["Black Dragons", "Chaos"],
+      "tags": ["Space Marines", "Horror"]
+    },
+    {
+      "id": "smb-13",
+      "title": "Death of Integrity",
+      "author": "Guy Haley",
+      "orderInSeries": 13,
+      "faction": ["Blood Drinkers", "Novamarines", "Genestealers"],
+      "tags": ["Space Marines", "Space Hulk"]
+    },
+    {
+      "id": "smb-14",
+      "title": "Malodrax",
+      "author": "Ben Counter",
+      "orderInSeries": 14,
+      "faction": ["Soul Drinkers", "Chaos"],
+      "tags": ["Space Marines", "Chaos"]
+    },
+    {
+      "id": "smb-15",
+      "title": "Pandorax",
+      "author": "C.Z. Dunn",
+      "orderInSeries": 15,
+      "faction": ["Grey Knights", "Dark Angels", "Chaos"],
+      "tags": ["Space Marines", "Grey Knights", "Daemon"]
+    },
+    {
+      "id": "smb-16",
+      "title": "Overfiend",
+      "author": "David Annandale",
+      "orderInSeries": 16,
+      "faction": ["Ultramarines", "Orks"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-17",
+      "title": "Damocles",
+      "author": "Various",
+      "orderInSeries": 17,
+      "faction": ["Space Marines", "Tau"],
+      "tags": ["Anthology", "Space Marines", "Tau"]
+    },
+    {
+      "id": "smb-18",
+      "title": "The World Engine",
+      "author": "Ben Counter",
+      "orderInSeries": 18,
+      "faction": ["Astral Knights", "Necrons"],
+      "tags": ["Space Marines", "Necrons"]
+    },
+    {
+      "id": "smb-19",
+      "title": "Sanctus Reach",
+      "author": "Various",
+      "orderInSeries": 19,
+      "faction": ["Space Wolves", "Orks"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-20",
+      "title": "Flesh Tearers",
+      "author": "Andy Smillie",
+      "orderInSeries": 20,
+      "faction": ["Flesh Tearers", "Tyranids"],
+      "tags": ["Space Marines", "Tyranids"]
+    },
+    {
+      "id": "smb-21",
+      "title": "Blades of Damocles",
+      "author": "Phil Kelly",
+      "orderInSeries": 21,
+      "faction": ["White Scars", "Tau"],
+      "tags": ["Space Marines", "Tau"]
+    },
+    {
+      "id": "smb-22",
+      "title": "The Plagues of Orath",
+      "author": "Various",
+      "orderInSeries": 22,
+      "faction": ["Ultramarines", "Chaos"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-23",
+      "title": "Crusaders of Dorn",
+      "author": "Various",
+      "orderInSeries": 23,
+      "faction": ["Imperial Fists"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-24",
+      "title": "Calgar's Siege",
+      "author": "Paul Kearney",
+      "orderInSeries": 24,
+      "faction": ["Ultramarines", "Orks"],
+      "tags": ["Space Marines", "Siege Warfare"]
+    },
+    {
+      "id": "smb-25",
+      "title": "Storm of Damocles",
+      "author": "Justin D. Hill",
+      "orderInSeries": 25,
+      "faction": ["Scythes of the Emperor", "Tau"],
+      "tags": ["Space Marines", "Tau"]
+    },
+    {
+      "id": "smb-26",
+      "title": "Tyrant of the Hollow Worlds",
+      "author": "Mark Clapham",
+      "orderInSeries": 26,
+      "faction": ["Red Scorpions", "Tau"],
+      "tags": ["Space Marines", "Tau"]
+    },
+    {
+      "id": "smb-27",
+      "title": "Shield of Baal",
+      "author": "Various",
+      "orderInSeries": 27,
+      "faction": ["Blood Angels", "Tyranids"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-28",
+      "title": "Scythes of the Emperor",
+      "author": "Laurie Goulding",
+      "orderInSeries": 28,
+      "faction": ["Scythes of the Emperor", "Tyranids"],
+      "tags": ["Anthology", "Space Marines"]
+    },
+    {
+      "id": "smb-29",
+      "title": "The Eye of Ezekiel",
+      "author": "C.Z. Dunn",
+      "orderInSeries": 29,
+      "faction": ["Dark Angels", "Chaos"],
+      "tags": ["Space Marines", "Dark Angels"]
+    }
+  ]
+}

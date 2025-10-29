@@ -1,0 +1,71 @@
+{
+  "id": "space-marine-conquests",
+  "name": "Space Marine Conquests",
+  "description": "Major Space Marine campaigns and conquests across the galaxy",
+  "books": [
+    {
+      "id": "smc-01",
+      "title": "The Devastation of Baal",
+      "author": "Guy Haley",
+      "orderInSeries": 1,
+      "faction": ["Blood Angels", "Tyranids"],
+      "tags": ["Space Marines", "Blood Angels", "Tyranids"]
+    },
+    {
+      "id": "smc-02",
+      "title": "The Ashes of Prospero",
+      "author": "Gav Thorpe",
+      "orderInSeries": 2,
+      "faction": ["Space Wolves", "Thousand Sons"],
+      "tags": ["Space Marines", "Space Wolves"]
+    },
+    {
+      "id": "smc-03",
+      "title": "War of Secrets",
+      "author": "Phil Kelly",
+      "orderInSeries": 3,
+      "faction": ["Dark Angels", "Tau"],
+      "tags": ["Space Marines", "Dark Angels", "Tau"]
+    },
+    {
+      "id": "smc-04",
+      "title": "Of Honour and Iron",
+      "author": "Ian St. Martin",
+      "orderInSeries": 4,
+      "faction": ["Salamanders"],
+      "tags": ["Space Marines", "Salamanders"]
+    },
+    {
+      "id": "smc-05",
+      "title": "Apocalypse",
+      "author": "Josh Reynolds",
+      "orderInSeries": 5,
+      "faction": ["Black Templars", "Word Bearers"],
+      "tags": ["Space Marines", "Chaos"]
+    },
+    {
+      "id": "smc-06",
+      "title": "Fist of the Imperium",
+      "author": "Andy Clark",
+      "orderInSeries": 6,
+      "faction": ["Imperial Fists"],
+      "tags": ["Space Marines", "Imperial Fists"]
+    },
+    {
+      "id": "smc-07",
+      "title": "Masters of Shadow",
+      "author": "Thomas Parrott",
+      "orderInSeries": 7,
+      "faction": ["Raven Guard"],
+      "tags": ["Space Marines", "Raven Guard", "Unreleased"]
+    },
+    {
+      "id": "smc-08",
+      "title": "For Glory and Honour",
+      "author": "Various",
+      "orderInSeries": 8,
+      "faction": ["Space Marines"],
+      "tags": ["Anthology", "Space Marines"]
+    }
+  ]
+}

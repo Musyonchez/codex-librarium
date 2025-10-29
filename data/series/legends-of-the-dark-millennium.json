@@ -1,0 +1,55 @@
+{
+  "id": "legends-of-the-dark-millennium",
+  "name": "Legends of the Dark Millennium",
+  "description": "Tales exploring different factions and heroes of the 41st millennium",
+  "books": [
+    {
+      "id": "ldm-01",
+      "title": "Deathwatch",
+      "author": "Ian St Martin",
+      "orderInSeries": 1,
+      "faction": ["Deathwatch", "Space Marines"],
+      "tags": ["Space Marines", "Deathwatch", "Xenos"]
+    },
+    {
+      "id": "ldm-02",
+      "title": "Ultramarines",
+      "author": "Various",
+      "orderInSeries": 2,
+      "faction": ["Ultramarines", "Space Marines"],
+      "tags": ["Space Marines", "Ultramarines"]
+    },
+    {
+      "id": "ldm-03",
+      "title": "Shas'o",
+      "author": "Various",
+      "orderInSeries": 3,
+      "faction": ["Tau"],
+      "tags": ["Tau", "Commander"]
+    },
+    {
+      "id": "ldm-04",
+      "title": "Sons of Corax",
+      "author": "George Mann",
+      "orderInSeries": 4,
+      "faction": ["Raven Guard", "Space Marines"],
+      "tags": ["Space Marines", "Raven Guard"]
+    },
+    {
+      "id": "ldm-05",
+      "title": "Astra Militarum",
+      "author": "Various",
+      "orderInSeries": 5,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Astra Militarum"]
+    },
+    {
+      "id": "ldm-06",
+      "title": "Space Wolves",
+      "author": "Various",
+      "orderInSeries": 6,
+      "faction": ["Space Wolves", "Space Marines"],
+      "tags": ["Space Marines", "Space Wolves"]
+    }
+  ]
+}

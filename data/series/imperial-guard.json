@@ -1,0 +1,111 @@
+{
+  "id": "imperial-guard",
+  "name": "Imperial Guard",
+  "description": "Stories of the Imperial Guard regiments fighting across the galaxy",
+  "books": [
+    {
+      "id": "ig-01",
+      "title": "Fifteen Hours",
+      "author": "Mitchel Scanlon",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Astra Militarum"]
+    },
+    {
+      "id": "ig-02",
+      "title": "Death World",
+      "author": "Steve Lyons",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Catachan", "Jungle Warfare"]
+    },
+    {
+      "id": "ig-03",
+      "title": "Rebel Winter",
+      "author": "Steve Parker",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard", "Vostroyan"]
+    },
+    {
+      "id": "ig-04",
+      "title": "Desert Raiders",
+      "author": "Lucien Soulban",
+      "orderInSeries": 4,
+      "faction": ["Astra Militarum", "Tau"],
+      "tags": ["Imperial Guard", "Tallarn", "Desert Warfare"]
+    },
+    {
+      "id": "ig-05",
+      "title": "Ice Guard",
+      "author": "Steve Lyons",
+      "orderInSeries": 5,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard", "Valhalla", "Ice Warfare"]
+    },
+    {
+      "id": "ig-06",
+      "title": "Gunheads",
+      "author": "Steve Parker",
+      "orderInSeries": 6,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Tank Warfare"]
+    },
+    {
+      "id": "ig-07",
+      "title": "Cadian Blood",
+      "author": "Aaron Dembski-Bowden",
+      "orderInSeries": 7,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard", "Cadia", "Horror"]
+    },
+    {
+      "id": "ig-08",
+      "title": "Redemption Corps",
+      "author": "Rob Sanders",
+      "orderInSeries": 8,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard", "Storm Troopers"]
+    },
+    {
+      "id": "ig-09",
+      "title": "Dead Men Walking",
+      "author": "Steve Lyons",
+      "orderInSeries": 9,
+      "faction": ["Astra Militarum", "Necrons"],
+      "tags": ["Imperial Guard", "Death Korps of Krieg", "Necrons"]
+    },
+    {
+      "id": "ig-10",
+      "title": "Imperial Glory",
+      "author": "Richard Williams",
+      "orderInSeries": 10,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Brimlock"]
+    },
+    {
+      "id": "ig-11",
+      "title": "Iron Guard",
+      "author": "Mark Clapham",
+      "orderInSeries": 11,
+      "faction": ["Astra Militarum", "Chaos"],
+      "tags": ["Imperial Guard"]
+    },
+    {
+      "id": "ig-12",
+      "title": "Commissar",
+      "author": "Andy Hoare",
+      "orderInSeries": 12,
+      "faction": ["Astra Militarum", "Tau"],
+      "tags": ["Imperial Guard", "Commissar"]
+    },
+    {
+      "id": "ig-13",
+      "title": "Straken",
+      "author": "Toby Frost",
+      "orderInSeries": 13,
+      "faction": ["Astra Militarum", "Tau"],
+      "tags": ["Imperial Guard", "Catachan", "Straken"]
+    }
+  ]
+}
