@@ -1,0 +1,31 @@
+{
+  "id": "gathering-storm",
+  "name": "The Gathering Storm Campaign Trilogy",
+  "description": "The pivotal narrative campaign trilogy marking the end of the 41st Millennium - chronicling the fall of Cadia, the awakening of the Aeldari god of death, and the resurrection of Roboute Guilliman",
+  "books": [
+    {
+      "id": "gs-01",
+      "title": "Fall of Cadia",
+      "author": "Games Workshop",
+      "orderInSeries": 1,
+      "faction": ["Imperial Guard", "Adepta Sororitas", "Cadia", "Black Legion", "Chaos"],
+      "tags": ["Fall of Cadia", "13th Black Crusade", "Abaddon", "Cadia", "Celestine", "Campaign"]
+    },
+    {
+      "id": "gs-02",
+      "title": "Fracture of Biel-Tan",
+      "author": "Games Workshop",
+      "orderInSeries": 2,
+      "faction": ["Eldar", "Dark Eldar", "Harlequins", "Ynnari"],
+      "tags": ["Fracture of Biel-Tan", "Yvraine", "Ynnari", "Biel-Tan", "Ynnead", "Craftworlds", "Campaign"]
+    },
+    {
+      "id": "gs-03",
+      "title": "Rise of the Primarch",
+      "author": "Games Workshop",
+      "orderInSeries": 3,
+      "faction": ["Ultramarines", "Adepta Sororitas", "Adeptus Mechanicus"],
+      "tags": ["Rise of the Primarch", "Guilliman", "Belisarius Cawl", "Celestine", "Greyfax", "Primarchs", "Campaign"]
+    }
+  ]
+}

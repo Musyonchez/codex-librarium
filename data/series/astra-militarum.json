@@ -1,0 +1,47 @@
+{
+  "id": "astra-militarum",
+  "name": "Astra Militarum",
+  "description": "Stories of courage and sacrifice from the soldiers of the Imperial Guard across different regiments and war zones of the 41st Millennium",
+  "books": [
+    {
+      "id": "am-01",
+      "title": "Steel Tread",
+      "author": "Andy Clark",
+      "orderInSeries": 1,
+      "faction": ["Astra Militarum", "Orks"],
+      "tags": ["Imperial Guard", "Tanks", "Leman Russ", "Tank Warfare"]
+    },
+    {
+      "id": "am-02",
+      "title": "Catachan Devil",
+      "author": "Justin Woolley",
+      "orderInSeries": 2,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Catachan", "Catachan Jungle Fighters", "Jungle Warfare"]
+    },
+    {
+      "id": "am-03",
+      "title": "Witchbringer",
+      "author": "Steven B. Fischer",
+      "orderInSeries": 3,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard", "Psykers", "Sanctioned Psykers"]
+    },
+    {
+      "id": "am-04",
+      "title": "Longshot",
+      "author": "Rob Young",
+      "orderInSeries": 4,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard"]
+    },
+    {
+      "id": "am-05",
+      "title": "Deathworlder",
+      "author": "Victoria Hayward",
+      "orderInSeries": 5,
+      "faction": ["Astra Militarum"],
+      "tags": ["Imperial Guard"]
+    }
+  ]
+}
