@@ -124,6 +124,14 @@
       "tags": ["Horus Heresy", "Space Wolves", "Prospero", "Leman Russ"]
     },
     {
+      "id": "hh-16",
+      "title": "Age of Darkness",
+      "author": "Various",
+      "orderInSeries": 16,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
+    },
+    {
       "id": "hh-17",
       "title": "The Outcast Dead",
       "author": "Graham McNeill",
@@ -148,12 +156,28 @@
       "tags": ["Horus Heresy", "Ultramarines", "Calth", "Betrayal"]
     },
     {
+      "id": "hh-20",
+      "title": "The Primarchs",
+      "author": "Various",
+      "orderInSeries": 20,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Primarchs", "Short Stories"]
+    },
+    {
       "id": "hh-21",
       "title": "Fear to Tread",
       "author": "James Swallow",
       "orderInSeries": 21,
       "faction": ["Blood Angels"],
       "tags": ["Horus Heresy", "Blood Angels", "Sanguinius", "Signus"]
+    },
+    {
+      "id": "hh-22",
+      "title": "Shadows of Treachery",
+      "author": "Various",
+      "orderInSeries": 22,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
     },
     {
       "id": "hh-23",
@@ -170,6 +194,14 @@
       "orderInSeries": 24,
       "faction": ["World Eaters", "Word Bearers"],
       "tags": ["Horus Heresy", "World Eaters", "Angron", "Lorgar"]
+    },
+    {
+      "id": "hh-25",
+      "title": "Mark of Calth",
+      "author": "Various",
+      "orderInSeries": 25,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Calth", "Short Stories"]
     },
     {
       "id": "hh-26",
@@ -212,12 +244,28 @@
       "tags": ["Horus Heresy", "Iron Hands", "Daemons"]
     },
     {
+      "id": "hh-31",
+      "title": "Legacies of Betrayal",
+      "author": "Various",
+      "orderInSeries": 31,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
+    },
+    {
       "id": "hh-32",
       "title": "Deathfire",
       "author": "Nick Kyme",
       "orderInSeries": 32,
       "faction": ["Salamanders"],
       "tags": ["Horus Heresy", "Salamanders", "Vulkan"]
+    },
+    {
+      "id": "hh-33",
+      "title": "War Without End",
+      "author": "Various",
+      "orderInSeries": 33,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
     },
     {
       "id": "hh-34",
@@ -228,12 +276,28 @@
       "tags": ["Horus Heresy", "Ultramarines", "Pharos", "Night Lords"]
     },
     {
+      "id": "hh-35",
+      "title": "Eye of Terra",
+      "author": "Various",
+      "orderInSeries": 35,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
+    },
+    {
       "id": "hh-36",
       "title": "The Path of Heaven",
       "author": "Chris Wraight",
       "orderInSeries": 36,
       "faction": ["White Scars"],
       "tags": ["Horus Heresy", "White Scars", "Jaghatai Khan"]
+    },
+    {
+      "id": "hh-37",
+      "title": "The Silent War",
+      "author": "Various",
+      "orderInSeries": 37,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
     },
     {
       "id": "hh-38",
@@ -252,6 +316,14 @@
       "tags": ["Horus Heresy", "Imperial Fists", "Rogal Dorn", "Alpha Legion"]
     },
     {
+      "id": "hh-40",
+      "title": "Corax",
+      "author": "Gav Thorpe",
+      "orderInSeries": 40,
+      "faction": ["Raven Guard"],
+      "tags": ["Horus Heresy", "Raven Guard", "Corax", "Anthology"]
+    },
+    {
       "id": "hh-41",
       "title": "Master of Mankind",
       "author": "Aaron Dembski-Bowden",
@@ -266,6 +338,14 @@
       "orderInSeries": 42,
       "faction": ["Death Guard"],
       "tags": ["Horus Heresy", "Nathaniel Garro", "Knights-Errant"]
+    },
+    {
+      "id": "hh-43",
+      "title": "Shattered Legions",
+      "author": "Various",
+      "orderInSeries": 43,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Iron Hands", "Salamanders", "Raven Guard", "Short Stories"]
     },
     {
       "id": "hh-44",
@@ -300,6 +380,14 @@
       "tags": ["Horus Heresy", "Salamanders", "Vulkan", "Terra"]
     },
     {
+      "id": "hh-48",
+      "title": "The Burden of Loyalty",
+      "author": "Various",
+      "orderInSeries": 48,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
+    },
+    {
       "id": "hh-49",
       "title": "Wolfsbane",
       "author": "Guy Haley",
@@ -322,6 +410,14 @@
       "orderInSeries": 51,
       "faction": ["Sons of Horus", "Chaos"],
       "tags": ["Horus Heresy", "Horus", "Chaos", "Traitor Legions"]
+    },
+    {
+      "id": "hh-52",
+      "title": "Heralds of the Siege",
+      "author": "Various",
+      "orderInSeries": 52,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
     },
     {
       "id": "hh-53",
