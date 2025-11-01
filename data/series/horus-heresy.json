@@ -76,6 +76,14 @@
       "tags": ["Horus Heresy", "Mechanicum", "Mars"]
     },
     {
+      "id": "hh-10",
+      "title": "Tales of Heresy",
+      "author": "Various",
+      "orderInSeries": 10,
+      "faction": ["Anthology"],
+      "tags": ["Horus Heresy", "Anthology", "Short Stories"]
+    },
+    {
       "id": "hh-11",
       "title": "Fallen Angels",
       "author": "Mike Lee",
